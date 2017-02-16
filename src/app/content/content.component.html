@@ -1,0 +1,267 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-4">
+	    <div class="card">
+				<h3 class="card-header">auto-complete</h3>
+				<div class="card-block component">
+						<div class="text-xs-center">
+							<input type="text" class="form-control" auto-complete [(ngModel)]="autoCompleteModel" 
+							placeholder="Enter Address(min. 2 chars)" [source]="googleGeoCode" display-property-name="formatted_address" path-to-data="results" min-chars="2">
+						</div>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/autocomplete']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+	    <div class="card">
+				<h3 class="card-header">gos-badge</h3>
+				<div class="card-block component">
+						<div class="text-xs-center"><gos-badge type="badge" badgeData="badge"></gos-badge></div><br/>
+						<div class="text-xs-center"><gos-badge type="badge-link" labelText="Link" badgeData="6"></gos-badge></div><br/>
+						<div class="text-xs-center"><gos-badge type="badge-button" buttonColor="secondary" labelText="Button" badgeData="6"></gos-badge></div><br/>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/badge']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-button</h3>
+				<div class="card-block component">
+						<div class="text-xs-center"><gos-button label="Small Button" buttonSize="sm" buttonColor="outline-primary" iconName="camera"></gos-button></div><br/>
+						<div class="text-xs-center"><gos-button label="Default Button" buttonColor="outline-secondary"></gos-button></div><br/>
+						<div class="text-xs-center"><gos-button label="Large Button" buttonSize="lg" buttonColor="outline-success"></gos-button></div>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/button']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-datetimepicker</h3>
+				<div class="card-block component">
+					<gos-datetimepicker calendarLanguage="th" [isFromTo]="true" fromLabel="จาก" toLabel="ถึง" clearLabel="ลบทิ้ง" [showClearButton]="true" [yearNavigator]="true" yearRange="2000:2020" [monthNavigator]="true" dateFormat='dd/mm/yy' 
+						[isBuddhistYear]="true" [readonlyInput]="true" [(date1)]="dateFrom" [(date2)]="dateTo"></gos-datetimepicker><br>
+					Date From: {{dateFrom}}<br><br>
+					Date To: {{dateTo}}
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/datetimepicker']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+	    <div class="card">
+				<h3 class="card-header">gos-chart</h3>
+				<div class="card-block component">
+						<div class="text-xs-center"><gos-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></gos-chart></div><br/>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/chart']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-checkbox</h3>
+				<div class="card-block component">
+					<gos-checkbox name="chbnames1" id="chbid1" label="Choose expertise: " [data]="datas" block="block" colorTheme="warning" require="true">  check </gos-checkbox>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/checkbox']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-image-gallery</h3>
+				<div class="card-block component">
+					<div class="text-xs-center"><gos-image-gallery [images]=ImgGallery showImage=3></gos-image-gallery></div>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/imagegallery']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">message-popup</h3>
+				<div class="card-block component text-xs-center">
+					<gos-button label="Show popup" buttonSize="sm" buttonColor="primary" (click)="openAlertPopup()"></gos-button>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/popup']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<!--<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-progressbar-lock</h3>
+				<div class="card-block component text-xs-center">
+					<gos-progressbar-lock id="lockId" color="firebrick" height="4px" [lockScreen]=false></gos-progressbar-lock>
+					<gos-button label="Start progress" buttonSize="sm" buttonColor="primary" (click)="startProgress()"></gos-button>
+					<gos-button label="Complete progress" buttonSize="sm" buttonColor="primary" (click)="completeProgress()"></gos-button>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/progressbar']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>-->
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-pulldown-menu</h3>
+				<div class="card-block component text-xs-center">
+					<ul class="nav navbar-nav">
+						<li class="nav-item active" routerLinkActive="active">
+							<a class="nav-link" [routerLink]="['/']">Menu 1</a>
+						</li>
+						<li class="nav-item active" routerLinkActive="active">
+							<a class="nav-link" [routerLink]="['/']">Menu 2</a>
+						</li>
+						<gos-pulldown-menu headLabel="Pulldown Menu" [pageList]="pageListArray"></gos-pulldown-menu>
+					</ul>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/pulldown']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-radiobutton</h3>
+				<div class="card-block component">
+					<gos-radiobutton name="radioname1" 
+                  id="radioid1" 
+                  label="Radio button: " 
+                  [data]="data" 
+                  block="block" 
+                  colorTheme="success" 
+                  require="true" 
+				  (valueOut)="textValue($event)"></gos-radiobutton><br>
+				  <p> <strong> Output value: </strong> {{getValue}} </p>
+				  <p> <strong> Output label: </strong> {{getLabel}} </p>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/radiobutton']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">ng-select</h3>
+				<div class="card-block component">
+					<ng-select [allowClear]="true" 
+						placeholder="please select city"
+						[items]="items"
+						[disabled]="disabledSingle" 
+						(data)="refreshSingleValue($event)"></ng-select><br>
+				<p><strong> Select: </strong> {{ singleValue.text }} </p>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/selectbox']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-sidebar</h3>
+				<div class="card-block component">
+					<sidebar-child>Show Side Bar</sidebar-child>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/sidebar']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">tab</h3>
+				<div class="card-block component">
+					<tabset> 
+						<tab heading="TAB 1"><h1>TAB 1</h1></tab> 
+						<tab heading="TAB 2"><h1>TAB 2</h1></tab> 
+					</tabset> 
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/tab']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-table</h3>
+				<div class="card-block component">
+					<gos-table class="table-striped table-border table-sm" paging=false filterAll=true [columns]="tableColumns" [(data)]="dataOfTable"></gos-table>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/table']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-textarea</h3>
+				<div class="card-block component">
+					<gos-textarea label="Text Area" row="4" gosId="textarea_sample" colorTheme="info"></gos-textarea>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/textarea']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-textbox</h3>
+				<div class="card-block component">
+					<gos-textbox type="number" label="Number with Validation" require="true" id="textbox_1" placeholder="put valid number"></gos-textbox>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/textbox']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-texteditor</h3>
+				<div class="card-block component"><gos-texteditor elementId='editor_1' height='100' editormode='basic' showMenubar="false" content='editor'></gos-texteditor></div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/texteditor']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">tooltip</h3>
+				<div class="card-block component text-xs-center"><gos-button label="move mouse to here" buttonColor="primary" tooltip="It's tooltip !!"></gos-button></div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/tooltip']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-tree</h3>
+				<div class="card-block component"><gos-tree [directories]="directories" id="treeview1" name="treeviewname" (valueOut)="textValue($event)"></gos-tree></div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/tree']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">gos-upload</h3>
+				<div class="card-block component">
+					<gos-upload name="demo" url="http://localhost:10050/upload" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*" [autoUpload]="false" [maxFileSize]=50*1024*1024 [showImage]="true" [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true" [messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinish($event)" (onError)="onError($event)" (onSelect)="onSelect($event)" (onDelete)="onDelete($event)" (onClear)="onClear($event)"></gos-upload>
+					<small>อัพโหลดไฟล์ประเภท image, text</small>
+				</div>
+				<div class="card-block text-xs-center">
+					<gos-button routerLinkActive="active" [routerLink]="['/upload']" label="How to use" buttonColor="danger"></gos-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

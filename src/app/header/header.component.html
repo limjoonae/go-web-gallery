@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light navbar-bg-gosoft">
+  <a class="navbar-brand" href="#">
+    <img src="assets/t3_logo_light2.png" width="200" height="34" class="d-inline-block align-top" alt="Gosoft Logo">
+    <small class="project-name"><strong>Front-end Web Application Framework</strong></small>
+  </a>
+  <ul class="nav navbar-nav float-md-right">
+    <li class="nav-item active" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/']">Home</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/gettingstart']">Getting Start</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/font']">Font</a>
+    </li>
+    <gos-pulldown-menu headLabel="Component" [pageList]="pageList"></gos-pulldown-menu>
+  </ul>
+</nav>
