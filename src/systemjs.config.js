@@ -50,7 +50,7 @@
       'gos-directive': 'gos:directive/1.0.0',
 
       'ng2-charts': 'npm:ng2-charts',
-      'chart.js': 'npm:ng2-charts/node_modules/chart.js/dist/Chart.bundle.min.js',
+      'chart.js': 'npm:chart.js/dist/Chart.bundle.min.js',
 
       'primeng': 'npm:primeng',
 
