@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Directory } from 'gos-tree/directory'; //**tree*
 
 // **popup*
 import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal-bootstrap';
+
+import { Directory } from 'gos-tree/directory'; //**tree*
 
 // import { SlimLoadingBarService } from 'gos-progressbar';
 // import { LockService } from 'gos-progressbar-lockservice';
@@ -41,7 +42,7 @@ const PAGELIST: Array<any> = [
   templateUrl: 'content.component.html',
   styleUrls: ['content.component.css'],
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
   // **datetimepicker*
   dateFrom:Date;
@@ -109,6 +110,7 @@ export class ContentComponent implements OnInit {
         {'name':'Bar', 'surname':'<i>Foo</i>', 'no':'02', 'startDate':'01/02/2015'},
         {'name':'Buff', 'no':'03', 'startDate':'02/01/2015'},
   ];
+  // constructor(){}
 
   // **tree*
   private directories: Array<Directory>;
@@ -127,18 +129,6 @@ export class ContentComponent implements OnInit {
   // **upload*
   private message_sets = { chooseLabel: "choose me", deleteLabel: "delete it" }; 
   private show_opts = { showDragandDropBox: true };
-
-  ngOnInit() {
-    // this.th = {
-    //         firstDayOfWeek: 1,
-    //         addYearForEra: 543,
-    //         dayNames: [ "อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์" ],
-    //         dayNamesShort: [ "อา.","จ.","อ.","พ.","พฤ.","ศ.","ส." ],
-    //         dayNamesMin: [ "อา.","จ.","อ.","พ.","พฤ.","ศ.","ส." ],
-    //         monthNames: [ "มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม" ],
-    //         monthNamesShort: [ "ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค." ]
-    //     };
-  }
   
   // **popup*
   openAlertPopup() {
@@ -151,6 +141,8 @@ export class ContentComponent implements OnInit {
      .okBtn('OK') 
      .open() 
   }
+
+  
   // startProgress() {
   //     this.slimLoader.start();
   // }
