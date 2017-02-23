@@ -15,9 +15,13 @@ a.nav-link:focus, a.nav-link:hover { color: #cc0000!important;}
 nav div.dropdown-menu, .card, .card-header, ul.nav.nav-tabs {border-color:#990000!important; }
 nav ul li div a.dropdown-item.active { background-color: #990000!important; color: #fff!important;}
 nav ul li div a.dropdown-item:hover {background-color: #ffe6e6!important; color: #990000!important;} 
-h3.card-header { color: #fff!important;}
-.card-header {background-color: #990000!important;}
-.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover {
+/*h3.card-header { color: #fff!important;}*/
+.card-header { color: #fff!important;background-color: #990000!important;}
+.nav-tabs .nav-item.open .nav-link, 
+.nav-tabs .nav-item.open .nav-link:focus, 
+.nav-tabs .nav-item.open .nav-link:hover, 
+.nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, 
+.nav-tabs .nav-link.active:hover {
     color: #fff!important;
     background-color: #990000!important;
     border-color:#990000!important;
@@ -28,40 +32,13 @@ nav { margin-bottom: 1.25rem; }
 .card-block.component { height: 18rem; }
 .row.row-in-tab { margin-top: 1.25rem; }
 
-.slim-loading-bar {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-}
-
-/* Styling for the Slim Loading Progress Bar itself */
-.slim-loading-bar-progress {
-    margin: 0;
-    margin-bottom: 1rem;
-    padding: 0;
-    z-index: 99998;
-    background-color: green;
-    color: green;
-    box-shadow: 0 0 10px 0; /* Inherits the font color */
-    height: 2px;
-    opacity: 0;
-
-    /* Add CSS3 styles for transition smoothing */
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.highlight {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: #e6e6ff;
-    border: 0;
+.nav-pills .nav-item.open .nav-link, 
+.nav-pills .nav-item.open .nav-link:focus, 
+.nav-pills .nav-item.open .nav-link:hover, 
+.nav-pills .nav-link.active, .nav-pills 
+.nav-link.active:focus, .nav-pills .nav-link.active:hover {
+    color: #fff!important;
+    background-color: #990000!important;
+    border-color:#990000!important;
 }
 
