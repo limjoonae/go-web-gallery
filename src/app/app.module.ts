@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MarkdownModule } from 'angular2-markdown';
 import { AppComponent }  from './app.component';
 import { HeaderComponent }  from './header/header.component';
 import { ContentComponent }  from './content/content.component';
 import { SidebarChild }  from './sidebar-child/sidebar-child';
+import { MarkdownModule } from 'angular2-markdown';
 
 import { SelectModule } from 'ng2-select';
 import { TabsModule, PaginationModule, TooltipModule } from 'ng2-bootstrap';

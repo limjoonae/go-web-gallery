@@ -54,7 +54,7 @@ export class ContentComponent {
   private getValue: any = []; 
   private getLabel: any = []; 
  
-  private textValue(data: any): void{  
+  private textValueRadio(data: any): void{  
         this.getValue = data.value;
         this.getLabel = data.label;
   } 
@@ -110,6 +110,7 @@ export class ContentComponent {
         {'name':'Bar', 'surname':'<i>Foo</i>', 'no':'02', 'startDate':'01/02/2015'},
         {'name':'Buff', 'no':'03', 'startDate':'02/01/2015'},
   ];
+
   // constructor(){}
 
   // **tree*
