@@ -9,7 +9,7 @@ const PAGELIST: Array<any> = [
   {routerLink: 'datetimepicker', menuName: 'Datetime Picker'},
   {routerLink: 'imagegallery', menuName: 'Image Gallery'},
   {routerLink: 'popup', menuName: 'Popup'},
-  // {routerLink: 'progressbar', menuName: 'Progress Bar'},
+  {routerLink: 'progressbar', menuName: 'Progress Bar'},
   {routerLink: 'pulldown', menuName: 'Pulldown Menu'},
   {routerLink: 'radiobutton', menuName: 'Radio Button'},
   {routerLink: 'selectbox', menuName: 'Select Box'},

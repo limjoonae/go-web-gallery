@@ -142,15 +142,14 @@ export class ContentComponent {
      .okBtn('OK') 
      .open() 
   }
-
   
-  // startProgress() {
-  //     this.slimLoader.start();
-  // }
-
-  // completeProgress() {
-  //     this.slimLoader.complete();
-  // }
-
+  // ** progressbar *
+  private progress_1: number = 0;
+  startProgress() {
+      this.progress_1 = 50;
+  }
+  completeProgress() {
+      this.progress_1 = 100;
+  }
 
 }

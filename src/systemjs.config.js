@@ -70,8 +70,7 @@
       'angular2-modal':           'npm:angular2-modal/bundles/angular2-modal.umd.js',
       'angular2-modal-bootstrap': 'npm:angular2-modal/bundles/angular2-modal.bootstrap.umd.js',
 
-      'gos-progressbar':	           'gos:progressbar/1.0.0',
-      'gos-progressbar-lockservice':	'gos:progressbar/1.0.0',
+      'gos-progressbar': 'gos:progressbar/1.0.0',
 
       'gos-radiobutton': 'gos:radiobutton/1.0.0',
 
@@ -101,6 +100,7 @@
       'doc-datetimepicker': 'gos:datetimepicker/1.0.0/doc',
       'doc-image-gallery': 'gos:image-gallery/1.0.0/doc',
       'doc-popup': 'gos:popup/1.0.0/doc',
+      'doc-progressbar': 'gos:progressbar/1.0.0/doc',
       'doc-upload': 'gos:upload/1.0.0/doc',
       'doc-radiobutton': 'gos:radiobutton/1.0.0/doc',
       'doc-selectbox': 'gos:selectbox/1.0.0/doc',
@@ -211,14 +211,6 @@
           main: './upload.js',
           defaultExtension: 'js'
        },
-      'gos-progressbar': {
-         main: './slim-loading-bar.module.js',
-         defaultExtension: 'js'
-      },
-      'gos-progressbar-lockservice': {
-           main: './lock.service.js',
-           defaultExtension: 'js'
-       },
        'ng-sidebar': {
           main: './lib/index.js',
           defaultExtension: 'js'
@@ -245,6 +237,10 @@
        },
        'gos-tree': {
           main: './tree.js',
+          defaultExtension: 'js'
+       },
+       'gos-progressbar': {
+          main: './progressbar.js',
           defaultExtension: 'js'
        },
        
@@ -283,6 +279,10 @@
       },
       'doc-popup': {
           main: './popup.document.js',
+          defaultExtension: 'js'
+       },
+      'doc-progressbar': {
+          main: './progressbar.document.js',
           defaultExtension: 'js'
        },
       'doc-upload': {

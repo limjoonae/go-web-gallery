@@ -48,6 +48,7 @@ import { TextEditorComponent } from 'gos-texteditor';
 import { TreeView, TreeComponent } from 'gos-tree';
 
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+import { ProgressbarComponent } from 'gos-progressbar';
 
 import { BadgeDocument } from 'doc-badge';
 import { ButtonDocument } from 'doc-button';
@@ -58,6 +59,7 @@ import { FontDocument } from 'doc-font';
 import { PulldownMenuDocument } from 'doc-pulldown-menu';
 import { ImageGalleryDocument } from 'doc-image-gallery';
 import { PopupDocument } from 'doc-popup';
+import { ProgressbarDocument } from 'doc-progressbar';
 import { UploadDocument } from 'doc-upload';
 import { RadioButtonDocument } from 'doc-radiobutton';
 import { SelectboxDocument } from 'doc-selectbox';
@@ -84,6 +86,7 @@ const appRoutes: Routes = [
   { path: 'radiobutton', component: RadioButtonDocument},
   { path: 'datetimepicker', component: DateTimePickerDocument},
   { path: 'popup', component: PopupDocument},
+  { path: 'progressbar', component: ProgressbarDocument},
   { path: 'pulldown', component: PulldownMenuDocument},
   { path: 'imagegallery', component: ImageGalleryDocument},
   { path: 'selectbox', component: SelectboxDocument},
@@ -100,7 +103,6 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ 
-    // SlimLoadingBarModule.forRoot(),
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
@@ -144,6 +146,7 @@ const appRoutes: Routes = [
 
     TreeView,
     TreeComponent,
+    ProgressbarComponent,
 
     BadgeDocument,
     ButtonDocument,
@@ -152,6 +155,7 @@ const appRoutes: Routes = [
     DateTimePickerDocument,
     FontDocument,
     PopupDocument,
+    ProgressbarDocument,
     PulldownMenuDocument,
     ImageGalleryDocument,
     UploadDocument,
@@ -169,6 +173,5 @@ const appRoutes: Routes = [
     GettingStartComponent,
   ],
   bootstrap:    [ AppComponent ],
-  // providers: [ LockService ]
 })
 export class AppModule { }
