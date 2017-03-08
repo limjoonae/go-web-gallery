@@ -1,7 +1,17 @@
 <div class="container">
 	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+	    	<div class="card">
+				<h3 class="card-header">Getting Start with Angular 2</h3>
+				<div class="card-block component">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-sm-12 col-md-6 col-lg-4">
-	    <div class="card">
+	    	<div class="card">
 				<h3 class="card-header">auto-complete</h3>
 				<div class="card-block component">
 						<div class="text-xs-center">
@@ -15,7 +25,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
-	    <div class="card">
+	    	<div class="card">
 				<h3 class="card-header">gos-badge</h3>
 				<div class="card-block component">
 						<div class="text-xs-center"><gos-badge type="badge" badgeData="badge"></gos-badge></div><br/>
@@ -69,7 +79,7 @@
 			<div class="card">
 				<h3 class="card-header">gos-checkbox</h3>
 				<div class="card-block component">
-					<gos-checkbox name="chbnames1" id="chbid1" label="Choose expertise: " [data]="datas" block="block" colorTheme="warning" require="true">  check </gos-checkbox>
+					<gos-checkbox name="chbnames1" id="chbid1" label="Choose expertise: " type="block" [data]="datas" block="block" colorTheme="warning" require="true">  check </gos-checkbox>
 				</div>
 				<div class="card-block text-xs-center">
 					<gos-button routerLinkActive="active" [routerLink]="['/checkbox']" label="How to use" buttonColor="danger"></gos-button>
@@ -138,7 +148,7 @@
                   id="radioid1" 
                   label="Radio button: " 
                   [data]="data" 
-                  block="block" 
+                  type="block"
                   colorTheme="success" 
                   require="true" 
 				  (valueOut)="textValueRadio($event)"></gos-radiobutton><br>

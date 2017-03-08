@@ -1,9 +1,6 @@
 .more {
-      position: absolute;
-    /* margin: 0px; */
-    /* top: 0px; */
+    position: absolute;
     margin-top: 2px;
-    /* word-break: break-word; */
     background: rgba(0,0,0,0.7);
     height: 50px;
     width: 50px;

@@ -35,9 +35,6 @@ import { BootstrapModalModule } from 'angular2-modal-bootstrap';
 
 import { UploadComponent } from 'gos-upload';
 
-import { SlimLoadingBarModule } from 'gos-progressbar'; 
-import { LockService } from 'gos-progressbar-lockservice';
-
 import { SidebarModule } from 'ng-sidebar';
 import { SidebarComponent } from 'gos-sidebar';
 

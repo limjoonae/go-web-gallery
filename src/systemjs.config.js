@@ -8,8 +8,6 @@
       // paths serve as alias
 
       //***tempolary path variable***
-      // 'npm_local:': 'node_modules/',
-      // 'gos:': 'http://10.182.247.173/gos-cdn-dev/',
       'npm:': 'http://10.182.247.173/gos-cdn/node_modules/2.4.0/',
       'gos:': 'http://10.182.247.173/gos-cdn/',
     },
