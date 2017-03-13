@@ -8,8 +8,8 @@
       // paths serve as alias
 
       //***tempolary path variable***
-      'npm:': 'http://10.182.247.173/gos-cdn/node_modules/2.4.0/',
-      'gos:': 'http://10.182.247.173/gos-cdn/',
+      'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/',
+      'go:': 'http://10.182.247.73/go-cdn-dev/',
     },
     meta: {
        'tinymce': {
@@ -20,6 +20,7 @@
     map: {
       // our app is within the app folder
       app: 'app',
+      global: './global.js',
 
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -38,78 +39,78 @@
       'marked': 'npm:marked/lib/marked.js',
       'prismjs': 'npm:prismjs',
       
-      //***lib for gos-component***
+      //***lib for go-component***
       'ng2-select': 'npm:ng2-select/bundles/ng2-select.umd.js',
       'numeral': 'npm:numeral/numeral.js',
-      'gos-badge': 'gos:badge/1.0.0',
-      'gos-pulldown-menu': 'gos:pulldown-menu/1.0.0',
-      'gos-service':  'gos:service/1.0.0',
-      'gos-label':	'gos:label/1.0.0',
-      'gos-directive': 'gos:directive/1.0.0',
+      'go-badge': 'go:badge/1.0.0',
+      'go-pulldown-menu': 'go:pulldown-menu/1.0.0',
+      'go-service':  'go:service/1.0.0',
+      'go-label':	'go:label/1.0.0',
+      'go-directive': 'go:directive/1.0.0',
 
       'ng2-charts': 'npm:ng2-charts',
       'chart.js': 'npm:chart.js/dist/Chart.bundle.min.js',
 
       'primeng': 'npm:primeng',
 
-      'gos-chart': 'gos:chart/1.0.0',
-      'gos-button': 'gos:button/1.0.0',
-      'gos-textbox': 'gos:textbox/1.0.0',
-      'gos-textarea': 'gos:textarea/1.0.0',
-      'gos-checkbox': 'gos:checkbox/1.0.0',
+      'go-chart': 'go:chart/1.0.0',
+      'go-button': 'go:button/1.0.0',
+      'go-textbox': 'go:textbox/1.0.0',
+      'go-textarea': 'go:textarea/1.0.0',
+      'go-checkbox': 'go:checkbox/1.0.0',
 
-      'gos-datetimepicker': 'gos:datetimepicker/1.0.0',
+      'go-datetimepicker': 'go:datetimepicker/1.0.0',
 
-      'gos-upload': 'gos:upload/1.0.0',
+      'go-upload': 'go:upload/1.0.0',
 
       'angular2-image-popup':'npm:angular2-image-popup/directives/angular2-image-popup/',
-      'gos-image-gallery': 'gos:image-gallery/1.0.0',
+      'go-image-gallery': 'go:image-gallery/1.0.0',
 
       'angular2-modal':           'npm:angular2-modal/bundles/angular2-modal.umd.js',
       'angular2-modal-bootstrap': 'npm:angular2-modal/bundles/angular2-modal.bootstrap.umd.js',
 
-      'gos-progressbar': 'gos:progressbar/1.0.0',
+      'go-progressbar': 'go:progressbar/1.0.0',
 
-      'gos-radiobutton': 'gos:radiobutton/1.0.0',
+      'go-radiobutton': 'go:radiobutton/1.0.0',
 
       'ng-sidebar': 'npm:ng-sidebar',
-      'gos-sidebar': 'gos:sidebar/1.0.0/',
+      'go-sidebar': 'go:sidebar/1.0.0/',
       'moment': 'npm:moment',
       'ng2-bootstrap':'npm:ng2-bootstrap',
       'ng2-table': 'npm:ng2-table',
-      'gos-table': 'gos:table/1.0.0/',
+      'go-table': 'go:table/1.0.0/',
 
       'tinymce': 'npm:tinymce',
-      'gos-texteditor': 'gos:texteditor/1.0.0/',
+      'go-texteditor': 'go:texteditor/1.0.0/',
 
-      'gos-tree': 'gos:tree/1.0.0',
+      'go-tree': 'go:tree/1.0.0',
 
       'ng2-auto-complete':'npm:ng2-auto-complete/dist/ng2-auto-complete.umd.js',
 
       //*** document ***/
-      'doc-badge': 'gos:badge/1.0.0/doc',
-      'doc-pulldown-menu': 'gos:pulldown-menu/1.0.0/doc',
-      'doc-button': 'gos:button/1.0.0/doc',
-      'doc-font': 'gos:fonts/1.0.0/doc',
-      'doc-textbox': 'gos:textbox/1.0.0/doc',
-      'doc-textarea': 'gos:textarea/1.0.0/doc',
-      'doc-chart': 'gos:chart/1.0.0/doc',
-      'doc-checkbox': 'gos:checkbox/1.0.0/doc',
-      'doc-datetimepicker': 'gos:datetimepicker/1.0.0/doc',
-      'doc-image-gallery': 'gos:image-gallery/1.0.0/doc',
-      'doc-popup': 'gos:popup/1.0.0/doc',
-      'doc-progressbar': 'gos:progressbar/1.0.0/doc',
-      'doc-upload': 'gos:upload/1.0.0/doc',
-      'doc-radiobutton': 'gos:radiobutton/1.0.0/doc',
-      'doc-selectbox': 'gos:selectbox/1.0.0/doc',
-      'doc-sidebar': 'gos:sidebar/1.0.0/doc',
-      'doc-tab': 'gos:tab/1.0.0/doc',
-      'doc-table': 'gos:table/1.0.0/doc',
-      'doc-tooltip': 'gos:tooltip/1.0.0/doc',
-      'doc-texteditor': 'gos:texteditor/1.0.0/doc',
-      'doc-tree': 'gos:tree/1.0.0/doc',
-      'doc-auto-complete': 'gos:auto-complete/1.0.0/doc',
-      'doc-getting-start': 'gos:getting-start/1.0.0/doc',
+      'doc-badge': 'go:badge/1.0.0/doc',
+      'doc-pulldown-menu': 'go:pulldown-menu/1.0.0/doc',
+      'doc-button': 'go:button/1.0.0/doc',
+      'doc-font': 'go:fonts/1.0.0/doc',
+      'doc-textbox': 'go:textbox/1.0.0/doc',
+      'doc-textarea': 'go:textarea/1.0.0/doc',
+      'doc-chart': 'go:chart/1.0.0/doc',
+      'doc-checkbox': 'go:checkbox/1.0.0/doc',
+      'doc-datetimepicker': 'go:datetimepicker/1.0.0/doc',
+      'doc-image-gallery': 'go:image-gallery/1.0.0/doc',
+      'doc-popup': 'go:popup/1.0.0/doc',
+      'doc-progressbar': 'go:progressbar/1.0.0/doc',
+      'doc-upload': 'go:upload/1.0.0/doc',
+      'doc-radiobutton': 'go:radiobutton/1.0.0/doc',
+      'doc-selectbox': 'go:selectbox/1.0.0/doc',
+      'doc-sidebar': 'go:sidebar/1.0.0/doc',
+      'doc-tab': 'go:tab/1.0.0/doc',
+      'doc-table': 'go:table/1.0.0/doc',
+      'doc-tooltip': 'go:tooltip/1.0.0/doc',
+      'doc-texteditor': 'go:texteditor/1.0.0/doc',
+      'doc-tree': 'go:tree/1.0.0/doc',
+      'doc-auto-complete': 'go:auto-complete/1.0.0/doc',
+      'doc-getting-start': 'go:getting-start/1.0.0/doc',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension
@@ -138,36 +139,36 @@
           defaultExtension: 'js'
       },
 
-      //***gos-component main file***
-      'gos-label': {
+      //***go-component main file***
+      'go-label': {
         main: './label.js',
         defaultExtension: 'js'
       },
-      'gos-directive': {
+      'go-directive': {
         main: './index.js',
         defaultExtension: 'js'
       },
-      'gos-service': {
+      'go-service': {
         main: './index.js',
         defaultExtension: 'js'
       },
-      'gos-badge': {
+      'go-badge': {
         main: './badge.js',
         defaultExtension: 'js'
       },
-      'gos-pulldown-menu': {
+      'go-pulldown-menu': {
         main: './pulldown-menu.js',
         defaultExtension: 'js'
       },
-      'gos-button': {
+      'go-button': {
         main: './button.js',
         defaultExtension: 'js'
       },
-      'gos-textbox': {
+      'go-textbox': {
         main: './textbox.js',
         defaultExtension: 'js'
       },
-      'gos-textarea': {
+      'go-textarea': {
         main: './textarea.js',
         defaultExtension: 'js'
       },
@@ -176,15 +177,15 @@
           main: './ng2-charts.js',
           defaultExtension: 'js',
        },
-       'gos-chart': {
+       'go-chart': {
           main: './chart.js',
           defaultExtension: 'js',
        },
-       'gos-checkbox': {
+       'go-checkbox': {
           main: './checkbox.js',
           defaultExtension: 'js',
        },
-       'gos-radiobutton': {
+       'go-radiobutton': {
           main: './radiobutton.js',
           defaultExtension: 'js',
        },
@@ -193,7 +194,7 @@
         main: './primeng.js',
         defaultExtension: 'js'
       },
-      'gos-datetimepicker': {
+      'go-datetimepicker': {
         main: './datetimepicker.js',
         defaultExtension: 'js'
       },
@@ -201,11 +202,11 @@
         main: './image-modal-popup.js',
         defaultExtension: 'js'
       },
-     'gos-image-gallery': {
-        main: './image-gallery.js',
+     'go-image-gallery': {
+        main: './image-gallery.module.js',
         defaultExtension: 'js'
       },
-      'gos-upload': {
+      'go-upload': {
           main: './upload.js',
           defaultExtension: 'js'
        },
@@ -213,7 +214,7 @@
           main: './lib/index.js',
           defaultExtension: 'js'
        },
-       'gos-sidebar': {
+       'go-sidebar': {
           main: './sidebar.js',
           defaultExtension: 'js'
        },
@@ -221,7 +222,7 @@
           main: './ng2-table.js',
           defaultExtension: 'js'
        },
-       'gos-table': {
+       'go-table': {
           main: './table.js',
           defaultExtension: 'js'
        },
@@ -229,15 +230,15 @@
           main: './tinymce.min.js',
           defaultExtension: 'js'
        },
-       'gos-texteditor': {
+       'go-texteditor': {
           main: './texteditor.js',
           defaultExtension: 'js'
        },
-       'gos-tree': {
+       'go-tree': {
           main: './tree.js',
           defaultExtension: 'js'
        },
-       'gos-progressbar': {
+       'go-progressbar': {
           main: './progressbar.js',
           defaultExtension: 'js'
        },
