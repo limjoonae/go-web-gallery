@@ -5,10 +5,7 @@ import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal-bootstrap';
 
-import { Directory } from 'gos-tree/directory'; //**tree*
-
-// import { SlimLoadingBarService } from 'gos-progressbar';
-// import { LockService } from 'gos-progressbar-lockservice';
+import { Directory } from 'go-tree/directory'; //**tree*
 	
 // **checkbox*
 const DATA: any[] = [
@@ -116,7 +113,9 @@ export class ContentComponent {
   // **tree*
   private directories: Array<Directory>;
 
-  constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
+  constructor(
+    overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal
+  ) {
     
     overlay.defaultViewContainer = vcRef; 
  
