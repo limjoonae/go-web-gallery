@@ -11,41 +11,40 @@ import { MarkdownModule } from 'angular2-markdown';
 
 import { SelectModule } from 'ng2-select';
 import { TabsModule, PaginationModule, TooltipModule } from 'ng2-bootstrap';
-import { BadgeComponent } from 'gos-badge';
-import { LabelComponent } from 'gos-label';
-import { PulldownMenuComponent } from 'gos-pulldown-menu';
-import { CustomDisabledDirective, CustomReadonlyDirective, CustomMaxlengthDirective, CustomCheckDirective } from 'gos-directive';
-import { RadioButtonComponent }  from 'gos-radiobutton';
+import { BadgeComponent } from 'go-badge';
+import { LabelComponent } from 'go-label';
+import { PulldownMenuComponent } from 'go-pulldown-menu';
+import { CustomDisabledDirective, CustomReadonlyDirective, CustomMaxlengthDirective, CustomCheckDirective } from 'go-directive';
+import { RadioButtonComponent }  from 'go-radiobutton';
 
-import { ButtonComponent } from 'gos-button';
-import { TextareaComponent } from 'gos-textarea';
-import { TextboxComponent } from 'gos-textbox';
+import { ButtonComponent } from 'go-button';
+import { TextareaComponent } from 'go-textarea';
+import { TextboxComponent } from 'go-textbox';
 
 import { ChartsModule } from 'ng2-charts';
-import { ChartComponent } from 'gos-chart';
-import { CheckboxComponent } from 'gos-checkbox';
+import { ChartComponent } from 'go-chart';
+import { CheckboxComponent } from 'go-checkbox';
 
 import { CalendarModule } from 'primeng/primeng';
-import { DateTimePickerComponent } from 'gos-datetimepicker';
-import { ImageModal } from 'angular2-image-popup';
-import { ImageGalleryComponent } from 'gos-image-gallery';
+import { DateTimePickerComponent } from 'go-datetimepicker';
+import { ImageGalleryModule} from 'go-image-gallery';
 
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal-bootstrap';
 
-import { UploadComponent } from 'gos-upload';
+import { UploadComponent } from 'go-upload';
 
 import { SidebarModule } from 'ng-sidebar';
-import { SidebarComponent } from 'gos-sidebar';
+import { SidebarComponent } from 'go-sidebar';
 
 import { Ng2TableModule } from 'ng2-table';
-import { TableComponent } from 'gos-table';
+import { TableComponent } from 'go-table';
 
-import { TextEditorComponent } from 'gos-texteditor';
-import { TreeView, TreeComponent } from 'gos-tree';
+import { TextEditorComponent } from 'go-texteditor';
+import { TreeView, TreeComponent } from 'go-tree';
 
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
-import { ProgressbarComponent } from 'gos-progressbar';
+import { ProgressbarComponent } from 'go-progressbar';
 
 import { BadgeDocument } from 'doc-badge';
 import { ButtonDocument } from 'doc-button';
@@ -115,6 +114,7 @@ const appRoutes: Routes = [
     Ng2TableModule,
     TooltipModule.forRoot(),
     Ng2AutoCompleteModule,
+    ImageGalleryModule
   ],
   declarations: [ 
     AppComponent,
@@ -134,8 +134,6 @@ const appRoutes: Routes = [
     ChartComponent,
     CheckboxComponent,
     DateTimePickerComponent,
-    ImageModal,
-    ImageGalleryComponent,
     UploadComponent,
     SidebarComponent,
     TableComponent,
