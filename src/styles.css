@@ -1,5 +1,5 @@
-@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/themes/omega/theme.css');
-@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/primeng.min.css');
+@import url('node_modules/primeng/resources/themes/omega/theme.css');
+@import url('node_modules/primeng/resources/primeng.min.css');
 
 body {color: #990000!important;}
 a, pre { color: #990000!important;}
@@ -29,6 +29,7 @@ nav ul li div a.dropdown-item:hover {background-color: #ffe6e6!important; color:
 
 nav { margin-bottom: 1.25rem; }
 .card-block.component { height: 18rem; }
+.align-center { text-align: center; }
 .row.row-in-tab { margin-top: 1.25rem; }
 
 .nav-pills .nav-item.open .nav-link, 
