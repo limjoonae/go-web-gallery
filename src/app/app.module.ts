@@ -1,74 +1,42 @@
 import { NgModule }      from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
 import { HeaderComponent }  from './header/header.component';
 import { ContentComponent }  from './content/content.component';
+
 import { SidebarChild }  from './sidebar-child/sidebar-child';
-import { MarkdownModule } from 'angular2-markdown';
 
-import { SelectModule } from 'ng2-select';
-import { TabsModule, PaginationModule, TooltipModule } from 'ng2-bootstrap';
-import { BadgeComponent } from 'go-badge';
-import { LabelComponent } from 'go-label';
-import { PulldownMenuComponent } from 'go-pulldown-menu';
-import { CustomDisabledDirective, CustomReadonlyDirective, CustomMaxlengthDirective, CustomCheckDirective } from 'go-directive';
-import { RadioButtonComponent }  from 'go-radiobutton';
+import { GoModule }  from 'go-module';
+import { LibModule }  from 'lib-module';
 
-import { ButtonComponent } from 'go-button';
-import { TextareaComponent } from 'go-textarea';
-import { TextboxComponent } from 'go-textbox';
-
-import { ChartsModule } from 'ng2-charts';
-import { ChartComponent } from 'go-chart';
-import { CheckboxComponent } from 'go-checkbox';
-
-import { CalendarModule } from 'primeng/primeng';
-import { DateTimePickerComponent } from 'go-datetimepicker';
-import { ImageGalleryModule} from 'go-image-gallery';
-
-import { ModalModule } from 'angular2-modal';
-import { BootstrapModalModule } from 'angular2-modal-bootstrap';
-
-import { UploadComponent } from 'go-upload';
-
-import { SidebarModule } from 'ng-sidebar';
-import { SidebarComponent } from 'go-sidebar';
-
-import { Ng2TableModule } from 'ng2-table';
-import { TableComponent } from 'go-table';
-
-import { TextEditorComponent } from 'go-texteditor';
-import { TreeView, TreeComponent } from 'go-tree';
-
-import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
-import { ProgressbarComponent } from 'go-progressbar';
-
-import { BadgeDocument } from 'doc-badge';
-import { ButtonDocument } from 'doc-button';
-import { ChartDocument } from 'doc-chart';
-import { CheckboxDocument } from 'doc-checkbox';
-import { DateTimePickerDocument } from 'doc-datetimepicker';
-import { FontDocument } from 'doc-font';
-import { PulldownMenuDocument } from 'doc-pulldown-menu';
-import { ImageGalleryDocument } from 'doc-image-gallery';
-import { PopupDocument } from 'doc-popup';
-import { ProgressbarDocument } from 'doc-progressbar';
-import { UploadDocument } from 'doc-upload';
-import { RadioButtonDocument } from 'doc-radiobutton';
-import { SelectboxDocument } from 'doc-selectbox';
-import { SidebarDocument } from 'doc-sidebar';
-import { TabDocument } from 'doc-tab';
-import { TableDocument } from 'doc-table';
-import { TooltipDocument } from 'doc-tooltip';
-import { TextEditorDocument } from 'doc-texteditor';
-import { TreeDocument } from 'doc-tree';
-import { TextareaDocument } from 'doc-textarea';
-import { TextboxDocument } from 'doc-textbox';
-import { AutoCompleteDocument } from 'doc-auto-complete';
-import { GettingStartComponent } from 'doc-getting-start';
+import { AutoCompleteDocument } from './doc/auto-complete.document';
+import { BadgeDocument } from './doc/badge.document';
+import { ButtonDocument } from './doc/button.document';
+import { ChartDocument } from './doc/chart.document';
+import { CheckboxDocument } from './doc/checkbox.document';
+import { DateTimePickerDocument } from './doc/datetimepicker.document';
+import { FontDocument } from './doc/font.document';
+import { ImageGalleryDocument } from './doc/image-gallery.document';
+import { PopupDocument } from './doc/popup.document';
+import { ProgressbarDocument } from './doc/progressbar.document';
+import { PulldownMenuDocument } from './doc/pulldown-menu.document';
+import { RadioButtonDocument } from './doc/radiobutton.document';
+import { SelectboxDocument } from './doc/selectbox.document';
+import { SidebarDocument } from './doc/sidebar.document';
+import { TabDocument } from './doc/tab.document';
+import { TableDocument } from './doc/table.document';
+import { TooltipDocument } from './doc/tooltip.document';
+import { TextEditorDocument } from './go-texteditor/src/app/go-texteditor/doc/texteditor.document';
+import { TextareaDocument } from './doc/textarea.document';
+import { TextboxDocument } from './doc/textbox.document';
+import { TreeDocument } from './doc/tree.document';
+import { UploadDocument } from './doc/upload.document';
+import { GettingStartComponent } from './doc/doc/page-getting-start.component';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
@@ -100,48 +68,18 @@ const appRoutes: Routes = [
 @NgModule({
   imports:      [ 
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
-    MarkdownModule, 
-    ChartsModule,
-    CalendarModule,
-    ModalModule.forRoot(), 
-    BootstrapModalModule,
-    SelectModule,
-    SidebarModule,
-    TabsModule.forRoot(),
-    PaginationModule.forRoot(),
-    Ng2TableModule,
-    TooltipModule.forRoot(),
-    Ng2AutoCompleteModule,
-    ImageGalleryModule
+    GoModule.forRoot(),
+    LibModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   declarations: [ 
     AppComponent,
     HeaderComponent,
     ContentComponent,
     SidebarChild,
-    BadgeComponent,
-    PulldownMenuComponent,
-
-    CustomDisabledDirective, CustomReadonlyDirective, CustomMaxlengthDirective, CustomCheckDirective,
-    LabelComponent,
-    ButtonComponent, 
-    TextareaComponent,
-    TextboxComponent,
-    RadioButtonComponent,
-
-    ChartComponent,
-    CheckboxComponent,
-    DateTimePickerComponent,
-    UploadComponent,
-    SidebarComponent,
-    TableComponent,
-    TextEditorComponent,
-
-    TreeView,
-    TreeComponent,
-    ProgressbarComponent,
 
     BadgeDocument,
     ButtonDocument,
