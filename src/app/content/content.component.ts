@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
-// **popup*
-import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { Overlay } from 'angular2-modal';
-import { Modal } from 'angular2-modal-bootstrap';
-
-import { Directory } from 'go-tree/directory'; //**tree*
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Car } from './assets/model/car';
+import { CarService } from './service/car.service';
+import { TreeService } from './service/tree.service';
 	
 // **checkbox*
 const DATA: any[] = [
@@ -38,12 +34,35 @@ const PAGELIST: Array<any> = [
   selector: 'app-content',
   templateUrl: 'content.component.html',
   styleUrls: ['content.component.css'],
+  providers: [ CarService, TreeService ],
+  encapsulation: ViewEncapsulation.None
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
 
   // **datetimepicker*
   dateFrom:Date;
   dateTo:Date;
+
+  // ** Datagrid *
+  cars: Car[] = [
+    {"vin": "ee8a89d8","year": "1987","brand": "Fiat","color":"Maroon"},
+    {"vin": "642b3edc","year": "1968","brand": "Renault","color":"White"},
+    {"vin": "39980f30","year": "1986","brand": "VW","color":"Red"},
+    {"vin": "1241c403","year": "1964","brand": "Jaguar","color":"Yellow"}
+];
+  selectedCar: Car;
+  displayDialog: boolean;
+  selectedFile: any;
+  filesTree: any[];
+
+  // galleria
+  images: any[] = [
+    {source:'/app/content/assets/images/datagrid/Fiat-big.gif', alt:'Fiat Logo', title:'Fiat'},
+    {source:'/app/content/assets/images/datagrid/Renault-big.gif', alt:'Renault Logo', title:'Renault'},
+    {source:'/app/content/assets/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
+    {source:'/app/content/assets/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
+  ];
+
 
 	datas = DATA; //**checkbox*
   data = RDATA; //**radioboxbox*
@@ -100,48 +119,62 @@ export class ContentComponent {
   private tableColumns: Array<any> = [
         {title:'Name', name:'name'},
         {title:'Id', name:'no', sort:'asc'},
-        {title:'Date Started', name:'startDate', dateFormat: 'dd-mm-yyyy'}
+        {title:'Date Started', name:'startDate', dateFormat: 'dd/mm/yy'}
   ]; 
   private dataOfTable: Array<any> = [
-        {'name':'Abc', 'surname':'<b>Cba</b>', 'no':'01', 'startDate':'01/01/2015'},
-        {'name':'Bar', 'surname':'<i>Foo</i>', 'no':'02', 'startDate':'01/02/2015'},
-        {'name':'Buff', 'no':'03', 'startDate':'02/01/2015'},
+        {'name':'Abc', 'surname':'<b>Cba</b>', 'no':'02', 'startDate':new Date('2015/7/8')},
+        {'name':'Bar', 'surname':'<i>Foo</i>', 'no':'03', 'startDate':new Date('2015/7/7')},
+        {'name':'Buff', 'no':'01', 'startDate':new Date('2015/7/6')},
   ];
 
-  // constructor(){}
-
-  // **tree*
-  private directories: Array<Directory>;
-
-  constructor(
-    overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal
-  ) {
-    
-    overlay.defaultViewContainer = vcRef; 
- 
-    // **tree*
-    let music2015 = new Directory('Music 2015', 'music2015', [],[],false);
-    let music2016 = new Directory('Music 2016', 'music2016', [],[],false);
-    let music2017 = new Directory('Music 2017', 'music2017', [],[],false);
-    let music = new Directory('Music', 'music', [music2015, music2016, music2017],false);
-    this.directories = [music];
-  }
   // **upload*
   private message_sets = { chooseLabel: "choose me", deleteLabel: "delete it" }; 
   private show_opts = { showDragandDropBox: true };
-  
-  // **popup*
-  openAlertPopup() {
-    this.modal.alert() 
-     .size('sm') 
-     .isBlocking(true) 
-     .showClose(true) 
-     .title('Message Popup') 
-     .body('Example Popup Alert') 
-     .okBtn('OK') 
-     .open() 
+
+  constructor(
+    private carService: CarService,
+    private treeService: TreeService
+  ) {}
+
+  activeIndex: number = 1;
+
+  ngOnInit() {
+      // this.carService.getCarsLarge().then(cars => this.cars = cars);
+      this.treeService.getFiles().then(filesTree => this.filesTree = filesTree);
+      this.stepItems = [
+            {label: '', command: (event: any) => {this.activeIndex = 0;} },
+            {label: '', command: (event: any) => {this.activeIndex = 1;} },
+            {label: '', command: (event: any) => {this.activeIndex = 2;} },
+            {label: '', command: (event: any) => {this.activeIndex = 3;} } 
+      ];
+      // console.log('car: ', this.cars);
   }
-  
+
+  selectCar(car: Car) {
+      this.selectedCar = car;
+      this.displayDialog = true;
+  }
+    
+  onDialogHide() {
+      this.selectedCar = null;
+  }
+  dialogVisible: boolean;
+  showCar(car: Car) {
+        this.selectedCar = car;
+        this.displayDialog = true;
+    }
+  // primeng dialog
+  display: boolean = false;
+  showDialog() {
+      this.display = true;
+  }
+  msgs: any[];
+  nodeSelect(event) {
+        this.msgs = [];
+        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: event.node.label});
+    }
+
+  private stepItems: any[];
   // ** progressbar *
   private progress_1: number = 0;
   startProgress() {

@@ -2,14 +2,34 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-6 col-lg-4">
 	    	<div class="card">
+				<h3 class="card-header">accordion</h3>
+				<div class="card-block component">
+					<div>
+						<p-accordion>
+							<p-accordionTab header="More Detail I" [selected]="true">
+								This is an example for show Accordion. You can customize to use.
+							</p-accordionTab>
+							<p-accordionTab header="More Detail II">
+								This is an example for show Accordion. You can customize to use.
+							</p-accordionTab>
+						</p-accordion>
+					</div>
+				</div>
+				<div class="card-block align-center">
+					<go-button routerLinkActive="active" [routerLink]="['/accordion']" label="How to use" buttonColor="danger"></go-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+	    	<div class="card">
 				<h3 class="card-header">auto-complete</h3>
 				<div class="card-block component">
-						<div class="text-xs-center">
+						<div class="align-center">
 							<input type="text" class="form-control" auto-complete [(ngModel)]="autoCompleteModel" 
-							placeholder="Enter Address(min. 2 chars)" [source]="googleGeoCode" display-property-name="formatted_address" path-to-data="results" min-chars="2">
+							placeholder="Enter Address(min. 2 chars)" [source]="googleGeoCode" list-formatter="formatted_address" display-property-name="formatted_address" path-to-data="results" min-chars="2">
 						</div>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/autocomplete']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -18,11 +38,11 @@
 	    	<div class="card">
 				<h3 class="card-header">go-badge</h3>
 				<div class="card-block component">
-						<div class="text-xs-center"><go-badge type="badge" badgeData="badge"></go-badge></div><br/>
-						<div class="text-xs-center"><go-badge type="badge-link" labelText="Link" badgeData="6"></go-badge></div><br/>
-						<div class="text-xs-center"><go-badge type="badge-button" buttonColor="secondary" labelText="Button" badgeData="6"></go-badge></div><br/>
+						<div class="align-center"><go-badge type="badge" badgeData="badge"></go-badge></div><br/>
+						<div class="align-center"><go-badge type="badge-link" labelText="Link" badgeData="6"></go-badge></div><br/>
+						<div class="align-center"><go-badge type="badge-button" buttonColor="secondary" labelText="Button" badgeData="6"></go-badge></div><br/>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/badge']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -31,16 +51,16 @@
 			<div class="card">
 				<h3 class="card-header">go-button</h3>
 				<div class="card-block component">
-						<div class="text-xs-center"><go-button label="Small Button" buttonSize="sm" buttonColor="outline-primary" iconName="camera"></go-button></div><br/>
-						<div class="text-xs-center"><go-button label="Default Button" buttonColor="outline-secondary"></go-button></div><br/>
-						<div class="text-xs-center"><go-button label="Large Button" buttonSize="lg" buttonColor="outline-success"></go-button></div>
+						<div class="align-center"><go-button label="Small Button" buttonSize="sm" buttonColor="outline-primary" iconName="camera"></go-button></div><br/>
+						<div class="align-center"><go-button label="Default Button" buttonColor="outline-secondary"></go-button></div><br/>
+						<div class="align-center"><go-button label="Large Button" buttonSize="lg" buttonColor="outline-success"></go-button></div>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/button']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-4">
+		<!--<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-datetimepicker</h3>
 				<div class="card-block component">
@@ -49,30 +69,63 @@
 					Date From: {{dateFrom}}<br><br>
 					Date To: {{dateTo}}
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/datetimepicker']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-4">
-	    <div class="card">
+		</div>-->
+		<!--<div class="col-sm-12 col-md-6 col-lg-4">
+	    	<div class="card">
 				<h3 class="card-header">go-chart</h3>
 				<div class="card-block component">
-						<div class="text-xs-center"><go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart></div><br/>
+						<div class="align-center"><go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart></div><br/>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/chart']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-checkbox</h3>
 				<div class="card-block component">
 					<go-checkbox name="chbnames1" id="chbid1" label="Choose expertise: " type="block" [data]="datas" block="block" colorTheme="warning" require="true">  check </go-checkbox>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/checkbox']" label="How to use" buttonColor="danger"></go-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">dialog (popup)</h3>
+				<div class="card-block component align-center">
+					<p-dialog header="Dialog Example" [(visible)]="display" modal="modal" width="300" responsive="true">
+						<p>This is a Dialog example. You can customize a dialog for use. Click "Yes" "No" or "x" to close.</p>
+							<p-footer>
+								<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+									<go-button label="No" buttonColor="primary" iconName="close" (click)="display=false"></go-button>
+									<go-button label="Yes" buttonColor="primary" iconName="check" (click)="display=false"></go-button>
+								</div>
+							</p-footer>
+					</p-dialog>
+					<go-button label="Show Dialog" buttonColor="primary" iconName="external-link-square" (click)="showDialog()"></go-button>
+				</div>
+				<div class="card-block align-center">
+					<go-button routerLinkActive="active" [routerLink]="['/dialog']" label="How to use" buttonColor="danger"></go-button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">galleria</h3>
+				<div class="card-block component">
+					<div class="align-center">
+						<p-galleria [images]="images" panelWidth="300" panelHeight="200" frameHeight="50" [showCaption]="true"></p-galleria>
+					</div>
+				</div>
+				<div class="card-block align-center">
+					<go-button routerLinkActive="active" [routerLink]="['/galleria']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
@@ -80,33 +133,35 @@
 			<div class="card">
 				<h3 class="card-header">go-image-gallery</h3>
 				<div class="card-block component">
-					<div class="text-xs-center"><go-image-gallery [images]=ImgGallery showImage=3></go-image-gallery></div>
+					<div class="align-center"><go-image-gallery [images]="ImgGallery" showImage=3></go-image-gallery></div>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/imagegallery']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
-				<h3 class="card-header">message-popup</h3>
-				<div class="card-block component text-xs-center">
-					<go-button label="Show popup" buttonSize="sm" buttonColor="primary" (click)="openAlertPopup()"></go-button>
+				<h3 class="card-header">panel</h3>
+				<div class="card-block component">
+					<p-panel header="Panel Example" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+						The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+					</p-panel>
 				</div>
-				<div class="card-block text-xs-center">
-					<go-button routerLinkActive="active" [routerLink]="['/popup']" label="How to use" buttonColor="danger"></go-button>
+				<div class="card-block align-center">
+					<go-button routerLinkActive="active" [routerLink]="['/panel']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-progressbar</h3>
-				<div class="card-block component text-xs-center">
+				<div class="card-block component align-center">
 					<go-progressbar [progress]="progress_1"></go-progressbar>
 					<go-button label="Start progress" buttonSize="sm" buttonColor="primary" (click)="startProgress()"></go-button>
 					<go-button label="Complete progress" buttonSize="sm" buttonColor="primary" (click)="completeProgress()"></go-button>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/progressbar']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -114,7 +169,7 @@
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-pulldown-menu</h3>
-				<div class="card-block component text-xs-center">
+				<div class="card-block component">
 					<ul class="nav navbar-nav">
 						<li class="nav-item active" routerLinkActive="active">
 							<a class="nav-link" [routerLink]="['/']">Menu 1</a>
@@ -125,7 +180,7 @@
 						<go-pulldown-menu headLabel="Pulldown Menu" [pageList]="pageListArray"></go-pulldown-menu>
 					</ul>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/pulldown']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -145,7 +200,7 @@
 				  <p> <strong> Output value: </strong> {{getValue}} </p>
 				  <p> <strong> Output label: </strong> {{getLabel}} </p>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/radiobutton']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -161,7 +216,7 @@
 						(data)="refreshSingleValue($event)"></ng-select><br>
 				<p><strong> Select: </strong> {{ singleValue.text }} </p>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/selectbox']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -172,21 +227,28 @@
 				<div class="card-block component">
 					<sidebar-child>Show Side Bar</sidebar-child>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/sidebar']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
-				<h3 class="card-header">tab</h3>
+				<h3 class="card-header">tabview</h3>
 				<div class="card-block component">
-					<tabset> 
-						<tab heading="TAB 1"><h1>TAB 1</h1></tab> 
-						<tab heading="TAB 2"><h1>TAB 2</h1></tab> 
-					</tabset> 
+					<p-tabView>
+						<p-tabPanel header="Godfather I" leftIcon="fa-calendar">
+							The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding.
+						</p-tabPanel>
+						<p-tabPanel header="Godfather II" leftIcon="fa-print">
+							Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall.
+						</p-tabPanel>
+						<p-tabPanel header="Godfather III" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+							After a break of more than  15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family.
+						</p-tabPanel>
+					</p-tabView>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/tab']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -197,7 +259,7 @@
 				<div class="card-block component">
 					<go-table class="table-striped table-border table-sm" paging=false filterAll=true [columns]="tableColumns" [(data)]="dataOfTable"></go-table>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/table']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -208,7 +270,7 @@
 				<div class="card-block component">
 					<go-textarea label="Text Area" row="4" goId="textarea_sample" colorTheme="info"></go-textarea>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/textarea']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -219,7 +281,7 @@
 				<div class="card-block component">
 					<go-textbox type="number" label="Number with Validation" require="true" id="textbox_1" placeholder="put valid number"></go-textbox>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/textbox']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -227,8 +289,10 @@
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-texteditor</h3>
-				<div class="card-block component"><go-texteditor elementId='editor_1' height='100' editormode='basic' showMenubar="false" content='editor'></go-texteditor></div>
-				<div class="card-block text-xs-center">
+				<div class="card-block component">
+					<go-texteditor elementId='editor_1' height='100' editormode='basic' showMenubar="false" content='editor'></go-texteditor>
+				</div>
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/texteditor']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -236,17 +300,23 @@
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">tooltip</h3>
-				<div class="card-block component text-xs-center"><go-button label="mouse on/tab me" buttonColor="primary" tooltip="It's tooltip !!"></go-button></div>
-				<div class="card-block text-xs-center">
+				<div class="card-block component align-center">
+					<input type="text" placeholder="mouse on me" pTooltip="Enter your username">
+				</div>
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/tooltip']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
-				<h3 class="card-header">go-tree</h3>
-				<div class="card-block component"><go-tree [directories]="directories" id="treeview1" name="treeviewname"></go-tree></div>
-				<div class="card-block text-xs-center">
+				<h3 class="card-header">tree</h3>
+				<div class="card-block component">
+					<p-tree [value]="filesTree" selectionMode="multiple" [(selection)]="selectedFiles" 
+						(onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
+					<div>Selected Nodes: <span *ngFor="let file of selectedFiles">{{file.label}}</span></div>
+				</div>
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/tree']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
@@ -258,10 +328,117 @@
 					<go-upload name="demo" url="http://localhost:10050/upload" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*" [autoUpload]="false" [maxFileSize]=50*1024*1024 [showImage]="true" [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true" [messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinish($event)" (onError)="onError($event)" (onSelect)="onSelect($event)" (onDelete)="onDelete($event)" (onClear)="onClear($event)"></go-upload>
 					<small>อัพโหลดไฟล์ประเภท image, text</small>
 				</div>
-				<div class="card-block text-xs-center">
+				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/upload']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12">
+	<div class="card">
+		<h3 class="card-header">steps</h3>
+		<div class="card-block component">
+			<p-steps [model]="stepItems" styleClass="steps-custom"></p-steps>
+		</div>
+		<div class="card-block align-center">
+			<go-button routerLinkActive="active" [routerLink]="['/sidebar']" label="How to use" buttonColor="danger"></go-button>
+		</div>
+	</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12">
+	<div class="card">
+		<h3 class="card-header">datagrid</h3>
+		<div class="card-block component">
+			<p-dataGrid [value]="cars" [paginator]="true" [rows]="20">
+				<p-header>
+					List of Cars
+				</p-header>
+				<ng-template let-car pTemplate="item">
+					<div style="padding:3px" class="ui-g-12 ui-md-3">
+						<p-panel [header]="car.vin" [style]="{'text-align':'center'}">
+							<img src="/app/content/assets/images/datagrid/{{car.brand}}.gif">
+							<div class="car-detail">{{car.year}} - {{car.color}}</div>
+							<hr class="ui-widget-content" style="border-top:0">
+							<i class="fa fa-search" (click)="selectCar(car)" style="cursor:pointer"></i>
+						</p-panel>
+					</div>
+				</ng-template>
+			</p-dataGrid>
+
+			<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+				<div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedCar" style="font-size:16px;text-align:center;padding:20px">
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-12" style="text-align:center"><img src="/app/content/assets/images/datagrid/{{selectedCar.brand}}-big.gif"></div>
+					</div>
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-4">Vin: </div>
+						<div class="ui-grid-col-8">{{selectedCar.vin}}</div>
+					</div>
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-4">Year: </div>
+						<div class="ui-grid-col-8">{{selectedCar.year}}</div>
+					</div>
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-4">Brand: </div>
+						<div class="ui-grid-col-8">{{selectedCar.brand}}</div>
+					</div>
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-4">Color: </div>
+						<div class="ui-grid-col-8">{{selectedCar.color}}</div>
+					</div>
+				</div>
+			</p-dialog>
+		</div>
+		<div class="card-block align-center">
+			<go-button routerLinkActive="active" [routerLink]="['/datagrid']" label="How to use" buttonColor="danger"></go-button>
+		</div>
+	</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12">
+	<div class="card">
+		<h3 class="card-header">datagrid</h3>
+		<div class="card-block">
+			<p-dataTable [value]="cars" expandableRows="true">
+				<p-column expander="true" styleClass="col-icon"></p-column>
+				<p-column field="vin" header="Vin"></p-column>
+				<p-column field="year" header="Year"></p-column>
+				<p-column field="brand" header="Brand"></p-column>
+				<p-column field="color" header="Color"></p-column>
+				<ng-template let-car pTemplate="rowexpansion">
+					<div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px">
+						<div class="ui-grid-row">
+							<div class="ui-grid-col-3" style="text-align:center">
+								<i class="fa fa-search" (click)="showCar(car)" style="cursor:pointer;float:left;margin-top:40px"></i>
+								<img src="/app/content/assets/images/datagrid/{{car.brand}}-big.gif">
+							</div>
+							<div class="ui-grid-col-9">
+								<div class="ui-grid ui-grid-responsive ui-grid-pad">
+									<div class="ui-grid-row">
+										<div class="ui-grid-col-2 label">Vin: </div>
+										<div class="ui-grid-col-10">{{car.vin}}</div>
+									</div>
+									<div class="ui-grid-row">
+										<div class="ui-grid-col-2 label">Year: </div>
+										<div class="ui-grid-col-10">{{car.year}}</div>
+									</div>
+									<div class="ui-grid-row">
+										<div class="ui-grid-col-2 label">Brand: </div>
+										<div class="ui-grid-col-10">{{car.brand}}</div>
+									</div>
+									<div class="ui-grid-row">
+										<div class="ui-grid-col-2 label">Color: </div>
+										<div class="ui-grid-col-10">{{car.color}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ng-template>
+			</p-dataTable>
+		</div>
+		<div class="card-block align-center">
+			<go-button routerLinkActive="active" [routerLink]="['/datagrid']" label="How to use" buttonColor="danger"></go-button>
 		</div>
 	</div>
 </div>
