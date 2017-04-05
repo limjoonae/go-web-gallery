@@ -19,6 +19,7 @@ const PAGELIST: Array<any> = [
   {routerLink: 'radiobutton', menuName: 'Radio Button'},
   {routerLink: 'selectbox', menuName: 'Select Box'},
   {routerLink: 'sidebar', menuName: 'Side Bar'},
+  {routerLink: 'steps', menuName: 'Steps'},
   {routerLink: 'tabview', menuName: 'Tabview'},
   {routerLink: 'table', menuName: 'Table'},
   {routerLink: 'textarea', menuName: 'Text Area'},
