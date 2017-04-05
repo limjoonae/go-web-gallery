@@ -2,39 +2,33 @@
 
 *Web gallery* is a project for show component and how to use which we provided with *_Angular 2_*
 
-### Available component
-
-- Auto Complete
+#### New/Modified Component List
 - Badge
 - Button
-- Datetimepicker
 - Chart
 - Checkbox
+- Datetimepicker
 - Image Gallery
-- Popup
-- Progress Bar
+- Progressbar 
 - Pulldown Menu
 - Radio Button
 - Select Box
-- Side Bar
-- Tabs
+- Sidebar
 - Table
-- Text Area
-- Text Box
-- Text Editor
-- Tooltip
-- Tree
+- Textarea
+- Textbox
+- Texteditor
 - Upload
 
-### New Library Update
-- Auto Complete
-- Accordion
-- Datagrid
-- Datatable
-- Dialog
-- Galleria
-- Panel
-- Step
-- TabView
-- Tooltip
-- Tree
+#### External Library
+- Auto Complete (ng2-auto-complete)
+- Accordion (Primeng)
+- Datagrid (Primeng)
+- Datatable (Primeng)
+- Dialog (Primeng)
+- Galleria (Primeng)
+- Panel (Primeng)
+- Step (Primeng)
+- TabView (Primeng)
+- Tooltip (Primeng)
+- Tree (Primeng)
