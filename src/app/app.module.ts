@@ -31,11 +31,11 @@ import { PulldownMenuDocument } from './doc/pulldown-menu.document';
 // import { TabDocument } from './doc/tab.document';
 // import { TableDocument } from './doc/table.document';
 // import { TooltipDocument } from './doc/tooltip.document';
-// import { TextEditorDocument } from './go-texteditor/src/app/go-texteditor/doc/texteditor.document';
 import { TextareaDocument } from './doc/textarea.document';
-// import { TextboxDocument } from './doc/textbox.document';
+import { TextboxDocument } from './doc/textbox.document';
+import { TextEditorDocument } from './doc/texteditor.document';
 // import { TreeDocument } from './doc/tree.document';
-// import { UploadDocument } from './doc/upload.document';
+import { UploadDocument } from './doc/upload.document';
 // import { GettingStartComponent } from './doc/doc/page-getting-start.component';
 
 const appRoutes: Routes = [
@@ -64,11 +64,11 @@ const appRoutes: Routes = [
   // { path: 'tabview', component: TabDocument},
   // { path: 'table', component: TableDocument},
   { path: 'textarea', component: TextareaDocument},
-  // { path: 'textbox', component: TextboxDocument},
-  // { path: 'texteditor', component: TextEditorDocument},
+  { path: 'textbox', component: TextboxDocument},
+  { path: 'texteditor', component: TextEditorDocument},
   // { path: 'tooltip', component: TooltipDocument},
   // { path: 'tree', component: TreeDocument},
-  // { path: 'upload', component: UploadDocument},
+  { path: 'upload', component: UploadDocument},
 ];
 
 @NgModule({
@@ -98,17 +98,17 @@ const appRoutes: Routes = [
     // ProgressbarDocument,
     PulldownMenuDocument,
     ImageGalleryDocument,
-    // UploadDocument,
     // RadioButtonDocument,
     // SelectboxDocument,
     // SidebarDocument,
     // TabDocument,
     // TableDocument,
     // TooltipDocument,
-    // TextEditorDocument,
     // TreeDocument,
     TextareaDocument,
-    // TextboxDocument,
+    TextboxDocument,
+    TextEditorDocument,
+    UploadDocument,
     // GettingStartComponent,
   ],
   bootstrap:    [ AppComponent ],
