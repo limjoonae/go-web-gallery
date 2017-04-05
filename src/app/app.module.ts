@@ -14,9 +14,9 @@ import { SidebarChild }  from './sidebar-child/sidebar-child';
 import { GoModule }  from 'go-module';
 import { LibModule }  from 'lib-module';
 
-// import { AutoCompleteDocument } from './doc/auto-complete.document';
-// import { BadgeDocument } from './doc/badge.document';
-// import { ButtonDocument } from './doc/button.document';
+import { AutoCompleteDocument } from './doc/auto-complete.document';
+import { BadgeDocument } from './doc/badge.document';
+import { ButtonDocument } from './doc/button.document';
 // import { ChartDocument } from './doc/chart.document';
 // import { CheckboxDocument } from './doc/checkbox.document';
 // import { DateTimePickerDocument } from './doc/datetimepicker.document';
@@ -43,9 +43,9 @@ const appRoutes: Routes = [
   // { path: 'font', component: FontDocument},
   // { path: 'gettingstart', component: GettingStartComponent},
   // { path: 'accordion', component: },
-  // { path: 'autocomplete', component: AutoCompleteDocument},
-  // { path: 'badge', component: BadgeDocument},
-  // { path: 'button', component: ButtonDocument},
+  { path: 'autocomplete', component: AutoCompleteDocument},
+  { path: 'badge', component: BadgeDocument},
+  { path: 'button', component: ButtonDocument},
   // { path: 'chart', component: ChartDocument},
   // { path: 'checkbox', component: CheckboxDocument},
   // { path: 'datagrid', component: },
@@ -77,9 +77,9 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
+    BrowserAnimationsModule,
     GoModule.forRoot(),
     LibModule.forRoot(),
-    BrowserAnimationsModule,
   ],
   declarations: [ 
     AppComponent,
@@ -87,8 +87,9 @@ const appRoutes: Routes = [
     ContentComponent,
     SidebarChild,
 
-    // BadgeDocument,
-    // ButtonDocument,
+    AutoCompleteDocument,
+    BadgeDocument,
+    ButtonDocument,
     // ChartDocument,
     // CheckboxDocument,
     // DateTimePickerDocument,
@@ -108,7 +109,6 @@ const appRoutes: Routes = [
     // TreeDocument,
     // TextareaDocument,
     // TextboxDocument,
-    // AutoCompleteDocument,
     // GettingStartComponent,
   ],
   bootstrap:    [ AppComponent ],
