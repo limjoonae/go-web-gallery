@@ -60,12 +60,13 @@
 				</div>
 			</div>
 		</div>
-		<!--<div class="col-sm-12 col-md-6 col-lg-4">
+		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-datetimepicker</h3>
 				<div class="card-block component">
-					<go-datetimepicker calendarLanguage="th" [isFromTo]="true" fromLabel="จาก" toLabel="ถึง" clearLabel="ลบทิ้ง" [showClearButton]="true" [yearNavigator]="true" yearRange="2000:2020" [monthNavigator]="true" dateFormat='dd/mm/yy' 
-						[isBuddhistYear]="true" [readonlyInput]="true" [(date1)]="dateFrom" [(date2)]="dateTo"></go-datetimepicker><br>
+					from <go-datetimepicker [(date)]="dateFrom" [maxDate]="dateTo" [readonlyInput]="true"></go-datetimepicker>
+					to <go-datetimepicker [(date)]="dateTo" [minDate]="dateFrom" [readonlyInput]="true"></go-datetimepicker>
+						<br>
 					Date From: {{dateFrom}}<br><br>
 					Date To: {{dateTo}}
 				</div>
@@ -73,8 +74,8 @@
 					<go-button routerLinkActive="active" [routerLink]="['/datetimepicker']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
-		</div>-->
-		<!--<div class="col-sm-12 col-md-6 col-lg-4">
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-4">
 	    	<div class="card">
 				<h3 class="card-header">go-chart</h3>
 				<div class="card-block component">
@@ -84,7 +85,7 @@
 					<go-button routerLinkActive="active" [routerLink]="['/chart']" label="How to use" buttonColor="danger"></go-button>
 				</div>
 			</div>
-		</div>-->
+		</div>
 		<div class="col-sm-12 col-md-6 col-lg-4">
 			<div class="card">
 				<h3 class="card-header">go-checkbox</h3>
@@ -121,7 +122,7 @@
 				<h3 class="card-header">galleria</h3>
 				<div class="card-block component">
 					<div class="align-center">
-						<p-galleria [images]="images" panelWidth="300" panelHeight="200" frameHeight="50" [showCaption]="true"></p-galleria>
+						<p-galleria [images]="images" panelWidth="300" panelHeight="200" frameHeight="60" [showCaption]="true"></p-galleria>
 					</div>
 				</div>
 				<div class="card-block align-center">

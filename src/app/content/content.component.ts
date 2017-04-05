@@ -40,8 +40,8 @@ const PAGELIST: Array<any> = [
 export class ContentComponent implements OnInit {
 
   // **datetimepicker*
-  dateFrom:Date;
-  dateTo:Date;
+  private dateFrom:Date;
+  private dateTo:Date;
 
   // ** Datagrid *
   cars: Car[] = [
@@ -62,7 +62,6 @@ export class ContentComponent implements OnInit {
     {source:'/app/content/assets/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
     {source:'/app/content/assets/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
   ];
-
 
 	datas = DATA; //**checkbox*
   data = RDATA; //**radioboxbox*
