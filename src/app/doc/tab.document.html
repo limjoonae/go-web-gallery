@@ -1,0 +1,224 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong>Credit: <a href="{{creditURL}}" target="_blank"> {{credit}} </a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-tab/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+            <h2>Syntax</h2>
+            <pre> <code>{{prefixSyntax}}<em *ngFor="let attrSyntax of attrSyntaxList">{{attrSyntax.data}} <br></em>{{suffixSyntax}}</code> </pre>
+        </div>
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+			<h3> TabView </h3>			
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+			<h3> TabPanel </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeTabPanelList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+			<h3> Event </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of eventList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h3 class="first">Basic</h3>
+						<p-tabView>
+							<p-tabPanel header="Header 1" leftIcon="fa-calendar">
+								 Content 1
+							</p-tabPanel>
+							<p-tabPanel header="Header 2" leftIcon="fa-print">
+								 Content 2
+							</p-tabPanel>
+							<p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+								 Content 3
+							</p-tabPanel>
+						</p-tabView>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+                            <pre><code *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h3>Event</h3>
+						<div class="form-group">
+							<p-tabView (onChange)="onTabChange($event)">
+								<p-tabPanel header="Header I">
+									Content 1
+								</p-tabPanel>
+								<p-tabPanel header="Header II" [selected]="true">
+									Content 2
+								</p-tabPanel>
+								<p-tabPanel header="Header III" [closable]="true" >
+									Content 3
+								</p-tabPanel>
+								<p-tabPanel header="Header IV" [disabled]="true">
+									Content 4
+								</p-tabPanel>
+							</p-tabView>
+						</div>
+						<p> Select Tab: {{tabSelect + 1}}</p>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						<h3>Orientation</h3>
+						<p-tabView orientation="left">
+							<p-tabPanel header="Header 1" leftIcon="fa-calendar">
+								 Content 1
+							</p-tabPanel>
+							<p-tabPanel header="Header 2" leftIcon="fa-print">
+								 Content 2
+							</p-tabPanel>
+							<p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+								 Content 3
+							</p-tabPanel>
+						</p-tabView>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+	</div>
+</div>
