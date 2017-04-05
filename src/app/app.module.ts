@@ -20,16 +20,16 @@ import { ButtonDocument } from './doc/button.document';
 import { ChartDocument } from './doc/chart.document';
 // import { CheckboxDocument } from './doc/checkbox.document';
 // import { DateTimePickerDocument } from './doc/datetimepicker.document';
-// import { FontDocument } from './doc/font.document';
+import { FontDocument } from './doc/font.document';
 import { ImageGalleryDocument } from './doc/image-gallery.document';
 // import { PopupDocument } from './doc/popup.document';
-// import { ProgressbarDocument } from './doc/progressbar.document';
+import { ProgressbarDocument } from './doc/progressbar.document';
 import { PulldownMenuDocument } from './doc/pulldown-menu.document';
 // import { RadioButtonDocument } from './doc/radiobutton.document';
 import { SelectboxDocument } from './doc/selectbox.document';
 import { SidebarDocument } from './doc/sidebar.document';
 // import { TabDocument } from './doc/tab.document';
-// import { TableDocument } from './doc/table.document';
+import { TableDocument } from './doc/table.document';
 // import { TooltipDocument } from './doc/tooltip.document';
 import { TextareaDocument } from './doc/textarea.document';
 import { TextboxDocument } from './doc/textbox.document';
@@ -40,7 +40,7 @@ import { UploadDocument } from './doc/upload.document';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
-  // { path: 'font', component: FontDocument},
+  { path: 'font', component: FontDocument},
   // { path: 'gettingstart', component: GettingStartComponent},
   // { path: 'accordion', component: },
   { path: 'autocomplete', component: AutoCompleteDocument},
@@ -55,14 +55,14 @@ const appRoutes: Routes = [
   // { path: 'galleria', component: },
   { path: 'imagegallery', component: ImageGalleryDocument},
   // { path: 'panel', component: },
-  // { path: 'progressbar', component: ProgressbarDocument},
+  { path: 'progressbar', component: ProgressbarDocument},
   { path: 'pulldownmenu', component: PulldownMenuDocument},
   // { path: 'radiobutton', component: RadioButtonDocument},
   { path: 'selectbox', component: SelectboxDocument},
   { path: 'sidebar', component: SidebarDocument},
   // { path: 'steps', component: },
   // { path: 'tabview', component: TabDocument},
-  // { path: 'table', component: TableDocument},
+  { path: 'table', component: TableDocument},
   { path: 'textarea', component: TextareaDocument},
   { path: 'textbox', component: TextboxDocument},
   { path: 'texteditor', component: TextEditorDocument},
@@ -93,16 +93,16 @@ const appRoutes: Routes = [
     ChartDocument,
     // CheckboxDocument,
     // DateTimePickerDocument,
-    // FontDocument,
+    FontDocument,
     // PopupDocument,
-    // ProgressbarDocument,
+    ProgressbarDocument,
     PulldownMenuDocument,
     ImageGalleryDocument,
     // RadioButtonDocument,
     SelectboxDocument,
     SidebarDocument,
     // TabDocument,
-    // TableDocument,
+    TableDocument,
     // TooltipDocument,
     // TreeDocument,
     TextareaDocument,

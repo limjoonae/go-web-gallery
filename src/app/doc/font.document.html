@@ -1,0 +1,121 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Font</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+                    <p><strong>Credit: <a href="{{creditUrl}}" target="_blank">{{credit}}</a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-fonts/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<!--<small>[  ] = optional attribute\n</small>-->
+			<code>{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}</code>
+		</div>
+		<div class="jumbotron">
+			<h2>Font Style</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Style \ TypeFace</th>
+						<th>Athiti</th>
+						<th>Kanit</th>
+						<th>Maitree</th>
+						<th>Taviraj</th>
+						<th>Trirong</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let row of tableList">
+						<th scope="row">{{row.fontFamily}}</th>
+                        <td *ngFor="let type of row.TypeFace" [ngStyle]="{'font-family': type+'-'+row.fontFamily}">{{type == ''? '-' : type+' ฟ้อนต์ไทย'}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="jumbotron">
+			<h2>Getting Started</h2>
+			<p><li>css</li></p>
+            <p><li style="list-style-type:none">
+                    <ul>
+                        <li>index.html</li>
+                    </ul>
+            </li></p>
+            <pre><code>{{htmlImport}}</code></pre><br>
+            <p>หรือ</p>
+            <p><li style="list-style-type:none">
+                    <ul>
+                        <li>style.css</li>
+                    </ul>
+            </li></p>
+            <pre><code>{{cssImport}}</code></pre>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<!--<div class="container-fluid">-->
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<h1 [ngStyle]="{'font-family': 'Athiti-Bold'}">H1</h1>
+					<h1 [ngStyle]="{'font-family': 'Kanit-Bold'}">H1</h1>
+					<h1 [ngStyle]="{'font-family': 'Maitree-Bold'}">H1</h1>
+					<h1 [ngStyle]="{'font-family': 'Taviraj-Bold'}">H1</h1>
+					<h1 [ngStyle]="{'font-family': 'Trirong-Bold'}">H1</h1>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="{{'#collapse_ex_1'}}" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<p>style.css</p>
+							<code>h1 &#123; 'font-family': 'Athiti-Bold'; &#125;</code><br>
+							<code>h1 &#123; 'font-family': 'Kanit-Bold'; &#125;</code><br>
+							<code>h1 &#123; 'font-family': 'Maitree-Bold'; &#125;</code><br>
+							<code>h1 &#123; 'font-family': 'Taviraj-Bold'; &#125;</code><br>
+							<code>h1 &#123; 'font-family': 'Trirong-Bold'; &#125;</code><br>
+							<small>*เลือกกำหนดรูปแบบใดรูปแบบหนึ่ง</small><br>
+							<p></p>
+							<p>หรือ</p>
+							<p></p>
+							<p>component.html</p>
+							<code>&#60;h1 &#91;ngStyle&#93;="&#123;'font-family': 'Athiti-Bold'&#125;"&#62;H1&#60;/h1&#62;</code><br>
+							<code>&#60;h1 &#91;ngStyle&#93;="&#123;'font-family': 'Kanit-Bold'&#125;"&#62;H1&#60;/h1&#62;</code><br>
+							<code>&#60;h1 &#91;ngStyle&#93;="&#123;'font-family': 'Maitree-Bold'&#125;"&#62;H1&#60;/h1&#62;</code><br>
+							<code>&#60;h1 &#91;ngStyle&#93;="&#123;'font-family': 'Taviraj-Bold'&#125;"&#62;H1&#60;/h1&#62;</code><br>
+							<code>&#60;h1 &#91;ngStyle&#93;="&#123;'font-family': 'Trirong-Bold'&#125;"&#62;H1&#60;/h1&#62;</code><br>
+							<small>*สามารถกำหนดแยกเป็นราย element ได้</small><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
