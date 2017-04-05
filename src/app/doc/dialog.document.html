@@ -1,0 +1,217 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong>Credit: <a href="{{creditURL}}" target="_blank"> {{credit}} </a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-dialog/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+            <h2>Syntax</h2>
+            <pre> <code>{{prefixSyntax}}<em *ngFor="let attrSyntax of attrSyntaxList">{{attrSyntax.data}} <br></em>{{suffixSyntax}}</code> </pre>
+        </div>
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+			<h3> Event </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of eventList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						<h2>Configuration:</h2>
+						<div class="form-group">
+							<label>Header :</label>
+							<input class="form-control" value="Hello World" #titleLocal (keyup)="callTitle(titleLocal.value)">
+						</div>
+						<div class="form-group">
+							<label>Show header? :</label>
+							<select class="form-control" #showHeader (change)="callShowHeader(showHeader.value)">
+                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
+                        	</select>
+						</div>
+						<div class="form-group">
+							<label>Draggable? :</label>
+							<select class="form-control" #showDraggable (change)="callDraggable(showDraggable.value)">
+                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Closable? :</label>
+							<select class="form-control" #showClosable (change)="callClosable(showClosable.value)">
+                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Responsive? :</label>
+							<select class="form-control" #showResponsive (change)="callResponsive(showResponsive.value)">
+                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Modal? :</label>
+							<select class="form-control" #showModal (change)="callModal(showModal.value)">
+                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Width :</label>
+							<input class="form-control" value="300" #widthDialog (keyup)="callWidth(widthDialog.value)">							
+						</div>
+						<div class="form-group">
+							<label>Height :</label>
+							<input class="form-control" #heightDialog (change)="callHeight(heightDialog.value)">														
+						</div>
+						<div class="form-group">
+							<label>Body :</label>
+							<input class="form-control" #bodyDialog (keyup)="callBody(bodyDialog.value)">														
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="card-block">
+							<h2>Code:</h2>
+							<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
+							<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
+
+							<p-dialog [header]="title" [(visible)]="display" 
+										[modal] = "isModal" [width] = "width" [height] = "height" 
+										[closable] = "isClosable" [responsive] = "isResponsive"
+										[draggable] = "isDraggable" [showHeader] = "isShowHeader">
+								<p> {{body}}</p>
+                            <p-footer>
+                            	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+                                </div>
+                            </p-footer>
+                        </p-dialog>
+					</div>
+				</div>
+			</div>
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+	</div>
+</div>

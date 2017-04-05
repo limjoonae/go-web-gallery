@@ -1,0 +1,336 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong>Credit: <a href="{{creditURL}}" target="_blank"> {{credit}} </a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-datatable/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+            <h2>Syntax</h2>
+            <pre> <code>{{prefixSyntax}}<em *ngFor="let attrSyntax of attrSyntaxList">{{attrSyntax.data}} <br></em>{{suffixSyntax}}</code> </pre>
+        </div>
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+			<h3> DataTable </h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeTableList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+			<h3> Column Component </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeColumnList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+			<h3> Event </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of eventList">
+                    <th scope="row">{{event.require}}</th>
+                    <td>{{event.name}}</td>
+                    <td><em>{{event.type}}</em></td>
+                    <td>{{event.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_01">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_01" aria-expanded="false" aria-controls="collapse_ex_01">
+							Code Example for data#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_01" class="collapse" role="tabpanel" aria-labelledby="ex_01">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let line of data1" >{{line}} <br></code> </pre>
+						</div>
+					</div>
+					<div role="tab" id="ex_02">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_02" aria-expanded="false" aria-controls="collapse_ex_02">
+							Code Example for data#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_02" class="collapse" role="tabpanel" aria-labelledby="ex_02">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let line of data2" >{{line}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Basic </h4>
+						<p-dataTable [value]="dataTable1">
+							<p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header"></p-column>
+						</p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+                            <pre><code *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Paginator &amp; Sort &amp; Template</h4>
+						<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" sortMode="multiple">
+                            <p-header>List of Cars</p-header>
+							<p-column field="vin" header="Vin" [sortable]="true"></p-column>
+                            <p-column field="year" header="Year" [sortable]="true"></p-column>
+                            <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+                            <p-column field="color" header="Color" [sortable]="true">
+								<ng-template let-col let-dataTable2="rowData" pTemplate="body">
+									<span [style.color]="dataTable2[col.field]">{{dataTable2[col.field]}}</span>
+								</ng-template>
+							</p-column>
+                        </p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Filter &amp; Editable &amp; Selection</h4>
+						<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+							<i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+							<input #gb type="text" pInputText size="30" placeholder="Global Filter">
+						</div>
+						<p-dataTable [value]="dataTable3" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" selectionMode="multiple" [(selection)]="selectedDatas">
+							<p-column field="vin" header="Vin (startsWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
+                            <p-column field="year" header="Year" [editable]="true" ></p-column>
+                            <p-column field="brand" header="Brand" [editable]="true" ></p-column>
+                            <p-column field="color" header="Color" [editable]="true">
+							</p-column>
+							<p-footer>
+								<ul>
+									<li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
+								</ul>
+							</p-footer>
+                        </p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Row Expansion &amp; Resize &amp; Reorder</h4>
+						<p-dataTable [value]="dataTable4" expandableRows="true" resizableColumns="true" reorderableColumns="true">
+                            <p-header>List of Cars</p-header>
+							<p-column expander="true" styleClass="col-icon"></p-column>
+							<p-column field="vin" header="Vin" [sortable]="true"></p-column>
+                            <p-column field="year" header="Year" [sortable]="true"></p-column>
+                            <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+                            <p-column field="color" header="Color" [sortable]="true"></p-column>
+							<ng-template let-dataTable4 pTemplate="rowexpansion">
+								<div class="container" >
+									<div class="row">
+										<div class="col-md-2 label">Vin: </div>
+										<div class="col-md-10">{{dataTable4.vin}}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 label">Year: </div>
+										<div class="col-md-10">{{dataTable4.year}}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 label">Brand: </div>
+										<div class="col-md-10">{{dataTable4.brand}}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 label">Color: </div>
+										<div class="col-md-10">{{dataTable4.color}}</div>
+									</div>
+								</div>
+							</ng-template>
+                        </p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#4
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Scroll &amp; Export CSV</h4>
+						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="200px">
+							<p-header>
+								<div >
+									<go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
+								</div>
+							</p-header>
+							<p-column field="vin" header="Vin" ></p-column>
+							<p-column field="year" header="Year"></p-column>
+							<p-column field="brand" header="Brand"></p-column>
+							<p-column field="color" header="Color"></p-column>
+						</p-dataTable>   
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_5">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_5" aria-expanded="false" aria-controls="collapse_ex_5">
+							Code Example#5
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_5" class="collapse" role="tabpanel" aria-labelledby="ex_5">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample5" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Responsive</h4>
+						<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()"></go-button>
+						<p-dataTable [value]="dataTable6" [rows]="5" [paginator]="true" [responsive]="true" [stacked]="stacked">
+							<p-header>Responsive</p-header>
+							<p-column field="vin" header="Vin"></p-column>
+							<p-column field="year" header="Year"></p-column>
+							<p-column field="brand" header="Brand"></p-column>
+							<p-column field="color" header="Color"></p-column>
+						</p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_6">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_6" aria-expanded="false" aria-controls="collapse_ex_6">
+							Code Example#6
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_6" class="collapse" role="tabpanel" aria-labelledby="ex_6">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
