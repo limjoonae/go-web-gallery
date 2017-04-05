@@ -17,7 +17,7 @@ import { LibModule }  from 'lib-module';
 import { AutoCompleteDocument } from './doc/auto-complete.document';
 import { BadgeDocument } from './doc/badge.document';
 import { ButtonDocument } from './doc/button.document';
-// import { ChartDocument } from './doc/chart.document';
+import { ChartDocument } from './doc/chart.document';
 // import { CheckboxDocument } from './doc/checkbox.document';
 // import { DateTimePickerDocument } from './doc/datetimepicker.document';
 // import { FontDocument } from './doc/font.document';
@@ -26,8 +26,8 @@ import { ImageGalleryDocument } from './doc/image-gallery.document';
 // import { ProgressbarDocument } from './doc/progressbar.document';
 import { PulldownMenuDocument } from './doc/pulldown-menu.document';
 // import { RadioButtonDocument } from './doc/radiobutton.document';
-// import { SelectboxDocument } from './doc/selectbox.document';
-// import { SidebarDocument } from './doc/sidebar.document';
+import { SelectboxDocument } from './doc/selectbox.document';
+import { SidebarDocument } from './doc/sidebar.document';
 // import { TabDocument } from './doc/tab.document';
 // import { TableDocument } from './doc/table.document';
 // import { TooltipDocument } from './doc/tooltip.document';
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
   { path: 'button', component: ButtonDocument},
-  // { path: 'chart', component: ChartDocument},
+  { path: 'chart', component: ChartDocument},
   // { path: 'checkbox', component: CheckboxDocument},
   // { path: 'datagrid', component: },
   // { path: 'datatable', component: },
@@ -58,8 +58,8 @@ const appRoutes: Routes = [
   // { path: 'progressbar', component: ProgressbarDocument},
   { path: 'pulldownmenu', component: PulldownMenuDocument},
   // { path: 'radiobutton', component: RadioButtonDocument},
-  // { path: 'selectbox', component: SelectboxDocument},
-  // { path: 'sidebar', component: SidebarDocument},
+  { path: 'selectbox', component: SelectboxDocument},
+  { path: 'sidebar', component: SidebarDocument},
   // { path: 'steps', component: },
   // { path: 'tabview', component: TabDocument},
   // { path: 'table', component: TableDocument},
@@ -90,7 +90,7 @@ const appRoutes: Routes = [
     AutoCompleteDocument,
     BadgeDocument,
     ButtonDocument,
-    // ChartDocument,
+    ChartDocument,
     // CheckboxDocument,
     // DateTimePickerDocument,
     // FontDocument,
@@ -99,8 +99,8 @@ const appRoutes: Routes = [
     PulldownMenuDocument,
     ImageGalleryDocument,
     // RadioButtonDocument,
-    // SelectboxDocument,
-    // SidebarDocument,
+    SelectboxDocument,
+    SidebarDocument,
     // TabDocument,
     // TableDocument,
     // TooltipDocument,
