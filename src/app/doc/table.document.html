@@ -23,9 +23,9 @@
 						<strong>Release Date: {{releaseDate}}</strong>
 					</p>
 					<p>
-						<strong>Credit:</strong> <a href="https://github.com/valor-software/ng2-charts">ng2-chart v1.4.1</a>
+						<strong>Credit:</strong> <a href="https://github.com/valor-software/ng2-table">ng2-table v1.3.2</a>
 					</p>
-					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-chart/issues" target="_blank">Report Issue</a></div>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-table/issues" target="_blank">Report Issue</a></div>
 				</div>
 			</div>
 		</div>
@@ -37,10 +37,10 @@
 			<code>
 				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
 			</code>
-			<h4>Array of Object of chart_data</h4>
-			<code> {{chartdataSyntax}} </code>
-			<h4>Array of Object of chart_color</h4>
-			<code> {{chartcolorSyntax}} </code>
+			<h4>Array of Object of columns</h4>
+			<code> {{columnsSyntax}} </code>
+			<h4>Array of Object of data</h4>
+			<code> {{dataSyntax}} </code>
 		</div>
 		<div class="jumbotron">
 			<h2>Attributes</h2>
@@ -57,16 +57,25 @@
 					<tr *ngFor="let attribute of attributeList">
 						<th scope="row">{{attribute.require}}</th>
 						<td>{{attribute.name}}</td>
-						<td><em [innerHTML]="attribute.type"></em></td>
+						<td><em>{{attribute.type}}</em></td>
 						<td>{{attribute.description}}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<div class="jumbotron">
+			<h2>Date Format</h2>
+			<div *ngFor="let format of dateFormatList">
+				<li>{{format.format}} - {{format.description}}</li>
+			</div>
+		</div>
 	</div>
 
 	<div role="tabpanel" class="tab-pane fade" id="ex">
 		<div class="jumbotron">
+			<span [innerHTML]="introduction_example"></span>
+			<!-- <button class="btn btn-primary" (click)="addData()">Add</button>
+			<button class="btn btn-danger" (click)="removeLastData()">Remove</button>-->
 			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="row">
@@ -76,18 +85,18 @@
 						<table class="table table-striped table-hover table-sm">
 							<thead>
 								<tr>
-									<th>Type</th>
-									<th *ngFor="let label of chartLabel">{{label}}</th>
+									<th>Name</th>
+									<th>Surname</th>
+									<th>Id</th>
+									<th>Start Date</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr *ngFor="let data of chartData">
-									<th scope="row">{{data.label}}</th>
-									<td *ngFor="let _data of data.data">{{_data}}</td>
-								</tr>
-								<tr>
-									<th scope="row">chart2</th>
-									<td *ngFor="let _data of chartData2[0].data">{{_data}}</td>
+								<tr *ngFor="let _data of data">
+									<td>{{_data.name}}</td>
+									<td>{{_data.surname}}</td>
+									<td>{{_data.no}}</td>
+									<td>{{_data.startDate}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -101,18 +110,16 @@
 					</div>
 					<div id="collapse_ex_data" class="collapse" role="tabpanel" aria-labelledby="ex_data">
 						<div class="jumbotron">
-							<code [innerHTML]="data_code"></code>
-							<br>
-							<code>{{data_code_2}}</code>
-							<br>
-							<code>{{label_code}}</code>
+							<pre><code>{{data_code}}</code></pre>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="line" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+					<go-table class="table table-striped table-border table-hover table-sm" [paging]=true [itemsPerPage]=10 [maxSize]=3 [showCard]="true"
+						cardClass="card-block card-header card-inverse" [filterAll]="false" [columns]="columns_1" [data]="data" (onCellClicked)="cellClick($event)"></go-table>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_1">
@@ -124,15 +131,17 @@
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
 							<code>{{code_1}}</code>
+							<br><br>
+							<pre><code>{{column_1_code}}</code></pre>
 						</div>
 					</div>
+					<span>ช่องที่ถูกคลิก: <span [innerHTML]="click"></span></span>
 				</div>
 			</div>
 
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="bar" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true' yAxlesStartAtZero='true'
-						yAxlesMaxValue=90></go-chart>
+					<go-table class="table table-striped table-border table-sm" [paging]=false [filterAll]=true [columns]="columns_2" [data]="data"></go-table>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_2">
@@ -144,6 +153,8 @@
 					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
 						<div class="jumbotron">
 							<code>{{code_2}}</code>
+							<br><br>
+							<pre><code>{{column_2_code}}</code></pre>
 						</div>
 					</div>
 				</div>
@@ -151,7 +162,8 @@
 
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="doughnut" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+					<go-table class="table table-striped table-border table-sm table-responsive" [paging]="true" [itemsPerPage]=4 [maxSize]=2
+						[showCard]="true" cardClass="card-block card-header card-inverse" [filterAll]="false" [columns]="columns_3" [data]="data"></go-table>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_3">
@@ -163,6 +175,8 @@
 					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
 						<div class="jumbotron">
 							<code>{{code_3}}</code>
+							<br><br>
+							<pre><code>{{column_3_code}}</code></pre>
 						</div>
 					</div>
 				</div>
@@ -170,7 +184,9 @@
 
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+					<go-table class="table table-striped table-border table-sm" [useFixedData]="true" [paging]="true" [itemsPerPage]=1 [maxSize]=4
+						[datalength]=6 [showCard]="true" cardClass="card-block card-header card-inverse" [filterAll]="true" [columns]="columns_4"
+						[data]="data_4" (onTableChanged)="tableChanged($event)"></go-table>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_4">
@@ -182,20 +198,42 @@
 					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
 						<div class="jumbotron">
 							<code>{{code_4}}</code>
+							<br><br>
+							<pre><code>{{column_4_code}}</code></pre>
 						</div>
 					</div>
+					<table class="table table-striped table-border table-sm table-responsive">
+						<tr>
+							<th></th>
+							<th>ค่า filter</th>
+							<th>ค่า sort</th>
+						</tr>
+						<tr>
+							<td>รวมทุกคอลัมภ์</td>
+							<td>{{filterAll}}</td>
+						</tr>
+						<tr>
+							<td>คอลัมภ์ 1</td>
+							<td>{{filter_1}}</td>
+							<td>{{sort_1}}</td>
+						</tr>
+						<tr>
+							<td>คอลัมภ์ 2</td>
+							<td>{{filter_2}}</td>
+							<td>{{sort_2}}</td>
+						</tr>
+						<tr>
+							<td>คอลัมภ์ 3</td>
+							<td>{{filter_3}}</td>
+							<td>{{sort_3}}</td>
+						</tr>
+						<tr>
+							<td>ค่า page</td>
+							<td>{{page}}</td>
+						</tr>
+					</table>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
-
-<!-- 
-<go-chart class="col-md-6" chartType="line" [chartData]='lineChartData'
-	[chartLabel]='lineChartLabel' [chartColor]='lineChartColor'
-	showLegend='true' yAxlesStartAtZero='true' yAxlesMaxValue=-50></go-chart>
-<go-chart class="col-md-4" chartType="doughnut"
-	[chartData]='lineChartData' [chartLabel]='lineChartLabel'
-	[chartColor]='lineChartColor' showLegend='true'></go-chart>
-	 -->

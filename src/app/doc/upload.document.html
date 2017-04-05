@@ -1,0 +1,170 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#doc" role="tab" data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#ex" role="tab" data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>Version: {{version}}</strong>
+					</p>
+					<p>
+						<strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p>
+						<strong>Credit:</strong> <a target="_blank" href="https://github.com/primefaces/primeng/blob/master/components/calendar/">PrimeNG</a>
+					</p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-upload/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="doc">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<code>
+				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
+			</code>
+			<br> <br>
+			<h2>Attributes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td [innerHTML]="attribute.description"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="jumbotron">
+			<h4>Object of messageSettings</h4>
+			<code> {{messageSettingsSyntax}} </code>
+			<br> <br>
+			<h4>Attributes</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of messageAttributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td [innerHTML]="attribute.description"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="jumbotron">
+			<h4>Object of showOptions</h4>
+			<code> {{showOptionsSyntax}} </code>
+			<br> <br>
+			<h2>Attributes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of showAttributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td [innerHTML]="attribute.description"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="ex">
+		<div class="col-md-12">
+			<div id="ex">
+				<h5 class="mb-0">
+					<a class="collapsed" data-toggle="collapse" href="#collapse_ex" aria-expanded="false" aria-controls="collapse_ex">
+						<i>>>>>> BackEnd SetUp <<<<<</i>
+					</a>
+				</h5>
+			</div>
+			<div id="collapse_ex" class="collapse" role="tabpanel" aria-labelledby="ex">
+				<div class="jumbotron">
+					สามารถดาวน์โหลดไฟล์ Backend ได้จาก <b><a [href]="dlpath">ลิงค์นี้</a></b><br> Requirement: Node.js และ npm เวอร์ชั่นปัจจุบัน
+					และจำเป็นต้องต่ออินเตอร์เน็ตอยู่
+					<br>
+					<strong>วิธีการใช้งานไฟล์ Backend</strong><br> 1. (ทำครั้งแรกครั้งดียว) เปิดไฟล์ backend_setup.bat ขึ้นมารอมันทำงานจนเสร็จ
+					จะปิดตัวเองลงและจะได้โฟลเดอร์ node_modules ขึ้นมา<br> 2. (ทำทุกครั้งที่จะเปิด backend ขึ้นมาลองใช้) เปิดไฟล์ backend_run.bat
+					ขึ้นมา แล้วย่อไว้เบื้องหลัง เมื่อทำงานเสร็จสามารถปิดทิ้งได้
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="col-md-12" [innerHTML]="exampleDescription"></div>
+		<div class="jumbotron">
+			<div class="col-md-5">
+				<div class="row">
+					<go-upload name="demo" url="http://localhost:10050/upload" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*"
+						[autoUpload]="false" [maxFileSize]=2*1024*1024 [showImage]="true" [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true"
+						[messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinish($event)"
+						(onSelect)="onSelect($event)" (onDelete)="onDelete($event)" (onClear)="onClear($event)" (onError)="onError($event)">
+					</go-upload>
+				</div>
+				<div class="row" *ngIf="uploadedFiles.length > 0">
+					<h3>{{uploadedFileMessage}}</h3>
+					<button class="btn btn-danger" (click)="clearCompletedList()">Clear</button>
+					<div class="row" *ngFor="let file of uploadedFiles">
+						<div class="col-md-12">{{file.name}} - [{{file.size}} bytes]</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div role="tab" id="ex_1">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1"> Code
+							Example </a>
+					</h5>
+				</div>
+				<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+					<div class="jumbotron">
+						<code>{{code}}</code>
+						<br> <br>
+						<code>{{msgCode}}</code>
+						<br> <br>
+						<code>{{showCode}}</code>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
