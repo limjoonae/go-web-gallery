@@ -14,12 +14,14 @@ import { SidebarChild }  from './sidebar-child/sidebar-child';
 import { GoModule }  from 'go-module';
 import { LibModule }  from 'lib-module';
 
+
+import { AccordionDocument } from './doc/accordion.document';
 import { AutoCompleteDocument } from './doc/auto-complete.document';
 import { BadgeDocument } from './doc/badge.document';
 import { ButtonDocument } from './doc/button.document';
 // import { ChartDocument } from './doc/chart.document';
 // import { CheckboxDocument } from './doc/checkbox.document';
-// import { DateTimePickerDocument } from './doc/datetimepicker.document';
+import { DateTimePickerDocument } from './doc/datetimepicker.document';
 // import { FontDocument } from './doc/font.document';
 // import { ImageGalleryDocument } from './doc/image-gallery.document';
 // import { PopupDocument } from './doc/popup.document';
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
   { path: '', component: ContentComponent},
   // { path: 'font', component: FontDocument},
   // { path: 'gettingstart', component: GettingStartComponent},
-  // { path: 'accordion', component: },
+  { path: 'accordion', component: AccordionDocument },
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
   { path: 'button', component: ButtonDocument},
@@ -50,7 +52,7 @@ const appRoutes: Routes = [
   // { path: 'checkbox', component: CheckboxDocument},
   // { path: 'datagrid', component: },
   // { path: 'datatable', component: },
-  // { path: 'datetimepicker', component: DateTimePickerDocument},
+  { path: 'datetimepicker', component: DateTimePickerDocument},
   // { path: 'dialog', component: },
   // { path: 'galleria', component: },
   // { path: 'imagegallery', component: ImageGalleryDocument},
@@ -87,12 +89,13 @@ const appRoutes: Routes = [
     ContentComponent,
     SidebarChild,
 
+    AccordionDocument,
     AutoCompleteDocument,
     BadgeDocument,
     ButtonDocument,
     // ChartDocument,
     // CheckboxDocument,
-    // DateTimePickerDocument,
+    DateTimePickerDocument,
     // FontDocument,
     // PopupDocument,
     // ProgressbarDocument,
