@@ -1,0 +1,190 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#doc" role="tab" data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#ex" role="tab" data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong></p>
+					<p><strong>Release Date: {{releaseDate}}</strong></p>
+					<p><strong>Credit: <a target="_blank" href="https://github.com/arkon/ng-sidebar">ng-sidebar v.3.4.2</a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-sidebar/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="doc">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<code>
+				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
+			</code>
+		</div>
+		<div class="jumbotron">
+			<h2>Attributes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td>{{attribute.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="ex">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<label><strong>Sidebar Default</strong></label>
+						<button class="btn btn-primary" *ngIf="!open_1" (click)="toggleSidebar_1()">Open Sidebar Default</button>
+						<button class="btn btn-secondary" *ngIf="open_1" (click)="toggleSidebar_1()">Close Sidebar Default</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+								Code Example#1</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<pre><code>{{html_1}}</code></pre>
+							<p>app.component.ts</p>
+							<pre><code>{{ts_1}}</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<label><strong>Sidebar with Lock Screen</strong><br><small>(and close on click outside)</small></label>
+						<button class="btn btn-primary" (click)="toggleSidebar_2()">Open Sidebar with Lock Screen</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2"> Code
+								Example#2 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre><code>{{html_2}}</code></pre>
+							<p>app.component.ts</p>
+							<pre><code>{{ts_2}}</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<label><strong>Sidebar Right Position</strong></label>
+						<button class="btn btn-primary" *ngIf="!open_3" (click)="toggleSidebar_3()">Open Sidebar Right Position</button>
+						<button class="btn btn-secondary" *ngIf="open_3" (click)="toggleSidebar_3()">Close Sidebar Right Position</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3"> Code
+								Example#3 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre><code>{{html_3}}</code></pre>
+							<p>app.component.ts</p>
+							<pre><code>{{ts_3}}</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<label><strong>Sidebar with Return Result</strong></label>
+						<button class="btn btn-primary" *ngIf="!open_4" (click)="toggleSidebar_4()">Open Sidebar with Return Result</button>
+						<button class="btn btn-secondary" *ngIf="open_4" (click)="toggleSidebar_4()">Close Sidebar with Return Result</button>
+						<p>{{sidebarMessage}}</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_4"> Code
+								Example#4 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<pre><code>{{html_4}}</code></pre>
+							<p>app.component.ts</p>
+							<pre><code>{{ts_4}}</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- This is side bar parts -->
+<go-sidebar [(opened)]="open_1">
+	<nav class="nav nav-pills nav-stacked">
+		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 1</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 2</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 3</a>
+	</nav>
+</go-sidebar>
+
+<go-sidebar [(opened)]="open_2" [showBackdrop]="true" closeOnClickOutside="true">
+	<nav class="nav nav-pills nav-stacked">
+		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 1</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 2</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 3</a>
+	</nav>
+</go-sidebar>
+
+<go-sidebar [(opened)]="open_3" position="right">
+	<nav class="nav nav-pills nav-stacked">
+		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 1</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 2</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 3</a>
+	</nav>
+</go-sidebar>
+
+<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()">
+	<nav class="nav nav-pills nav-stacked">
+		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 1</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 2</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 3</a>
+	</nav>
+</go-sidebar>
