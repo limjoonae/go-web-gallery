@@ -19,7 +19,7 @@ import { AccordionDocument } from './doc/accordion.document';
 import { AutoCompleteDocument } from './doc/auto-complete.document';
 import { BadgeDocument } from './doc/badge.document';
 import { ButtonDocument } from './doc/button.document';
-// import { ChartDocument } from './doc/chart.document';
+import { ChartDocument } from './doc/chart.document';
 import { CheckboxDocument } from './doc/checkbox.document';
 import { DataGridDocument } from './doc/datagrid.document';
 import { DataTableDocument } from './doc/datatable.document';
@@ -39,7 +39,7 @@ import { StepDocument } from './doc/step.document';
 import { TabDocument } from './doc/tab.document';
 import { TableDocument } from './doc/table.document';
 import { TooltipDocument } from './doc/tooltip.document';
-// import { TextEditorDocument } from './go-texteditor/src/app/go-texteditor/doc/texteditor.document';
+import { TextEditorDocument } from './doc/texteditor.document';
 import { TextareaDocument } from './doc/textarea.document';
 import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
   { path: 'button', component: ButtonDocument},
-  // { path: 'chart', component: ChartDocument},
+  { path: 'chart', component: ChartDocument},
   { path: 'checkbox', component: CheckboxDocument},
   { path: 'datagrid', component: DataGridDocument },
   { path: 'datatable', component: DataTableDocument },
@@ -73,7 +73,7 @@ const appRoutes: Routes = [
   { path: 'table', component: TableDocument},
   { path: 'textarea', component: TextareaDocument},
   { path: 'textbox', component: TextboxDocument},
-  // { path: 'texteditor', component: TextEditorDocument},
+  { path: 'texteditor', component: TextEditorDocument},
   { path: 'tooltip', component: TooltipDocument},
   { path: 'tree', component: TreeDocument},
   { path: 'upload', component: UploadDocument},
@@ -99,7 +99,7 @@ const appRoutes: Routes = [
     AutoCompleteDocument,
     BadgeDocument,
     ButtonDocument,
-    // ChartDocument,
+    ChartDocument,
     CheckboxDocument,
     DataGridDocument,
     DataTableDocument,
@@ -119,7 +119,7 @@ const appRoutes: Routes = [
     TabDocument,
     TableDocument,
     TooltipDocument,
-    // TextEditorDocument,
+    TextEditorDocument,
     TreeDocument,
     TextareaDocument,
     TextboxDocument,
