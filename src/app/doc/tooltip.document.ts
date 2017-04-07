@@ -58,6 +58,10 @@ const _styleLine_css: Array<any> = [
   `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css');`
 ];
 
+const _releaseUpdate: Array<any> = [
+  `Update primeng version 4.0.0-rc.2`
+];
+
 const _EXAMPLE1: Array<any> = [
   { data: `
   <go-button label="Right" buttonColor="danger"  pTooltip="tooltip position right"></go-button>
@@ -65,7 +69,7 @@ const _EXAMPLE1: Array<any> = [
   <go-button label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
   <go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom"></go-button>
     ` },
-]
+];
 const _EXAMPLE2: Array<any> = [
   { data: `` },
 ]
@@ -88,7 +92,7 @@ export class TooltipDocument  {
     private componentDescription: string = `Tooltip ใช้อธิบายคำหรือจุดที่ต้องการอธิบายเพิ่มเติมบนหน้าเว็บ ที่จะขึ้นมาเวลาเอาเมาส์ไปชี้ที่ตำแหน่งที่มี ToolTip `
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/tooltip';
-    private credit: string = 'primeng (2.0.5)';   
+    private credit: string = 'primeng (4.0.0-rc.2)';   
 
     private prefixSyntax: string = '<HTML Elements';
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;
@@ -105,6 +109,7 @@ export class TooltipDocument  {
     private codeExample3 = _EXAMPLE3;
     private codeExample4 = _EXAMPLE4;
     
+    private releaseUpdate = _releaseUpdate;
 
 
 }
