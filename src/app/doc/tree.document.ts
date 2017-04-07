@@ -73,9 +73,9 @@ const _styleLine_css: Array<any> = [
 ];
 
 const _releaseUpdate: Array<any> = [
-  `Update primeng version 4.0.0-rc.2`,
-  `เพิ่มความสามารถในการใส่ไอคอน (จาก Font Awesome)`,
-  `เพิ่มความสามารถในการเลือกตัวเลือกจาก Tree ให้สามารถเลือกแบบตัวเลือกเดี่ยว หรือหลายตัวเลือกได้`,
+  { head: `Version`, data: `Update primeng version 4.0.0-rc.2` },
+  { head: `Icon`, data: `สามารถใส่ไอคอน (จาก Font Awesome)` },
+  { head: `selectionMode`, data: `สามารถเลือกตัวเลือกจาก Tree ให้สามารถเลือกแบบตัวเลือกเดี่ยว หรือหลายตัวเลือกได้` },
 ];
 
 const _EXAMPLE1: Array<any> = [
