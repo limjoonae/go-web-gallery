@@ -71,6 +71,14 @@ const _styleLine_css: Array<any> = [
   `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css');`
 ];
 
+const _releaseUpdate: Array<any> = [
+  `Update primeng version 4.0.0-rc.2`,
+  `เพิ่มความสามารถในการใส่ไอคอน (จาก Font Awesome) `,
+  `เพิ่มความสามารถในการปิดแท็บ (close tab)`,
+  `เพิ่มความสามารถในการระบุตำแหน่งของ tab ระบุได้ดังนี้ "top", "bottom", "left", "right"`,
+  `เพิ่มความสามารถในการส่ง event คืนมาเมื่อกดเปลี่ยนแท็บ หรือปิดแท็บ`
+];
+
 const _EXAMPLE1: Array<any> = [
   { data: `
 <p-tabView>
@@ -148,7 +156,7 @@ export class TabDocument  {
     private componentDescription: string = `Tab เป็นเครื่องมือในการจัดองค์ประกอบข้อมูลเนื้อหาต่าง ๆ เข้าด้วยกัน โดยสามารถแบ่งออกเป็นแท็บหลาย ๆ แท็บตามต้องการ`
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/tabview';
-    private credit: string = 'primeng (2.0.5)';   
+    private credit: string = '4.0.0-rc.2';   
 
     private prefixSyntax: string = `<p-tabView [orientation = "orientation_of_tab"] [style = "style_inline"] [styleClass = "style_class"] >`;
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;
@@ -169,4 +177,5 @@ export class TabDocument  {
     private onTabChange(event) {
         this.tabSelect = event.index;
     }
+    private releaseUpdate = _releaseUpdate;
 }

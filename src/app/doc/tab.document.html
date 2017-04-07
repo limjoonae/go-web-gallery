@@ -27,6 +27,14 @@
 				</div>
 			</div>
 		</div>
+		<div class="jumbotron">
+			<div class="card-title">
+				<h2> Release Update </h2>
+			</div>
+			<div class="card-block">
+				<li *ngFor="let line of releaseUpdate"> {{line}} </li>	
+			</div>
+		</div>
 	</div>
   	<div role="tabpanel" class="tab-pane fade" id="Document">
 		<div class="jumbotron">
@@ -73,6 +81,12 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+		<div class="jumbotron">
+			<h2>Icon Name</h2>
+			<p>ในส่วนของรูปสามารถเลือกได้จาก <strong><em><a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a></em></strong> (อ้างอิงเวอร์ชั่น <strong>{{fontAwesomeVersion}})</strong> โดยนำเฉพาะชื่อของ icon มาใส่เท่านั้น</p>
+		</div>
+		<div class="jumbotron">
 			<h3> Event </h3>
 			<table class="table">
                 <thead>
@@ -167,7 +181,7 @@
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-4">
+				<div class="col-md-5">
 					<div class="card-block">
 						<h3>Orientation</h3>
 						<p-tabView orientation="left">
@@ -183,7 +197,7 @@
 						</p-tabView>
 					</div>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-7">
 					<div role="tab" id="ex_3">
 						<h5 class="mb-0">
 							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
