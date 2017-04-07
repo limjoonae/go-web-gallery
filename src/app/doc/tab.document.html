@@ -29,10 +29,10 @@
 		</div>
 		<div class="jumbotron">
 			<div class="card-title">
-				<h2> Release Update </h2>
+				<h3> Release Update {{releaseDay}}</h3>
 			</div>
 			<div class="card-block">
-				<li *ngFor="let line of releaseUpdate"> {{line}} </li>	
+				<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>	
 			</div>
 		</div>
 	</div>

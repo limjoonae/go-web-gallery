@@ -72,11 +72,11 @@ const _styleLine_css: Array<any> = [
 ];
 
 const _releaseUpdate: Array<any> = [
-  `Update primeng version 4.0.0-rc.2`,
-  `เพิ่มความสามารถในการใส่ไอคอน (จาก Font Awesome) `,
-  `เพิ่มความสามารถในการปิดแท็บ (close tab)`,
-  `เพิ่มความสามารถในการระบุตำแหน่งของ tab ระบุได้ดังนี้ "top", "bottom", "left", "right"`,
-  `เพิ่มความสามารถในการส่ง event คืนมาเมื่อกดเปลี่ยนแท็บ หรือปิดแท็บ`
+  { head: `Version`, data: `Update primeng version 4.0.0-rc.2` },
+  { head: `Icon`, data: `สามารถใส่ไอคอน (จาก Font Awesome)` },
+  { head: `Closable`, data: `สามารถปิดแท็บ (close tab) ได้` },
+  { head: `Orientation`, data: `สามารถระบุตำแหน่งของ tab ระบุได้ดังนี้ "top", "bottom", "left", "right"` },
+  { head: `Event`, data: `สามารถส่ง event คืนมาเมื่อกดเปลี่ยนแท็บ หรือปิดแท็บได้` },
 ];
 
 const _EXAMPLE1: Array<any> = [
@@ -168,6 +168,8 @@ export class TabDocument  {
     private appModule = _APPMODULE;
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
+    private releaseUpdate = _releaseUpdate;
+    private releaseDay: string = '(29 March 2017)';
 
     private codeExample1 = _EXAMPLE1;
     private codeExample2 = _EXAMPLE2;
@@ -177,5 +179,4 @@ export class TabDocument  {
     private onTabChange(event) {
         this.tabSelect = event.index;
     }
-    private releaseUpdate = _releaseUpdate;
 }
