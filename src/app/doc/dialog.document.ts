@@ -75,34 +75,26 @@ const _APPMODULE: Array<any> = [
   }) `}
 ];
 
-
-
-const _EXAMPLE1: Array<any> = [
-  { data: `` },
-]
-const _EXAMPLE2: Array<any> = [
-  { data: `` },
-]
-const _EXAMPLE3: Array<any> = [
-  { data: `` },
-]
-const _EXAMPLE4: Array<any> = [
-  { data: `` },
-]
-
+const _releaseUpdate: Array<any> = [
+  { head: `Version`, data: `Update primeng version 4.0.0-rc.2` },
+  { head: `Footer`, data: `สามารถใส่ footer ให้แก่ popup ได้` },
+  { head: `Draggable`, data: `สามารถกำหนดให้สามารถเลื่อน popup ไปมาได้` },
+  { head: `Responsive`, data: `สามารถกำหนด Responsive ให้แก่ popup ได้` },
+  { head: `Width - Height`, data: `สามารถกำหนดความกว้างความสูงให้แก่ popup ได้` },
+];
 
 @Component({
     moduleId: module.id,
     selector: 'doc-dialog',
-    templateUrl: './dialog.document.html'
+    templateUrl: 'dialog.document.html'
 })
 export class DialogDocument  { 
     private componentTag: string = 'Dialog'
-    private version: string = '1.0'; 
+    private version: string = '2.0'; 
     private componentDescription: string = `Dialog เป็นเหมือน message-popup ใช้แสดงการแจ้งเตือนสถานะต่าง ๆ `
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/dialog';
-    private credit: string = 'primeng (2.0.5)';   
+    private credit: string = 'primeng (4.0.0-rc.2)';   
 
     private prefixSyntax: string = '<p-dialog';
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;
@@ -113,13 +105,10 @@ export class DialogDocument  {
     private appModule : Array<any> = _APPMODULE;
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
-
-    private codeExample1 = _EXAMPLE1;
-    private codeExample2 = _EXAMPLE2;
-    private codeExample3 = _EXAMPLE3;
-    private codeExample4 = _EXAMPLE4;
+    private releaseUpdate = _releaseUpdate;
+    private releaseDay: string = '(29 March 2017)';
     
-    display: boolean = false;
+    private display: boolean = false;
 
     showDialog() {
         this.display = true;
