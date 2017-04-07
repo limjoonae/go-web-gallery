@@ -72,6 +72,12 @@ const _styleLine_css: Array<any> = [
   `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css');`
 ];
 
+const _releaseUpdate: Array<any> = [
+  `Update primeng version 4.0.0-rc.2`,
+  `เพิ่มความสามารถในการใส่ไอคอน (จาก Font Awesome)`,
+  `เพิ่มความสามารถในการเลือกตัวเลือกจาก Tree ให้สามารถเลือกแบบตัวเลือกเดี่ยว หรือหลายตัวเลือกได้`,
+];
+
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.html` },
   { data: `` },
@@ -177,7 +183,7 @@ export class TreeDocument  {
     private componentDescription: string = `Tree เป็น component ที่ช่วยแสดงรายการเป็นลำดับขั้น โดยสามารถเลือกรายการที่ต้องการได้ และสามารถเลือกได้มากกว่า 1 รายการ`
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/tree';
-    private credit: string = 'primeng (2.0.5)';   
+    private credit: string = 'primeng (4.0.0-rc.2)';   
 
     private prefixSyntax: string = '<p-tree';
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;
@@ -250,4 +256,5 @@ export class TreeDocument  {
     private selectedFiles: any;
     private selectedFiles2: any;
 
+    private releaseUpdate = _releaseUpdate;
 }
