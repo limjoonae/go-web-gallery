@@ -6,7 +6,7 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/',
+      'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
       'go:': 'http://10.182.247.73/go-cdn-dev/dist/',
     },
     meta: {
