@@ -11,25 +11,31 @@
        
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li class="nav-item " > <a class="nav-link active" href="#setupNodejs" role="tab" data-toggle="tab" >Setup Nodejs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#setupGit" role="tab" data-toggle="tab">Setup Git</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#createProjectAngular2" role="tab" data-toggle="tab">How to create project Angular2</a> </li>
+                <li class="nav-item " > <a class="nav-link active" href="#prerequisiteInstall" role="tab" data-toggle="tab" >Prerequisite Install</a></li>
+                <!--<li class="nav-item"> <a class="nav-link" href="#setupGit" role="tab" data-toggle="tab">Setup Git</a> </li>-->
+                <li class="nav-item"> <a class="nav-link" href="#createProjectAngular2" role="tab" data-toggle="tab">Create New Project</a> </li>
                 <!--<li class="nav-item"> <a class="nav-link" href="#callGOSforProjectAngular2" role="tab" data-toggle="tab">How to use GOS Component for project Angular2</a> </li>-->
-                <li class="nav-item"> <a class="nav-link" href="#callGOSforWebSphere" role="tab" data-toggle="tab">How to use GOS Component for project websphere</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#systemjsConfig" role="tab" data-toggle="tab">How to edit systemjs.config.js</a> </li>
+                <!--<li class="nav-item"> <a class="nav-link" href="#callGOSforWebSphere" role="tab" data-toggle="tab">How to use GOS Component for project websphere</a> </li>-->
+                <li class="nav-item"> <a class="nav-link" href="#existingProject" role="tab" data-toggle="tab">Existing Angular Project</a> </li>
             </ul>
         </div>
         <div class="col-md-9">
             <div class="tab-content">
-                <div  role="tabpanel" class="tab-pane active" id="setupNodejs">
+                <div  role="tabpanel" class="tab-pane active" id="prerequisiteInstall">
                     <h3 class="card-header "><strong> การติดตั้ง Nodejs </strong></h3>
-                    <!--<div class="card-block" *ngFor="let data of setupNodejs"> 
-                        <p> {{data.data}} </p> 
-                        <p  *ngIf="data.code != null"> <code> {{data.code}} </code> </p>
-                        <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
-                    </div>-->
                     <div class="card-block">
+                        <p> 1. ดาวน์โหลด Nodejs ผ่านเว็บไซต์ <a href="https://nodejs.org/en/download/" target="_blank" > https://nodejs.org </a></p>
                         <p *ngFor="let data of setupNodejs"> 
+                             {{data.data}} <br>
+                            <code *ngIf="data.code != null"> {{data.code}} </code> 
+                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
+                        </p>
+                    </div>
+                    <h3 class="card-header"><strong> การติดตั้ง Git </strong></h3>
+                    <div class="card-block">
+                        <p> 1.	ติดตั้ง Git สำหรับ Windows โดยดาวน์โหลดจาก <a href="https://git-scm.com/downloads" target="_blank" > git-scm.com </a></p>
+                        <p> 2.	คลิกขวา เลือก Run as administrator เพื่อเข้าสู่ขั้นตอนการติดตั้ง (ดูรายละเอียดการติดตั้งได้ที่ <a href="http://www.artit-k.com/dev-install-git-for-windows" target="_blank" > http://www.artit-k.com/dev-install-git-for-windows</a> ) </p>
+                        <p *ngFor="let data of setupGit"> 
                              {{data.data}} <br>
                             <code *ngIf="data.code != null"> {{data.code}} </code> 
                             <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
@@ -39,12 +45,6 @@
 
                 <div role="tabpanel" class="tab-pane fade" id="setupGit">
                     <h3 class="card-header"><strong> การติดตั้ง Git </strong></h3>
-                    <!--<div class="card-block" *ngFor="let data of setupGit"> 
-                        <p> {{data.data}} </p> 
-                        <p  *ngIf="data.code != null"> <code> {{data.code}} </code> </p>
-                        <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >  
-                    </div>-->
-
                     <div class="card-block">
                         <p *ngFor="let data of setupGit"> 
                              {{data.data}} <br>
@@ -56,12 +56,6 @@
 
                 <div role="tabpanel" class="tab-pane fade" id="createProjectAngular2">
                     <h3 class="card-header"><strong> การสร้าง Project Angular2 </strong></h3>
-                    <!--<div class="card-block" *ngFor="let data of createProjectAngular"> 
-                        <p> {{data.data}} </p> 
-                        <p  *ngIf="data.code != null"> <code> {{data.code}} </code> </p>
-                        <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
-                    </div>-->
-
                     <div class="card-block">
                         <p *ngFor="let data of createProjectAngular"> 
                              {{data.data}} <br>
@@ -71,21 +65,7 @@
                     </div>
                 </div>
 
-                <!--<div role="tabpanel" class="tab-pane fade" id="callGOSforProjectAngular2">
-                    <div class="card-header">
-                        <h2><strong> การเรียกใช้งาน GOS Component</strong></h2>
-                        <h5> สำหรับ Project Angular 2 (node_modules) </h5>
-                    </div>
-                            <p> 1.	Download หรือ Copy file systemjs.config.js มาไว้ใน Project </p>
-                            <strong> systemjs.config.js <a href="#" class="typcn typcn-download h5"> </a> </strong>
-                            <object data="./app/file-for-download/systemjs.txt" style="width: 100%; height: 100%; display: block;"></object>
-                            <p> 2.	start project ด้วยคำสั่งนี้ </p>
-                            <code> npm start </code>
-                            <p> 3.	Import Component ที่ต้องการใน app.module.ts เช่น  </p>
-                            <code> import &#123; ButtonComponent &#125; from 'gos-button'&#59; </code>
-                </div>-->
-
-                <div role="tabpanel" class="tab-pane fade" id="callGOSforWebSphere">
+                <!--<div role="tabpanel" class="tab-pane fade" id="callGOSforWebSphere">
                     <div class="card-header">
                         <h3 ><strong> การเรียกใช้งาน GOS Component  </strong></h3>
                         <h5 style="color:#ffffff!important;" > สำหรับ Project JSP (WebSphere) </h5> 
@@ -121,16 +101,29 @@
                         <pre> tsc </pre> <br> 
                         <p> 5.	start server run project </p>
                     </div>
-                </div>
+                </div>-->
 
-                <div  role="tabpanel" class="tab-pane fade" id="systemjsConfig">
-                    <h3 class="card-header "><strong> การแก้ไขไฟล์ systemjs.config.js </strong></h3>
+                <div  role="tabpanel" class="tab-pane fade" id="existingProject">
+                    <h3 class="card-header "><strong>Existing Angular Project</strong></h3>
+                    <h5 class="card-header ">systemjs.config.js</h5>
                     <div class="card-block">
-                        <p *ngFor="let data of howToSystemjs"> 
+                        <p *ngFor="let data of howToSystemjs">
                              {{data.data}} <br>
-                             <code *ngIf="data.code != null"> {{data.code}} </code> 
-                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
+                            <code *ngIf="data.code != null"> {{data.code}} </code> 
                         </p>
+                        <object data="file/systemjs.txt" style="width: 100%; height: 100%; display: block;"></object> <br>
+                    </div>
+
+                    <h5 class="card-header ">app.module.ts</h5>
+                    <div class="card-block">
+                        <p> {{importAppModule}} </p>
+                        <object data="file/appModuleTS.txt" style="width: 100%; height: 100%; display: block;"></object> <br>                        
+                    </div>
+
+                    <h5 class="card-header ">index.html</h5>
+                    <div class="card-block">
+                        <p> {{indexData}} </p>
+                        <object data="file/indexFile.txt" style="width: 100%; height: 100%; display: block;"></object> <br>
                     </div>
                 </div>
             </div>
