@@ -1,6 +1,3 @@
-@import url('node_modules/primeng/resources/themes/omega/theme.css');
-@import url('node_modules/primeng/resources/primeng.min.css');
-
 body {color: #990000!important;}
 a, pre { color: #990000!important;}
 pre {background-color: rgb(247,247,249)!important;}
