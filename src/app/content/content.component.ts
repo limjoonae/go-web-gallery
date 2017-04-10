@@ -57,10 +57,10 @@ export class ContentComponent implements OnInit {
 
   // galleria
   images: any[] = [
-    {source:'./app/content/assets/images/datagrid/Fiat-big.gif', alt:'Fiat Logo', title:'Fiat'},
-    {source:'./app/content/assets/images/datagrid/Renault-big.gif', alt:'Renault Logo', title:'Renault'},
-    {source:'./app/content/assets/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
-    {source:'./app/content/assets/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
+    {source:'/app/content/assets/images/datagrid/Fiat-big.gif', alt:'Fiat Logo', title:'Fiat'},
+    {source:'/app/content/assets/images/datagrid/Renault-big.gif', alt:'Renault Logo', title:'Renault'},
+    {source:'/app/content/assets/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
+    {source:'/app/content/assets/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
   ];
 
 	datas = DATA; //**checkbox*

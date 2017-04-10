@@ -6,21 +6,14 @@
   System.config({
     paths: {
       // paths serve as alias
-       'npm:': 'http://10.182.247.173/angular-cdn-dev/node_modules/2.4.0/',
-       'gos:': 'http://10.182.247.173/angular-cdn-dev/gos-component/'
-    },
-    meta: {
-      'tinymce': {
-        format: 'global'
-      }
-      // 'tinypath': {
-      //   format: 'global'
-      // }
+      'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
+      'go:': 'http://10.182.247.73/go-cdn-dev/dist/',
+
     },
     // map tells the System loader where to look for things
     map: {
       // our app is within the app folder
-      app: 'app',
+      'app': 'app',
 
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -30,152 +23,26 @@
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
-      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
-      'numeral':					'npm:numeral/numeral.js',
-      'ng2sidebar' :               'npm:ng2-sidebar',
-      'tinymce' :                  'npm:tinymce/tinymce.min.js',
-      // 'tinypath':                  'npm:tinymce',
 
       // other libraries
-      'rxjs':                      	'npm:rxjs',
-      'angular-in-memory-web-api': 	'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'angular2-modal-plugins': 	'npm:angular2-modal/plugins',
-      'angular2-modal': 		    'npm:angular2-modal/bundles/angular2-modal.umd.js',
-      'angular2-modal-bootstrap': 	'npm:angular2-modal/bundles/angular2-modal.bootstrap.umd.js',
-      'primeng':                   	'npm:primeng',
-      'angular2-markdown':         	'npm:angular2-markdown',
-      'marked': 'npm:marked/lib/marked.js',
-      'prismjs': 'npm:prismjs',
-      'moment': 'npm:moment/moment.js',
-      'ng2-bootstrap/ng2-bootstrap':'npm:ng2-bootstrap-NEW/bundles/ng2-bootstrap.umd.js',
-      'ng2-charts':                'npm:ng2-charts',
-      'chart.js':				   'npm:chart.js/dist/Chart.bundle.min.js',
-      'ng2-table': 'npm:ng2-table',
+      'rxjs':                      'npm:rxjs',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
 
-      'gos-button': 			    'gos:button',
-      'gos-service':		        'gos:service',
-      'gos-label':					'gos:label',
-      'gos-directive':				'gos:directive',
-      'gos-textarea':				'gos:textarea',
-      'gos-textbox':				'gos:textbox',
-      'gos-checkbox':               'gos:checkbox',
-      'gos-radiobutton':            'gos:radio-button/radio-button.component.js',
-      'gos-progressbar':			'gos:progressbar',
-      // 'gos-progressbar-lockservice':			'gos:progressbar/src/service',
-      'gos-badge':			        'gos:badge/badge.component.js',
-
-      'gos-texteditor':			    'gos:texteditor',
-
-      'gos-sidebar':			    'gos:sidebar',
-      'gos-pulldown-menu':			'gos:pulldown-menu/pulldown-menu.component.js',
-      'gos-chart':  'gos:chart/chart.component.js',
-      'angular2-image-popup':'gos:image-gallery/directives/angular2-image-popup/image-modal-popup.js',
-      'gos-image-gallery':  'gos:image-gallery',
-      'gos-tree': 'gos:gos-tree',
-      'gos-table': 'gos:table',
-      'gos-upload': 'gos:upload',
-
+      'go-module': 'go:gomodule.umd.js',
+      'lib-module': 'go:libmodule.umd.js',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: {
-        main: './main.js',
-        defaultExtension: 'js'
+        defaultExtension: 'js',
+        meta: {
+          './*.js': {
+            loader: 'systemjs-angular-loader.js'
+          }
+        }
       },
       rxjs: {
-        defaultExtension: 'js'
-      },
-      ng2sidebar: {
-          defaultExtension: 'js'
-      },
-      'angular2-modal-plugins': {
-        defaultExtension: 'js'
-      },
-      'angular2-modal': {
-          defaultExtension: 'js'
-      },
-      'angular2-modal-bootstrap': {
-          defaultExtension: 'js'
-      },
-      primeng: {
-          defaultExtension: 'js'
-      },
-      'angular2-markdown': {
-          main: './index.js',
-          defaultExtension: 'js'
-      },
-      'prismjs': {
-          defaultExtension: 'js'
-      },
-      'ng2-charts': {
-    	  main: './ng2-charts.js',
-        defaultExtension: 'js'
-      },
-      'chart.js': {
-      	defaultExtension: 'js'
-      },
-      'angular2-image-popup': {
-        defaultExtension: 'js'
-      },
-      'gos-button': {
-        defaultExtension: 'js'
-      },
-      'gos-service': {
-        defaultExtension: 'js'
-      },
-      'gos-label': {
-          defaultExtension: 'js'
-      },
-      'gos-directive': {
-          defaultExtension: 'js'
-        },
-      'gos-textarea': {
-          defaultExtension: 'js'
-      },
-      'gos-textbox': {
-          defaultExtension: 'js'
-      },
-      'gos-checkbox': {
-    	  defaultExtension: 'js'
-      },
-      'gos-progressbar': {
-        // main: '/index.js',
-    	  defaultExtension: 'js'
-      },
-      // 'gos-progressbar/lockservice': {
-      //   main: '/lock.service.js',
-    	//   defaultExtension: 'js'
-      // },
-      'gos-texteditor': {
-          defaultExtension: 'js'
-      },
-      'gos-pulldown-menu': {
-        defaultExtension: 'js'
-      },
-      'gos-sidebar': {
-        defaultExtension: 'js'
-      },
-      'gos-image-gallery': {
-        main: './image-gallery.component.js',
-        defaultExtension: 'js'
-      },
-      'gos-tree': {
-        main: './index.js',
-        defaultExtension: 'js'
-      },
-      'gos-table': {
-        main: '/table.component.js',
-        defaultExtension: 'js'
-      },
-      'gos-upload': {
-        main: '/upload.component.js',
-        defaultExtension: 'js'
-      },
-      'ng2-table': {
-        main: './ng2-table.js',
         defaultExtension: 'js'
       }
     }
