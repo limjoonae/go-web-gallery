@@ -59,7 +59,7 @@ const _styleLine_css: Array<any> = [
 ];
 
 const _releaseUpdate: Array<any> = [
-  `Update primeng version 4.0.0-rc.2`
+  { head: `Version`, data: `Update primeng version 4.0.0-rc.2` }
 ];
 
 const _EXAMPLE1: Array<any> = [
@@ -103,13 +103,15 @@ export class TooltipDocument  {
     private appModule = _APPMODULE;
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
+    private releaseUpdate = _releaseUpdate;
+    private releaseDay: string = '(29 March 2017)';
 
     private codeExample1 = _EXAMPLE1;
     private codeExample2 = _EXAMPLE2;
     private codeExample3 = _EXAMPLE3;
     private codeExample4 = _EXAMPLE4;
     
-    private releaseUpdate = _releaseUpdate;
+
 
 
 }

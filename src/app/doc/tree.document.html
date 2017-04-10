@@ -27,6 +27,14 @@
 				</div>
 			</div>
 		</div>
+		<div class="jumbotron">
+			<div class="card-title">
+				<h3> Release Update {{releaseDay}}</h3>
+			</div>
+			<div class="card-block">
+				<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>		
+			</div>
+		</div>
 	</div>
   	<div role="tabpanel" class="tab-pane fade" id="Document">
 		<div class="jumbotron">
