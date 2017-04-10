@@ -14,7 +14,6 @@ import { SidebarChild }  from './sidebar-child/sidebar-child';
 import { GoModule }  from 'go-module';
 import { LibModule }  from 'lib-module';
 
-
 import { AccordionDocument } from './doc/accordion.document';
 import { AutoCompleteDocument } from './doc/auto-complete.document';
 import { BadgeDocument } from './doc/badge.document';
@@ -44,12 +43,12 @@ import { TextareaDocument } from './doc/textarea.document';
 import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
 import { UploadDocument } from './doc/upload.document';
-// import { GettingStartComponent } from './doc/doc/page-getting-start.component';
+import { GettingStartComponent } from './doc/page-getting-start.component';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
   { path: 'font', component: FontDocument},
-  // { path: 'gettingstart', component: GettingStartComponent},
+  { path: 'gettingstart', component: GettingStartComponent},
   { path: 'accordion', component: AccordionDocument },
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
@@ -123,7 +122,7 @@ const appRoutes: Routes = [
     TreeDocument,
     TextareaDocument,
     TextboxDocument,
-    // GettingStartComponent,
+    GettingStartComponent,
   ],
   bootstrap:    [ AppComponent ],
 })
