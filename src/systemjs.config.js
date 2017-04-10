@@ -7,7 +7,8 @@
     paths: {
       // paths serve as alias
       'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
-      'go:': 'http://10.182.247.73/go-cdn-dev/dist/',
+      'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/1.0.0/',
+      'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/',
     },
     meta: {
     },
@@ -37,7 +38,7 @@
       
       //***lib for go-component***
       'go-module': 'go:gomodule.umd.js',
-      'lib-module': 'go:libmodule.umd.js',
+      'lib-module': 'lib:libmodule.umd.js',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
