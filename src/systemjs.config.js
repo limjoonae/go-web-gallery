@@ -33,17 +33,31 @@
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
 
       // other libraries
-      'rxjs':                      'npm:rxjs',
+      // 'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       
       //***lib for go-component***
       'go-module': 'go:gomodule.umd.js',
       'lib-module': 'lib:libmodule.umd.js',
     },
+    bundles: {
+    "npm:Rx.system.js": [
+      "rxjs",
+      "rxjs/*",
+      "rxjs/operator/*",
+      "rxjs/observable/*",
+      "rxjs/scheduler/*",
+      "rxjs/symbol/*",
+      "rxjs/add/operator/*",
+      "rxjs/add/observable/*",
+      "rxjs/util/*"
+    ]
+  },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: { defaultExtension: 'js' },
-      rxjs: { defaultExtension: 'js' },
+      rxjs: { defaultExtension: false },
+      // rxjs: { defaultExtension: 'js' },
     }
   });
 })(this);
