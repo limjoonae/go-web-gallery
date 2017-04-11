@@ -42,9 +42,10 @@ export class GettingStartComponent  {
 
     howToSystemjs:Array<any> = [
         { code: `'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',`, data: `1.	กำหนด path ที่ชื่อ npm เพื่อเรียกใช้งาน library หลักของ Angular2 ดังนี้`},
-        { code: `'go:': 'http://10.182.247.73/go-cdn-dev/dist/'`, data: `2.	กำหนด path ที่ชื่อ go เพื่อเรียกใช้งาน component ดังนี้`},
-        { data: `3. วาง path ทั้ง 2 ลงใน paths`},
-        { data: `4.	วาง path ของ gomodule และ libmodule ลงใน map`},
+        { code: `'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/1.0.0/',`, data: `2.	กำหนด path ที่ชื่อ go เพื่อเรียกใช้งาน component ดังนี้`},
+        { code: `'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/'`, data: `3.	กำหนด path ที่ชื่อ lib เพื่อเรียกใช้งาน component ดังนี้`},
+        { data: `4. วาง path ทั้ง 2 ลงใน paths`},
+        { data: `5.	วาง path ของ gomodule และ libmodule ลงใน map`},
         { data: `เมื่อวางแล้วจะได้ดังนี้`}
     ];
 

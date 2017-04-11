@@ -3,9 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 
+import { GoModule }  from 'go-module';
+import { LibModule }  from 'lib-module';
+
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
+  imports:      [ 
+    BrowserModule,
+    GoModule.forRoot(),
+    LibModule.forRoot(),
+  ],
+  declarations: [ 
+    AppComponent,
+     ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
