@@ -29,6 +29,16 @@
 				</div>
 			</div>
 		</div>
+		<div class="jumbotron">
+				<div class="card-title">
+					<h2> Release Update </h2>
+				</div>
+				<div class="card-block">
+					<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>		
+					<h5 *ngIf= "fixBug"> <b> Bug Fixes</b> {{fixBug[0].version}} </h5> 
+					<label *ngFor="let line of fixBug"> <li *ngIf="line.data != null"> <b> {{line.head}}: </b>{{line.data}} </li> </label>
+				</div>
+			</div>
 	</div>
   	<div role="tabpanel" class="tab-pane fade" id="Document">
         <div class="jumbotron">
@@ -116,6 +126,7 @@
 		<div class="jumbotron">
 			<div class="row row-in-tab">
 				<div class="col-md-6">
+					<h4> Block</h4>
 					<go-checkbox name="chbnames1" id="chbid1" label="Checkbox: " [data]="datas1" type="block" (valueOut)="textValue($event)"  colorTheme="success" require="true">  check </go-checkbox>
 					<p> <strong> Output value: </strong> {{getValue}} </p>
 					<p> <strong> Output label: </strong> {{getLabel}} </p>
@@ -137,6 +148,7 @@
 			</div>
 			<div class="row row-in-tab">
 				<div class="col-md-6">
+					<h4> Inline </h4>
 					<go-checkbox name="chbname2" id="chbid2" label="Checkbox: " [data]="datas2" colorTheme="warning">  check </go-checkbox>
 				</div>
 				<div class="col-md-6">
@@ -156,7 +168,10 @@
 			</div>
             <div class="row row-in-tab">
 				<div class="col-md-6">
-                    <go-checkbox name="chbnames3" id="chbid3" label="Select Checkbox: " [data]="datas3" type="column" [col]="3" colorTheme="danger" require="true">  check </go-checkbox>
+					<h4> Columns </h4>
+                    <go-checkbox name="chbnames3" id="chbid3" label="Select Checkbox: " (valueOut)="textValueColumns($event)" [data]="datas3" type="column" [col]="3" colorTheme="danger" require="true">  check </go-checkbox>
+					<p> <strong> Output value: </strong> {{getValueCol}} </p>
+					<p> <strong> Output label: </strong> {{getLabelCol}} </p>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_3">

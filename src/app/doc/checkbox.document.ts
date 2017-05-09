@@ -2,7 +2,11 @@ import { Component, Input } from '@angular/core';
 
 const DATA1: Array<any> = [
   { value: '11', label: 'checkbox 1', disable: '', readonly: '', checked: 'true' },
-  { value: '12', label: 'checkbox 2', disable: '', readonly: '', checked: '' }
+  { value: '12', label: 'checkbox 2', disable: '', readonly: '', checked: 'true' },
+  { value: '13', label: 'checkbox 3', disable: '', readonly: '', checked: 'true' },
+  { value: '14', label: 'checkbox 4', disable: '', readonly: '', checked: 'true' },
+  { value: '15', label: 'checkbox 5', disable: '', readonly: '', checked: 'true' },
+  { value: '16', label: 'checkbox 6', disable: '', readonly: '', checked: 'true' },
 ];
 
 const DATA2: Array<any> = [
@@ -36,7 +40,11 @@ const EXAMPLE1: Array<any> = [
   { data: ``},
   { data: `private datas = : CheckboxData[] = [`},
   { data: `         { value: '11', label: 'checkbox 1', disable: '', readonly: '', checked: 'true' },`},
-  { data: `         { value: '12', label: 'checkbox 2', disable: '', readonly: '', checked: '' }`},
+  { data: `         { value: '12', label: 'checkbox 2', disable: '', readonly: '', checked: 'true' }`},
+  { data: `         { value: '13', label: 'checkbox 3', disable: '', readonly: '', checked: 'true' }`},
+  { data: `         { value: '14', label: 'checkbox 4', disable: '', readonly: '', checked: 'true' }`},
+  { data: `         { value: '15', label: 'checkbox 5', disable: '', readonly: '', checked: 'true' }`},
+  { data: `         { value: '16', label: 'checkbox 6', disable: '', readonly: '', checked: 'true' }`},
   { data: `     ];`},
   { data: `private getValue: any = [];`},
   { data: `private getLabel: any = [];`},
@@ -82,6 +90,21 @@ const EXAMPLE3: Array<any> = [
   { data: `   { value: '37', label: 'checkbox 7', disable: '', readonly: '', checked: 'true' }`},
   { data: `];`},
   { data: ``},
+  { data: `private getValueCol: any = [];`},
+  { data: `private getLabelCol: any = [];`},
+  { data: `private textValue(value: any): void{
+    this.getValue = [];
+    this.getLabel = [];
+    if(value.length >0){
+      this.getValue = value[0].value;
+      this.getLabel = value[0].label;
+      for(var i=1; i < value.length; i++){
+        this.getValue = this.getValue + "," + value[i].value;
+        this.getLabel = this.getLabel + "," + value[i].label;
+      }
+    }
+  }`},
+  { data: ``},
   { data: `<go-checkbox name="chbnames3"`},
   { data: `               id="chbid3"`},
   { data: `               label="Select Checkbox: "`},
@@ -90,8 +113,11 @@ const EXAMPLE3: Array<any> = [
   { data: `               [col]="3"`},
   { data: `               colorTheme="danger"`},
   { data: `               require="true"`},
+  { data: `               (valueOut)="textValueColumns($event)"`},
   { data: `               >  check `},
   { data: `</go-checkbox>`},
+  { data: `<p> <strong> Output value: </strong> {{getValueCol}} </p>`},
+  { data: `<p> <strong> Output label: </strong> {{getLabelCol}} </p>`},
 ];
 
 const ATTRIBUTELIST: Array<any> = [
@@ -122,6 +148,18 @@ const GETTINGSTART: Array<any> = [
   { data: `     ],`}
 ];
 
+const _releaseUpdate: Array<any> = [
+  // { head: `fix bug`, data: `Return value not correct` },
+  // { head: `Icon`, data: `สามารถใส่ไอคอน (จาก Font Awesome)` },
+  // { head: `style`, data: `เปลี่ยนรูปแบบการจัดวาง inputbox ให้มีขนาดพอดีกับความกว้างที่นำ component ไปวาง` },
+];
+
+const _fixBug: Array<any> = [
+  { version: `1.0.1`},
+  { head:`Value` ,data: `Return value not correct`},
+  // { data: ``}
+];
+
 const EVENTLIST: Array<any> = [
   { require: '', name: 'valueOut', type: 'function($event)', description: `เมื่อเหตุการณ์ใดๆเกิดขึ้น จะทำการ return ชุดข้อมูลของ data ที่เลือกในปัจจุบัน` }
 ];
@@ -135,7 +173,7 @@ const EVENTLIST: Array<any> = [
 export class CheckboxDocument  { 
 
     version: string = `1.0`;
-    private releaseDate: string =  `24 Febuary 2017`
+    private releaseDate: string = `5 May 2017`
     private datas1 = DATA1;
     private datas2 = DATA2;
     private datas3 = DATA3;
@@ -145,6 +183,8 @@ export class CheckboxDocument  {
     private attributeList = ATTRIBUTELIST;
     private eventList = EVENTLIST;
     private gettingStart = GETTINGSTART;
+    private releaseUpdate = _releaseUpdate;
+    private fixBug = _fixBug;
 
     private componentTag: string = '<go-checkbox>' 
     private componentDescription: string = `Checkbox เป็นเครื่องมือช่วยให้กรอกข้อมูลบางอย่าง และทำการเลือกข้อมูลโดยกดเครื่องหมายถูกที่ตัวใดตัวหนึ่ง
@@ -221,6 +261,10 @@ export class CheckboxDocument  {
   private getValue: any = [];
   private getLabel: any = [];
 
+  private getValueCol: any = [];
+  private getLabelCol: any = [];
+
+
   private textValue(value: any): void{
     this.getValue = [];
     this.getLabel = [];
@@ -230,6 +274,19 @@ export class CheckboxDocument  {
       for(var i=1; i < value.length; i++){
         this.getValue = this.getValue + "," + value[i].value;
         this.getLabel = this.getLabel + "," + value[i].label;
+      }
+    }
+  }
+
+    private textValueColumns(value: any): void{
+    this.getValueCol = [];
+    this.getLabelCol = [];
+    if(value.length >0){
+      this.getValueCol = value[0].value;
+      this.getLabelCol = value[0].label;
+      for(var i=1; i < value.length; i++){
+        this.getValueCol = this.getValueCol + "," + value[i].value;
+        this.getLabelCol = this.getLabelCol + "," + value[i].label;
       }
     }
   }
