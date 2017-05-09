@@ -4,9 +4,9 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'inputId', type: 'string', description: `ใช้สำหรับระบุ id ให้ datetimepicker`},
     { require: '', name: 'defaultDate', type: 'date', description: `ใช้สำหรับระบุวันที่เริ่มต้นให้แก่ datetimepicker`},
     { require: '', name: 'style', type: 'string', description: `ใช้สำหรับระบุ style ให้ datetimepicker`},
-    { require: '', name: 'styleClass', type: 'string', description: `ใช้สำหรับระบุ style class ให้ datetimepicker`},
+    // { require: '', name: 'styleClass', type: 'string', description: `ใช้สำหรับระบุ style class ให้ datetimepicker`},
     { require: '', name: 'inputStyle', type: 'string', description: `ใช้สำหรับใส่ style ให้ input field`},
-    { require: '', name: 'inputStyleClass', type: 'string', description: `ใช้สำหรับใส่ style class ให้ input field`},
+    // { require: '', name: 'inputStyleClass', type: 'string', description: `ใช้สำหรับใส่ style class ให้ input field`},
     { require: '', name: 'placeholder', type: 'string', description: `ใช้สำหรับระบุ placeholder ให้ datetimepicker`},
     { require: '', name: 'disabled', type: 'string', description: `ใช้ระบุเพื่อกำหนด disabled ให้ datetimepicker`},
     { require: '', name: 'dateFormat', type: 'string', description: `ใช้สำหรับระบุรูปแบบวันที่ใน input field ที่จะแสดงรวมทั้งรูปแบบที่ผู้ใช้ต้องกรอก(เช่น 'dd MM yy' ผู้ใช้ต้องกรอกตามรูปแบบเป็น '1 January 2017' เท่านั้น) โดยสามารถดูได้จากด้านล่าง`},
@@ -44,9 +44,9 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `     inputId = "id_of_datetimepicker"` },
   { data: `     [defaultDate] = "default_date"` },
   { data: `     [style = "inline_style"] ` },
-  { data: `     [styleClass = "style_class"]` },
+  // { data: `     [styleClass = "style_class"]` },
   { data: `     [inputStyle = "inline_style_of_input_field"] ` },
-  { data: `     [inputStyleClass = "style_class_of_input_field"]` },
+  // { data: `     [inputStyleClass = "style_class_of_input_field"]` },
   { data: `     [placeholder = "placeholder"]` },
   { data: `     [disabled = "true_or_false"]` },
   { data: `     [dateFormat = "date_format"]` },
@@ -121,6 +121,11 @@ const _styleLine_css: Array<any> = [
   `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css');`
 ];
 
+const _releaseUpdate: Array<any> = [
+  { head: `Version`, data: `Update primeng version 4.0.0-rc.2` },
+  { head: `Icon`, data: `สามารถใส่ไอคอน (จาก Font Awesome)` },
+  { head: `style`, data: `เปลี่ยนรูปแบบการจัดวาง inputbox ให้มีขนาดพอดีกับความกว้างที่นำ component ไปวาง` },
+];
 
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.ts` },  
@@ -242,11 +247,12 @@ const _EXAMPLE8: Array<any> = [
 })
 export class DateTimePickerDocument implements OnInit {
     private componentTag: string = '<go-datetimepicker>';
-    private version: string = '2.0'; 
+    private version: string = '2.1'; 
     private componentDescription: string = `DateTimePicker ใช้สำหรับเป็นปฏิทินในการระบุวันที่และ/หรือเวลา โดยสามารถกำหนดรูปแบบของข้อมูลและการแสดงผลได้`
-    private releaseDate: string = '4 April 2017';
+    private releaseDate: string = '3 May 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/calendar';
-    private credit: string = 'primeng (2.0.5)';   
+    private credit: string = 'primeng (4.0.0-rc.2)';   
+    private releaseUpdate = _releaseUpdate;
 
     private prefixSyntax: string = '<go-datetimepicker';
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;

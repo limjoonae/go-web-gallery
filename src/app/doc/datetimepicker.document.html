@@ -26,6 +26,14 @@
 					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-datetimepicker/issues" target="_blank">Report Issue</a></div>
 				</div>
 			</div>
+			<div class="jumbotron">
+				<div class="card-title">
+					<h2> Release Update </h2>
+				</div>
+				<div class="card-block">
+					<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>		
+				</div>
+			</div>
 		</div>
 	</div>
   	<div role="tabpanel" class="tab-pane fade" id="Document">
