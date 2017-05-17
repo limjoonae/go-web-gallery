@@ -7,7 +7,7 @@ a { color: #990000!important;}
 a:focus, a:hover { color: #cc0000!important;}
 a.btn, a.btn:focus, a.btn:hover { color: #ffffff!important;}
 nav ul li.nav-item.active a.nav-link { font-weight: bold;}
-nav small.project-name, a.nav-link, a.dropdown-item { color: #990000!important;}
+nav small#projectName, a.nav-link, a.dropdown-item { color: #990000!important;}
 a.nav-link:focus, a.nav-link:hover { color: #cc0000!important;}
 nav div.dropdown-menu, .card, .card-header, ul.nav.nav-tabs {border-color:#990000!important; }
 nav ul li div a.dropdown-item.active { background-color: #990000!important; color: #fff!important;}
@@ -40,3 +40,17 @@ nav { margin-bottom: 1.25rem; }
     border-color:#990000!important;
 }
 
+/** available in bootstrap 4.0.0-alpha.6 **/
+.navbar-toggler-right {
+	position: absolute;
+	right: 1rem;
+}
+@media (min-width: 992px) { 
+#projectName{display:inline-block;}
+#navbarToggler{display:none;}
+#navbarSupportedContent {display:inline-block;}
+}
+@media (max-width: 990px) {
+#projectName{display:none;}
+#navbarToggler{display:block;}
+}
