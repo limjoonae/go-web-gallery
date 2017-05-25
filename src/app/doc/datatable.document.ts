@@ -342,9 +342,8 @@ const _COLS1: any = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-datatable',
-    templateUrl: 'datatable.document.html'
+    templateUrl: './datatable.document.html'
 })
 export class DataTableDocument  { 
     private componentTag: string = 'DataTable'

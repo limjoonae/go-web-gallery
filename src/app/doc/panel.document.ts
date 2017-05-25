@@ -71,9 +71,8 @@ const _EXAMPLE4: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-panel',
-    templateUrl: 'panel.document.html'
+    templateUrl: './panel.document.html'
 })
 export class PanelDocument  { 
     private componentTag: string = 'Panel'

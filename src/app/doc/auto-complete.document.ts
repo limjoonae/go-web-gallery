@@ -37,7 +37,6 @@ const APPMODULELINE: Array<any> = [
 
 
 @Component({
-  moduleId: module.id,
   selector: 'auto-complete-document',
   templateUrl: './auto-complete.document.html',
   // styles: [`

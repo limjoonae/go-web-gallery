@@ -62,7 +62,6 @@ const APPMODULELINE: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'textarea-document',
   templateUrl: './textarea.document.html',
   styleUrls: ['./textarea.document.css']

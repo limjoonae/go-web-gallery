@@ -117,9 +117,8 @@ const _EXAMPLE4: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-accordion',
-    templateUrl: 'accordion.document.html'
+    templateUrl: './accordion.document.html'
 })
 export class AccordionDocument  { 
     private componentTag: string = 'Accordion'

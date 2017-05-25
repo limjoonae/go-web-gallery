@@ -241,7 +241,6 @@ const _EXAMPLE8: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-datetimepicker',
     templateUrl: './datetimepicker.document.html'
 })

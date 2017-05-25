@@ -29,7 +29,6 @@ const TABLELIST: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'font-document',
   templateUrl: './font.document.html',
   styleUrls: ['./font.document.css']

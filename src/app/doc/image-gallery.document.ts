@@ -55,7 +55,6 @@ const STYLELINE_CSS: Array<any> = [
 ];
 
 @Component({
-    moduleId: module.id,
     selector: 'image-gallery-document',
     templateUrl: './image-gallery.document.html'
 })

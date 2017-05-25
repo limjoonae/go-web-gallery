@@ -118,9 +118,8 @@ const _styleLine_css: Array<any> = [
 ];
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-galleria',
-    templateUrl: 'galleria.document.html'
+    templateUrl: './galleria.document.html'
 })
 export class GalleriaDocument  { 
     private componentTag: string = 'Galleria'

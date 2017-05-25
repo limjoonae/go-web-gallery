@@ -45,7 +45,6 @@ const APPMODULELINE: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'badge-document',
   templateUrl: './badge.document.html',
 })

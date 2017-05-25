@@ -61,7 +61,6 @@ const APPMODULELINE: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'button-document',
   templateUrl: './button.document.html',
   styleUrls: ['./button.document.css']

@@ -42,12 +42,11 @@ const _releaseUpdate_v_2: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
-  selector: 'textbox-document',
-  templateUrl: './textbox.document.html',
+    selector: 'app-test',
+    templateUrl: './textbox.document.html'
 })
-export class TextboxDocument implements OnInit {
 
+export class TextboxDocument implements OnInit {
   private componentTag: string = '<go-textbox>';
   private componentDescription: string = `Text box ใช้ในการรับค่าและแสดงผลข้อมูลตามประเภทต่างๆ`;
   private version: string = '2.0';
@@ -101,5 +100,4 @@ export class TextboxDocument implements OnInit {
     console.log('formValue:',formValue);
   }
     myInput: string;
-
 }

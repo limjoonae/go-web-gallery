@@ -76,7 +76,6 @@ const APPMODULELINE: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'upload-example',
     templateUrl: './upload.document.html'
 })

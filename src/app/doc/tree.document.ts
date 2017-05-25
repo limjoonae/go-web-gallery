@@ -173,9 +173,8 @@ private data =
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-tree',
-    templateUrl: 'tree.document.html'
+    templateUrl: './tree.document.html'
 })
 export class TreeDocument  { 
     private componentTag: string = 'Tree'

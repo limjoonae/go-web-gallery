@@ -146,9 +146,8 @@ const _EXAMPLE4: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-tab',
-    templateUrl: 'tab.document.html'
+    templateUrl: './tab.document.html'
 })
 export class TabDocument  { 
     private componentTag: string = 'Tab'

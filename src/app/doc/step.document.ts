@@ -128,9 +128,8 @@ const _EXAMPLE4: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-step',
-    templateUrl: 'step.document.html'
+    templateUrl: './step.document.html'
 })
 export class StepDocument  { 
 

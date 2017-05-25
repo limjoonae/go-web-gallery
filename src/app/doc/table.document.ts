@@ -87,9 +87,8 @@ const APPMODULELINE: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'table-document',
-    templateUrl: 'table.document.html'
+    templateUrl: './table.document.html'
 })
 export class TableDocument {
 

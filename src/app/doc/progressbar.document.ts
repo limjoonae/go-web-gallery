@@ -40,9 +40,8 @@ const APPMODULELINE: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'progressbar-document',
-    templateUrl: 'progressbar.document.html'
+    templateUrl: './progressbar.document.html'
 })
 export class ProgressbarDocument {
 

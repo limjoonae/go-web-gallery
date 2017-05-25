@@ -63,7 +63,6 @@ const APPMODULELINE: Array<any> = [
 ];
 
 @Component({
-    moduleId: module.id,
     selector: 'chart-document',
     templateUrl: './chart.document.html'
 })

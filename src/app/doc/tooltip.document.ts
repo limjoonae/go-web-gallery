@@ -82,9 +82,8 @@ const _EXAMPLE4: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-tooltip',
-    templateUrl: 'tooltip.document.html'
+    templateUrl: './tooltip.document.html'
 })
 export class TooltipDocument  { 
     private componentTag: string = 'Tooltip'

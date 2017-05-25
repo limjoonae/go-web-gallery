@@ -166,7 +166,6 @@ const EVENTLIST: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-checkbox',
     templateUrl: './checkbox.document.html'
 })

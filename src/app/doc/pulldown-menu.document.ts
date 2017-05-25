@@ -86,7 +86,6 @@ const PAGELIST2: Array<any> = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'pulldown-menu-document',
   templateUrl: './pulldown-menu.document.html',
   styleUrls: ['./pulldown-menu.document.css']

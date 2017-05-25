@@ -84,9 +84,8 @@ const _releaseUpdate: Array<any> = [
 ];
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-dialog',
-    templateUrl: 'dialog.document.html'
+    templateUrl: './dialog.document.html'
 })
 export class DialogDocument  { 
     private componentTag: string = 'Dialog'

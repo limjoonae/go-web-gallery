@@ -196,9 +196,8 @@ const _DATAFOREXAMPLE: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-datagrid',
-    templateUrl: 'datagrid.document.html'
+    templateUrl: './datagrid.document.html'
 })
 export class DataGridDocument  { 
     private componentTag: string = 'DataGrid'

@@ -148,9 +148,8 @@ const GETTINGSTART: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-radiobutton',
-    templateUrl: 'radiobutton.document.html'
+    templateUrl: './radiobutton.document.html'
 })
 export class RadioButtonDocument  { 
 

@@ -54,7 +54,6 @@ const APPMODULELINE: Array<any> = [
 ];
 
 @Component({
-    moduleId: module.id,
     selector: 'texteditor-document',
     templateUrl: './texteditor.document.html'
 })

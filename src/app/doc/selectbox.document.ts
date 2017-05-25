@@ -236,9 +236,8 @@ const APPMODULELINE: Array<any> = [
  ];
 
 @Component({
-    moduleId: module.id,
     selector: 'doc-selectbox',
-    templateUrl: 'selectbox.document.html',
+    templateUrl: './selectbox.document.html',
     styles: [`colorbox,.colorbox { display:inline-block; height:14px; width:14px;margin-right:4px; border:1px solid #000;}`],
     encapsulation: ViewEncapsulation.None
 })

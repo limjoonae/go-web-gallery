@@ -51,9 +51,8 @@ const APPMODULELINE: Array<any> = [
 
 
 @Component({
-    moduleId: module.id,
     selector: 'sidebar-document',
-    templateUrl: 'sidebar.document.html'
+    templateUrl: './sidebar.document.html'
 })
 export class SidebarDocument {
 
