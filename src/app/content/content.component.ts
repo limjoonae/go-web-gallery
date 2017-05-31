@@ -120,6 +120,9 @@ export class ContentComponent implements OnInit {
         {title:'Id', name:'no', sort:'asc'},
         {title:'Date Started', name:'startDate', dateFormat: 'dd/mm/yy'}
   ]; 
+
+  textbox_1: number;
+
   private dataOfTable: Array<any> = [
         {'name':'Abc', 'surname':'<b>Cba</b>', 'no':'02', 'startDate':new Date('2015/7/8')},
         {'name':'Bar', 'surname':'<i>Foo</i>', 'no':'03', 'startDate':new Date('2015/7/7')},

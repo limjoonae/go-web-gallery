@@ -111,7 +111,7 @@
 			<div class="card">
 				<h3 class="card-header">go-checkbox</h3>
 				<div class="card-block component">
-					<go-checkbox name="chbnames1" id="chbid1" label="Choose expertise: " type="block" [data]="datas" block="block" colorTheme="warning" require="true">  check </go-checkbox>
+					<go-checkbox id="chbid1" label="Choose expertise: " type="block" [(ngModel)]="datas" block="block" colorTheme="warning" require="true">  check </go-checkbox>
 				</div>
 				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/checkbox']" label="How to use" buttonColor="danger"></go-button>
@@ -301,7 +301,7 @@
 			<div class="card">
 				<h3 class="card-header">go-textbox</h3>
 				<div class="card-block component">
-					<go-textbox type="number" label="Number with Validation" require="true" id="textbox_1" placeholder="put valid number"></go-textbox>
+					<go-textbox type="currency" [(ngModel)]="textbox_1" goId="textbox_1" placeholder="put valid currency"></go-textbox>
 				</div>
 				<div class="card-block align-center">
 					<go-button routerLinkActive="active" [routerLink]="['/textbox']" label="How to use" buttonColor="danger"></go-button>
