@@ -1,6 +1,7 @@
 body {color: #990000!important;}
 a, pre { color: #990000!important;}
 pre {background-color: rgb(247,247,249)!important;}
+.loading-img {margin-left: 35rem; margin-top: 10rem;}
 .navbar-footer {border-color:#990000!important;}
 .jumbotron {background-color: #ffffff!important; padding: 2rem 2rem 0 2rem!important;}
 a { color: #990000!important;}
