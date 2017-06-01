@@ -9,6 +9,8 @@
       'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
       'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/2.0.0/',
       'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/',
+      // 'go:': '/dist2/',
+      // 'lib:': '/dist2/',
     },
     // map tells the System loader where to look for things
     map: {
