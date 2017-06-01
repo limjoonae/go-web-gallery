@@ -108,8 +108,9 @@
 							type="block" 
 							colorTheme="success" 
 							require="true">  check </go-checkbox>
-					<p> <strong> Output value: </strong> {{getValue}}  <label *ngFor="let d of datas1"> {{d.value}} , </label></p>
-					<p> <strong> Output label: </strong> {{getLabel}}  <label *ngFor="let d of datas1"> {{d.label}} , </label> </p>
+					<p> <strong> Output value: </strong> {{getValue}}  <label *ngFor="let d of datas1"> <label *ngIf="d.checked"> {{d.value}} , </label></label></p>
+					<p> <strong> Output label: </strong> {{getLabel}}  <label *ngFor="let d of datas1"> <label *ngIf="d.checked"> {{d.label}} , </label></label> </p>
+					
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_1">
@@ -134,8 +135,8 @@
 								[(ngModel)]="datas2"  
 								colorTheme="warning"
 								>  check </go-checkbox>
-					<p> <strong> Output value: </strong> {{getValue}}  <label *ngFor="let d of datas2"> {{d.value}} , </label> </p>
-					<p> <strong> Output label: </strong> {{getLabel}}  <label *ngFor="let d of datas2"> {{d.label}} , </label> </p>
+					<p> <strong> Output value: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.value}} , </label></label> </p>
+					<p> <strong> Output label: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.label}} , </label></label> </p>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_2">
@@ -158,14 +159,14 @@
                     <go-checkbox name="chbnames3" 
 								id="chbid3" 
 								label="Select Checkbox: " 
-								[(ngModel)]="datas3"  
-								type="column" 
+								[(ngModel)]="datas3"
+								type="column"
 								[col]="3" 
 								colorTheme="danger" 
 								require="true"
 					>  check </go-checkbox>
-					<p> <strong> Output value: </strong> {{getValue}} <label *ngFor="let d of datas3"> {{d.value}} , </label></p>
-					<p> <strong> Output label: </strong> {{getLabel}} <label *ngFor="let d of datas3"> {{d.label}} , </label></p>
+					<p> <strong> Output value: </strong> {{getValue}} <label *ngFor="let d of datas3"><label *ngIf="d.checked">  {{d.value}} , </label></label></p>
+					<p> <strong> Output label: </strong> {{getLabel}} <label *ngFor="let d of datas3"><label *ngIf="d.checked">  {{d.label}} , </label></label></p>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_3">
