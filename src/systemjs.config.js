@@ -9,8 +9,6 @@
       'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
       'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/2.0.0/',
       'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/',
-      // 'go:': '/dist2/',
-      // 'lib:': '/dist2/',
     },
     // map tells the System loader where to look for things
     map: {
@@ -33,7 +31,6 @@
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
 
       // other libraries
-      // 'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
 
       //***lib for go-component***
@@ -64,9 +61,6 @@
         }
       },
       rxjs: { defaultExtension: false }
-      // rxjs: {
-      //   defaultExtension: 'js'
-      // }
     }
   });
 })(this);
