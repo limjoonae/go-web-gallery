@@ -14,7 +14,7 @@ const ATTRIBUTELIST: Array<any> = [
         หากระบุค่า disable="true" จะไม่สามารถใช้งานหรือ copy ข้อความใน textbox ได้`},
     { require: '', name: 'readonly', type: 'boolean', description: `ใช้กำหนดให้ไม่สามารถแก้ไขข้อมูลใน text box ได้`},
     { require: '', name: 'maxlength', type: 'number', description: `ใช้กำหนดความยาวตัวอักษรสูงสุดที่สามารถพิมพ์ได้ใน text box 
-        หากไม่ระบุจะมีค่า = 524288 ตัวอักษร`},
+        หากไม่ระบุจะมีค่า = 524288 ตัวอักษร **ไม่สามารถใช้กับ textbox type="number" ได้ ตามความสามารถของ HTML**`},
     { require: '', name: 'placeholder', type: 'text', description: `ใช้กำหนดข้อความตัวอย่างใน textbox สามารถใช้แทน label ได้`},
     { require: '', name: 'colorTheme', type: 'text', description: `ใช้กำหนดสีของ text box โดยค่าที่สามารถระบุได้ ประกอบด้วย
         success=สีเขียว, info=สีฟ้า, warning=สีส้ม, danger=สีแดง`},
@@ -41,16 +41,21 @@ const _releaseUpdate_v_2: Array<any> = [
   { head: ``, data: `ปรับลดความสูงของ textbox แบบมีสีให้เท่ากับ textbox แบบไม่มีสี` },
 ];
 
-@Component({
-    selector: 'app-test',
-    templateUrl: './textbox.document.html'
-})
+const _releaseUpdate_v_2_0_1: Array<any> = [
+  { head: ``, data: `แก้ไข customRegExp แสดงผลการ validate เพี้ยนตอน onBlur` },
+  { head: ``, data: `แก้ไขให้ currency box แสดงค่าตาม number format ตั้งแต่เริ่มต้น` },
+];
 
+@Component({
+  selector: 'textbox-document',
+  templateUrl: './textbox.document.html',
+})
 export class TextboxDocument implements OnInit {
+
   private componentTag: string = '<go-textbox>';
   private componentDescription: string = `Text box ใช้ในการรับค่าและแสดงผลข้อมูลตามประเภทต่างๆ`;
   private version: string = '2.0';
-  private releaseDate: string = '3 May 2017';
+  private releaseDate: string = '5 June 2017';
   private prefixSyntax: string = `<go-textbox `;
   private attrSyntax: string = `type="type_name" [(ngModel)]="input_variable" [name="textbox_name"] [required] [#name="ngModel"] [goId="textbox_id"]
             [format="format_pattern"] [disable="true"] [readonly="true"] [maxlength="number"] [placeholder="text"] [colorTheme="text"] [warningText="text"]
@@ -61,12 +66,8 @@ export class TextboxDocument implements OnInit {
   private typeDescription = 'รายละเอียดของ text box ใน type ต่างๆดังต่อไปนี้';
   private numeralJSVersion = '2.0.4';
   private regExp = /^[a-zA-Z0-9]{8}$/g;
-  private releaseUpdate_v_2: Array<any> = [
-    { head: ``, data: `เปลี่ยนวิธีการรับส่งข้อมูลจาก attribute [(defaultValue)] เป็น [(ngModel)] เพื่อให้รองรับการทำงานร่วมกับ form validation` },
-    { head: ``, data: `เปลี่ยนชื่อ textbox type จาก number เป็น currency และ integer เป็น number เพื่อให้สอดคล้องตามรูปแบบของ HTML` },
-    { head: ``, data: `ลบ label ออกจาก textbox เพื่อความยืดหยุ่นในการจัดวาง layout` },
-    { head: ``, data: `ปรับลดความสูงของ textbox แบบมีสีให้เท่ากับ textbox แบบไม่มีสี` },
-  ];
+  private releaseUpdate_v_2 = _releaseUpdate_v_2;
+  private releaseUpdate_v_2_0_1 = _releaseUpdate_v_2_0_1
 
   paramText = '{{userName_1}}';
   isValidFlag: boolean;
@@ -100,4 +101,5 @@ export class TextboxDocument implements OnInit {
     console.log('formValue:',formValue);
   }
     myInput: string;
+
 }
