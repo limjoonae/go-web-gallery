@@ -28,7 +28,6 @@ import { GalleriaDocument } from './doc/galleria.document';
 import { FontDocument } from './doc/font.document';
 import { ImageGalleryDocument } from './doc/image-gallery.document';
 import { PanelDocument } from './doc/panel.document';
-// import { PopupDocument } from './doc/popup.document';
 import { ProgressbarDocument } from './doc/progressbar.document';
 import { PulldownMenuDocument } from './doc/pulldown-menu.document';
 import { RadioButtonDocument } from './doc/radiobutton.document';
