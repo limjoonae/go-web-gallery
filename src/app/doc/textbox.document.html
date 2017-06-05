@@ -22,7 +22,7 @@
 						<li>ใช้งานร่วมกับ form validation ได้</li>
 						<li>ระบุรูปแบบข้อมูลของ textbox type currency ได้</li>
 						<li>ระบุ regular expression ที่ต้องการใช้ validate ข้อมูลได้</li>
-						<li>กำหนดให้เป็น textbox ที่ถูกปิด(disable) หรืออ่านได้อย่างเดียว(readoonly) ได้</li>
+						<li>กำหนดให้เป็น textbox ที่ถูกปิด(disable) หรืออ่านได้อย่างเดียว(readonly) ได้</li>
 						<li>กำหนดความยาวสูงสุดในการรับข้อมูลได้</li>
 						<li>ใส่สีให้กับ textbox ได้</li>
 						<li>กำหนดข้อความเตือน และตำแหน่งของข้อความได้</li>
@@ -172,7 +172,7 @@
 			<div class="row row-in-tab">
 				<div class="col-md-3">
 					<label><strong>Currency box with tooptip positioning</strong></label>
-					<go-textbox type="currency" [(ngModel)]="currency_box" goId="currency_box"></go-textbox>
+					<go-textbox type="currency" [(ngModel)]="currency_box" goId="currency_box" warningPos="bottom" warningText="กรุณาระบุรูปแบบตัวเลขให้ถูกต้อง"></go-textbox>
 					<small>*ทดสอบโดยการระบุตัวอักษรลงไปและเอาเม้าส์ชี้*</small>
 				</div>
 				<div class="col-md-9">
