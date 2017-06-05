@@ -47979,11 +47979,12 @@ var TextboxComponent = (function () {
     };
     //// ControlValueAccessor implementation
     TextboxComponent.prototype.writeValue = function (value) {
-        // if(this.type == 'currency') {
-        //   this.value = this.getCurrencyFormat(value);
-        // } else {
-        this.value = value;
-        // }
+        if (this.type == 'currency') {
+            this.value = this.getCurrencyFormat(value);
+        }
+        else {
+            this.value = value;
+        }
         this.updateInputfield();
     };
     TextboxComponent.prototype.registerOnChange = function (fn) {
@@ -48025,8 +48026,8 @@ var TextboxComponent = (function () {
         if (val == '' && required) {
             this.setRequireBorder();
         }
-        else {
-            this.validateInput(val);
+        if (this.type == 'currency') {
+            this.validateCurrency(val);
         }
         this.focus = false;
         this.onBlur.emit(event);
