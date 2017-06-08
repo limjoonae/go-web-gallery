@@ -266,7 +266,7 @@ const _EXAMPLE4: Array<any> = [
 const _EXAMPLE5: Array<any> = [
   { data: `app.component.html` },
   { data: `
-<p-dataTable #dt [value]="dataTable1" exportFilename="dataTableEX5" scrollable="true" scrollHeight="200px">
+<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight={{scrollHeightCal(dataTable5)}}>
   <p-header>
     <div >
       <go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
@@ -277,6 +277,23 @@ const _EXAMPLE5: Array<any> = [
   <p-column field="brand" header="Brand"></p-column>
   <p-column field="color" header="Color"></p-column>
 </p-dataTable>
+
+component.ts
+
+ scrollHeightCal(data : Array<any>) : string{
+      let scrollHeight : number;
+      let enlargeScroll : number;
+      enlargeScroll = data.length / 5;
+      if(enlargeScroll > 1){
+        scrollHeight = this.defaultScrollHeight + 100 * (enlargeScroll - 1);
+        return scrollHeight + 'px';
+          } 
+      else
+      return '100px';
+    }
+
+
+
 ` }
 ];
 
@@ -381,13 +398,27 @@ export class DataTableDocument  {
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
 
+    
+    private defaultScrollHeight : number = 100;
     private selectedDatas: Array<any>;
 
 
     private stacked: boolean;
-
+    
     toggle() {
         this.stacked = !this.stacked;
+    }
+
+    scrollHeightCal(data : Array<any>) : string{
+      let scrollHeight : number;
+      let enlargeScroll : number;
+      enlargeScroll = data.length / 5;
+      if(enlargeScroll > 1){
+        scrollHeight = this.defaultScrollHeight + 100 * (enlargeScroll - 1);
+        return scrollHeight + 'px';
+          } 
+      else
+      return '100px';
     }
 
 }

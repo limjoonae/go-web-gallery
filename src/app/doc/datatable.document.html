@@ -274,7 +274,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Scroll &amp; Export CSV</h4>
-						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="200px">
+						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight={{scrollHeightCal(dataTable5)}}>
 							<p-header>
 								<div >
 									<go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
