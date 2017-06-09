@@ -39,31 +39,10 @@ const PAGELIST: Array<any> = [
 })
 export class HeaderComponent implements OnInit {
 
-  //** * Registeration
-  private registerDialogDisplay : boolean = false;
-  private title: string = "Registeration";
-  private isShowHeader: boolean = true;
-  private isDraggable: boolean = true;
-  private isClosable: boolean = true;
-  private isResponsive: boolean = true;    
-  private isModal: boolean = true;
-  private width: number = 600;
-  private height: number = 450;
-  private body: string = '';
-
-  private user_name : string;
-  private dept_name : string;
-  private user_email : string;
-
   pageList = PAGELIST;
   constructor() { }
 
   ngOnInit() {
   }
-  //**Register */
-  registerDialog(){
-    this.registerDialogDisplay = true;
-  }
-  
   
 }
