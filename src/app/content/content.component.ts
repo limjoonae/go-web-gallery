@@ -201,7 +201,7 @@ export class ContentComponent implements OnInit {
   private isClosable: boolean = false;
   private isResponsive: boolean = true;    
   private isModal: boolean = true;
-  private width: number = 400;
+  private width: number = 300;
   private height: number = 200;
   //private body: string = '';
 
