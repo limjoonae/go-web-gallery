@@ -13,7 +13,7 @@
 					<div class="row" style="margin-top: 1rem;">
 						<div class="col-sm-12 col-md-12 col-lg-12">
 						<h5>Component Pack</h5>
-						<p>สามารถใช้งาน component ได้ง่ายขึ้น เพียงเรียกใช้ไฟล์ gomodule.umd.js และ libmodule.umd.js ดูตัวอย่างการเใช้งานได้ที่ <a [routerLink]="['gettingstart']"><strong><em>Getting Start</em></strong></a> ที่เมนู Existing Angular Project</p>
+						<p>สามารถใช้งาน component ได้ง่ายขึ้น เพียงเรียกใช้ไฟล์ gomodule.umd.js และ libmodule.umd.js ดูตัวอย่างการเใช้งานได้ที่ <a [routerLink]="['gettingstart']"><strong><em>Getting Start</em></strong></a> ที่เมนู Existing Angular Project</p><br><br><br><br><br><br><br>
 						</div>
 					</div>
 				</div>
@@ -23,8 +23,8 @@
 			<div class="card">
 				<h3 class="card-header">Registeration</h3>
 				<div class="card-block">
-					Name
-					<go-textbox type="text" [(ngModel)]="user_name" name="user"  goId="user_id" placeholder="username"  required goId="user_id"></go-textbox><br>
+					Name - Surname
+					<go-textbox type="text" [(ngModel)]="user_name" name="user"  goId="user_id" placeholder="name and surname"  required goId="user_id"></go-textbox><br>
 					Department
 					<go-textbox type="text" [(ngModel)]="dept_name" name="dept"  goId="dept_id" placeholder="department name"  required goId="dept_id"></go-textbox><br>
 					E-Mail
@@ -37,7 +37,7 @@
 										[draggable] = "false" [showHeader] = "true">
 						
 						<div class="dialog" align="center">
-							<font size = '4' color = 'red'>Registered!!</font>
+							<font size = '4' color = '#990000'>Registered!!</font>
 						</div>
 							<p-footer>
 								<div align = 'center'>
@@ -51,7 +51,7 @@
 										[draggable] = "false" [showHeader] = "true">
 						
 						<div class="dialog" align="center">
-							<font size = '4' color = 'red'>Please fill the correct data.</font>
+							<font size = '4' color = '#990000'>Please fill the correct data.</font>
 						</div>
 							<p-footer>
 								<div align = 'center'>

@@ -68,32 +68,5 @@
 						</div>
 					</li>-->
       </ul>
-     <div align="right">
-     <go-button id="register_button" name="registerButton" label='Register' buttonColor='danger' (click) = 'registerDialog()'></go-button>
-     	<div class="dialog" align='left'>
-							<p-dialog [header]="title" [visible]="registerDialogDisplay"
-              [modal] = "isModal" [width] = "width" [height] = "height" 
-										[closable] = 'false'[responsive] = "isResponsive"
-										[draggable] = "false" [showHeader] = "true">
-                    
-                     <div align='left'>
-                     <font color='#990000'>Name</font><br>
-                 <go-textbox type="text" [(ngModel)]="user_name" name="user"  goId="user_id" placeholder="username"  required goId="user_id"></go-textbox><br>
-                     <font color='#990000'>Department</font><br>
-                   <go-textbox type="text" [(ngModel)]="dept_name" name="dept"  goId="dept_id" placeholder="department name"  required goId="dept_id"></go-textbox><br>
-                     <font color='#990000'>E-Mail</font><br>
-                  <go-textbox type="email" [(ngModel)]="user_email" name="email"  goId="email_id" placeholder="example@host.com"  required #email_1="ngModel" ></go-textbox>
-                  </div>
-                  <br><font size='2' color='red'>* Please Fill in English</font>
-                            <p-footer>
-                            	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                        
-									<go-button label="close" iconName="close" buttonColor="danger" (click)="registerDialogDisplay=false" ></go-button>
-									<go-button label="submit" iconName="check" buttonColor="danger" (click)="submitData()" ></go-button>
-                                </div>
-                            </p-footer>
-                        </p-dialog>
-						</div>
-     </div>
   </div>
 </nav>

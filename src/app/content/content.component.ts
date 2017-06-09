@@ -186,7 +186,7 @@ export class ContentComponent implements OnInit {
       this.progress_1 = 100;
   }
 
-  //*registeration  
+  // ** registeration *  
   private user_name : string;
   private dept_name : string;
   private user_email : string;
@@ -206,7 +206,7 @@ export class ContentComponent implements OnInit {
   //private body: string = '';
 
   submitData(){          
- if(this.user_name != undefined && this.dept_name != undefined && this.user_email != undefined && this.mailSyntaxCheck(this.user_email)){
+ if(this.user_name != undefined && this.dept_name != undefined && this.user_email != undefined){
     console.log(this.user_name);
     console.log(this.dept_name);
     console.log(this.user_email);
@@ -227,25 +227,33 @@ export class ContentComponent implements OnInit {
     this.user_email = undefined; 
     
   }
-  
+/*
   mailSyntaxCheck(mail:string) : boolean{
     let result : boolean;
     let assignCheck : boolean = false;
     let stop : number = 0;
     for(let i = 0 ; i < mail.length ; i++){
       if(mail.substring(i,i + 1) == "@"){
+        if(mail.substring(i - 1,i)=='.'){
+          result = false;
+          break;
+        }
+        else if(mail.substring(i+1,i+2) == '.'){
+          result = false;
+          break;
+        }
         stop = i;
         assignCheck = true;
         break;
       }  
   }
     for(let i = stop ; i < mail.length; i++){
-      if(mail.substring(i,i + 1) == '.' && i != (mail.length - 1) && assignCheck){
+      if(mail.substring(i,i + 1) == '.' && i!= mail.length - 2 && assignCheck){
         result = true;
-        break;
       }
       else result = false;
     }
     return result;
   }
+  */
 }

@@ -65,15 +65,5 @@ export class HeaderComponent implements OnInit {
     this.registerDialogDisplay = true;
   }
   
-  submitData(){          
- if(this.user_name != undefined && this.dept_name != undefined && this.user_email != undefined){
-    console.log(this.user_name);
-    console.log(this.dept_name);
-    console.log(this.user_email);
-    this.user_name = undefined;
-    this.dept_name = undefined;
-    this.user_email = undefined; 
-    }
- this.registerDialogDisplay = false;
-  }
+  
 }
