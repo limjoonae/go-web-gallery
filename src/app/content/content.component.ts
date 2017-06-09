@@ -186,4 +186,66 @@ export class ContentComponent implements OnInit {
       this.progress_1 = 100;
   }
 
+  //*registeration  
+  private user_name : string;
+  private dept_name : string;
+  private user_email : string;
+  
+  
+  private registerDialogDisplay : boolean = false;
+  private errorDialogDisplay : boolean = false;
+  private title: string = "Registeration Comfirm";
+  private errorTitle : string = "Error";
+  private isShowHeader: boolean = true;
+  private isDraggable: boolean = false;
+  private isClosable: boolean = false;
+  private isResponsive: boolean = true;    
+  private isModal: boolean = true;
+  private width: number = 400;
+  private height: number = 200;
+  //private body: string = '';
+
+  submitData(){          
+ if(this.user_name != undefined && this.dept_name != undefined && this.user_email != undefined && this.mailSyntaxCheck(this.user_email)){
+    console.log(this.user_name);
+    console.log(this.dept_name);
+    console.log(this.user_email);
+    this.user_name = undefined;
+    this.dept_name = undefined;
+    this.user_email = undefined; 
+    this.registerDialogDisplay = true;  
+  }
+  else{
+    this.errorDialogDisplay = true;
+    }
+  }
+
+  clearText(){          
+ 
+    this.user_name = undefined;
+    this.dept_name = undefined;
+    this.user_email = undefined; 
+    
+  }
+  
+  mailSyntaxCheck(mail:string) : boolean{
+    let result : boolean;
+    let assignCheck : boolean = false;
+    let stop : number = 0;
+    for(let i = 0 ; i < mail.length ; i++){
+      if(mail.substring(i,i + 1) == "@"){
+        stop = i;
+        assignCheck = true;
+        break;
+      }  
+  }
+    for(let i = stop ; i < mail.length; i++){
+      if(mail.substring(i,i + 1) == '.' && i != (mail.length - 1) && assignCheck){
+        result = true;
+        break;
+      }
+      else result = false;
+    }
+    return result;
+  }
 }

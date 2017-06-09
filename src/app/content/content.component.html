@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-12">
+		<div class="col-sm-12 col-md-12 col-lg-8">
 			<div class="card">
 				<h3 class="card-header">What's New!!</h3>
 				<div class="card-block">
@@ -17,6 +17,54 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-4">
+			<div class="card">
+				<h3 class="card-header">Registeration</h3>
+				<div class="card-block">
+					Name
+					<go-textbox type="text" [(ngModel)]="user_name" name="user"  goId="user_id" placeholder="username"  required goId="user_id"></go-textbox><br>
+					Department
+					<go-textbox type="text" [(ngModel)]="dept_name" name="dept"  goId="dept_id" placeholder="department name"  required goId="dept_id"></go-textbox><br>
+					E-Mail
+					<go-textbox type="email" [(ngModel)]="user_email" name="email"  goId="email_id" placeholder="example@host.com"  required #email_1="ngModel" ></go-textbox><br>
+					<font size='2' color='red'>* Please Fill in English</font><br>
+					
+					 	<p-dialog [header]="title" [visible]="registerDialogDisplay"
+              			[modal] = "isModal" [width] = "width" [height] = "height" 
+										[closable] = 'false'[responsive] = "isResponsive"
+										[draggable] = "false" [showHeader] = "true">
+						
+						<div class="dialog" align="center">
+							<font size = '4' color = 'red'>Registered!!</font>
+						</div>
+							<p-footer>
+								<div align = 'center'>
+								<go-button label="close" iconName="close" buttonColor="danger" (click)="registerDialogDisplay=false" ></go-button>
+								</div>	
+							</p-footer>
+					 	</p-dialog>
+						 <p-dialog [header]="errorTitle" [visible]="errorDialogDisplay"
+              			[modal] = "isModal" [width] = "width" [height] = "height" 
+										[closable] = 'false'[responsive] = "isResponsive"
+										[draggable] = "false" [showHeader] = "true">
+						
+						<div class="dialog" align="center">
+							<font size = '4' color = 'red'>Please fill the correct data.</font>
+						</div>
+							<p-footer>
+								<div align = 'center'>
+								<go-button label="close" iconName="close" buttonColor="danger" (click)="errorDialogDisplay=false" ></go-button>
+								</div>	
+							</p-footer>
+					 	</p-dialog>
+				</div>
+				<div align = right>
+					<go-button label="Submit" iconName="check" buttonColor="danger" (click)="submitData()" ></go-button>
+					<go-button label="Clear"  buttonColor="danger" (click)="clearText()" ></go-button><br>
+				</div>
+				<div><br></div>
 			</div>
 		</div>
 	</div>

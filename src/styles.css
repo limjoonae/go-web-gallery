@@ -55,3 +55,9 @@ nav { margin-bottom: 1.25rem; }
 #projectName{display:none;}
 #navbarToggler{display:block;}
 }
+
+body .ui-widget-header{
+    background: #990000;
+    color : #ffffff;
+    font-size: 1.25em;
+}
