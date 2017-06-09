@@ -1,7 +1,7 @@
 body {color: #990000!important;}
 a, pre { color: #990000!important;}
 pre {background-color: rgb(247,247,249)!important;}
-.loading-img {margin-left: 35rem; margin-top: 10rem;}
+/*.loading-img {margin-left: 30rem; margin-top: 10rem;}*/
 .navbar-footer {border-color:#990000!important;}
 .jumbotron {background-color: #ffffff!important; padding: 2rem 2rem 0 2rem!important;}
 a { color: #990000!important;}
@@ -47,11 +47,13 @@ nav { margin-bottom: 1.25rem; }
 	right: 1rem;
 }
 @media (min-width: 992px) { 
+.loading-img {margin-left: 40%; margin-top: 10rem;}
 #projectName{display:inline-block;}
 #navbarToggler{display:none;}
 #navbarSupportedContent {display:inline-block;}
 }
 @media (max-width: 990px) {
+.loading-img {margin-left: 4rem; margin-top: 10rem;}
 #projectName{display:none;}
 #navbarToggler{display:block;}
 }
