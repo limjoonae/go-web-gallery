@@ -19,15 +19,12 @@ export class GettingStartComponent  {
         {},
     ];
     setupNodejs:Array<any> = [
-        // { data: `1. เข้าเว็บไซต์ https://nodejs.org `},
         { data: `2.	ทำการติดตั้ง Node.js เมื่อทำการติดตั้ง Node.js จะได้ Node และตัว npm (Node Package Manager) ซึ่งเป็นตัวจัดการ package/module ต่าง ๆ ของ Node มาด้วย`},
         { code:`node –v`, data: `3.	ตรวจสอบว่าเราทำการติดตั้ง Node.js สมบูรณ์หรือไม่ โดยการเช็คเวอร์ชันด้วยคำสั่งนี้`},
         { code:`npm -v`, data: `4.	ตรวจเช็คเวอร์ชัน npm `},
     ];
 
     setupGit:Array<any> = [
-        // {image: `image/1-setupGit.jpg`, data: `1.	ติดตั้ง Git สำหรับ Windows โดยดาวน์โหลดจาก git-scm.com`},
-        // {data: `2.	คลิกขวา เลือก Run as administrator เพื่อเข้าสู่ขั้นตอนการติดตั้ง (ดูรายละเอียดการติดตั้งได้ที่ http://www.artit-k.com/dev-install-git-for-windows)`},
         {image: `image/setupGit-4.jpg`, data: `3.	หลังจากติดตั้ง Git เรียบร้อย สามารถตรวจสอบ version ของ git ได้ โดยใน Git GUI สามารถดูได้ที่เมนู Help > About Git Gui`},
         {code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
     ];
@@ -38,7 +35,6 @@ export class GettingStartComponent  {
         { code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`, data: `3.	พิมพ์คำสั่งเพื่อสร้างโปรเจคใหม่ ดังนี้ `},
         { data: `4.	เมื่อ clone เสร็จแล้ว จะได้โปรเจค`},
         { data: `5. เปิด cmd ขึ้นมาใน path project แล้ว set proxy ด้วยคำสั่งต่อไปนี้ `, code: `npm config set registry http://registry.npmjs.org -g`},
-        // { code: `npm config set registry http://registry.npmjs.org -g`},
         { data: `6. install npm ลงในโปรเจค` , code: `npm --proxy http://aduser:adpass@10.182.255.166:8080 install`},
         { data: `7. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
         { data: ``, code: ``},
