@@ -14,7 +14,7 @@ import { Component, Input } from '@angular/core';
 })
 export class GettingStartComponent  { 
 
-    releaseDate:string = '10 April 2017';
+    releaseDate:string = '12 May 2017';
     prerequisiteInstall: Array<any> = [
         {},
     ];
