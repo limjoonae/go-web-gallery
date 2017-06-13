@@ -29,11 +29,17 @@
                     <div class="card-block">
                         <p> 1.	ติดตั้ง Git สำหรับ Windows โดยดาวน์โหลดจาก <a href="https://git-scm.com/downloads" target="_blank" > git-scm.com </a></p>
                         <p> 2.	คลิกขวา เลือก Run as administrator เพื่อเข้าสู่ขั้นตอนการติดตั้ง (ดูรายละเอียดการติดตั้งได้ที่ <a href="http://www.artit-k.com/dev-install-git-for-windows" target="_blank" > http://www.artit-k.com/dev-install-git-for-windows</a> ) </p>
-                        <p *ngFor="let data of setupGit"> 
-                             {{data.data}} <br>
-                            <code *ngIf="data.code != null"> {{data.code}} </code> 
-                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
-                        </p>
+                        <div *ngFor="let data of setupGit"> 
+                            <p> {{data.data}} </p>
+                            <code *ngIf="data.code != null"> {{data.code}} </code>
+                        </div>
+                    </div>
+                    <h3 class="card-header"><strong> การ set proxy git และ npm </strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of setProxy"> 
+                             <p>{{data.data}}</p>
+                            <pre> <code *ngIf="data.code != null"> {{data.code}} </code> </pre>
+                        </div>
                     </div>
                 </div>
 
@@ -51,11 +57,11 @@
                 <div role="tabpanel" class="tab-pane fade" id="createProjectAngular2">
                     <h3 class="card-header"><strong> การสร้าง Project Angular </strong></h3>
                     <div class="card-block">
-                        <p *ngFor="let data of createProjectAngular"> 
-                             {{data.data}} <br>
-                            <code *ngIf="data.code != null"> {{data.code}} </code> 
+                        <div *ngFor="let data of createProjectAngular">
+                            <p> {{data.data}} </p>
+                            <pre><code *ngIf="data.code != null"> {{data.code}} </code></pre>
                             <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
-                        </p>
+                        </div>
                     </div>
                 </div>
 

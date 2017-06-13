@@ -25,21 +25,24 @@ export class GettingStartComponent  {
     ];
 
     setupGit:Array<any> = [
-        {image: `image/setupGit-4.jpg`, data: `3.	หลังจากติดตั้ง Git เรียบร้อย สามารถตรวจสอบ version ของ git ได้ โดยใน Git GUI สามารถดูได้ที่เมนู Help > About Git Gui`},
-        {code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
+        // image: `image/setupGit-4.jpg`,
+        { data: `3.	หลังจากติดตั้ง Git เรียบร้อย สามารถตรวจสอบ version ของ git ได้ โดยใน Git GUI สามารถดูได้ที่เมนู Help > About Git Gui`},
+        { code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
     ];
 
     createProjectAngular:Array<any> = [
-        { data: `1.	ไปยัง directory ที่ต้องการจะสร้างโปรเจค`},
-        { image: `image/createProject001.png`, data: `2.	คลิกขวาเลือก Git Bash`},
-        { code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`, data: `3.	พิมพ์คำสั่งเพื่อสร้างโปรเจคใหม่ ดังนี้ `},
-        { data: `4.	เมื่อ clone เสร็จแล้ว จะได้โปรเจค`},
-        { data: `5. เปิด cmd ขึ้นมาใน path project แล้ว set proxy ด้วยคำสั่งต่อไปนี้ `, code: `npm config set registry http://registry.npmjs.org -g`},
-        { data: `6. install npm ลงในโปรเจค` , code: `npm --proxy http://aduser:adpass@10.182.255.166:8080 install`},
-        { data: `7. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
-        { data: ``, code: ``},
-        { data: ``, code: ``},
+        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`},
+        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั้ง` , code: `npm --proxy http://aduser:adpass@10.182.255.166:8080 install
+  หมายเหตุ aduser = user lan, adpass = password ของ user lan`},
+        { data: `3. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
     ];
+
+    setProxy: Array<any> = [
+        { data: `1. เปิด command prompt แล้ว set proxy ของ git ด้วยคำสั่งนี้`, code: `git config --global http.proxy http://aduser:adpass@10.182.255.166:8080
+  หมายเหตุ aduser = user lan, adpass = password ของ user lan`},
+        { data: `2. set proxy ของ npm`, code: `npm config set registry http://registry.npmjs.org -g`},
+    ];
+    
 
     howToSystemjs:Array<any> = [
         { code: `'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',`, data: `1.	กำหนด path ที่ชื่อ npm เพื่อเรียกใช้งาน library หลักของ Angular2 ดังนี้`},
