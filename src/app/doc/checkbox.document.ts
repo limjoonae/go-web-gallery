@@ -66,7 +66,7 @@ const EXAMPLE2: Array<any> = [
 ];
 
 const EXAMPLE3: Array<any> = [
-  { data: `private data3: Arrat<any> = [`},
+  { data: `private data3: Array<any> = [`},
   { data: `   { value: '31', label: 'checkbox 1', disable: '', checked: true },`},
   { data: `   { value: '32', label: 'checkbox 2', disable: true, checked: '' },`},
   { data: `   { value: '33', label: 'checkbox 3', disable: '', checked: '' },`},
@@ -93,9 +93,9 @@ const EXAMPLE3: Array<any> = [
 const ATTRIBUTELIST: Array<any> = [
     { require: '*', name: 'id', type: 'text', description: `ใช้สำหรับระบุ id ให้ checkbox`},
     { require: '*', name: 'name', type: 'text', description: `ใช้สำหรับระบุ name ให้ checkbox`},
-    { require: '', name: 'label', type: 'text', description: `ใช้สำหรับระบุ label หน้า checkbox`},
+    { require: '', name: 'label', type: 'text', description: `ใช้สำหรับระบุ label หลัง checkbox`},
     { require: '', name: 'require', type: 'boolean ', description: `ใช้สำหรับตั้งค่า require ให้ checkbox`},
-    { require: '', name: 'type', type: 'inline/block/column ', description: `ใช้สำหรับระบุการจัดวางของ checkbox`},
+    { require: '', name: 'type', type: 'inline/block/column ', description: `ใช้สำหรับระบุการจัดวางของ checkbox (กรณีที่ไม่ระบุ จะถูกกำหนด default type = 'inline')`},
     { require: '', name: 'col', type: 'number', description: `ใช้สำหรับระบุจำนวน column เมื่อ type = column สามารถระบุจำนวนคอลัมน์ได้ 1,2,3,4,6,12 เท่านั้น (ปรับความกว้างตาม class bootstrap)`},
     { require: '', name: 'colorTheme', type: 'text', description: `ใช้กำหนดสีของปุ่ม โดยค่าที่สามารถระบุได้ ประกอบด้วย
         success=สีเขียว, warning=สีส้ม, danger=สีแดง`},

@@ -22,53 +22,15 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `     [styleClass = "style_class"]` }
 ];
 
-const _SYSTEMJS: Array<any> = [
-    { data: `map: {`},
-    { data: `     'primeng': 'npm:primeng',`},
-    { data: `  },`},
-    { data: ``},
-    { data: `packages: {`},
-    { data: ` 'primeng': {`},
-    { data: `   main: './primeng.js',`},
-    { data: `   defaultExtension: 'js'`},
-    { data: ` }`},
-    { data: `}`}
-]
-
-const _APPMODULE: Array<any> = [
-  { data: `import { PanelModule } from 'primeng';` },
-  { data: `@NgModule({ 
-   imports: [  
-           .................. 
-           PanelModule
-           .................. 
-   ] 
-  }) `}
-]
-
-const _styleLine_html: Array<any> = [
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css" />',
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/primeng.min.css" />'
-];
-
-const _styleLine_css: Array<any> = [
-  `@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css');`,
-  `@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/primeng.min.css');`
-];
-
 const _EXAMPLE1: Array<any> = [
-  { data: `<p-panel header="Title" [toggleable] = "true" > Content</p-panel>` },
-]
-const _EXAMPLE2: Array<any> = [
+  { data: `<p-panel header="Title" [toggleable] = "true" [collapsed]="true" (onBeforeToggle)="beforeCollapsed()">{{Content}}</p-panel>` },
   { data: `` },
-]
-const _EXAMPLE3: Array<any> = [
-  { data: `` },
-]
-const _EXAMPLE4: Array<any> = [
-  { data: `` },
-]
-
+  { data: `component.ts` },
+  { data: `collapsed : boolean = true;` },
+  { data: `beforeCollapsed(){` },
+  { data: ` this.collapsed = !this.collapsed;` },
+  { data: `}` },
+];
 
 @Component({
     selector: 'doc-panel',
@@ -87,16 +49,13 @@ export class PanelDocument  {
     private suffixSyntax: string = '> Content </p-panel>';
     private attributeList = _ATTRIBUTELIST;
     private eventList = _EVENTLIST;
-    private systemjs = _SYSTEMJS;
-    private appModule = _APPMODULE;
-    private styleLine_html = _styleLine_html;
-    private styleLine_css = _styleLine_css;
-
     private codeExample1 = _EXAMPLE1;
-    private codeExample2 = _EXAMPLE2;
-    private codeExample3 = _EXAMPLE3;
-    private codeExample4 = _EXAMPLE4;
     
+    content : string = "Panel Text Here";
 
-
+    collapsed : boolean = true;
+    beforeCollapsed(){
+      this.collapsed = !this.collapsed;
+    }
+    
 }

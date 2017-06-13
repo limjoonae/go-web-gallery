@@ -10,9 +10,8 @@ const ATTRIBUTELIST: Array<any> = [
     { require: '', name: 'goId', type: 'text', description: `ใช้ระบุ id ของ textbox`},
     { require: '', name: 'isValid', type: 'boolean', description: `ใช้รับส่งผลการ validate ข้อมูลผ่านตัวแปรที่ระบุใน attribute นี้`},
     { require: '', name: 'numberFormat', type: 'format', description: `ใช้กำหนด format การแสดงตัวเลขของ textbox type="currency"`},
-    { require: '', name: 'disable', type: 'boolean', description: `ใช้กำหนดเพื่อปิดใช้งาน textbox โดย
-        หากระบุค่า disable="true" จะไม่สามารถใช้งานหรือ copy ข้อความใน textbox ได้`},
-    { require: '', name: 'readonly', type: 'boolean', description: `ใช้กำหนดให้ไม่สามารถแก้ไขข้อมูลใน text box ได้`},
+    { require: '', name: 'disable', type: 'boolean', description: `เมื่อกำหนดค่าเป็น true แล้วจะไม่สามารถแก้ไขข้อมูลใน textbox ได้ และแสดงเครื่องหมายห้ามแก้ไข **หมายเหตุ: ในการใช้งานร่วมกับ form submit ยังคงสามารถส่งค่าได้`},
+    { require: '', name: 'readonly', type: 'boolean', description: `เมื่อกำหนดค่าเป็น true แล้วจะไม่สามารถแก้ไขข้อมูลใน textbox ได้`},
     { require: '', name: 'maxlength', type: 'number', description: `ใช้กำหนดความยาวตัวอักษรสูงสุดที่สามารถพิมพ์ได้ใน text box 
         หากไม่ระบุจะมีค่า = 524288 ตัวอักษร **ไม่สามารถใช้กับ textbox type="number" ได้ ตามความสามารถของ HTML**`},
     { require: '', name: 'placeholder', type: 'text', description: `ใช้กำหนดข้อความตัวอย่างใน textbox สามารถใช้แทน label ได้`},

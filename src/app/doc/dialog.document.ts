@@ -5,7 +5,7 @@ const _ATTRIBUTELIST: Array<any> = [
     { require: '', name: 'draggable', type: 'boolean', description: `ใช้ระบุเพื่อให้ dialog สามารถเลื่อนได้`},
     { require: '', name: 'visible', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดการแสดง dialog`},
     { require: '', name: 'closable', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดการแสดงปุ่ม close`},
-    { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog สามารถ responsove ได้`},
+    { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog สามารถ responsive ได้`},
     { require: '', name: 'showHeader', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog แสดงส่วน header`},
     { require: '', name: 'modal', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้มีการ lock screen`},
     { require: '', name: 'width', type: 'number', description: `ใช้สำหรับระบุความกว้างของ dialog`},

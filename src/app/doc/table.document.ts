@@ -193,7 +193,7 @@ export class TableDocument {
     columns_2: Array<any> = [
         { title: 'Name', name: 'name' },
         { title: 'Id', name: 'no', sort: 'asc' },
-        { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy' }
+        { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy'}
     ];
     columns_3: Array<any> = [
         { title: 'Name', name: 'name', filtering: { placeholder: 'name', filterString: 'Aaa' }, maxWidth: '100px' },
@@ -202,8 +202,8 @@ export class TableDocument {
     ];
     columns_4: Array<any> = [
         { title: 'Name', name: 'name', filtering: { filterString: '' } },
-        { title: 'Id', name: 'no' },
-        { title: 'Start Date', name: 'startDate', dateFormat: 'dd/mm/yy', yearAdditional: 543 }
+        { title: 'Id', name: 'no',filtering: { filterString: '' } },
+        { title: 'Start Date', name: 'startDate', dateFormat: 'dd/mm/yy', yearAdditional: 543 ,filtering: { filterString: '' }}
     ];
 
     data: Array<any> = [

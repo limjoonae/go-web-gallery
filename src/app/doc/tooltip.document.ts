@@ -68,6 +68,7 @@ const _EXAMPLE1: Array<any> = [
   <go-button label="Left" buttonColor="info"  pTooltip="tooltip position left" tooltipPosition="left"></go-button> 
   <go-button label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
   <go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom"></go-button>
+  <input pTooltip = "Textbox Tooltip" placeholder="Mouse On Me!!" type="text" ng-reflect-text="Enter your name">
     ` },
 ];
 const _EXAMPLE2: Array<any> = [

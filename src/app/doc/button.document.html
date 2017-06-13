@@ -256,7 +256,7 @@
 				<div class="col-md-3">
 					<h6>Button with Event</h6>
 					<div style="text-align: center;">
-						<go-button label="Click Me" buttonColor="danger" (click)="myClick()"></go-button><br>Count: {{count}}
+						<go-button label="Click Me" buttonColor="danger" (click)="myClick()"></go-button><go-button label="Reset" buttonColor="danger" (click)="myReset()"></go-button><br>Count: {{count}}
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -269,7 +269,7 @@
 					</div>
 					<div id="collapse_ex_7" class="collapse" role="tabpanel" aria-labelledby="ex_7">
 						<div class="jumbotron">
-							<code>&lt;go-button label="Click Me" buttonColor="danger" (click)="myClick()"&gt;&lt;/go-button&gt;</code><br>
+							<code>&lt;go-button label="Click Me" buttonColor="danger" (click)="myClick()"&gt;&lt;/go-button&gt; &lt;go-button label="Reset" buttonColor="danger" (click)="myReset()"&gt;&lt;/go-button&gt;</code><br>
 							<code>{{countCode}}</code>
 							<p></p>
 							<p>component.ts</p>
@@ -278,6 +278,9 @@
 
 myClick() &#123;
       this.count++;
+  &#125;
+myReset() &#123;
+      this.count = 0;
   &#125;</code>
 							</pre>
 						</div>
@@ -287,4 +290,3 @@ myClick() &#123;
 		</div>
 	</div>
 </div>
-

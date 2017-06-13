@@ -62,7 +62,7 @@ const APPMODULELINE: Array<any> = [
     `]})`,
 ];
 
-@Component({
+@Component( {
     selector: 'chart-document',
     templateUrl: './chart.document.html'
 })
@@ -126,7 +126,7 @@ export class ChartDocument {
     //        }
     //    ];
 
-    data_code: string = `public chartData: Array<any> = [<br>
+    private data_code: string = `public chartData: Array<any> = [<br>
         { data: [20, 20, 30, 40, 50, 60], label: 'A' },<br>
         { data: [20, 40, 60, 80, 20, 40], label: 'B' },<br>
         { data: [20, 20, 40, 60, 70, 90], label: 'C' }<br>

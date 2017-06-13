@@ -10,7 +10,7 @@ const ATTRIBUTELIST: Array<any> = [
         default=สีเทา primary=สีน้ำเงิน, success=สีเขียว, info=สีฟ้า, warning=สีส้ม, danger=สีแดง`},
     { require: '', name: 'labelText', type: 'text', description: `ใช้ระบุข้อความกรณีเลือกใช้งาน type badge-link, badge-button`},
     { require: '', name: 'buttonColor', type: 'text', description: `(ใช้ร่วมกับ type=" badge-button") กำหนดสีของปุ่ม 
-        โดยค่าที่สามารถระบุได้ ประกอบด้วย primary=สีน้ำเงิน, secondary=, success=สีเขียว, info=สีฟ้า, warning=สีส้ม, danger=สีแดง`},
+        โดยค่าที่สามารถระบุได้ ประกอบด้วย primary=สีน้ำเงิน, secondary= สีขาว, success=สีเขียว, info=สีฟ้า, warning=สีส้ม, danger=สีแดง`},
     { require: '', name: 'buttonSize', type: 'text', description: `(ใช้ร่วมกับ type=" badge-button") 
         กำหนดขนาดของปุ่ม ค่าที่ระบุได้ประกอบด้วย sm=small,  lg=large`},
 ];

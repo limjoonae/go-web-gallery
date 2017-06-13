@@ -29,7 +29,7 @@
 		</div>
 		<div class="jumbotron">
 			<div class="card-title">
-				<h3> Release Update {{releaseDay}}</h3>
+				<h2> Release Update {{releaseDay}}</h2>
 			</div>
 			<div class="card-block">
 				<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>	
@@ -136,17 +136,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-8" >
 					<div class="card-block">
 							<h2>Code:</h2>
 							<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
 							<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
-
+							<div class="dialog">
 							<p-dialog [header]="title" [(visible)]="display" 
 										[modal] = "isModal" [width] = "width" [height] = "height" 
 										[closable] = "isClosable" [responsive] = "isResponsive"
 										[draggable] = "isDraggable" [showHeader] = "isShowHeader">
-								<p> {{body}}</p>
+								<p> {{body}}</p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
 									<go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
@@ -154,6 +154,7 @@
                                 </div>
                             </p-footer>
                         </p-dialog>
+						</div>
 					</div>
 				</div>
 			</div>

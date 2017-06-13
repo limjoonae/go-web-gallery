@@ -111,6 +111,18 @@ private items2: Array<any> = [
     command: (event: any) => {
       this.activeIndex = 3;
     }
+  },
+  {
+    label: 'Step 5',
+    command: (event: any) => {
+      this.activeIndex = 4;
+    }
+  },
+  {
+    label: 'Step 6',
+    command: (event: any) => {
+      this.activeIndex = 5;
+    }
   }
 ];
     ` },
@@ -186,6 +198,18 @@ export class StepDocument  {
                 label: 'Step 4',
                 command: (event: any) => {
                     this.activeIndex = 3;
+                }
+            },
+            {
+                label: 'Step 5',
+                command: (event: any) => {
+                    this.activeIndex = 4;
+                }
+            },
+            {
+                label: 'Step 6',
+                command: (event: any) => {
+                    this.activeIndex = 5;
                 }
             }
 

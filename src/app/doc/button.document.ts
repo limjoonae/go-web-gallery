@@ -78,6 +78,8 @@ export class ButtonDocument implements OnInit {
     [buttonColor="color_theme"] [buttonSize="sm_or_lg"] [iconName="icon_name"] [iconSize="icon_size"] [iconPos="right_position"]`;
   private suffixSyntax: string = `></go-button>`;
   private attributeList = ATTRIBUTELIST;
+  private systemjsLine = SYSTEMJSLINE;
+  private appModuleLine = APPMODULELINE;
   private fontAwesomeVersion = '4.7.0';
   private eventList = EVENTLIST;
   private htmlImport = `<link href="` + cdnPath + `font-awesome/css/font-awesome.min.css rel="stylesheet" type="text/css">`;
@@ -92,6 +94,10 @@ export class ButtonDocument implements OnInit {
 
   myClick() {
       this.count++;
+  }
+
+  myReset() {
+      this.count = 0;
   }
 
 }

@@ -23,7 +23,7 @@
 					<p><strong>Release Date: {{releaseDate}}</strong>
 					</p>
 					<p><strong>Credit: <a href="{{creditURL}}" target="_blank"> {{credit}} </a></strong></p>
-					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-accordion/issues" target="_blank">Report Issue</a></div>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-auto-complete/issues" target="_blank">Report Issue</a></div>
 				</div>
 			</div>
 		</div>
@@ -192,17 +192,28 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="row row-in-tab">
+			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">
-						
+                        <h4> Selected </h4>
+						<p-accordion >
+                            <p-accordionTab header="Header 1" [selected]="true">
+                            Content 1
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 2" [selected]="true">
+                                Content 2
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 3" [selected]="true">
+                                Content 3    
+                            </p-accordionTab>
+                        </p-accordion>
 					</div>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_4">
 						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
-							Code Example#3
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_4">
+							Code Example#4
 							</a>
 						</h5>
 					</div>
@@ -212,7 +223,39 @@
 						</div>
 					</div>
 				</div>
-			</div>-->
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+                        <h4>Lazy</h4>
+						<p-accordion [lazy]= "true">
+                            <p-accordionTab header="Header 1" [selected]="true">
+                            Content 1
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 2">
+                                Content 2
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 3">
+                                Content 3    
+                            </p-accordionTab>
+                        </p-accordion>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_5">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_5" aria-expanded="false" aria-controls="collapse_ex_5">
+							Code Example#5
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_5" class="collapse" role="tabpanel" aria-labelledby="ex_5">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample5" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

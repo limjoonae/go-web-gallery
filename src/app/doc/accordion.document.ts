@@ -112,7 +112,34 @@ const _EXAMPLE3: Array<any> = [
     ` },
 ]
 const _EXAMPLE4: Array<any> = [
-  { data: `` },
+  { data: `
+<p-accordion>
+  <p-accordionTab header="Header 1" [selected]="true">
+    Content 1
+  </p-accordionTab>
+  <p-accordionTab header="Header 2" [selected]="true">
+    Content 2
+  </p-accordionTab>
+  <p-accordionTab header="Header 3" [selected]="true">
+    Content 3    
+  </p-accordionTab>
+</p-accordion>
+    ` },
+]
+const _EXAMPLE5: Array<any> = [
+  { data: `
+<p-accordion [lazy] = "true">
+  <p-accordionTab header="Header 1" [selected]="true">
+    Content 1
+  </p-accordionTab>
+  <p-accordionTab header="Header 2">
+    Content 2
+  </p-accordionTab>
+  <p-accordionTab header="Header 3">
+    Content 3    
+  </p-accordionTab>
+</p-accordion>
+    ` },
 ]
 
 
@@ -143,7 +170,5 @@ export class AccordionDocument  {
     private codeExample2 = _EXAMPLE2;
     private codeExample3 = _EXAMPLE3;
     private codeExample4 = _EXAMPLE4;
-    
-
-
+    private codeExample5 = _EXAMPLE5;
 }

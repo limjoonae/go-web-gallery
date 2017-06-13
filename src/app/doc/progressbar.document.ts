@@ -4,9 +4,9 @@ const ATTRIBUTELIST: Array<any> = [
     { require: '*', name: 'progress', type: 'number', description: `ใช้สำหรับกำหนดค่าของขนาด progressbar ที่จะแสดงในปัจจุบัน โดยจะแสดงตามอัตราส่วนระหว่าง progressMin กับ progressMax` },
     { require: '', name: 'minProgress', type: 'number', description: `ใช้สำหรับกำหนดค่าต่ำสุดของ progressbar ที่จะให้ progressbar แสดงขึ้นมา (มีค่า default เป็น 0)` },
     { require: '', name: 'maxProgress', type: 'number', description: `ใช้สำหรับกำหนดค่าสูงสุดของ progressbar ที่จะให้ progressbar แสดงขึ้นมา (มีค่า default เป็น 100)` },
-    { require: '', name: 'color', type: 'string', description: `ใช้กำหนดสีของ progressbar` },
+    { require: '', name: 'color', type: 'string', description: `ใช้กำหนดสีของ progressbar (มีค่า default เป็นสีแดง)` },
     { require: '', name: 'height', type: 'string', description: `ใช้กำหนดความสูงของ progressbar โดยใส่เป็นรูปแบบ 'Npx' เมื่อ N เป็นตัวเลขจำนวนเต็มบวก` },
-    { require: '', name: 'lockOnLoad', type: 'boolean', description: `ใช้สำหรับแสดง Overlay ไม่ให้กดสิ่งใดๆบนหน้าจอได้ เมื่อ progressbar ยังแสดงอยู่)` },
+    { require: '', name: 'lockOnLoad', type: 'boolean', description: `ใช้สำหรับแสดง Overlay ไม่ให้กดสิ่งใดๆบนหน้าจอได้ เมื่อ progressbar ยังแสดงอยู่` },
     { require: '', name: 'opacity', type: 'number', description: `ใช้กำหนดความเข้มของ Overlay โดยมีค่าอยู่ที่ 0(ไม่แสดง) ถึง 1(เข้มสุด) โดยมีค่า default ที่ 0.5` },
     { require: '', name: 'transitionSpeed', type: 'number', description: `ใช้กำหนดช่วงเวลาที่จะให้ progressbar เลื่อนจนเสร็จสิ้น โดยให้กำหนดในหน่วย ms(millisecond) (มีค่า default = 500)` },
 ];
@@ -61,7 +61,7 @@ export class ProgressbarDocument {
 
     main_title = 'Example';
 
-    firstProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่แรก`;
+    firstProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่หนึ่ง`;
     code_1: string = `<go-progressbar [progress]="progress_1"></go-progressbar>`;
     code_button_1: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="addProgress_1(10)">เพิ่มค่า progress_1 เป็นจำนวน 10 จุด</button>`;
     code_exam_1: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
@@ -116,7 +116,7 @@ export class ProgressbarDocument {
     }
 
     thirdProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่สาม`;
-    code_3: string = `<go-progressbar [progress]="progress_3" color="blue" height="5px" [lockOnLoad]="true" [opacity]="0.5" [transitionSpeed]="1000"></go-progressbar>`;
+    code_3: string = `<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000"></go-progressbar>`;
     code_button_3: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>`;
     code_exam_3: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
     progress_3: number = 0;<br>

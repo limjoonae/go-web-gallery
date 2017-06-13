@@ -79,8 +79,9 @@
 			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">
-						<p-panel header="Title" [toggleable] = "true" > Content</p-panel>
+						<p-panel header="Title" [toggleable] = "true" [collapsed]="true" (onBeforeToggle)="beforeCollapsed()">{{content}}</p-panel>
 					</div>
+					Collapsed?: {{collapsed}}
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_1">
@@ -97,69 +98,6 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="row row-in-tab">
-				<div class="col-md-4">
-					<div class="card-block">
-						
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div role="tab" id="ex_2">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
-							Code Example#2
-							</a>
-						</h5>
-					</div>
-					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
-						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
-						</div>
-					</div>
-				</div>
-			</div>-->
-			<!--<div class="row row-in-tab">
-				<div class="col-md-4">
-					<div class="card-block">
-						
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div role="tab" id="ex_3">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
-							Code Example#3
-							</a>
-						</h5>
-					</div>
-					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
-						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
-						</div>
-					</div>
-				</div>
-			</div>-->
-			<!--<div class="row row-in-tab">
-				<div class="col-md-4">
-					<div class="card-block">
-						
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div role="tab" id="ex_4">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
-							Code Example#3
-							</a>
-						</h5>
-					</div>
-					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
-						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
-						</div>
-					</div>
-				</div>
-			</div>-->
 		</div>
 	</div>
 </div>

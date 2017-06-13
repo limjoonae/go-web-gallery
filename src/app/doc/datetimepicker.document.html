@@ -31,7 +31,12 @@
 					<h2> Release Update </h2>
 				</div>
 				<div class="card-block">
-					<li *ngFor="let line of releaseUpdate"> <b> {{line.head}}</b>: {{line.data}} </li>		
+					<p *ngFor="let line of releaseUpdate">
+						<b *ngIf="line.dateUpdate"> {{line.dateUpdate}} </b>
+						<li *ngIf="line.head"> 
+							<b> {{line.head}}</b>: {{line.data}} 
+						</li>
+					</p>
 				</div>
 			</div>
 		</div>

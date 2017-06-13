@@ -24,7 +24,7 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'virtualScroll', type: 'boolean', description: `ใช้ระบุเพื่อแสดงข้อมูลระหว่าง scroll`},
     { require: '', name: 'lazy', type: 'boolean', description: `ใช้ระบุให้ตารางโหลดข้อมูลแบบ lazy`},
     { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางสามารถ responsive ได้`},
-    { require: '', name: 'exportFilename', type: 'string', description: `ช้ระบุชื่อไฟล์ที่ทำการ export `},
+    { require: '', name: 'exportFilename', type: 'string', description: `ใช้ระบุชื่อไฟล์ที่ทำการ export `},
 ];
 
 const _ATTRIBUTECOLUMNLIST: Array<any> = [
@@ -155,17 +155,7 @@ const _DATA2: Array<any> = [
   {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
   {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
   {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
-  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
-  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
-  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
-  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
-  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
-  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
-  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
-  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
-  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
-  {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
-  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
 ];`
 ];
 const _EXAMPLE1: Array<any> = [
@@ -192,7 +182,7 @@ const _EXAMPLE2: Array<any> = [
   { data: `app.component.html` },
   { data: `` },  
   { data: `
-<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" sortMode="multiple">
+<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple">
   <p-header>List of Cars</p-header>
   <p-column field="vin" header="Vin" [sortable]="true"></p-column>
   <p-column field="year" header="Year" [sortable]="true"></p-column>
@@ -212,8 +202,10 @@ const _EXAMPLE3: Array<any> = [
   { data: `app.component.html` },
   { data: `
 <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
-  <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-  <input #gb type="text" pInputText size="30" placeholder="Global Filter">
+  <div class="row"> 
+    <i class="col col-md-1 fa fa-search" ></i> 
+    <input class="col col-md-10" #gb type="text"  placeholder="Global Filter">
+  </div>
 </div>` },
   { data: `
 <p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" selectionMode="multiple" [(selection)]="selectedDatas">
@@ -278,9 +270,11 @@ const _EXAMPLE5: Array<any> = [
   <p-column field="color" header="Color"></p-column>
 </p-dataTable>
 
-component.ts
+  component.ts
 
- scrollHeightCal(data : Array<any>) : string{
+  private defaultScrollHeight : number = 100;
+
+  scrollHeightCal(data : Array<any>) : string{
       let scrollHeight : number;
       let enlargeScroll : number;
       enlargeScroll = data.length / 5;
@@ -291,9 +285,6 @@ component.ts
       else
       return '100px';
     }
-
-
-
 ` }
 ];
 
@@ -329,17 +320,7 @@ const _DATATABLE2: Array<any> = [
   {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
   {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
   {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
-  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
-  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
-  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
-  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
-  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
-  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
-  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
-  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
-  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
-  {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
-  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
 ];
 
 const _DATATABLE1: Array<any> = [
@@ -365,7 +346,7 @@ const _COLS1: any = [
 export class DataTableDocument  { 
     private componentTag: string = 'DataTable'
     private version: string = '1.0'; 
-    private componentDescription: string = `DataTables เป็นเครื่องมือช่วยสร้างตารางแสดงข้อมูล ได้อย่างง่ายและสะดวกรวมทั้งมี feature ที่สามารถเลือกใช้ในการใช้งานต่างๆได้`
+    private componentDescription: string = `DataTables เป็นเครื่องมือช่วยสร้างตารางแสดงข้อมูลได้อย่างง่ายและสะดวก รวมทั้งมี feature ที่สามารถเลือกใช้ในการใช้งานต่างๆได้`
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/datatable';
     private credit: string = 'primeng (2.0.5)';   
@@ -393,22 +374,20 @@ export class DataTableDocument  {
     private dataTable2 = _DATATABLE2;
     private dataTable3 = _DATATABLE2;
     private dataTable4 = _DATATABLE1;
-    private dataTable5 = _DATATABLE1;
+    private dataTable5 = _DATATABLE2;
     private dataTable6 = _DATATABLE2;
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
 
-    
-    private defaultScrollHeight : number = 100;
     private selectedDatas: Array<any>;
-
+    private defaultScrollHeight : number = 100;
 
     private stacked: boolean;
-    
+
     toggle() {
         this.stacked = !this.stacked;
     }
-
+    
     scrollHeightCal(data : Array<any>) : string{
       let scrollHeight : number;
       let enlargeScroll : number;
@@ -420,5 +399,4 @@ export class DataTableDocument  {
       else
       return '100px';
     }
-
 }

@@ -122,9 +122,11 @@ const _styleLine_css: Array<any> = [
 ];
 
 const _releaseUpdate: Array<any> = [
+  { dateUpdate: "Version 2.1 (3 May 2017)"},
+  { head: `style`, data: `เปลี่ยนรูปแบบการจัดวาง inputbox ให้มีขนาดพอดีกับความกว้างที่นำ component ไปวาง` },
+  { dateUpdate: "Version 2.0 (4 April 2017)"},
   { head: `Version`, data: `Update primeng version 4.0.0-rc.2` },
   { head: `Icon`, data: `สามารถใส่ไอคอน (จาก Font Awesome)` },
-  { head: `style`, data: `เปลี่ยนรูปแบบการจัดวาง inputbox ให้มีขนาดพอดีกับความกว้างที่นำ component ไปวาง` },
 ];
 
 const _EXAMPLE1: Array<any> = [
@@ -233,8 +235,8 @@ const _EXAMPLE8: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date8" [showTime]="true"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date8}}</p> ` },
+  { data: `<go-datetimepicker [(date)]="date9" [inline]="true"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{date9|date}}</p> ` },
   { data: `` },
   { data: `` },
 ];
