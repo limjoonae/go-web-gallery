@@ -35,8 +35,14 @@ export class GettingStartComponent  {
     createProjectAngular:Array<any> = [
         { data: `1.	ไปยัง directory ที่ต้องการจะสร้างโปรเจค`},
         { image: `image/createProject001.png`, data: `2.	คลิกขวาเลือก Git Bash`},
-        { code: `git clone https://github.com/angular/quickstart ชื่อโปรเจค`, data: `3.	พิมพ์คำสั่งเพื่อสร้างโปรเจคใหม่ ดังนี้ `},
-        { data: `4.	เมื่อ clone เสร็จแล้ว จะได้โปรเจคใหม่ที่สามารถใช้งานได้`},
+        { code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`, data: `3.	พิมพ์คำสั่งเพื่อสร้างโปรเจคใหม่ ดังนี้ `},
+        { data: `4.	เมื่อ clone เสร็จแล้ว จะได้โปรเจค`},
+        { data: `5. เปิด cmd ขึ้นมาใน path project แล้ว set proxy ด้วยคำสั่งต่อไปนี้ `, code: `npm config set registry http://registry.npmjs.org -g`},
+        // { code: `npm config set registry http://registry.npmjs.org -g`},
+        { data: `6. install npm ลงในโปรเจค` , code: `npm --proxy http://aduser:adpass@10.182.255.166:8080 install`},
+        { data: `7. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
+        { data: ``, code: ``},
+        { data: ``, code: ``},
     ];
 
     howToSystemjs:Array<any> = [
