@@ -47,34 +47,6 @@ const SHOWATTRIBUTELIST: Array<any> = [
     { require: '', name: 'showUploadStatusDialog', type: 'boolean', description: `กำหนดให้แสดงข้อความเมื่ออัพโหลดสำเร็จหรือล้มเหลว` }
 ];
 
-const SYSTEMJSLINE: Array<any> = [
-    `map: {`,
-    `   ..........`,
-    `   'go-upload': 'go:upload/{version}',`,
-    `   ..........`,
-    `},`,
-    `packages: {`,
-    `   ..........`,
-    `   'go-upload': {`,
-    `      main: './upload.js',`,
-    `      defaultExtension: 'js'`,
-    `   },`,
-    `   ..........`,
-    `}`,
-];
-
-const APPMODULELINE: Array<any> = [
-    `import { UploadComponent } from 'go-upload';`,
-    ``,
-    `@NgModule({ `,
-    `   declarations: [`,
-    `   ..........`,
-    `   UploadComponent`,
-    `   ..........`,
-    `]})`
-];
-
-
 @Component({
     selector: 'upload-example',
     templateUrl: './upload.document.html'
@@ -123,8 +95,6 @@ export class UploadDocument implements OnInit {
     private attributeList = ATTRIBUTELIST;
     private messageAttributeList = MSGATTRIBUTELIST;
     private showAttributeList = SHOWATTRIBUTELIST;
-    private appModuleLine = APPMODULELINE;
-    private systemjsLine = SYSTEMJSLINE;
     private appModuleDetail: string = `app.module.ts`;
     private systemJSDetail: string = `systemjs.config.js`;
 

@@ -194,8 +194,6 @@ export class TreeDocument  {
     private appModule = _APPMODULE;
     private styleLine_html = _styleLine_html;
     private styleLine_css = _styleLine_css;
-    private releaseUpdate = _releaseUpdate;
-    private releaseDay: string = '(29 March 2017)';
 
     private codeExample1 = _EXAMPLE1;
     private codeExample2 = _EXAMPLE2;
@@ -257,4 +255,5 @@ export class TreeDocument  {
     private selectedFiles: any;
     private selectedFiles2: any;
 
+    private releaseUpdate = _releaseUpdate;
 }
