@@ -14,30 +14,35 @@ import { Component, Input } from '@angular/core';
 })
 export class GettingStartComponent  { 
 
-    releaseDate:string = '10 April 2017';
+    releaseDate:string = '12 May 2017';
     prerequisiteInstall: Array<any> = [
         {},
     ];
     setupNodejs:Array<any> = [
-        // { data: `1. เข้าเว็บไซต์ https://nodejs.org `},
         { data: `2.	ทำการติดตั้ง Node.js เมื่อทำการติดตั้ง Node.js จะได้ Node และตัว npm (Node Package Manager) ซึ่งเป็นตัวจัดการ package/module ต่าง ๆ ของ Node มาด้วย`},
         { code:`node –v`, data: `3.	ตรวจสอบว่าเราทำการติดตั้ง Node.js สมบูรณ์หรือไม่ โดยการเช็คเวอร์ชันด้วยคำสั่งนี้`},
         { code:`npm -v`, data: `4.	ตรวจเช็คเวอร์ชัน npm `},
     ];
 
     setupGit:Array<any> = [
-        // {image: `image/1-setupGit.jpg`, data: `1.	ติดตั้ง Git สำหรับ Windows โดยดาวน์โหลดจาก git-scm.com`},
-        // {data: `2.	คลิกขวา เลือก Run as administrator เพื่อเข้าสู่ขั้นตอนการติดตั้ง (ดูรายละเอียดการติดตั้งได้ที่ http://www.artit-k.com/dev-install-git-for-windows)`},
-        {image: `image/setupGit-4.jpg`, data: `3.	หลังจากติดตั้ง Git เรียบร้อย สามารถตรวจสอบ version ของ git ได้ โดยใน Git GUI สามารถดูได้ที่เมนู Help > About Git Gui`},
-        {code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
+        // image: `image/setupGit-4.jpg`,
+        { data: `3.	หลังจากติดตั้ง Git เรียบร้อย สามารถตรวจสอบ version ของ git ได้ โดยใน Git GUI สามารถดูได้ที่เมนู Help > About Git Gui`},
+        { code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
     ];
 
     createProjectAngular:Array<any> = [
-        { data: `1.	ไปยัง directory ที่ต้องการจะสร้างโปรเจค`},
-        { image: `image/createProject001.png`, data: `2.	คลิกขวาเลือก Git Bash`},
-        { code: `git clone https://github.com/angular/quickstart ชื่อโปรเจค`, data: `3.	พิมพ์คำสั่งเพื่อสร้างโปรเจคใหม่ ดังนี้ `},
-        { data: `4.	เมื่อ clone เสร็จแล้ว จะได้โปรเจคใหม่ที่สามารถใช้งานได้`},
+        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`},
+        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั้ง` , code: `npm --proxy http://aduser:adpass@10.182.255.166:8080 install
+  หมายเหตุ aduser = user lan, adpass = password ของ user lan`},
+        { data: `3. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
     ];
+
+    setProxy: Array<any> = [
+        { data: `1. เปิด command prompt แล้ว set proxy ของ git ด้วยคำสั่งนี้`, code: `git config --global http.proxy http://aduser:adpass@10.182.255.166:8080
+  หมายเหตุ aduser = user lan, adpass = password ของ user lan`},
+        { data: `2. set proxy ของ npm`, code: `npm config set registry http://registry.npmjs.org -g`},
+    ];
+    
 
     howToSystemjs:Array<any> = [
         { code: `'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',`, data: `1.	กำหนด path ที่ชื่อ npm เพื่อเรียกใช้งาน library หลักของ Angular2 ดังนี้`},
