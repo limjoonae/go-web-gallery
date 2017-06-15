@@ -42,7 +42,7 @@ import { TextareaDocument } from './doc/textarea.document';
 import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
 import { UploadDocument } from './doc/upload.document';
-import { GettingStartComponent } from './doc/page-getting-start.component';
+import { GettingStartComponent } from './getting-start/getting-start.component';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},

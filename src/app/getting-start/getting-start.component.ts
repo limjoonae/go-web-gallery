@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'page-getting-start',
-    templateUrl: './page-getting-start.html',
+    selector: 'getting-start',
+    templateUrl: './getting-start.component.html',
     styles: [`
             object{
                 background-color:#eee;
