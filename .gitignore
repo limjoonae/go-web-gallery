@@ -5,11 +5,13 @@ npm-debug.log
 debug.log
 src/**/*.js
 src/**/*.js.map
+!src/main.js
 !src/systemjs-angular-loader.js
 !src/systemjs.config.extras.js
 !src/systemjs.config.js
 !src/dist/*.js
 *.js.map
+!src/main.js.map
 e2e/**/*.js
 e2e/**/*.js.map
 _test-output
