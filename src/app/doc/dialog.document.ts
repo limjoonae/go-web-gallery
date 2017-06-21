@@ -180,14 +180,28 @@ export class DialogDocument  {
 
     update(){
 this.codeExample = [
-      '<p-dialog [header]="' + this.title + '"',
-      '[modal] = "' + this.isModal + '"',
-      '[closable] = "' + this.isClosable + '"',
-      '[draggable] = "' + this.isDraggable + '"',
-      '[responsive] = "' + this.isResponsive + '"',
-      '[showHeader] = "' + this.isShowHeader + '"',
-      '[width] = "' + this.width + '"',
-      '[height] = "' + this.height + '"',
+      'app.component.ts',
+      `
+ private display: boolean = false;
+ showDialog() {
+   this.display = true;
+ }
+`,
+      '',
+      'app.component.html',
+      '',      
+      `<go-button label="show" iconName="external-link-square" 
+      buttonColor="primary" (click)="showDialog()" ></go-button>`,
+      '',    
+      '<p-dialog header="' + this.title + '"',
+      ' [(visible)]="display" ',
+      ' [modal] = "' + this.isModal + '"',
+      ' [closable] = "' + this.isClosable + '"',
+      ' [draggable] = "' + this.isDraggable + '"',
+      ' [responsive] = "' + this.isResponsive + '"',
+      ' [showHeader] = "' + this.isShowHeader + '"',
+      ' [width] = "' + this.width + '"',
+      ' [height] = "' + this.height + '"',
       '>',
       '' + this.body,
       `
@@ -201,14 +215,28 @@ this.codeExample = [
     }
 
     private codeExample: Array<any> = [
-      '<p-dialog [header]="' + this.title + '"',
-      '[modal] = "' + this.isModal + '"',
-      '[closable] = "' + this.isClosable + '"',
-      '[draggable] = "' + this.isDraggable + '"',
-      '[responsive] = "' + this.isResponsive + '"',
-      '[showHeader] = "' + this.isShowHeader + '"',
-      '[width] = "' + this.width + '"',
-      '[height] = "' + this.height + '"',
+      'app.component.ts',
+      `
+ private display: boolean = false;
+ showDialog() {
+   this.display = true;
+ }
+`,
+      '',
+      'app.component.html',
+      '',      
+      `<go-button label="show" iconName="external-link-square" 
+      buttonColor="primary" (click)="showDialog()" ></go-button>`,
+      '',    
+      '<p-dialog header="' + this.title + '"',
+      ' [(visible)]="display" ',
+      ' [modal] = "' + this.isModal + '"',
+      ' [closable] = "' + this.isClosable + '"',
+      ' [draggable] = "' + this.isDraggable + '"',
+      ' [responsive] = "' + this.isResponsive + '"',
+      ' [showHeader] = "' + this.isShowHeader + '"',
+      ' [width] = "' + this.width + '"',
+      ' [height] = "' + this.height + '"',
       '>',
       '' + this.body,
       `
