@@ -8500,7 +8500,7 @@ var NgTableComponent = (function () {
         this.cellClicked.emit({ row: row, column: column });
     };
     // Ported from jquery-ui datepicker formatDate    
-    NgTableComponent.prototype.formatDate = function (date, format) {
+    NgTableComponent.prototype.formatDate = function (date, format, yearAdd) {
         if (!date) {
             return "";
         }
@@ -8542,6 +8542,8 @@ var NgTableComponent = (function () {
                             break;
                         case "y":
                             var _year = date.getFullYear();
+                            if (yearAdd)
+                                _year += yearAdd;
                             output += (lookAhead("y") ? _year :
                                 (_year % 100 < 10 ? "0" : "") + _year % 100);
                             break;
@@ -53249,7 +53251,7 @@ process.umask = function() { return 0; };
 /* 416 */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table dataTable\" ngClass=\"{{config.className || ''}}\" role=\"grid\" style=\"width: 100%;\">\n    <thead>\n        <tr role=\"row\">\n            <th *ngFor=\"let column of columns\" [ngTableSorting]=\"config\" [column]=\"column\" (sortChanged)=\"onChangeTable($event)\" ngClass=\"{{column.className || ''}}\">\n                <div [innerHTML]=\"column.title\" [ngStyle]=\"column.width\"></div>\n            </th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngIf=\"showFilterRow\">\n            <td *ngFor=\"let column of columns\">\n                <div [ngStyle]=\"column.width\">\n                    <input *ngIf=\"column.filtering\" placeholder=\"{{column.filtering.placeholder || ''}}\" [ngTableFiltering]=\"column.filtering\"\n                        class=\"form-control\" style=\"width: 100%;\" (tableChanged)=\"onChangeTable(config)\" value=\"{{column.filtering.filterString}}\"\n                    />\n                </div>\n            </td>\n        </tr>\n        <tr *ngFor=\"let row of rows\">\n            <td (click)=\"cellClick(row, column.name)\" *ngFor=\"let column of columns\">\n                <div style=\"word-wrap: break-word\" [ngStyle]=\"column.width\" [innerHtml]=\"column.dateFormat ? formatDate(row[column.name],column.dateFormat) : sanitize(getData(row, column.name))\"></div>\n            </td>\n        </tr>\n    </tbody>\n</table>"
+module.exports = "<table class=\"table dataTable\" ngClass=\"{{config.className || ''}}\" role=\"grid\" style=\"width: 100%;\">\n    <thead>\n        <tr role=\"row\">\n            <th *ngFor=\"let column of columns\" [ngTableSorting]=\"config\" [column]=\"column\" (sortChanged)=\"onChangeTable($event)\" ngClass=\"{{column.className || ''}}\">\n                <div [innerHTML]=\"column.title\" [ngStyle]=\"column.width\"></div>\n            </th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngIf=\"showFilterRow\">\n            <td *ngFor=\"let column of columns\">\n                <div [ngStyle]=\"column.width\">\n                    <input *ngIf=\"column.filtering\" placeholder=\"{{column.filtering.placeholder || ''}}\" [ngTableFiltering]=\"column.filtering\"\n                        class=\"form-control\" style=\"width: 100%;\" (tableChanged)=\"onChangeTable(config)\" value=\"{{column.filtering.filterString}}\"\n                    />\n                </div>\n            </td>\n        </tr>\n        <tr *ngFor=\"let row of rows\">\n            <td (click)=\"cellClick(row, column.name)\" *ngFor=\"let column of columns\">\n                <div style=\"word-wrap: break-word\" [ngStyle]=\"column.width\" [innerHtml]=\"column.dateFormat ? formatDate(row[column.name],column.dateFormat,column.yearAdditional) : sanitize(getData(row, column.name))\"></div>\n            </td>\n        </tr>\n    </tbody>\n</table>"
 
 /***/ }),
 /* 417 */
