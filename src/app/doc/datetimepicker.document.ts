@@ -17,8 +17,8 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'readonlyInput', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ไม่สามารถระบุหรือไม่สามารถแก้ไขค่าใน input field โดยตรงได้`},
     { require: '', name: 'minDate', type: 'Date', description: `ใช้ระบุเพื่อกำหนดวันที่ต่ำที่สุดที่สามารถเลือกได้`},
     { require: '', name: 'maxDate', type: 'Date', description: `ใช้ระบุเพื่อกำหนดวันที่สูงที่สุดที่สามารถเลือกได้`},
-    { require: '', name: 'disabledDates', type: 'Array<Date>', description: `ใช้สำหรับระบุวันที่ที่ไม่สามารถเลือกได้`},
-    { require: '', name: 'disabledDays', type: 'Array<number>', description: `ใช้สำหรับระบุวันที่ที่ไม่สามารถเลือกได้ เช่นระบุ [0,6] จะไม่สามารถเลือกวันอาทิตย์กับวันเสาร์ได้`},
+    { require: '', name: 'disabledDates', type: 'Array<Date>', description: `ใช้สำหรับระบุวันที่ ที่ไม่ต้องการให้เลือกบนปฏิทิน`},
+    { require: '', name: 'disabledDays', type: 'Array<number>', description: `ใช้สำหรับระบุวันในสัปดาห์ ที่ไม่ต้องการให้เลือกบนปฏิทิน เช่นระบุ [0,6] จะไม่สามารถเลือกวันอาทิตย์กับวันเสาร์ได้`},
     { require: '', name: 'monthNavigator', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ใช้งานตัวเลือกเดือนในปฏิทิน`},
     { require: '', name: 'yearNavigator', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ใช้งานตัวเลือกปีในปฏิทิน`},
     { require: '', name: 'yearRange', type: 'string', description: `ใช้ระบุเพื่อกำหนดช่วงปีที่ต้องการให้แสดงในรายการ (ใช้คู่กับ yearNavigator โดยกำหนดในรูปแบบของ "xxxx:yyyy" โดยที่ xxxx ต้องน้อยกว่า yyyy)`},
@@ -76,51 +76,6 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `     (dateChange) = "date_output"` }
 ];
 
-const _SYSTEMJS: Array<any> = [
-    { data: `map: {`},
-    { data: `     'primeng': 'npm:primeng',`},
-    { data: `     'go-datetimepicker': 'go:datetimepicker/{version}',`},
-    { data: `  },`},
-    { data: ``},
-    { data: `packages: {`},
-    { data: ` 'primeng': {`},
-    { data: `   main: './primeng.js',`},
-    { data: `   defaultExtension: 'js'`},
-    { data: ` },`},
-    { data: ` 'go-datetimepicker': {`},
-    { data: `   main: './datetimepicker.component.js',`},
-    { data: `   defaultExtension: 'js'`},
-    { data: ` },`},
-]
-
-const _APPMODULE: Array<any> = [
-  { data: `import { CalendarModule } from 'primeng';` },
-  { data: `import { DateTimePickerComponent } from 'go-datetimepicker';`},  
-  { data: ``},
-  { data: `@NgModule({ 
-   imports: [  
-           .................. 
-           CalendarModule
-           .................. 
-   ],
-   declarations: [
-           .................. 
-           DateTimePickerComponent
-           ..................      
-   ] 
-  }) `}
-]
-
-const _styleLine_html: Array<any> = [
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css" />',
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css" />'
-];
-
-const _styleLine_css: Array<any> = [
-  `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css');`,
-  `@import url('http://10.182.247.73/go-cdn-dev/node_modules/2.4.0/primeng/resources/primeng.min.css');`
-];
-
 const _releaseUpdate: Array<any> = [
   { dateUpdate: "Version 2.1 (3 May 2017)"},
   { head: `style`, data: `เปลี่ยนรูปแบบการจัดวาง inputbox ให้มีขนาดพอดีกับความกว้างที่นำ component ไปวาง` },
@@ -132,7 +87,7 @@ const _releaseUpdate: Array<any> = [
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date1: Date = new Date();` },
+  { data: `private date1: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
@@ -143,7 +98,7 @@ const _EXAMPLE1: Array<any> = [
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date2: Date = new Date();` },  
+  { data: `private date2: Date;` },  
   { data: `` },  
   { data: `app.component.html` },
   { data: `` },
@@ -155,7 +110,7 @@ const _EXAMPLE2: Array<any> = [
 const _EXAMPLE3: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date3: Date = new Date();` },
+  { data: `private date3: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
@@ -205,7 +160,7 @@ ngOnInit() {
 const _EXAMPLE6: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date7: Date = new Date();` },
+  { data: `private date7: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
@@ -218,7 +173,7 @@ const _EXAMPLE6: Array<any> = [
 const _EXAMPLE7: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date8: Date = new Date();` },
+  { data: `private date8: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
@@ -231,7 +186,7 @@ const _EXAMPLE7: Array<any> = [
 const _EXAMPLE8: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date8: Date = new Date();` },
+  { data: `private date8: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
@@ -240,7 +195,6 @@ const _EXAMPLE8: Array<any> = [
   { data: `` },
   { data: `` },
 ];
-
 
 @Component({
     selector: 'doc-datetimepicker',
@@ -259,10 +213,6 @@ export class DateTimePickerDocument implements OnInit {
     private attrSyntaxList: Array<any> = _ATTRSYNTAX;
     private suffixSyntax: string = '> </go-datetimepicker>';
     private attributeTableList: Array<any> = _ATTRIBUTETABLELIST;
-    private systemjs: Array<any> = _SYSTEMJS;
-    private appModule : Array<any> = _APPMODULE;
-    private styleLine_html = _styleLine_html;
-    private styleLine_css = _styleLine_css;
 
     private codeExample1 = _EXAMPLE1;
     private codeExample2 = _EXAMPLE2;
@@ -273,16 +223,15 @@ export class DateTimePickerDocument implements OnInit {
     private codeExample7 = _EXAMPLE7;
     private codeExample8 = _EXAMPLE8;
 
-
-    private date1: Date = new Date();
-    private date2: Date = new Date();
-    private date3: Date = new Date();
+    private date1: Date;
+    private date2: Date;
+    private date3: Date;
     private date4: Date;
     private date5: Date;
-    private date6: Date = new Date();
-    private date7: Date = new Date();
-    private date8: Date = new Date();
-    private date9: Date = new Date();
+    private date6: Date;
+    private date7: Date;
+    private date8: Date;
+    private date9: Date;
 
     private invalidDates: Array<Date>;
     ngOnInit() {

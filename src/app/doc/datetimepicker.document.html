@@ -75,7 +75,7 @@
 					<div class="card-block">
 						<h4 class="form-group"> Basic </h4>
 						<go-datetimepicker [(date)]="date1" ></go-datetimepicker> 
-						<p> <strong> Output: </strong> {{date1|date}} </p>
+						<p> <strong> Output: </strong> {{date1}} </p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -144,8 +144,8 @@
 					<div class="card-block">
 						<h4 class="form-group"> Min-Max </h4>
 						<div class="form-group">
-							from <go-datetimepicker [(date)]="date4" [maxDate]="date5" [readonlyInput]="true"></go-datetimepicker>
-							to <go-datetimepicker [(date)]="date5" [minDate]="date4" [readonlyInput]="true"></go-datetimepicker>
+							Date from <go-datetimepicker [(date)]="date4" [maxDate]="date5" [readonlyInput]="true"></go-datetimepicker>
+							Date to <go-datetimepicker [(date)]="date5" [minDate]="date4" [readonlyInput]="true"></go-datetimepicker>
 						</div>
 						<!--<p> <strong> Output: </strong> </p>-->
 						<p> <strong> from: </strong> {{date4|date}} </p> 
@@ -239,7 +239,7 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4 class="form-group"> Time </h4>
+						<h4 class="form-group"> Inline </h4>
         				<go-datetimepicker [(date)]="date9" [inline]="true"></go-datetimepicker> 
 						<p> <strong> Output: </strong> {{date9|date}}</p> 
 					</div>
