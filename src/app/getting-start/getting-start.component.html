@@ -37,13 +37,20 @@
                             <code *ngIf="data.code != null"> {{data.code}} </code>
                         </div>
                     </div>
-                    <h3 class="card-header"><strong> การ set proxy git และ npm </strong></h3>
+                    <h3 class="card-header"><strong> การ generate ssh key </strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of generateSshKey"> 
+                            <p> <span [innerHTML]="data.data"> </span> <a *ngIf="data.link != null" href="data.link">{{data.link}}</a></p>
+                            <code *ngIf="data.code != null"> {{data.code}} </code>
+                        </div>
+                    </div>
+                    <!--<h3 class="card-header"><strong> การ set proxy git และ npm </strong></h3>
                     <div class="card-block">
                         <div *ngFor="let data of setProxy"> 
                              <p>{{data.data}}</p>
                             <pre> <code *ngIf="data.code != null"> {{data.code}} </code> </pre>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div role="tabpanel" class="tab-pane fade" id="setupGit">

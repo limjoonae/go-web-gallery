@@ -14,7 +14,7 @@ import { Component, Input } from '@angular/core';
 })
 export class GettingStartComponent  { 
 
-    releaseDate:string = '14 June 2017';
+    releaseDate:string = '26 June 2017';
     prerequisiteInstall: Array<any> = [
         {},
     ];
@@ -30,14 +30,14 @@ export class GettingStartComponent  {
         { code:`git version หรือ git --version`, data: `ส่วนของ Git bash จะเป็นหน้า Command Prompt สามารถตรวจสอบ version ได้ด้วยการพิมพ์คำสั่ง`},
     ];
 
-    setProxy: Array<any> = [
-        { data: `1. เปิด command prompt แล้ว set proxy ของ git ด้วยคำสั่งนี้`, code: `git config --global http.proxy http://ยูเซอร์LAN:พาสเวิร์ดLAN@10.182.255.166:8080`},
-        { data: `2. set proxy ของ npm`, code: `npm config set registry http://registry.npmjs.org -g`},
-    ];
+    // setProxy: Array<any> = [
+    //     { data: `1. เปิด command prompt แล้ว set proxy ของ git ด้วยคำสั่งนี้`, code: `git config --global http.proxy http://ยูเซอร์LAN:พาสเวิร์ดLAN@10.182.255.166:8080`},
+    //     { data: `2. set proxy ของ npm`, code: `npm config set registry http://registry.npmjs.org -g`},
+    // ];
 
     createProjectAngular:Array<any> = [
-        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`},
-        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั่ง` , code: `npm --proxy http://ยูเซอร์LAN:พาสเวิร์ดLAN@10.182.255.166:8080 install`},
+        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone git@10.182.247.74:go-webframework/go-starter-project.git ชื่อโปรเจค`},
+        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั่ง` , code: `npm install`},
         { data: `3. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
         { data: `browser จะถูกเปิดอัตโนมัติ และแสดงคำว่า Hello Angular`},
     ];
@@ -54,5 +54,13 @@ export class GettingStartComponent  {
     importAppModule: string = `import 'gomodule' และ 'libmodule' ใน app.module.ts ดังนี้`;
     indexData: string = `ใส่ styles ในไฟล์ index.html เพื่อที่จะสามารถใช้ component ได้เต็มประสิทธิภาพ ดังนี้`;
 
-    
+    generateSshKey: Array<any> = [
+        { data: '1. เปิดโปรแกรม Git GUI' }, 
+        { data: '2. ไปที่เมนู Help เลือก show SSH Key'},
+        { data: '3. โปรแกรมจะแสดงหน้าต่างใหม่ขึ้นมา ให้กดที่ปุ่ม Generate Key โปรแกรมจะ generate ssh key ขึ้นมา เมื่อ key ขึ้นมาแล้วให้ copy key ไว้'},
+        { data: '4. ไปที่ gitlab', link: 'http://10.182.247.74/'},
+        { data: '5. ไปที่เมนู setting > SSH Keys'},
+        { data: '6. วาง key ที่ copy มาจาก Git GUI แล้วตั้งชื่อ title '},
+        { data: '7. กด Add key'}
+    ]
 }
