@@ -34,40 +34,6 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `   [styleClass = "style_class"]` }
 ];
 
-const _SYSTEMJS: Array<any> = [
-    { data: `map: {`},
-    { data: `     'primeng': 'npm:primeng',`},
-    { data: `  },`},
-    { data: ``},
-    { data: `packages: {`},
-    { data: ` 'primeng': {`},
-    { data: `   main: './primeng.js',`},
-    { data: `   defaultExtension: 'js'`},
-    { data: ` }`},
-    { data: `}`}
-]
-
-const _APPMODULE: Array<any> = [
-  { data: `import { DataGridModule } from 'primeng';` },
-  { data: `@NgModule({ 
-   imports: [  
-           .................. 
-           DataGridModule
-           .................. 
-   ] 
-  }) `}
-]
-
-const _styleLine_html: Array<any> = [
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css" />',
-'<link rel="stylesheet" type="text/css" href="http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/primeng.min.css" />'
-];
-
-const _styleLine_css: Array<any> = [
-  `@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/themes/bootstrap/theme.css');`,
-  `@import url('http://10.182.247.173/gos-cdn/node_modules/2.4.0/primeng/resources/primeng.min.css');`
-];
-
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.ts` },
   { data: `` },
@@ -202,7 +168,7 @@ const _DATAFOREXAMPLE: Array<any> = [
 export class DataGridDocument  { 
     private componentTag: string = 'DataGrid'
     private version: string = '1.0'; 
-    private componentDescription: string = `DataTables เป็นเครื่องมือช่วยแสดงข้อมูลในรูปแบบตาราง grid`
+    private componentDescription: string = `DataGrid เป็นเครื่องมือช่วยแสดงข้อมูลในรูปแบบตาราง grid`
     private releaseDate: string = '29 March 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/datagrid';
     private credit: string = 'primeng (2.0.5)';   
@@ -212,10 +178,6 @@ export class DataGridDocument  {
     private suffixSyntax: string = '</p-dataGrid>';
     private attributeList: Array<any> = _ATTRIBUTELIST;
     private eventList: Array<any> = _EVENTLIST;
-    private systemjs: Array<any> = _SYSTEMJS;
-    private appModule : Array<any> = _APPMODULE;
-    private styleLine_html = _styleLine_html;
-    private styleLine_css = _styleLine_css;
 
     private dataForEx = _DATAFOREXAMPLE;
     private codeExample1 = _EXAMPLE1;
