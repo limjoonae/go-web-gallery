@@ -139,7 +139,7 @@ const _EXAMPLE4: Array<any> = [
 const _EXAMPLE5: Array<any> = [
   { data: `app.component.ts` }, 
   { data: `` },
-  { data: `
+  { data: `private date6: Date;
 private invalidDates: Array<Date>;
 ngOnInit() {
     let today = new Date();
@@ -164,7 +164,7 @@ const _EXAMPLE6: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030"></go-datetimepicker>` },
+  { data: `<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>` },
   { data: `<p> <strong> Output: </strong> {{date7|date}}</p>` },
   { data: `` },
   { data: `` },
@@ -186,7 +186,7 @@ const _EXAMPLE7: Array<any> = [
 const _EXAMPLE8: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date8: Date;` },
+  { data: `private date9: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },

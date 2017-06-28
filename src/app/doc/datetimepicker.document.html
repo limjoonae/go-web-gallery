@@ -75,7 +75,7 @@
 					<div class="card-block">
 						<h4 class="form-group"> Basic </h4>
 						<go-datetimepicker [(date)]="date1" ></go-datetimepicker> 
-						<p> <strong> Output: </strong> {{date1}} </p>
+						<p> <strong> Output: </strong> {{date1|date}} </p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -193,8 +193,8 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4 class="form-group"> Navigators </h4>
-        				<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030"></go-datetimepicker>
+						<h4 class="form-group">Navigators and First Day of the Week</h4>
+        				<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>
 						<p> <strong> Output: </strong> {{date7|date}}</p>
 					</div>
 				</div>
@@ -217,8 +217,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> Time </h4>
-        				<go-datetimepicker [(date)]="date8" [showTime]="true"></go-datetimepicker>
-						<p> <strong> Output: </strong> {{date8}}</p> 
+        				<go-datetimepicker [(date)]="date8" [showSeconds]="true" [showTime]="true" [stepHour]="1"  [stepMinute]="5"  [stepSecond]="5" [hourFormat]="12"></go-datetimepicker>
+						<p><strong> Output: </strong> {{date8}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -239,7 +239,7 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4 class="form-group"> Inline </h4>
+						<h4 class="form-group"> In-Line Calendar </h4>
         				<go-datetimepicker [(date)]="date9" [inline]="true"></go-datetimepicker> 
 						<p> <strong> Output: </strong> {{date9|date}}</p> 
 					</div>

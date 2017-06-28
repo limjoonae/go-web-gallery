@@ -111,6 +111,7 @@
                                 (selected)="selected($event)" 
                                 (removed)="removed($event)"
                                 placeholder="please select city"
+                                [active]="initial"
                     ></ng-select>
                     <p><strong> Output value: </strong> {{ itemsToString(multiValue)}} </p>
                     <p><strong> Select value: </strong> {{ selectValue.text }} </p>

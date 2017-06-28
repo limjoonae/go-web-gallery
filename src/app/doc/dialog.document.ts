@@ -108,23 +108,35 @@ export class DialogDocument  {
     private releaseDay: string = '(29 March 2017)';
     
     private display: boolean = false;
+    private display2: boolean = false;
+    private display3: boolean = false;
 
     showDialog() {
         this.display = true;
     }
 
+    showDialog2() {
+        this.display2 = true;
+    }
+
+    showDialog3() {
+        this.display3 = true;
+    }
+
     private booleanArr: boolean[] = [true, false];
 
     private title: string = "Hello World";
+    private title2:string = 'Responsive';
+    private title3:string = 'Non-Responsive';
     private isShowHeader: boolean = true;
     private isDraggable: boolean = true;
     private isClosable: boolean = true;
-    private isResponsive: boolean = true;
+    private isResponsive: boolean=true;
     private isModal: boolean = true;
     private width: number = 300;
     private height: number;
     private body: string = '';
-
+    private res:boolean =!this.isResponsive;
     callTitle(value:any) {
       this.title = value;
       this.update();
@@ -146,7 +158,11 @@ export class DialogDocument  {
     }
 
     callResponsive(value: any){
-      this.isResponsive = this.stringToBoolean(value);
+      
+      console.log("test");
+      
+      this.isResponsive= this.stringToBoolean(value);
+      console.log(this.isResponsive);
       this.update();
     }
 
@@ -180,6 +196,15 @@ export class DialogDocument  {
 
     update(){
 this.codeExample = [
+
+      '<p-dialog [header]="' + this.title + '"',
+      '[modal] = "' + this.isModal + '"',
+      '[closable] = "' + this.isClosable + '"',
+      '[draggable] = "' + this.isDraggable + '"',
+      '[showHeader] = "' + this.isShowHeader + '"',
+      '[width] = "' + this.width + '"',
+      '[height] = "' + this.height + '"',
+
       'app.component.ts',
       `
  private display: boolean = false;
@@ -202,6 +227,7 @@ this.codeExample = [
       ' [showHeader] = "' + this.isShowHeader + '"',
       ' [width] = "' + this.width + '"',
       ' [height] = "' + this.height + '"',
+
       '>',
       '' + this.body,
       `
@@ -215,6 +241,15 @@ this.codeExample = [
     }
 
     private codeExample: Array<any> = [
+
+      '<p-dialog [header]="' + this.title + '"',
+      '[modal] = "' + this.isModal + '"',
+      '[closable] = "' + this.isClosable + '"',
+      '[draggable] = "' + this.isDraggable + '"',
+      '[showHeader] = "' + this.isShowHeader + '"',
+      '[width] = "' + this.width + '"',
+      '[height] = "' + this.height + '"',
+
       'app.component.ts',
       `
  private display: boolean = false;
@@ -237,6 +272,7 @@ this.codeExample = [
       ' [showHeader] = "' + this.isShowHeader + '"',
       ' [width] = "' + this.width + '"',
       ' [height] = "' + this.height + '"',
+
       '>',
       '' + this.body,
       `

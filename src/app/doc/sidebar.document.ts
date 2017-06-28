@@ -74,11 +74,10 @@ export class SidebarDocument {
 
     main_title = 'Example';
 
-    open_1: boolean = false;
-    open_2: boolean = false;
-    open_3: boolean = false;
-    open_4: boolean = false;
-    open_5: boolean = false;
+    private open_1: boolean = false;
+    private open_2: boolean = false;
+    private open_3: boolean = false;
+    private open_4: boolean = false;
 
     html_1: string = `<button class="btn btn-primary" *ngIf="!open_1" (click)="toggleSidebar_1()">Open Sidebar Default</button>
 <button class="btn btn-secondary" *ngIf="open_1" (click)="toggleSidebar_1()">Close Sidebar Default</button>
@@ -98,7 +97,7 @@ private toggleSidebar_1(): void {
     html_2: string = `<button class="btn btn-primary" (click)="toggleSidebar_2()">Open Sidebar with Lock Screen</button>
 
 <go-sidebar [(opened)]="open_2" position="top" [showBackdrop]='true' closeOnClickOutside="true">
-    <nav class="nav nav-pills nav-stacked">
+    <nav class="navbar navbar-default">
         <a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 4</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 5</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 6</a>
@@ -143,22 +142,7 @@ private sidebarMessage: string;
 private openFinish(): void { this.sidebarMessage = 'เปิดเสร็จสิ้น' };
 private closeFinish(): void { this.sidebarMessage = 'ปิดเรียบร้อย' };
 `;
-     html_5: string = `<button class="btn btn-primary" *ngIf="!open_5" (click)="toggleSidebar_5()">Open Sidebar with Return Result</button>
-<button class="btn btn-secondary" *ngIf="open_5" (click)="toggleSidebar_5()">Close Sidebar with Return Result</button>
-<p>{{sidebarMessage}}</p>
 
-<go-sidebar [(opened)]="open_5" position="bottom" closeOnClickOutside="true">
-    <nav class="nav nav-pills nav-stacked">
-        <a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 13</a>
-        <a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 14</a>
-        <a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 15</a>
-    </nav>
-</go-sidebar>`;
-    ts_5: string = `private open_5: boolean = false;
-private toggleSidebar_5(): void {
-    this.open_5 = !this.open_5;
-}
-`;
 
     private toggleSidebar_1() {
         this.open_1 = !this.open_1;
@@ -172,10 +156,6 @@ private toggleSidebar_5(): void {
     private toggleSidebar_4() {
         this.open_4 = !this.open_4;
     }
-    private toggleSidebar_5() {
-        this.open_5 = !this.open_5;
-    }
-
     sidebarMessage: string;
     openFinish() { this.sidebarMessage = 'เปิดเสร็จสิ้น' };
     closeFinish() { this.sidebarMessage = 'ปิดเรียบร้อย' };

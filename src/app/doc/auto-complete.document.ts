@@ -34,7 +34,22 @@ const APPMODULELINE: Array<any> = [
   ` ],`,
   `})`
 ];
+ const _EXAMPLE1: Array<any> = [
+  { data: `app.component.ts` },  
+  { data: `` },
+   { data: ` myCallback(newVal: any) {
+    console.log("value is changed to ", newVal);
+    this.model1 = newVal;
+  }` },
+  { data: `private selectedDatas: Array<any>;` },
+  { data: `` },
+  { data: `app.component.html` },
+  { data: `
+<input type="text" class="form-control" auto-complete [source]="arrayOfStrings" 
+(ngModelChange)="myCallback($event)" [ngModel]="model1" placeholder="enter text">
+` },
 
+];
 
 @Component({
   selector: 'auto-complete-document',
@@ -62,9 +77,9 @@ export class AutoCompleteDocument {
   private systemjsLine = SYSTEMJSLINE;
   private appModuleLine = APPMODULELINE;
   private appModuleDetail: string = `app.module.ts - ทำการ import พร้อมทั้งกำหนดค่าเพิ่มเติมใน imports`;
-
+  private codeExample1 = _EXAMPLE1;
   arrayOfNumbers: number[] = [100, 200, 300, 400, 500];
-
+ 
   arrayOfStrings: string[] =
   ["this", "is", "array", "of", "text"];
 

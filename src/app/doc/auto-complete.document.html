@@ -70,8 +70,9 @@
                     </div>
                     <div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
                         <div class="jumbotron">
-                            <code>&lt;input type="text" class="form-control" auto-complete [source]="arrayOfStrings" (ngModelChange)="myCallback($event)"
-                        [ngModel]="model1" placeholder="enter text"&gt;</code>
+                            <div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample1">{{codeExample.data}} <br></code></pre>
+						</div>
                         </div>
                     </div>
                 </div>

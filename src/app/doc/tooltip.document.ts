@@ -4,7 +4,7 @@ const _ATTRIBUTELIST: Array<any> = [
     { require: '', name: 'pTooltip', type: 'string', description: `ใช้สำหรับระบุข้อความที่จะแสดงใน tooltip และสามารถใช้ Tag html`},
     { require: '', name: 'tooltipPosition', type: 'boolean', description: `ใช้สำหรับระบุตำแหน่งของ tooltip โดยสามารถกำหนดได้ดังนี้  "top", "bottom", "left", "right"`},
     { require: '', name: 'tooltipEvent', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ tooltip แสดงเมื่อเกิดเหตุการณ์ใด ๆ โดยสามารถกำหนดได้ 2 เหตุการณ์ดังนี้ "hover", "focus"`},
-    { require: '', name: 'tooltipDisabled', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ค่าเริ่มต้นของ panel นั้น collapsed หรือไม่`},
+    { require: '', name: 'tooltipDisabled', type: 'boolean', description: `ใช้กำหนดเพื่อปิดใช้งาน tooltip โดยจะไม่แสดงกล่อง tooltip เมื่อมีค่าเป็น true`},
     { require: '', name: 'positionStyle', type: 'string', description: `ใช้สำหรับระบุ style ของ position`},
     { require: '', name: 'tooltipStyleClass', type: 'string', description: `ใช้สำหรับระบุ style class`}
 ];
@@ -67,8 +67,8 @@ const _EXAMPLE1: Array<any> = [
   <go-button label="Right" buttonColor="danger"  pTooltip="tooltip position right"></go-button>
   <go-button label="Left" buttonColor="info"  pTooltip="tooltip position left" tooltipPosition="left"></go-button> 
   <go-button label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
-  <go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom"></go-button>
-  <input pTooltip = "Textbox Tooltip" placeholder="Mouse On Me!!" type="text" ng-reflect-text="Enter your name">
+  <go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom" tooltipDisabled="true"></go-button>
+  <input pTooltip = "Textbox Tooltip" placeholder="Mouse On Me!!" type="text" ng-reflect-text="Enter your name" tooltipEvent="focus">
     ` },
 ];
 const _EXAMPLE2: Array<any> = [

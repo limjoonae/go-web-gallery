@@ -100,14 +100,14 @@
 				<div class="col-md-4">
 					<div class="card-block">
                         <h4> Basic </h4>
-						<p-accordion>
-                            <p-accordionTab header="Header 1">
+						<p-accordion id = "BasicAccordion">
+                            <p-accordionTab header="Header 1" id = "BasicAccordionTab1">
                             Content 1
                             </p-accordionTab>
-                            <p-accordionTab header="Header 2">
+                            <p-accordionTab header="Header 2" id = "BasicAccordionTab2">
                                 Content 2
                             </p-accordionTab>
-                            <p-accordionTab header="Header 3">
+                            <p-accordionTab header="Header 3" id = "BasicAccordionTab3">
                                 Content 3    
                             </p-accordionTab>
                         </p-accordion>
@@ -123,7 +123,7 @@
 					</div>
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
-                            <pre> <code *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+                            <pre><code *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>
@@ -132,14 +132,14 @@
 				<div class="col-md-4">
 					<div class="card-block">
                         <h4> Multiple </h4>
-						<p-accordion [multiple]="true">
-                            <p-accordionTab header="Header 1">
+						<p-accordion [multiple]="true" id="MultipleAccordion">
+                            <p-accordionTab header="Header 1" id="MultipleAccordionTab1">
                                 Content 1
                             </p-accordionTab>
-                            <p-accordionTab header="Header 2">
+                            <p-accordionTab header="Header 2" id="MultipleAccordionTab2">
                                 Content 2
                             </p-accordionTab>
-                            <p-accordionTab header="Header 3">
+                            <p-accordionTab header="Header 3" id="MultipleAccordionTab3">
                                 Content 3    
                             </p-accordionTab>
                         </p-accordion>
@@ -155,7 +155,7 @@
 					</div>
 					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+							<pre><code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>
@@ -163,15 +163,15 @@
 			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">
-                        <h4> Disabled </h4>
-						<p-accordion>
-                            <p-accordionTab header="Header 1" [disabled]="true">
+                        <h4>Lazy</h4>
+						<p-accordion [lazy]= "true" id="LazyAccordion">
+                            <p-accordionTab header="Header 1" [selected]="true" id="LazyAccordionTab1">
                             Content 1
                             </p-accordionTab>
-                            <p-accordionTab header="Header 2">
+                            <p-accordionTab header="Header 2" id="LazyAccordionTab2">
                                 Content 2
                             </p-accordionTab>
-                            <p-accordionTab header="Header 3">
+                            <p-accordionTab header="Header 3" id="LazyAccordionTab3">
                                 Content 3    
                             </p-accordionTab>
                         </p-accordion>
@@ -187,7 +187,7 @@
 					</div>
 					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+							<pre><code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
 						</div>
 					</div>
 				</div>
@@ -195,15 +195,15 @@
 			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">
-                        <h4> Selected </h4>
-						<p-accordion >
-                            <p-accordionTab header="Header 1" [selected]="true">
+                        <h4> Disabled </h4>
+						<p-accordion id="DisableAccordion">
+                            <p-accordionTab header="Header 1" [disabled]="true" [selected]= "true" id="DisableAccordionTab1">
                             Content 1
                             </p-accordionTab>
-                            <p-accordionTab header="Header 2" [selected]="true">
+                            <p-accordionTab header="Header 2" id="DisableAccordionTab2">
                                 Content 2
                             </p-accordionTab>
-                            <p-accordionTab header="Header 3" [selected]="true">
+                            <p-accordionTab header="Header 3" id="DisableAccordionTab3">
                                 Content 3    
                             </p-accordionTab>
                         </p-accordion>
@@ -219,7 +219,7 @@
 					</div>
 					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+							<pre><code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
 						</div>
 					</div>
 				</div>
@@ -227,15 +227,15 @@
 			<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">
-                        <h4>Lazy</h4>
-						<p-accordion [lazy]= "true">
-                            <p-accordionTab header="Header 1" [selected]="true">
+                        <h4> Selected </h4>
+						<p-accordion id="SelectedAccordion">
+                            <p-accordionTab header="Header 1" [selected]="true" id="SelectedAccordionTab1">
                             Content 1
                             </p-accordionTab>
-                            <p-accordionTab header="Header 2">
+                            <p-accordionTab header="Header 2" [selected]="true" id="SelectedAccordionTab2">
                                 Content 2
                             </p-accordionTab>
-                            <p-accordionTab header="Header 3">
+                            <p-accordionTab header="Header 3" [selected]="true" id="SelectedAccordionTab3">
                                 Content 3    
                             </p-accordionTab>
                         </p-accordion>

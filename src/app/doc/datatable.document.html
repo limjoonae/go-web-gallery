@@ -187,25 +187,19 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4> Filter &amp; Editable &amp; Selection</h4>
+						<h4> Filter &amp; Editable</h4>
 						<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
 							<div class="row"> 
 								<i class="col col-md-1  fa fa-search" ></i> 
 								<input class="col col-md-10" #gb type="text"  placeholder="Global Filter">
 							</div>
 						</div>
-						<p-dataTable [value]="dataTable3" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" selectionMode="multiple" [(selection)]="selectedDatas">
-							<p-column field="vin" header="Vin (startsWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
-                            <p-column field="year" header="Year" [editable]="true" ></p-column>
-                            <p-column field="brand" header="Brand" [editable]="true" ></p-column>
-                            <p-column field="color" header="Color" [editable]="true">
-							</p-column>
-							<p-footer>
-								<ul>
-									<li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
-								</ul>
-							</p-footer>
-                        </p-dataTable>
+						<p-dataTable [value]="dataTable3" [editable]="true" [rows]="5" [paginator]="true"  [globalFilter]="gb">
+							<p-column field="vin" header="Vin (startWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
+							<p-column field="year" header="Year (equals)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='equals'></p-column>
+							 <p-column field="brand" header="Brand (contain)" [editable]="true"  [filter]="true" filterPlaceholder="Search" filterMatchMode='contains'></p-column>
+							<p-column field="color" header="Color (endsWith)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='endsWith'></p-column>
+						</p-dataTable>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -218,7 +212,7 @@
 					</div>
 					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+							<pre><code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
 						</div>
 					</div>
 				</div>
@@ -227,7 +221,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Row Expansion &amp; Resize &amp; Reorder</h4>
-						<p-dataTable [value]="dataTable4" expandableRows="true" resizableColumns="true" reorderableColumns="true">
+						<p-dataTable [value]="dataTable4" expandableRows="true" resizableColumns="true" reorderableColumns="true" columnResizeMode="expand">
                             <p-header>List of Cars</p-header>
 							<p-column expander="true" styleClass="col-icon"></p-column>
 							<p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -267,7 +261,7 @@
 					</div>
 					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+							<pre><code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
 						</div>
 					</div>
 				</div>
@@ -276,16 +270,16 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Scroll &amp; Export CSV</h4>
-						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight={{scrollHeightCal(dataTable5)}}>
+						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="150px" scrollWidth = '450px'>
 							<p-header>
 								<div >
 									<go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
 								</div>
 							</p-header>
-							<p-column field="vin" header="Vin" ></p-column>
-							<p-column field="year" header="Year"></p-column>
-							<p-column field="brand" header="Brand"></p-column>
-							<p-column field="color" header="Color"></p-column>
+							<p-column field="vin" header="Vin" [style] = "{width:'160px'}" ></p-column>
+							<p-column field="year" header="Year" [style] = "{width:'160px'}" ></p-column>
+							<p-column field="brand" header="Brand" [style] = "{width:'160px'}" ></p-column>
+							<p-column field="color" header="Color" [style] = "{width:'160px'}" ></p-column>
 						</p-dataTable>   
 					</div>
 				</div>
@@ -299,7 +293,7 @@
 					</div>
 					<div id="collapse_ex_5" class="collapse" role="tabpanel" aria-labelledby="ex_5">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample5" >{{codeExample.data}} <br></code> </pre>
+							<pre><code  *ngFor="let codeExample of codeExample5" >{{codeExample.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>
@@ -328,7 +322,41 @@
 					</div>
 					<div id="collapse_ex_6" class="collapse" role="tabpanel" aria-labelledby="ex_6">
 						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+							<pre><code  *ngFor="let codeExample of codeExample6" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Selection Mode</h4>
+						
+						<p-dataTable [value]="dataTable3"  selectionMode="multiple" [(selection)]="selectedDatas">
+							<p-column field="vin" header="Vin"></p-column>
+							<p-column field="year" header="Year" ></p-column>
+							 <p-column field="brand" header="Brand" ></p-column>
+							<p-column field="color" header="Color" ></p-column>
+						
+						<p-footer>
+						<ul>
+      						<li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
+    					</ul>
+  						</p-footer>
+						  </p-dataTable>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_7">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_7" aria-expanded="false" aria-controls="collapse_ex_7">
+							Code Example#7
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_7" class="collapse" role="tabpanel" aria-labelledby="ex_7">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample7" >{{codeExample.data}} <br></code></pre>
 						</div>
 					</div>
 				</div>

@@ -115,6 +115,7 @@ const APPMODULELINE: Array<any> = [
      `          (selected)="selected($event)"`,
      `          (removed)="removed($event)"`,
      `          placeholder="please select city"`,
+     `          [active]="initial"`,
      `></ng-select>`,
      `<p><strong> Output value: </strong> {{ itemsToString(multiValue)}} </p>`,
      `<p><strong> Select value: </strong> {{ selectValue.text }} </p>`,
@@ -132,8 +133,11 @@ const APPMODULELINE: Array<any> = [
      `         'Rotterdam', 'Seville', 'Sheffield', 'Sofia', 'Stockholm', 'Stuttgart',`, 
      `         'Zagreb', 'Zaragoza', 'Łódź'];`,
      ``,
+     `private initial:Array<string> = ['Munich'];`,
+     ``,    
      `private selectValue: any = [];`,
      `private removeValue: any = [];`,
+     `private multiValue: any = [];`,
      ``,
      `public refreshMultiValue(value: any): void {`,
      `  this.multiValue = value;`,
@@ -225,7 +229,7 @@ const APPMODULELINE: Array<any> = [
     COLORS.forEach((color: { name: string, hex: string }) => {
         this.colorItems.push({
             id: color.hex,
-            text: '<colorbox style='background-color:$ {color.hex};'></colorbox>$ {color.name} ($ {color.hex})'
+            text: '<colorbox style="background-color:$ {color.hex};"></colorbox>$ {color.name} ($ {color.hex})'
         });
     });
 }`,
@@ -282,6 +286,8 @@ export class SelectboxDocument {
         'Rotterdam', 'Seville', 'Sheffield', 'Sofia', 'Stockholm', 'Stuttgart',
         'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
         'Zagreb', 'Zaragoza', 'Łódź'];
+
+    private initial:Array<string> = ['Munich'];    
 
     private removeValue: any = [];
     private selectValue: any = [];
