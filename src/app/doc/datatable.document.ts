@@ -171,7 +171,7 @@ const _EXAMPLE1: Array<any> = [
   { data: `app.component.html` },
   { data: `` },
   { data: `<p-dataTable [value]="dataTable1">` },
-  { data: `   <p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header"></p-column>` },
+  { data: `   <p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header" id='dataTable_basic'></p-column>` },
   { data: `</p-dataTable>` },
 
 
@@ -179,7 +179,7 @@ const _EXAMPLE1: Array<any> = [
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.html` },  
   { data: `
-<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple">
+<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple" id='dataTable_paginator_sort'>
   <p-header>List of Cars</p-header>
   <p-column field="vin" header="Vin" [sortable]="true"></p-column>
   <p-column field="year" header="Year" [sortable]="true"></p-column>
@@ -205,7 +205,7 @@ const _EXAMPLE3: Array<any> = [
   </div>
 </div>` },
   { data: `
-<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true">
+<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" id='dataTable_filter_editable'>
   <p-column field="vin" header="Vin (startWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
 	<p-column field="year" header="Year (equals)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='equals'></p-column>
 	<p-column field="brand" header="Brand (contain)" [editable]="true"  [filter]="true" filterPlaceholder="Search" filterMatchMode='contains'></p-column>
@@ -222,7 +222,7 @@ const _EXAMPLE3: Array<any> = [
 const _EXAMPLE4: Array<any> = [
   { data: `app.component.html` },
   { data: `
-<p-dataTable [value]="dataTable2" expandableRows="true" resizableColumns="true" reorderableColumns="true">
+<p-dataTable [value]="dataTable2" expandableRows="true" resizableColumns="true" reorderableColumns="true" id='dataTable_resize'>
   <p-header>List of Cars</p-header>
   <p-column expander="true" styleClass="col-icon"></p-column>
   <p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -255,7 +255,8 @@ const _EXAMPLE4: Array<any> = [
 const _EXAMPLE5: Array<any> = [
   { data: `app.component.html` },
   { data: `
-<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="150px" scrollWidth='480px'>
+
+<p-dataTable  [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="100px" scrollWidth='600px' id='dataTable_scroll_csv'>
   <p-header>
     <div >
       <go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
@@ -297,7 +298,7 @@ toggle() {
   { data: `` },
   { data: `app.component.html` },
   { data: `
-<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()"></go-button>
+<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()" id='dataTable_responsive'></go-button>
 <p-dataTable [value]="dataTable6" [rows]="5" [paginator]="true" [responsive]="true" [stacked]="stacked">
   <p-header>Responsive</p-header>
   <p-column field="vin" header="Vin"></p-column>
@@ -315,7 +316,7 @@ const _EXAMPLE7: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `
-<p-dataTable [value]="dataTable3" selectionMode="multiple" [(selection)]="selectedDatas">
+<p-dataTable [value]="dataTable3" selectionMode="multiple" [(selection)]="selectedDatas" id='dataTable_selection'>
 <p-column field="vin" header="Vin"></p-column>
 <p-column field="year" header="Year" ></p-column>
 <p-column field="brand" header="Brand" ></p-column>
@@ -420,6 +421,23 @@ export class DataTableDocument  {
       else
       return '100px';
     }
-
-    
+/*
+    loadCarsLazy(event: LazyLoadEvent) {
+        //for demo purposes keep loading the same dataset 
+        //in a real production application, this data should come from server by building the query with LazyLoadEvent options 
+        this.dataTable5 = [
+            {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
+        ];
+        
+    }   
+    */
 }

@@ -197,14 +197,6 @@ export class DialogDocument  {
     update(){
 this.codeExample = [
 
-      '<p-dialog [header]="' + this.title + '"',
-      '[modal] = "' + this.isModal + '"',
-      '[closable] = "' + this.isClosable + '"',
-      '[draggable] = "' + this.isDraggable + '"',
-      '[showHeader] = "' + this.isShowHeader + '"',
-      '[width] = "' + this.width + '"',
-      '[height] = "' + this.height + '"',
-
       'app.component.ts',
       `
  private display: boolean = false;
@@ -223,10 +215,10 @@ this.codeExample = [
       ' [modal] = "' + this.isModal + '"',
       ' [closable] = "' + this.isClosable + '"',
       ' [draggable] = "' + this.isDraggable + '"',
-      ' [responsive] = "' + this.isResponsive + '"',
       ' [showHeader] = "' + this.isShowHeader + '"',
       ' [width] = "' + this.width + '"',
       ' [height] = "' + this.height + '"',
+      ' id = "dialog_configuration"',
 
       '>',
       '' + this.body,
@@ -241,15 +233,6 @@ this.codeExample = [
     }
 
     private codeExample: Array<any> = [
-
-      '<p-dialog [header]="' + this.title + '"',
-      '[modal] = "' + this.isModal + '"',
-      '[closable] = "' + this.isClosable + '"',
-      '[draggable] = "' + this.isDraggable + '"',
-      '[showHeader] = "' + this.isShowHeader + '"',
-      '[width] = "' + this.width + '"',
-      '[height] = "' + this.height + '"',
-
       'app.component.ts',
       `
  private display: boolean = false;
@@ -268,11 +251,10 @@ this.codeExample = [
       ' [modal] = "' + this.isModal + '"',
       ' [closable] = "' + this.isClosable + '"',
       ' [draggable] = "' + this.isDraggable + '"',
-      ' [responsive] = "' + this.isResponsive + '"',
       ' [showHeader] = "' + this.isShowHeader + '"',
       ' [width] = "' + this.width + '"',
       ' [height] = "' + this.height + '"',
-
+      ' id = "dialog_configuration"',
       '>',
       '' + this.body,
       `

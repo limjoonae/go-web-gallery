@@ -139,7 +139,7 @@
 							<p-dialog [header]="title" [(visible)]="display" 
 										[modal] = "isModal" [width] = "width" [height] = "height" 
 										[closable] = "isClosable" 
-										[draggable] = "isDraggable" [showHeader] = "isShowHeader" breakpoint='500'>
+										[draggable] = "isDraggable" [showHeader] = "isShowHeader" breakpoint='500' id='dialog_configuration'>
 								<p> {{body}}</p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
@@ -162,7 +162,7 @@
 							<p-dialog [header]="title2" [(visible)]="display2" 
 										[modal] = "true" [width] = "400" [height] = "250" 
 										[closable] = "true" [responsive] = "true"
-										[draggable] = "true" [showHeader] = "true">
+										[draggable] = "true" [showHeader] = "true" id='dialog_responsive'>
 								<p> Please Drag the Dialog. Then, resize your browser.<br><br></p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
@@ -176,7 +176,7 @@
 							<p-dialog [header]="title3" [(visible)]="display3" 
 										[modal] = "true" [width] = "400" [height] = "250" 
 										[closable] = "true" [responsive] = "false"
-										[draggable] = "true" [showHeader] = "true">
+										[draggable] = "true" [showHeader] = "true" id='dialog_non-responsive'>
 								<p>Please Drag the Dialog. Then, resize your browser.<br><br></p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
@@ -204,11 +204,13 @@
 							<code>&lt;p-dialog [header]="title2" [(visible)]="display2" 
 										[modal] = "true" [width] = "300" [height] = "300" 
 										[closable] = "true" [responsive] = "true"
-										[draggable] = "true" [showHeader] = "true"&gt;</code><br>
+										[draggable] = "true" [showHeader] = "true"
+										id='dialog_responsive'&gt;</code><br>
 							<code>&lt;p-dialog [header]="title3" [(visible)]="display3" 
 										[modal] = "true" [width] = "300" [height] = "300" 
 										[closable] = "true" [responsive] = "false"
-										[draggable] = "true" [showHeader] = "true"&gt;</code><br>
+										[draggable] = "true" [showHeader] = "true"
+										id='dialog_non-responsive'&gt;</code><br>
 							<p></p>
 							<p>component.ts</p>
 							<pre>

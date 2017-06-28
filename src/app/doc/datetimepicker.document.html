@@ -74,8 +74,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> Basic </h4>
-						<go-datetimepicker [(date)]="date1" ></go-datetimepicker> 
-						<p> <strong> Output: </strong> {{date1|date}} </p>
+						<go-datetimepicker [(date)]="basicDatetimepicker" id="basicDatetimepicker"></go-datetimepicker> 
+						<p> <strong> Output: </strong> {{basicDatetimepicker|date}} </p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -97,8 +97,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> Thai</h4>
-						<go-datetimepicker [(date)]="date2" calendarLanguage="th" dateFormat="dd/mm/yy" [isBuddhistYear]="true"></go-datetimepicker> 
-						<p> <strong> Output: </strong> {{date2|date}}</p>
+						<go-datetimepicker id="thaiDateimepicker" [(date)]="thaiDateimepicker" calendarLanguage="th" dateFormat="dd/mm/yy" [isBuddhistYear]="true"></go-datetimepicker> 
+						<p> <strong> Output: </strong> {{thaiDateimepicker|date}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -120,8 +120,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group">	Icon </h4>
-						<go-datetimepicker [(date)]="date3" [showIcon]="true"></go-datetimepicker>
-						<p> <strong> Output: </strong> {{date3|date}}</p>
+						<go-datetimepicker id="iconDatetimepicker" [(date)]="iconDatetimepicker" [showIcon]="true"></go-datetimepicker>
+						<p> <strong> Output: </strong> {{iconDatetimepicker|date}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -142,14 +142,14 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4 class="form-group"> Min-Max </h4>
+						<h4 class="form-group"> Min-Max Specify </h4>
 						<div class="form-group">
-							Date from <go-datetimepicker [(date)]="date4" [maxDate]="date5" [readonlyInput]="true"></go-datetimepicker>
-							Date to <go-datetimepicker [(date)]="date5" [minDate]="date4" [readonlyInput]="true"></go-datetimepicker>
+							Date from <go-datetimepicker id="datefromDatetimepicker"[(date)]="datefromDatetimepicker" [maxDate]="datetoDatetimepicker" [readonlyInput]="true"></go-datetimepicker>
+							Date to <go-datetimepicker id="datetoDatetimepicker" [(date)]="datetoDatetimepicker" [minDate]="datefromDatetimepicker" [readonlyInput]="true"></go-datetimepicker>
 						</div>
 						<!--<p> <strong> Output: </strong> </p>-->
-						<p> <strong> from: </strong> {{date4|date}} </p> 
-						<p> <strong>  to </strong> {{date5|date}}</p>
+						<p> <strong> from: </strong> {{datefromDatetimepicker|date}} </p> 
+						<p> <strong>  to </strong> {{datetoDatetimepicker|date}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -171,8 +171,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> Disable Days</h4>
-        				<go-datetimepicker [(date)]="date6" tabindex="0" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="readonlyInput"></go-datetimepicker>
-						<p> <strong> Output: </strong> {{date6|date}}</p>
+        				<go-datetimepicker id="disableDatetimepicker" [(date)]="disableDatetimepicker" tabindex="0" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="readonlyInput"></go-datetimepicker>
+						<p> <strong> Output: </strong> {{disableDatetimepicker|date}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -193,9 +193,9 @@
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<h4 class="form-group">Navigators and First Day of the Week</h4>
-        				<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>
-						<p> <strong> Output: </strong> {{date7|date}}</p>
+						<h4 class="form-group"> Navigators and First Day of the Week</h4>
+        				<go-datetimepicker id="navigatorDatetimepicker" [(date)]="navigatorDatetimepicker" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>
+						<p> <strong> Output: </strong> {{navigatorDatetimepicker|date}}</p>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -217,8 +217,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> Time </h4>
-        				<go-datetimepicker [(date)]="date8" [showSeconds]="true" [showTime]="true" [stepHour]="1"  [stepMinute]="5"  [stepSecond]="5" [hourFormat]="12"></go-datetimepicker>
-						<p><strong> Output: </strong> {{date8}}</p>
+        				<go-datetimepicker id="dateAndTimepicker" [(date)]="dateAndTimepicker" [showSeconds] = "true" [showTime]="true" [stepHour] = "1"  [stepMinute] = "5"  [stepSecond] = "5" [hourFormat] = "12"></go-datetimepicker>
+						<p> <strong> Output: </strong> {{dateAndTimepicker}}</p> 
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -240,8 +240,8 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4 class="form-group"> In-Line Calendar </h4>
-        				<go-datetimepicker [(date)]="date9" [inline]="true"></go-datetimepicker> 
-						<p> <strong> Output: </strong> {{date9|date}}</p> 
+        				<go-datetimepicker id="inlineDateimepicker" [(date)]="inlineDateimepicker" [inline]="true"></go-datetimepicker> 
+						<p> <strong> Output: </strong> {{inlineDateimepicker|date}}</p> 
 					</div>
 				</div>
 				<div class="col-md-7">

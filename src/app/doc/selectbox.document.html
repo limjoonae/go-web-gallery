@@ -83,6 +83,7 @@
                                     [items]="items" 
                                     [disabled]="disabledSingle" 
                                     (data)="refreshSingleValue($event)"
+                                    id='selectbox_single'
                                 ></ng-select>
                                     <p></p>
                     <p><strong> Output value: </strong> {{ singleValue.text }} </p>
@@ -112,6 +113,7 @@
                                 (removed)="removed($event)"
                                 placeholder="please select city"
                                 [active]="initial"
+                                id='selectbox_multiple'
                     ></ng-select>
                     <p><strong> Output value: </strong> {{ itemsToString(multiValue)}} </p>
                     <p><strong> Select value: </strong> {{ selectValue.text }} </p>
@@ -139,7 +141,8 @@
                     [allowClear]="true"
                                 [items]="colorItems"
                                 (data)="refreshColorValue($event)"
-                                placeholder="Please select color">
+                                placeholder="Please select color"
+                                id='selectbox_searchColor'>
                     </ng-select>
                     <p><strong> Output value: </strong> {{colorValue.text}} </p>
                 </div>

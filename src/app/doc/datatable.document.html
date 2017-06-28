@@ -132,7 +132,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Basic </h4>
-						<p-dataTable [value]="dataTable1">
+						<p-dataTable [value]="dataTable1" id='dataTable_basic'>
 							<p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header"></p-column>
 						</p-dataTable>
 					</div>
@@ -156,7 +156,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Paginator &amp; Sort &amp; Template</h4>
-						<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple">
+						<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple" id='dataTable_paginator_sort'>
                             <p-header>List of Cars</p-header>
 							<p-column field="vin" header="Vin" [sortable]="true"></p-column>
                             <p-column field="year" header="Year" [sortable]="true"></p-column>
@@ -194,7 +194,23 @@
 								<input class="col col-md-10" #gb type="text"  placeholder="Global Filter">
 							</div>
 						</div>
-						<p-dataTable [value]="dataTable3" [editable]="true" [rows]="5" [paginator]="true"  [globalFilter]="gb">
+
+						<!--<p-dataTable [value]="dataTable3" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" selectionMode="multiple" [(selection)]="selectedDatas" >
+							<p-column field="vin" header="Vin (contains)" [filter]="true" filterPlaceholder="Search" [editable]="true" [filterMatchMode] = "contains"></p-column>
+                            <p-column field="year" header="Year" [editable]="true" ></p-column>
+                            <p-column field="brand" header="Brand" [editable]="true" ></p-column>
+                            <p-column field="color" header="Color" [editable]="true" ></p-column>
+							
+							<p-footer>
+								<ul>
+									<li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
+								</ul>
+							</p-footer>
+                        </p-dataTable>-->
+						<p-dataTable [value]="dataTable3" [editable]="true" [rows]="5" [paginator]="true"  [globalFilter]="gb" id='dataTable_filter_editable'>
+
+						
+
 							<p-column field="vin" header="Vin (startWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
 							<p-column field="year" header="Year (equals)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='equals'></p-column>
 							 <p-column field="brand" header="Brand (contain)" [editable]="true"  [filter]="true" filterPlaceholder="Search" filterMatchMode='contains'></p-column>
@@ -221,7 +237,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Row Expansion &amp; Resize &amp; Reorder</h4>
-						<p-dataTable [value]="dataTable4" expandableRows="true" resizableColumns="true" reorderableColumns="true" columnResizeMode="expand">
+						<p-dataTable [value]="dataTable4" expandableRows="true" resizableColumns="true" reorderableColumns="true" columnResizeMode="expand" id='dataTable_resize'>
                             <p-header>List of Cars</p-header>
 							<p-column expander="true" styleClass="col-icon"></p-column>
 							<p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -270,7 +286,9 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Scroll &amp; Export CSV</h4>
-						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="150px" scrollWidth = '450px'>
+
+						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="100px" scrollWidth="600px" id='dataTable_scroll_csv'>
+
 							<p-header>
 								<div >
 									<go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
@@ -302,7 +320,7 @@
 				<div class="col-md-5">
 					<div class="card-block">
 						<h4> Responsive</h4>
-						<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()"></go-button>
+						<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()" id='dataTable_responsive'></go-button>
 						<p-dataTable [value]="dataTable6" [rows]="5" [paginator]="true" [responsive]="true" [stacked]="stacked">
 							<p-header>Responsive</p-header>
 							<p-column field="vin" header="Vin"></p-column>
@@ -332,7 +350,7 @@
 					<div class="card-block">
 						<h4> Selection Mode</h4>
 						
-						<p-dataTable [value]="dataTable3"  selectionMode="multiple" [(selection)]="selectedDatas">
+						<p-dataTable [value]="dataTable3"  selectionMode="multiple" [(selection)]="selectedDatas" id='dataTable_selection'>
 							<p-column field="vin" header="Vin"></p-column>
 							<p-column field="year" header="Year" ></p-column>
 							 <p-column field="brand" header="Brand" ></p-column>

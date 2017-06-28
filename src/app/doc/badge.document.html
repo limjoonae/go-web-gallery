@@ -72,8 +72,8 @@
 			<div class="row row-in-tab">
 				<h6>Badge Style</h6>
 				<div class="col-md-3">
-					<go-badge type="badge" badgeData="default"></go-badge><br>
-					<go-badge type="badge" badgeData="pill" badgeStyle="pill"></go-badge>
+					<go-badge type="badge" badgeData="default" id="default_badge"></go-badge><br>
+					<go-badge type="badge" badgeData="pill" badgeStyle="pill" id="pill_badge"></go-badge>
 				</div>
 				<div class="col-md-9">
 					<div role="tab" id="ex_1">
@@ -85,8 +85,8 @@
 					</div>
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
-							<code>&lt;go-badge type="badge" badgeData="default"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="pill" badgeStyle="pill"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="default" id="default_badge"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="pill" badgeStyle="pill" id="pill_badge"&gt;&lt;/go-badge&gt;</code><br/>
 						</div>
 					</div>
 				</div>
@@ -94,12 +94,12 @@
 			<div class="row row-in-tab">
 				<h6>Badge Color</h6>
 				<div class="col-md-3">
-					<go-badge type="badge" badgeData="badge"></go-badge><br>
-					<go-badge type="badge" badgeData="badge" badgeColor="primary"></go-badge><br>
-					<go-badge type="badge" badgeData="badge" badgeColor="success"></go-badge><br>
-					<go-badge type="badge" badgeData="badge" badgeColor="info"></go-badge><br>
-					<go-badge type="badge" badgeData="badge" badgeColor="warning"></go-badge><br>
-					<go-badge type="badge" badgeData="badge" badgeColor="danger"></go-badge>
+					<go-badge type="badge" badgeData="badge" id="color_badge_default"></go-badge><br>
+					<go-badge type="badge" badgeData="badge" id="color_badge_primary" badgeColor="primary"></go-badge><br>
+					<go-badge type="badge" badgeData="badge" id="color_badge_success" badgeColor="success"></go-badge><br>
+					<go-badge type="badge" badgeData="badge" id="color_badge_info" badgeColor="info"></go-badge><br>
+					<go-badge type="badge" badgeData="badge" id="color_badge_warning" badgeColor="warning"></go-badge><br>
+					<go-badge type="badge" badgeData="badge" id="color_badge_danger" badgeColor="danger"></go-badge>
 				</div>
 				<div class="col-md-9">
 					<div role="tab" id="ex_2">
@@ -111,12 +111,12 @@
 					</div>
 					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
 						<div class="jumbotron">
-							<code>&lt;go-badge type="badge" badgeData="badge"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="badge" badgeColor="primary"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="badge" badgeColor="success"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="badge" badgeColor="info"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="badge" badgeColor="warning"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge" badgeData="badge" badgeColor="danger"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_default"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_primary" badgeColor="primary"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_success"badgeColor="success"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_info" badgeColor="info"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_warning" badgeColor="warning"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge" badgeData="badge" id="color_badge_danger" badgeColor="danger"&gt;&lt;/go-badge&gt;</code><br/>
 						</div>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 			<div class="row row-in-tab">
 				<h6>Badge Link</h6>
 				<div class="col-md-3">
-					<go-badge type="badge-link" labelText="Notification" badgeData="6"></go-badge>
+					<go-badge type="badge-link" labelText="Notification" badgeData="6" id="badge_link"></go-badge>
 				</div>
 				<div class="col-md-9">
 					<div role="tab" id="ex_3">
@@ -136,7 +136,7 @@
 					</div>
 					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
 						<div class="jumbotron">
-							<code>&lt;go-badge type="badge-link" labelText="Notification" badgeData="6"&gt;&lt;/go-badge&gt;</code>
+							<code>&lt;go-badge type="badge-link" labelText="Notification" badgeData="6" id="badge_link"&gt;&lt;/go-badge&gt;</code>
 						</div>
 					</div>
 				</div>
@@ -144,11 +144,11 @@
 			<div class="row row-in-tab">
 				<h6>Badge Button</h6>
 				<div class="col-md-3">
-					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="danger" buttonSize="sm" badgeStyle="pill"></go-badge><br>
+					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="danger" buttonSize="sm" badgeStyle="pill" id="small_badge_button"></go-badge><br>
 					<p></p>
-					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="warning"></go-badge><br>
+					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="warning" id="medium_badge_button"></go-badge><br>
 					<p></p>
-					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="success" buttonColor="secondary" buttonSize="lg"></go-badge>
+					<go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="success" buttonColor="secondary" buttonSize="lg" id="large_badge_button"></go-badge>
 				</div>
 				<div class="col-md-9">
 					<div role="tab" id="ex_4">
@@ -160,35 +160,13 @@
 					</div>
 					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
 						<div class="jumbotron">
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="danger" buttonSize="sm"  badgeStyle="pill"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="warning"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="success" buttonColor="secondary" buttonSize="lg"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="danger" buttonSize="sm"  badgeStyle="pill" id="small_badge_button"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="warning" id="medium_badge_button"&gt;&lt;/go-badge&gt;</code><br/>
+							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="success" buttonColor="secondary" buttonSize="lg" id="large_badge_button"&gt;&lt;/go-badge&gt;</code><br/>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!--<div class="row row-in-tab">
-				<h6>Badge with Tooltip</h6>
-				<div class="col-md-3">
-					<go-badge type="badge" badgeData="badge" badgeColor="info" buttonColor="success" tooltip="Show tooltip here" placement="rigth"></go-badge>
-				</div>
-				<div class="col-md-9">
-					<div role="tab" id="ex_5">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_5" aria-expanded="false" aria-controls="collapse_ex_5">
-							Code Example#5
-							</a>
-						</h5>
-					</div>
-					<div id="collapse_ex_5" class="collapse" role="tabpanel" aria-labelledby="ex_5">
-						<div class="jumbotron">
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="success" buttonSize="sm"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="success"&gt;&lt;/go-badge&gt;</code><br/>
-							<code>&lt;go-badge type="badge-button" labelText="Notification" badgeData="6" badgeColor="info" buttonColor="success" buttonSize="lg"&gt;&lt;/go-badge&gt;</code><br/>
-						</div>
-					</div>
-				</div>
-			</div>-->
 		</div>
 	</div>
 </div>

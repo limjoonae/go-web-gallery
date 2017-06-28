@@ -83,6 +83,7 @@ const APPMODULELINE: Array<any> = [
       `         [items]="items"`, 
       `         [disabled]="disabledSingle" `,
       `         (data)="refreshSingleValue($event)"`,
+      `         id='search_single'`,
       `></ng-select>`, 
       `<p><strong> Select: </strong> {{ singleValue.text }} </p>`,
       ``,
@@ -116,6 +117,7 @@ const APPMODULELINE: Array<any> = [
      `          (removed)="removed($event)"`,
      `          placeholder="please select city"`,
      `          [active]="initial"`,
+     `          id='selectbox_multiple'`,
      `></ng-select>`,
      `<p><strong> Output value: </strong> {{ itemsToString(multiValue)}} </p>`,
      `<p><strong> Select value: </strong> {{ selectValue.text }} </p>`,
@@ -166,7 +168,8 @@ const APPMODULELINE: Array<any> = [
     `<ng-select
         [items]="colorItems"
         (data)="refreshColorValue($event)"
-        placeholder="Please select color">`,
+        placeholder="Please select color"
+        id='selectbox_searchColor'>`,
     `</ng-select>`,
      `<p><strong> Output value: </strong> {{colorValue.text}} </p>`,
      ``,

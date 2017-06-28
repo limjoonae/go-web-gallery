@@ -87,59 +87,59 @@ const _releaseUpdate: Array<any> = [
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date1: Date;` },
+  { data: `private basicDatetimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date1" ></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date1|date}} </p>` },
+  { data: `<go-datetimepicker [(date)]="basicDatetimepicker" id="basicDatetimepicker"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{basicDatetimepicker|date}} </p>` },
   
 ]
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date2: Date;` },  
+  { data: `private thaiDateimepicker: Date;` },  
   { data: `` },  
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date2" calendarLanguage="th" dateFormat="dd/mm/yy" [isBuddhistYear]="true"></go-datetimepicker> ` },
-  { data: `<p> <strong> Output: </strong> {{date2|date}} </p>` },
+  { data: `<go-datetimepicker id="thaiDateimepicker" [(date)]="thaiDateimepicker" calendarLanguage="th" dateFormat="dd/mm/yy" [isBuddhistYear]="true"></go-datetimepicker> ` },
+  { data: `<p> <strong> Output: </strong> {{thaiDateimepicker|date}} </p>` },
   { data: `` },
   
 ]
 const _EXAMPLE3: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date3: Date;` },
+  { data: `private iconDatetimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date3" [showIcon]="true"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date3|date}}</p>` },
+  { data: `<go-datetimepicker id="iconDatetimepicker" [(date)]="iconDatetimepicker" [showIcon]="true"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{iconDatetimepicker|date}}</p>` },
 ];
 
 const _EXAMPLE4: Array<any> = [
   { data: `app.component.ts` }, 
   { data: `` },
-  { data: `private date4: Date;` },
-  { data: `private date5: Date;` },
+  { data: `private datefromDatetimepicker: Date;` },
+  { data: `private datetoDatetimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `
 <div class="form-group">
-  from <go-datetimepicker [(date)]="date4" [maxDate]="date5" [readonlyInput]="true"></go-datetimepicker>
-  to <go-datetimepicker [(date)]="date5" [minDate]="date4" [readonlyInput]="true"></go-datetimepicker>
+  Date from <go-datetimepicker id="datefromDatetimepicker"[(date)]="datefromDatetimepicker" [maxDate]="datetoDatetimepicker" [readonlyInput]="true"></go-datetimepicker>
+  Date to <go-datetimepicker id="datetoDatetimepicker" [(date)]="datetoDatetimepicker" [minDate]="datefromDatetimepicker" [readonlyInput]="true"></go-datetimepicker>
 </div>
     ` },
-  { data: `<p> <strong> from: </strong> {{date4|date}} </p> ` },
-  { data: `<p> <strong>  to </strong> {{date5|date}}</p>` },
+  { data: `<p> <strong> from: </strong> {{datefromDatetimepicker|date}} </p> ` },
+  { data: `<p> <strong>  to </strong> {{datetoDatetimepicker|date}}</p>` },
   { data: `` },
 ];
 
 const _EXAMPLE5: Array<any> = [
   { data: `app.component.ts` }, 
   { data: `` },
-  { data: `private date6: Date;
+  { data: `private disableDatetimepicker: Date;
 private invalidDates: Array<Date>;
 ngOnInit() {
     let today = new Date();
@@ -151,8 +151,8 @@ ngOnInit() {
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date6" tabindex="0" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="readonlyInput"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date6|date}}</p>` },
+  { data: `<go-datetimepicker id="disableDatetimepicker" [(date)]="disableDatetimepicker" tabindex="0" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="readonlyInput"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{disableDatetimepicker|date}}</p>` },
   { data: `` },
   
 ];
@@ -160,12 +160,12 @@ ngOnInit() {
 const _EXAMPLE6: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date7: Date;` },
+  { data: `private navigatorDatetimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date7" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date7|date}}</p>` },
+  { data: `<go-datetimepicker id='navigatorDatetimepicker' [(date)]="navigatorDatetimepicker" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [firstDayOfWeek]="1"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{navigatorDatetimepicker|date}}</p>` },
   { data: `` },
   { data: `` },
 ];
@@ -173,12 +173,13 @@ const _EXAMPLE6: Array<any> = [
 const _EXAMPLE7: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date8: Date;` },
+  { data: `private dateAndTimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date8" [showTime]="true"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date8}}</p> ` },
+  { data: `<go-datetimepicker id="dateAndTimepicker" [(date)]="dateAndTimepicker" [showSeconds]="true" [showTime]="true" 
+[stepHour]="1"  [stepMinute]="5"  [stepSecond]="5" [hourFormat]="12">` },
+  { data: `<p> <strong> Output: </strong> {{dateAndTimepicker}}</p> ` },
   { data: `` },
   { data: `` },
 ];
@@ -186,12 +187,12 @@ const _EXAMPLE7: Array<any> = [
 const _EXAMPLE8: Array<any> = [
   { data: `app.component.ts` },  
   { data: `` },
-  { data: `private date9: Date;` },
+  { data: `private inlineDateimepicker: Date;` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<go-datetimepicker [(date)]="date9" [inline]="true"></go-datetimepicker>` },
-  { data: `<p> <strong> Output: </strong> {{date9|date}}</p> ` },
+  { data: `<go-datetimepicker id="inlineDateimepicker" [(date)]="inlineDateimepicker" [inline]="true"></go-datetimepicker>` },
+  { data: `<p> <strong> Output: </strong> {{inlineDateimepicker|date}}</p> ` },
   { data: `` },
   { data: `` },
 ];
@@ -223,15 +224,15 @@ export class DateTimePickerDocument implements OnInit {
     private codeExample7 = _EXAMPLE7;
     private codeExample8 = _EXAMPLE8;
 
-    private date1: Date;
-    private date2: Date;
-    private date3: Date;
-    private date4: Date;
-    private date5: Date;
-    private date6: Date;
-    private date7: Date;
-    private date8: Date;
-    private date9: Date;
+    private basicDatetimepicker: Date;
+    private thaiDateimepicker: Date;
+    private iconDatetimepicker: Date;
+    private datefromDatetimepicker: Date;
+    private datetoDatetimepicker: Date;
+    private disableDatetimepicker: Date;
+    private navigatorDatetimepicker: Date;
+    private dateAndTimepicker: Date;
+    private inlineDateimepicker: Date;
 
     private invalidDates: Array<Date>;
     ngOnInit() {
