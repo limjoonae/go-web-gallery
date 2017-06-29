@@ -159,7 +159,7 @@ const EVENTLIST: Array<any> = [
         placeholder="Please select color"
         id='selectbox_searchColor'>`,
     `</ng-select>`,
-     `<p><strong> Output value: </strong> {{colorValue.i}} </p>`,
+     `<p><strong> Output value: </strong> {{colorValue.id}} </p>`,
      ``,
      `app.component.ts`,
      ``,
