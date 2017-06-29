@@ -81,7 +81,7 @@ const _releaseUpdate: Array<any> = [
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data"></p-tree>` },
+  { data: `<p-tree [value]="data" id='tree_basic'></p-tree>` },
 ];
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.ts  ` },
@@ -90,7 +90,7 @@ const _EXAMPLE2: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="single" [(selection)]="selectedFile"></p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="single" [(selection)]="selectedFile" id='tree_single'></p-tree>` },
   { data: `<div>Selected Node: <label *ngIf="selectedFile">{{selectedFile.label}}</label></div>` },
   { data: `` },
   { data: `` },
@@ -102,7 +102,7 @@ const _EXAMPLE3: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="multiple" [(selection)]="selectedFiles"> </p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="multiple" [(selection)]="selectedFiles" id='tree_multiple'> </p-tree>` },
   { data: `<div>Selected Nodes: <span *ngFor="let file of selectedFiles">{{file.label}} </span></div>` },
 ];
 const _EXAMPLE4: Array<any> = [
@@ -112,7 +112,7 @@ const _EXAMPLE4: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="checkbox" [(selection)]="selectedFiles2"></p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="checkbox" [(selection)]="selectedFiles2" id='tree_checkbox'></p-tree>` },
   { data: `<div>Selected Nodes: <span *ngFor="let file of selectedFiles2">{{file.label}} </span></div>` },
 
 ];

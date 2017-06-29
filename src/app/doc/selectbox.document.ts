@@ -63,18 +63,6 @@ const EVENTLIST: Array<any> = [
   { require: '', name: 'typed', type: 'function($event)', description: `เมื่อผู้ใช้พิมพ์ลงในกล่องข้อความจะทำการ return ค่าที่ผู้ใช้พิมพ์ในรูปของ string` }
 ];
 
-const APPMODULELINE: Array<any> = [
-  `import { SelectModule } from 'ng2-select/ng2-select';`,
-  ``,
-  `@NgModule({`,
-  ` imports: [`,
-  `     ..........`,
-  `     SelectModule,`,
-  `     ..........`,
-  ` ],`,
-  `})`
-];
-
  const _EXAMPLE1: Array<any> = [
       `app.component.html`,
       ``,
@@ -171,7 +159,7 @@ const APPMODULELINE: Array<any> = [
         placeholder="Please select color"
         id='selectbox_searchColor'>`,
     `</ng-select>`,
-     `<p><strong> Output value: </strong> {{colorValue.text}} </p>`,
+     `<p><strong> Output value: </strong> {{colorValue.i}} </p>`,
      ``,
      `app.component.ts`,
      ``,
@@ -263,7 +251,6 @@ export class SelectboxDocument {
     private suffixSyntax: string = `><ng-select>`;
     private attributeList = ATTRIBUTELIST;
     private eventList = EVENTLIST;
-    private appModuleLine = APPMODULELINE;
 
     private exampleOf1 = _EXAMPLE1;
     private exampleOf2 = _EXAMPLE2;
