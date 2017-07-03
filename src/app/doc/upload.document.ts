@@ -103,7 +103,7 @@ export class UploadDocument implements OnInit {
     private uploadedFileMessage = "รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น";
     private exampleDescription = "<h5>สำหรับตัวอย่างนี้ จะแบ่งออกเป็น 2 ส่วนได้แก่</h5> <p><strong>1.ส่วนด้านใน </strong>โดยจะประกอบด้วยส่วนที่ใช้เลือกไฟล์เพื่ออัพโหลดซึ่งได้มีการเตรียมไว้ให้<i>(รวมถึงการแสดงรายชื่อไฟล์เพื่อจะทำการอัพโหลด)</i></p> <p><strong>2.ส่วนด้านนอก </strong>โดยในส่วนนี้ จะเป็น<strong>\"รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น\"</strong>ซึ่งจะรับค่ามาจาก output ของส่วนใน component</p>";
 
-    private code: string = `<go-upload name="demo" url="http://localhost:10050/upload" 
+    private code: string = `<go-upload name="demo" id="upload_ex" url="http://localhost:10050/upload" 
     [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*" 
     [autoUpload]="false" [maxFileSize]=50*1024*1024 [showImage]="true" 
     [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true" 

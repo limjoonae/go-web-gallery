@@ -94,8 +94,13 @@
 	<div role="tabpanel" class="tab-pane fade" id="Example">
 		<div class="jumbotron">
 			<div class="row row-in-tab">
-				<div class="col-md-6">
-					<go-radiobutton name="chbname1" id="chbid1" label="Radio button: " [data]="datas1" type="block" colorTheme="success" require="true" (valueOut)="textValue($event)">  radiobutton </go-radiobutton>
+				<div class="col-md-6 card-block">
+					<h4> Block </h4>
+					<go-radiobutton id='radiobutton_block' 
+					name="chbname1" 
+					label="Radio button: " 
+					[data]="datas1" type="block" 
+					colorTheme="success" require="true" (valueOut)="textValue($event)">   </go-radiobutton>
 					<p> <strong> Output value: </strong> {{getValue}} </p>
 					<p> <strong> Output label: </strong> {{getLabel}} </p>
 				</div>
@@ -115,8 +120,9 @@
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-6">
-					<go-radiobutton name="chbname2" id="chbid2" label="Radio button: " [data]="datas2" colorTheme="warning">  radiobutton </go-radiobutton>
+				<div class="col-md-6 card-block">
+					<h4> Inline </h4>
+					<go-radiobutton id='radiobutton_in-line' name="chbname2" label="Radio button: " [data]="datas2" colorTheme="warning">   </go-radiobutton>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_2">
@@ -134,8 +140,9 @@
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-6">
-					  <go-radiobutton name="chbname3" id="chbid3" label="Select Radio button: " type="column" col="3" [data]="datas3" colorTheme="danger">  radiobutton </go-radiobutton>
+				<div class="col-md-6 card-block">
+					<h4> Column </h4>
+					<go-radiobutton id='radiobutton_column' name="chbname3" label="Select Radio button: " type="column" col="3" [data]="datas3" colorTheme="danger">   </go-radiobutton>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_3">

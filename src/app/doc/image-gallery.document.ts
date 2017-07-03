@@ -76,7 +76,7 @@ export class ImageGalleryDocument {
     private styleLine_html = STYLELINE_HTML;
     private styleLine_css = STYLELINE_CSS;
     private objectDetail: string = `กำหนดรูปแบบ object ดังนี้ โดย thumb => รูปเล็กที่แสดงในอัลบั้มรวม, img => รูปใหญ่ที่ใช้ในการแสดง`;
-    private imgUrl = './app/doc/assets/images/gallery/';
+    private imgUrl = './app/go-image-gallery/doc/assets/images/gallery/';
     // private imgUrl = CDN_URL + 'image-gallery/1.0.0/doc/assets/images/gallery/';
 
     ImgGallery = [

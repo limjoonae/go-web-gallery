@@ -157,7 +157,7 @@
 </div>
 
 <!-- This is side bar parts -->
-<go-sidebar [(opened)]="open_1">
+<go-sidebar [(opened)]="open_1" id="default_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 1</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 2</a>
@@ -165,7 +165,7 @@
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]="true" closeOnClickOutside="true">
+<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]="true" closeOnClickOutside="true" id="backdrop_sidebar">
 	<nav class="navbar navbar-default">
 		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 4</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 5</a>
@@ -173,7 +173,7 @@
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_3" position="right" autoFocus="true" trapFocus="true">
+<go-sidebar [(opened)]="open_3" position="right" autoFocus="true" trapFocus="true" id="right_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 7</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 8</a>
@@ -181,7 +181,7 @@
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()">
+<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()" id="action_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 10</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 11</a>

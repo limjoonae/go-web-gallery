@@ -130,11 +130,12 @@
 			</div>
 		</div>
 		<br>
-		<div class="col-md-12" [innerHTML]="exampleDescription"></div>
+		<div class="col-md-6 col-sm-6" [innerHTML]="exampleDescription"></div>
+		<div class="col-md-6 col-sm-6" [innerHTML]="exampleDescription"></div>
 		<div class="jumbotron">
 			<div class="col-md-5">
 				<div class="row">
-					<go-upload name="demo" url="http://localhost:10050/upload" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*"
+					<go-upload name="demo" url="http://localhost:10050/upload" id="upload_ex" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*"
 						[autoUpload]="false" [maxFileSize]=2*1024*1024 [showImage]="true" [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true"
 						[messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinish($event)"
 						(onSelect)="onSelect($event)" (onDelete)="onDelete($event)" (onClear)="onClear($event)" (onError)="onError($event)">

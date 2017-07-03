@@ -71,19 +71,19 @@
 						<div class="row form-group">
 							<h1>Tooltip on Button<br></h1>
 							<div class="col-md-5 form-inline">
-								<go-button label="Right" buttonColor="danger"  pTooltip="tooltip position right"></go-button>
+								<go-button id="tooltip_right" label="Right" buttonColor="danger"  pTooltip="tooltip position right"></go-button>
 							</div>
 							<div class="col-md-5">
-								<go-button label="Left" buttonColor="info"  pTooltip="tooltip position left" tooltipPosition="left"></go-button> 
+								<go-button id="tooltip_left" label="Left" buttonColor="info"  pTooltip="tooltip position left" tooltipPosition="left"></go-button> 
 							</div>		
 						</div>
 						
 						<div class="row form-group">
 							<div class="col-md-5 form-inline">
-								<go-button label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
+								<go-button id="tooltip_top" label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
 							</div>
 							<div class="col-md-5">
-								<go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom" tooltipDisabled="true"></go-button>
+								<go-button id="tooltip_bottom" label="Bottom(Disabled)" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom" tooltipDisabled="true"></go-button>
 							</div>		
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 					<div class="car-block">
 						<div class="row form-group">
 								<h1>ToolTip on Textbox<br></h1>
-								<input pTooltip = "Textbox Tooltip" placeholder="Mouse On Me!!" type="text" ng-reflect-text="Enter your name" tooltipEvent="focus">
+								<input id="tooltip_textbox" pTooltip = "Textbox Tooltip" placeholder="Click Me!!" type="text" ng-reflect-text="Enter your name" tooltipEvent="focus">
 							</div>
 						</div>	
 					</div>

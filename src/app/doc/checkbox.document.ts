@@ -26,7 +26,7 @@ const DATA3: Array<any> = [
 
 const EXAMPLE1: Array<any> = [
   { data: `<go-checkbox name="chbnames1"`},
-  { data: `             id="chbid1"`},
+  { data: `             id="chb_block"`},
   { data: `             label="Checkbox: "`},
   { data: `             [(ngModel)]="datas1"`},
   { data: `             type="block"`},
@@ -51,7 +51,7 @@ const EXAMPLE1TS: Array<any> = [
 
 const EXAMPLE2: Array<any> = [
   { data: `<go-checkbox name="chbname2"`},
-  { data: `             id="chbid2"`},
+  { data: `             id="chb_inline"`},
   { data: `             label="Checkbox: "`},
   { data: `             [(ngModel)]="datas2"`},
   { data: `             colorTheme="warning">`},
@@ -70,7 +70,7 @@ const EXAMPLE2TS: Array<any> = [
 
 const EXAMPLE3: Array<any> = [
   { data: `<go-checkbox name="chbnames3"`},
-  { data: `               id="chbid3"`},
+  { data: `               id="chb_column"`},
   { data: `               label="Select Checkbox: "`},
   { data: `               [(ngModel)]="datas3"`},
   { data: `               type="column"`},

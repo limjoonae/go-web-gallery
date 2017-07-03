@@ -82,7 +82,7 @@ export class SidebarDocument {
     html_1: string = `<button class="btn btn-primary" *ngIf="!open_1" (click)="toggleSidebar_1()">Open Sidebar Default</button>
 <button class="btn btn-secondary" *ngIf="open_1" (click)="toggleSidebar_1()">Close Sidebar Default</button>
 
-<go-sidebar [(opened)]="open_1">
+<go-sidebar [(opened)]="open_1" id="default_sidebar">
     <nav class="nav nav-pills nav-stacked">
         <a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 1</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 2</a>
@@ -96,7 +96,7 @@ private toggleSidebar_1(): void {
 `;
     html_2: string = `<button class="btn btn-primary" (click)="toggleSidebar_2()">Open Sidebar with Lock Screen</button>
 
-<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]='true' closeOnClickOutside="true">
+<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]='true' closeOnClickOutside="true" id="backdrop_sidebar">
     <nav class="navbar navbar-default">
         <a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 4</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 5</a>
@@ -111,7 +111,7 @@ private toggleSidebar_2(): void {
     html_3: string = `<button class="btn btn-primary" *ngIf="!open_3" (click)="toggleSidebar_3()">Open Sidebar Right Position</button>
 <button class="btn btn-secondary" *ngIf="open_3" (click)="toggleSidebar_3()">Close Sidebar Right Position</button>
 
-<go-sidebar [(opened)]="open_3" position='right'>
+<go-sidebar [(opened)]="open_3" position='right' id="right_sidebar">
     <nav class="nav nav-pills nav-stacked">
         <a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 7</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 8</a>
@@ -127,7 +127,7 @@ private toggleSidebar_3(): void {
 <button class="btn btn-secondary" *ngIf="open_4" (click)="toggleSidebar_4()">Close Sidebar with Return Result</button>
 <p>{{sidebarMessage}}</p>
 
-<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()">
+<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()" id="action_sidebar">
     <nav class="nav nav-pills nav-stacked">
         <a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 10</a>
         <a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 11</a>
