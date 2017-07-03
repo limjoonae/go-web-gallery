@@ -74,15 +74,15 @@ export class DialogDocument  {
     private display3: boolean = false;
 
     showDialog() {
-        this.display = true;
+        this.display = !this.display;
     }
 
     showDialog2() {
-        this.display2 = true;
+        this.display2 = !this.display2;
     }
 
     showDialog3() {
-        this.display3 = true;
+        this.display3 = !this.display3;
     }
 
     private booleanArr: boolean[] = [true, false];
@@ -97,7 +97,7 @@ export class DialogDocument  {
     private isModal: boolean = true;
     private width: number = 300;
     private height: number;
-    private body: string = '';
+    private body: string = "This is Dialog Body";
     private res:boolean =!this.isResponsive;
     callTitle(value:any) {
       this.title = value;
@@ -120,8 +120,6 @@ export class DialogDocument  {
     }
 
     callResponsive(value: any){
-      
-      console.log("test");
       
       this.isResponsive= this.stringToBoolean(value);
       console.log(this.isResponsive);
@@ -172,25 +170,23 @@ this.codeExample = [
       `<go-button label="show" iconName="external-link-square" 
       buttonColor="primary" (click)="showDialog()" ></go-button>`,
       '',    
-      '<p-dialog header="' + this.title + '"',
-      ' [(visible)]="display" ',
-      ' [modal] = "' + this.isModal + '"',
-      ' [closable] = "' + this.isClosable + '"',
-      ' [draggable] = "' + this.isDraggable + '"',
-      ' [showHeader] = "' + this.isShowHeader + '"',
-      ' [width] = "' + this.width + '"',
-      ' [height] = "' + this.height + '"',
-      ' id = "dialog_configuration"',
-
+      '<p-dialog id="dialog_configuration"',
+      '   [(visible)]="' + this.display + '"',
+      '   header="' + this.title + '"',
+      '   [showHeader]="' + this.isShowHeader + '"',
+      '   [draggable]="' + this.isDraggable + '"',
+      '   [closable]="' + this.isClosable + '"',
+      '   [modal]="' + this.isModal + '"',
+      '   width="' + this.width + '"',
+      '   [height]="' + this.height + '"',
       '>',
-      '' + this.body,
-      `
-<p-footer>
-  <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-    <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-    <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
-  </div>
-</p-footer>`,
+      ' <p>' + this.body + '</p>',
+      ` <p-footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
+      <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+    </div>
+  </p-footer>`,
       '</p-dialog>'];
     }
 
@@ -208,24 +204,23 @@ this.codeExample = [
       `<go-button label="show" iconName="external-link-square" 
       buttonColor="primary" (click)="showDialog()" ></go-button>`,
       '',    
-      '<p-dialog header="' + this.title + '"',
-      ' [(visible)]="display" ',
-      ' [modal] = "' + this.isModal + '"',
-      ' [closable] = "' + this.isClosable + '"',
-      ' [draggable] = "' + this.isDraggable + '"',
-      ' [showHeader] = "' + this.isShowHeader + '"',
-      ' [width] = "' + this.width + '"',
-      ' [height] = "' + this.height + '"',
-      ' id = "dialog_configuration"',
+      '<p-dialog id="dialog_configuration"',
+      '   [(visible)]="' + this.display + '"',
+      '   header="' + this.title + '"',
+      '   [showHeader]="' + this.isShowHeader + '"',
+      '   [draggable]="' + this.isDraggable + '"',
+      '   [closable]="' + this.isClosable + '"',
+      '   [modal]="' + this.isModal + '"',
+      '   width="' + this.width + '"',
+      '   [height]="' + this.height + '"',
       '>',
-      '' + this.body,
-      `
-<p-footer>
-  <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-    <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-    <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
-  </div>
-</p-footer>`,
+      ' <p>' + this.body + '</p>',
+      ` <p-footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
+      <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+    </div>
+  </p-footer>`,
       '</p-dialog>'];
   
 }

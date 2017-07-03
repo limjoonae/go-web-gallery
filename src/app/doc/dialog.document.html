@@ -126,25 +126,25 @@
 						</div>
 						<div class="form-group">
 							<label>Body :</label>
-							<input class="form-control" #bodyDialog (keyup)="callBody(bodyDialog.value)">														
+							<input class="form-control" [(ngModel)]="body" #bodyDialog (keyup)="callBody(bodyDialog.value)">														
 						</div>
 					</div>
 				</div>
 				<div class="col-md-8" >
 					<div class="card-block">
-							<h2>Code:</h2>
-							<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
-							<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
-							<div class="dialog">
-							<p-dialog [header]="title" [(visible)]="display" 
-										[modal] = "isModal" [width] = "width" [height] = "height" 
-										[closable] = "isClosable" 
-										[draggable] = "isDraggable" [showHeader] = "isShowHeader" breakpoint='500' id='dialog_configuration'>
-								<p> {{body}}</p> 
+						<h2>Code:</h2>
+						<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
+						<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
+						<div class="dialog">
+						<p-dialog [header]="title" [(visible)]="display" 
+									[modal] = "isModal" [width] = "width" [height] = "height" 
+									[closable] = "isClosable" 
+									[draggable] = "isDraggable" [showHeader] = "isShowHeader" breakpoint='500' id='dialog_configuration'>
+							<p>{{body}}</p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-									<go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-									<go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog()" ></go-button>
                                 </div>
                             </p-footer>
                         </p-dialog>
@@ -166,8 +166,8 @@
 								<p> Please Drag the Dialog. Then, resize your browser.<br><br></p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-									<go-button label="no" iconName="close" buttonColor="primary" (click)="display2=false" ></go-button>
-									<go-button label="yes" iconName="check" buttonColor="primary" (click)="display2=false" ></go-button>
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog2()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog2()" ></go-button>
                                 </div>
                             </p-footer>
                         </p-dialog>
@@ -180,8 +180,8 @@
 								<p>Please Drag the Dialog. Then, resize your browser.<br><br></p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-									<go-button label="no" iconName="close" buttonColor="primary" (click)="display3=false" ></go-button>
-									<go-button label="yes" iconName="check" buttonColor="primary" (click)="display3=false" ></go-button>
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog3()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog3()" ></go-button>
                                 </div>
                             </p-footer>
                         </p-dialog>
