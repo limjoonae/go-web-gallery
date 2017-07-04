@@ -46,7 +46,7 @@ const APPMODULELINE: Array<any> = [
   { data: `app.component.html` },
   { data: `
 <input type="text" class="form-control" auto-complete [source]="arrayOfStrings" 
-(ngModelChange)="myCallback($event)" [ngModel]="model1" placeholder="enter text">
+(ngModelChange)="myCallback($event)" [ngModel]="model1" placeholder="enter text" id="autocomplete_basic">
 ` },
 
 ];
