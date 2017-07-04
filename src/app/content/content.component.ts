@@ -149,7 +149,6 @@ export class ContentComponent implements OnInit {
             {label: '', command: (event: any) => {this.activeIndex = 2;} },
             {label: '', command: (event: any) => {this.activeIndex = 3;} } 
       ];
-      // console.log('car: ', this.cars);
   }
 
   selectCar(car: Car) {
@@ -207,9 +206,6 @@ export class ContentComponent implements OnInit {
 
   submitData(){          
  if(this.user_name != undefined && this.dept_name != undefined && this.user_email != undefined){
-    console.log(this.user_name);
-    console.log(this.dept_name);
-    console.log(this.user_email);
     this.user_name = undefined;
     this.dept_name = undefined;
     this.user_email = undefined; 

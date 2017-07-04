@@ -1,22 +1,19 @@
-button.space { margin-bottom: 1.25rem; }
-
 .ui-steps .ui-steps-item {
     width: 25%;
 }
 
 .ui-steps.steps-custom {
-    /*margin-bottom: 30px;*/
     margin-top: 15px;
 }
-    
+
 .ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
     height: 10px;
     padding: 0 1em;
 }
-    
+
 .ui-steps.steps-custom .ui-steps-item .ui-steps-number {
     background-color: #0081c2;
-    color: #FFFFFF;
+    color: #ffffff;
     display: inline-block;
     width: 36px;
     border-radius: 50%;

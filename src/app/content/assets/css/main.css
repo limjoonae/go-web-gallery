@@ -1,11 +1,9 @@
 .more {
     position: absolute;
     margin-top: 2px;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,.7);
     height: 50px;
     width: 50px;
-    padding-left: 0px;
-    padding-top: 2px;
     padding-top: 2px;
     text-align: center;
 }
@@ -15,10 +13,10 @@
 }
 .float-left {
   float: left;
-  margin-right:5px;
-  color:#ffffff;
+  margin-right: 5px;
+  color: #ffffff;
 }
 .float-left a:hover {
-  color:red;
+  color: red;
   cursor: pointer;
 }
