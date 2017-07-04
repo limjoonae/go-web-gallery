@@ -8587,6 +8587,7 @@ __decorate([
 ], NgTableComponent.prototype, "columns", null);
 NgTableComponent = __decorate([
     core_1.Component({
+        // moduleId: module.id,
         selector: 'ng-table',
         styles: ["\n    .table-fixed {\n      'table-layout':'fixed',\n       'word-wrap': 'break-word'\n      }\n  "],
         template: __webpack_require__(414)
@@ -47409,26 +47410,19 @@ var TableComponent = (function () {
         var filteredData = data;
         var dateString;
         var DateFormat;
-        //console.log('data: ',data);
-        //console.log('columns: ',this.columns);
-        /* for(let i = 0; i < this.columns.length;i++){
-         if(this.columns[i] instanceof Object) dateFormat = this.columns[i].dateFormat;
-         //console.log(dateFormat);
-     }
-         */
         this.columns.forEach(function (column) {
             if (column.filtering) {
-                //console.log(column.filtering);
-                //column.filtering.filterString = this.escapeSpecialCharacters(column.filtering.filterString);
+                column.filtering.filterString = _this.escapeSpecialCharacters(column.filtering.filterString);
                 filteredData = filteredData.filter(function (item) {
                     var dump;
                     if (item[column.name] instanceof Date) {
                         DateFormat = column.dateFormat;
                         dump = _this.formatDate(item[column.name], DateFormat);
                     }
-                    else
+                    else {
                         dump = item[column.name];
-                    return String(dump.match(column.filtering.filterString));
+                    }
+                    return String(dump).match(column.filtering.filterString);
                 });
             }
         });
