@@ -116,7 +116,7 @@ export class ProgressbarDocument {
     }
 
     thirdProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่สาม`;
-    code_3: string = `<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000" id="interval_progressbar"></go-progressbar>`;
+    code_3: string = `<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000" id="lock_on_load_progressbar"></go-progressbar>`;
     code_button_3: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>`;
     code_exam_3: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
     progress_3: number = 0;<br>
