@@ -5,7 +5,7 @@ const _ATTRIBUTELIST: Array<any> = [
     { require: '', name: 'header', type: 'string', description: `ใช้สำหรับระบุ Title ของ dialog`},
     { require: '', name: 'draggable', type: 'boolean', description: `ใช้ระบุว่าให้ dialog สามารถเลื่อนได้หรือไม่ มีค่า default เป็น true`},
     { require: '', name: 'closable', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดการแสดงปุ่มปิด(X) มีค่า default เป็น true`},
-    { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog สามารถ responsive ได้ มีค่า default เป็น false`},
+    { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog สามารถ responsive ได้ มีค่า default เป็น false (*หมายเหตุ: ควรกำหนดค่าเป็น true เพื่อให้สามารถแสดงผลบน Mobile ได้)`},
     { require: '', name: 'showHeader', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดให้ dialog แสดงส่วน header มีค่า default เป็น true`},
     { require: '', name: 'modal', type: 'boolean', description: `ใช้ระบุเพื่อกำหนดว่าจะให้ lock screen หรือไม่เมื่อแสดง dialog มีค่า default เป็น false`},
     { require: '', name: 'width', type: 'number', description: `ใช้สำหรับระบุความกว้างของ dialog`},
@@ -161,7 +161,7 @@ this.codeExample = [
       `
  private display: boolean = false;
  showDialog() {
-   this.display = true;
+   this.display = !this.display;
  }
 `,
       '',
@@ -183,8 +183,8 @@ this.codeExample = [
       ' <p>' + this.body + '</p>',
       ` <p-footer>
     <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-      <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-      <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+      <go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog()" ></go-button>
+      <go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog()" ></go-button>
     </div>
   </p-footer>`,
       '</p-dialog>'];
@@ -195,7 +195,7 @@ this.codeExample = [
       `
  private display: boolean = false;
  showDialog() {
-   this.display = true;
+   this.display = !this.display;
  }
 `,
       '',
@@ -217,8 +217,8 @@ this.codeExample = [
       ' <p>' + this.body + '</p>',
       ` <p-footer>
     <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-      <go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-      <go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+      <go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog()" ></go-button>
+      <go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog()" ></go-button>
     </div>
   </p-footer>`,
       '</p-dialog>'];
