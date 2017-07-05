@@ -114,7 +114,7 @@ const _EXAMPLE3: Array<any> = [
 const _EXAMPLE4: Array<any> = [
   { data: `
 <p-accordion id="DisableAccordion">
-  <p-accordionTab header="Header 1" [disabled]="true" [selected]="true" id="DisableAccordionTab1">
+  <p-accordionTab header="Header 1" [disabled]="true" id="DisableAccordionTab1">
     Content 1
   </p-accordionTab>
   <p-accordionTab header="Header 2" id="DisableAccordionTab2">
