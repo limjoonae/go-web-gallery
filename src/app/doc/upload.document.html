@@ -126,22 +126,23 @@
 			<div class="jumbotron">
 				<h5>Simulate Backend Setup</h5>
 				ก่อนการทดลองใช้งาน Upload component ต้องทำการติดตั้งตัวจำลอง Backend โดยสามารถดาวน์โหลดได้จาก <strong><a [href]="dlpath">ลิงค์นี้</a></strong><br>
-				เพื่อให้สามารถทำการ Upload ไฟล์ได้เสมือนจริง<br><br>
+				เพื่อให้สามารถทำการ Upload ไฟล์ได้เสมือนจริง (ผู้ใช้ต้องมีการติดตั้ง node.js และ npm เวอร์ชั่นปัจจุบันอยู่บนเครื่อง)<br><br>
 				<strong>วิธีการใช้งานไฟล์ Backend</strong><br>
-				1. (ทำครั้งแรกครั้งดียว) run ไฟล์ backend_setup.bat รอจนโปรแกรมทำงานจนเสร็จ โปรแกรมจะปิดตัวเองและจะได้โฟลเดอร์ node_modules ขึ้นมา<br>
-				(ผู้ใช้ต้องมีการติดตั้ง node.js และ npm เวอร์ชั่นปัจจุบันอยู่บนเครื่อง และจำเป็นต้องใช้ Internet ในการดาวน์โหลด)<br>
-				2. (ทำทุกครั้งที่จะทดลองใช้งาน Upload component) run ไฟล์ backend_run.bat และเปิดโปรแกรมค้างไว้ขณะใช้งาน
+				(ทำทุกครั้งที่จะทดลองใช้งาน Upload component) run ไฟล์ backend_run.bat และเปิดโปรแกรมค้างไว้ขณะใช้งาน<br><br>
+				<strong>คำอธิบายเพิ่มเติม</strong><br>
+				ในส่วนของ "รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น" นั้นเป็นส่วนที่เขียนขึ้นเอง มิได้เป็นส่วนหนึ่งของ component 
+				เพียงแต่มีการนำข้อมูลที่ได้จาก component มาแสดงผล 
 			</div>
 		</div>
 		<div class="jumbotron">
 			<div class="row row-in-tab">
 				<div class="col-md-5">
+					<strong>Basic Upload</strong> Status: {{status}}<br>
 					<go-upload name="upload_default" 
 						id="upload_default" url="http://localhost:10050/upload" 
 						accept="image/*,text/*" fileTypeAllow="image/*,text/*"
 						(onFinish)="onFinish($event)" (onSelect)="onSelect($event)" 
-						(onDelete)="onDelete($event)" (onClear)="onClear($event)" 
-						(onError)="onError($event)">
+						(onDelete)="onDelete($event)" (onClear)="onClear($event)">
 					</go-upload>
 					<div class="row" *ngIf="uploadedFiles.length > 0" style="margin-top: 2rem;">
 						<strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>
@@ -172,10 +173,11 @@
 			</div>
 			<div class="row row-in-tab">
 				<div class="col-md-5">
-					<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,text/*,application/*" fileTypeAllow="image/*,text/*,application/*"
+					<strong>Set Option Upload</strong> Status: {{statusSet}}<br>
+					<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,application/*" fileTypeAllow="image/*,application/*"
 						[maxFileSize]=2.5*1024*1024 [showImage]="false" [previewWidth]="100" [speedCalculationTime]=1000
 						[messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinishSet($event)"
-						(onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)" (onError)="onErrorSet($event)">
+						(onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)">
 					</go-upload>
 					<div class="row" *ngIf="uploadedFilesSet.length > 0">
 						<strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>

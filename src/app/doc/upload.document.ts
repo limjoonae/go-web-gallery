@@ -61,7 +61,11 @@ export class UploadDocument implements OnInit {
     private componentTag: string = '<go-upload>';
     private componentDescription: string = `ใช้สำหรับอัพโหลดไฟล์ประเภทต่างๆขึ้นไปบน path ที่ต้องการ`;
     private version: string = '1.1';
+    private releaseUpdate_v_1_1 = _releaseUpdate_v_1_1
     private releaseDate: string = '6 July 2017';
+    private attributeList = ATTRIBUTELIST;
+    private messageAttributeList = MSGATTRIBUTELIST;
+    private showAttributeList = SHOWATTRIBUTELIST;
     private prefixSyntax: string = `<go-upload `;
     private attrSyntax: string = `name="component_name" url="upload_url_path"
      [[multiple]="is_multiple_upload"] [accept="file_type_accepted"] 
@@ -77,7 +81,6 @@ export class UploadDocument implements OnInit {
      [(onError)="onError($event)"] [(onClear)="onClear($event)"]`;
     private suffixSyntax: string = `></go-upload>`;
 
-    private releaseUpdate_v_1_1 = _releaseUpdate_v_1_1
 
     private messageSettingsSyntax: string = `constDATA: messageSettings{} = 
     { invalidFileSizeMsg:'invalid_file_size_message', 
@@ -99,16 +102,7 @@ export class UploadDocument implements OnInit {
     showUploadStatusDialog:'show_status_complete_or_failure' };
     `;
 
-    private attributeList = ATTRIBUTELIST;
-    private messageAttributeList = MSGATTRIBUTELIST;
-    private showAttributeList = SHOWATTRIBUTELIST;
-    private appModuleDetail: string = `app.module.ts`;
-    private systemJSDetail: string = `systemjs.config.js`;
-
-    status: string = '';
-    private uploadedFileMessage = "รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น";
-    private exampleDescription = "<h5>สำหรับตัวอย่างนี้ จะแบ่งออกเป็น 2 ส่วนได้แก่</h5> <p><strong>1.ส่วนด้านใน </strong>โดยจะประกอบด้วยส่วนที่ใช้เลือกไฟล์เพื่ออัพโหลดซึ่งได้มีการเตรียมไว้ให้<i>(รวมถึงการแสดงรายชื่อไฟล์เพื่อจะทำการอัพโหลด)</i></p> <p><strong>2.ส่วนด้านนอก </strong>โดยในส่วนนี้ จะเป็น<strong>\"รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น\"</strong>ซึ่งจะรับค่ามาจาก output ของส่วนใน component</p>";
-
+ 
     private html_ex_default: string = `<go-upload name="upload_default" 
     id="upload_default" url="http://localhost:10050/upload" 
     accept="image/*,text/*" fileTypeAllow="image/*,text/*"
@@ -195,13 +189,16 @@ clearCompletedListSet() {
     this.uploadedFilesSet = [];
 }`;
 
+    status: string = '';
+    statusSet: string = '';
+    private uploadedFileMessage = "รายชื่อไฟล์ที่อัพโหลดเสร็จสิ้น";
     uploadedFiles: any[] = [];
     uploadedFilesSet: any[] = [];
 
-    private message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it"};
-    private show_opts = { showDragandDropBox: true };
+    private message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it", invalidFileSizeMsg: "ขนาดไฟล์ไม่ถูกต้อง"};
+    private show_opts = { showDragandDropBox: true, showUploadStatusDialog: false };
 
-    private dlpath = '';
+    private dowloadBackendpath = '';
 
     ngOnInit() {
         this.getDownloadedPath();
@@ -210,9 +207,9 @@ clearCompletedListSet() {
     getDownloadedPath() {
         let paths = module.id.split('/');
         for (let i = 0; i < paths.length - 1; i++) {
-            this.dlpath += paths[i] + '/';
+            this.dowloadBackendpath += paths[i] + '/';
         }
-        this.dlpath += 'backend.zip';
+        this.dowloadBackendpath += 'backend.zip';
     }
 
     onFinish(event: any) {
@@ -231,11 +228,7 @@ clearCompletedListSet() {
     }
 
     onClear(event: any) {
-        this.status = 'ลบไฟล์ทั้งหมด';
-    }
-
-    onError(event: any) {
-        this.status = 'อัพโหลดผิดพลาด';
+        this.status = '';
     }
 
     clearCompletedList() {
@@ -243,26 +236,22 @@ clearCompletedListSet() {
     }
 
     onFinishSet(event: any) {
-        this.status = 'อัพโหลดสำเร็จ';
+        this.statusSet = 'อัพโหลดสำเร็จ';
         for (let file of event.files) {
             this.uploadedFilesSet.push(file);
         }
     }
 
     onSelectSet(event: any) {
-        this.status = 'เลือกไฟล์';
+        this.statusSet = 'เลือกไฟล์';
     }
 
     onDeleteSet(event: any) {
-        this.status = 'ลบไฟล์';
+        this.statusSet = 'ลบไฟล์';
     }
 
     onClearSet(event: any) {
-        this.status = 'ลบไฟล์ทั้งหมด';
-    }
-
-    onErrorSet(event: any) {
-        this.status = 'อัพโหลดผิดพลาด';
+        this.statusSet = '';
     }
 
     clearCompletedListSet() {
