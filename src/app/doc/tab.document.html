@@ -111,23 +111,23 @@
 	<div role="tabpanel" class="tab-pane fade" id="Example">
 		<div class="jumbotron">
 			<div class="row row-in-tab">
-				<div class="col-md-5">
+				<div class="col-md-7">
 					<div class="card-block">
 						<h3 class="first">Basic</h3>
-						<p-tabView>
-							<p-tabPanel header="Header 1" leftIcon="fa-calendar">
+						<p-tabView id="tabView_basic">
+							<p-tabPanel header="Header 1" id="basic_tp_1" leftIcon="fa-calendar">
 								 Content 1
 							</p-tabPanel>
-							<p-tabPanel header="Header 2" leftIcon="fa-print">
+							<p-tabPanel header="Header 2" id="basic_tp_2" leftIcon="fa-print">
 								 Content 2
 							</p-tabPanel>
-							<p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+							<p-tabPanel header="Header 3" id="basic_tp_3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
 								 Content 3
 							</p-tabPanel>
 						</p-tabView>
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-5">
 					<div role="tab" id="ex_1">
 						<h5 class="mb-0">
 							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
@@ -143,21 +143,21 @@
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-5">
+				<div class="col-md-7">
 					<div class="card-block">
 						<h3>Event</h3>
 						<div class="form-group">
-							<p-tabView (onChange)="onTabChange($event)">
-								<p-tabPanel header="Header I">
+							<p-tabView (onChange)="onTabChange($event)" id="tabView_event">
+								<p-tabPanel header="Header I" id="event_tp_1">
 									Content 1
 								</p-tabPanel>
-								<p-tabPanel header="Header II" [selected]="true">
+								<p-tabPanel header="Header II" id="event_tp_2" [selected]="true" >
 									Content 2
 								</p-tabPanel>
-								<p-tabPanel header="Header III" [closable]="true" >
+								<p-tabPanel header="Header III" id="event_tp_3" [closable]="true" >
 									Content 3
 								</p-tabPanel>
-								<p-tabPanel header="Header IV" [disabled]="true">
+								<p-tabPanel header="Header IV" id="event_tp_4" [disabled]="true">
 									Content 4
 								</p-tabPanel>
 							</p-tabView>
@@ -165,7 +165,7 @@
 						<p> Select Tab: {{tabSelect + 1}}</p>
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-5">
 					<div role="tab" id="ex_2">
 						<h5 class="mb-0">
 							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
@@ -181,23 +181,23 @@
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-5">
+				<div class="col-md-7">
 					<div class="card-block">
 						<h3>Orientation</h3>
-						<p-tabView orientation="left">
-							<p-tabPanel header="Header 1" leftIcon="fa-calendar">
+						<p-tabView orientation="left" id="tabView_orientation">
+							<p-tabPanel header="Header 1" id="orientation_tp_1" leftIcon="fa-calendar">
 								 Content 1
 							</p-tabPanel>
-							<p-tabPanel header="Header 2" leftIcon="fa-print">
+							<p-tabPanel header="Header 2" id="orientation_tp_2" leftIcon="fa-print">
 								 Content 2
 							</p-tabPanel>
-							<p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+							<p-tabPanel header="Header 3" id="orientation_tp_3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
 								 Content 3
 							</p-tabPanel>
 						</p-tabView>
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-5">
 					<div role="tab" id="ex_3">
 						<h5 class="mb-0">
 							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
@@ -212,27 +212,6 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="row row-in-tab">
-				<div class="col-md-4">
-					<div class="card-block">
-						
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div role="tab" id="ex_4">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
-							Code Example#3
-							</a>
-						</h5>
-					</div>
-					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
-						<div class="jumbotron">
-							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
-						</div>
-					</div>
-				</div>
-			</div>-->
 		</div>
 	</div>
 </div>
