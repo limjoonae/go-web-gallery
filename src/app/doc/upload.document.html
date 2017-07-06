@@ -29,6 +29,15 @@
 				</div>
 			</div>
 		</div>
+		<div class="jumbotron">
+			<div class="card-title">
+				<h3>Release Update</h3>
+			</div>
+			<div class="card-block">
+				<h5><strong>Version </strong>{{version}} ({{releaseDate}})</h5>
+				<li *ngFor="let line of releaseUpdate_v_1_1">{{line.data}} </li>	
+			</div>
+		</div>
 	</div>
 
 	<div role="tabpanel" class="tab-pane fade" id="doc">
@@ -37,7 +46,8 @@
 			<code>
 				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
 			</code>
-			<br> <br>
+		</div>
+		<div class="jumbotron" id="attributesTopic">
 			<h2>Attributes</h2>
 			<table class="table">
 				<thead>
@@ -59,11 +69,11 @@
 			</table>
 		</div>
 
-		<div class="jumbotron">
-			<h4>Object of messageSettings</h4>
+		<div class="jumbotron" id="messageSettingsTopic">
+			<h2>messageSettings Object</h2>
 			<code> {{messageSettingsSyntax}} </code>
 			<br> <br>
-			<h4>Attributes</h4>
+			<h4>messageSettings Key Description</h4>
 			<table class="table">
 				<thead>
 					<tr>
@@ -82,13 +92,14 @@
 					</tr>
 				</tbody>
 			</table>
+			<a href="#attributesTopic">back to top</a>
 		</div>
 
-		<div class="jumbotron">
-			<h4>Object of showOptions</h4>
+		<div class="jumbotron" id="showOptionsTopic">
+			<h2>showOptions Object</h2>
 			<code> {{showOptionsSyntax}} </code>
 			<br> <br>
-			<h2>Attributes</h2>
+			<h4>showOptions Key Description</h4>
 			<table class="table">
 				<thead>
 					<tr>
@@ -107,62 +118,89 @@
 					</tr>
 				</tbody>
 			</table>
+			<a href="#attributesTopic">back to top</a>
 		</div>
 	</div>
 	<div role="tabpanel" class="tab-pane fade" id="ex">
 		<div class="col-md-12">
-			<div id="ex">
-				<h5 class="mb-0">
-					<a class="collapsed" data-toggle="collapse" href="#collapse_ex" aria-expanded="false" aria-controls="collapse_ex">
-						<i>>>>>> BackEnd SetUp <<<<<</i>
-					</a>
-				</h5>
-			</div>
-			<div id="collapse_ex" class="collapse" role="tabpanel" aria-labelledby="ex">
-				<div class="jumbotron">
-					สามารถดาวน์โหลดไฟล์ Backend ได้จาก <b><a [href]="dlpath">ลิงค์นี้</a></b><br> Requirement: Node.js และ npm เวอร์ชั่นปัจจุบัน
-					และจำเป็นต้องต่ออินเตอร์เน็ตอยู่
-					<br>
-					<strong>วิธีการใช้งานไฟล์ Backend</strong><br> 1. (ทำครั้งแรกครั้งดียว) เปิดไฟล์ backend_setup.bat ขึ้นมารอมันทำงานจนเสร็จ
-					จะปิดตัวเองลงและจะได้โฟลเดอร์ node_modules ขึ้นมา<br> 2. (ทำทุกครั้งที่จะเปิด backend ขึ้นมาลองใช้) เปิดไฟล์ backend_run.bat
-					ขึ้นมา แล้วย่อไว้เบื้องหลัง เมื่อทำงานเสร็จสามารถปิดทิ้งได้
-				</div>
+			<div class="jumbotron">
+				<h5>Simulate Backend Setup</h5>
+				ก่อนการทดลองใช้งาน Upload component ต้องทำการติดตั้งตัวจำลอง Backend โดยสามารถดาวน์โหลดได้จาก <strong><a [href]="dlpath">ลิงค์นี้</a></strong><br>
+				เพื่อให้สามารถทำการ Upload ไฟล์ได้เสมือนจริง<br><br>
+				<strong>วิธีการใช้งานไฟล์ Backend</strong><br>
+				1. (ทำครั้งแรกครั้งดียว) run ไฟล์ backend_setup.bat รอจนโปรแกรมทำงานจนเสร็จ โปรแกรมจะปิดตัวเองและจะได้โฟลเดอร์ node_modules ขึ้นมา<br>
+				(ผู้ใช้ต้องมีการติดตั้ง node.js และ npm เวอร์ชั่นปัจจุบันอยู่บนเครื่อง และจำเป็นต้องใช้ Internet ในการดาวน์โหลด)<br>
+				2. (ทำทุกครั้งที่จะทดลองใช้งาน Upload component) run ไฟล์ backend_run.bat และเปิดโปรแกรมค้างไว้ขณะใช้งาน
 			</div>
 		</div>
-		<br>
-		<div class="col-md-6 col-sm-6" [innerHTML]="exampleDescription"></div>
-		<div class="col-md-6 col-sm-6" [innerHTML]="exampleDescription"></div>
 		<div class="jumbotron">
-			<div class="col-md-5">
-				<div class="row">
-					<go-upload name="demo" url="http://localhost:10050/upload" id="upload_ex" [multiple]="true" accept="image/*,text/*" fileTypeAllow="image/*,text/*"
-						[autoUpload]="false" [maxFileSize]=2*1024*1024 [showImage]="true" [previewWidth]="100" [speedCalculationTime]=1000 [canAbort]="true"
-						[messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinish($event)"
-						(onSelect)="onSelect($event)" (onDelete)="onDelete($event)" (onClear)="onClear($event)" (onError)="onError($event)">
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<go-upload name="upload_default" 
+						id="upload_default" url="http://localhost:10050/upload" 
+						accept="image/*,text/*" fileTypeAllow="image/*,text/*"
+						(onFinish)="onFinish($event)" (onSelect)="onSelect($event)" 
+						(onDelete)="onDelete($event)" (onClear)="onClear($event)" 
+						(onError)="onError($event)">
 					</go-upload>
-				</div>
-				<div class="row" *ngIf="uploadedFiles.length > 0">
-					<h3>{{uploadedFileMessage}}</h3>
-					<button class="btn btn-danger" (click)="clearCompletedList()">Clear</button>
-					<div class="row" *ngFor="let file of uploadedFiles">
-						<div class="col-md-12">{{file.name}} - [{{file.size}} bytes]</div>
+					<div class="row" *ngIf="uploadedFiles.length > 0" style="margin-top: 2rem;">
+						<strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>
+						<div class="row" *ngFor="let file of uploadedFiles">
+							<div class="col-md-12">
+								<li>{{file.name}} - [{{file.size}} bytes]</li>
+							</div>
+						</div>
+					</div>
+				</div><br>
+				<div class="col-md-7">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<p>component.html</p>
+							<pre><code>{{html_ex_default}}</code></pre>
+							<br>
+							<p>component.ts</p>
+							<pre><code>{{ts_ex_default}}</code></pre>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-7">
-				<div role="tab" id="ex_1">
-					<h5 class="mb-0">
-						<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1"> Code
-							Example </a>
-					</h5>
-				</div>
-				<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
-					<div class="jumbotron">
-						<code>{{code}}</code>
-						<br> <br>
-						<code>{{msgCode}}</code>
-						<br> <br>
-						<code>{{showCode}}</code>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,text/*,application/*" fileTypeAllow="image/*,text/*,application/*"
+						[maxFileSize]=2.5*1024*1024 [showImage]="false" [previewWidth]="100" [speedCalculationTime]=1000
+						[messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinishSet($event)"
+						(onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)" (onError)="onErrorSet($event)">
+					</go-upload>
+					<div class="row" *ngIf="uploadedFilesSet.length > 0">
+						<strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>
+						<div class="row" *ngFor="let file of uploadedFilesSet">
+							<div class="col-md-12">
+								<li>{{file.name}} - [{{file.size}} bytes]</li>
+							</div>
+						</div>
+					</div>
+				</div><br>
+				<div class="col-md-7">
+					<div role="tab" id="ex_upload_set">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_upload_set" aria-expanded="false" aria-controls="collapse_ex_upload_set">
+							Code Example#2</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_upload_set" class="collapse" role="tabpanel" aria-labelledby="ex_upload_set">
+						<div class="jumbotron">
+							<p>component.html</p>
+							<pre><code>{{html_ex_upload_set}}</code></pre>
+							<br>
+							<p>component.ts</p>
+							<pre><code>{{ts_ex_upload_set}}</code></pre>
+						</div>
 					</div>
 				</div>
 			</div>
