@@ -144,7 +144,7 @@ clearCompletedList() {
 }`;
 
     private html_ex_upload_set: string = `<strong>Set Option Upload</strong> Status: {{statusSet}}
-<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,text/*,application/*" fileTypeAllow="image/*,text/*,application/*"
+<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,application/*" fileTypeAllow="image/*,application/*"
     [maxFileSize]=2.5*1024*1024 [showImage]="false" [previewWidth]="100" [speedCalculationTime]=1000
     [messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinishSet($event)"
     (onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)">
