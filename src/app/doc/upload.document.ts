@@ -103,12 +103,12 @@ export class UploadDocument implements OnInit {
     `;
 
  
-    private html_ex_default: string = `<go-upload name="upload_default" 
-    id="upload_default" url="http://localhost:10050/upload" 
+    private html_ex_default: string = `<strong>Basic Upload</strong> Status: {{status}}
+<go-upload name="upload_default" 
+	id="upload_default" url="http://localhost:10050/upload" 
     accept="image/*,text/*" fileTypeAllow="image/*,text/*"
     (onFinish)="onFinish($event)" (onSelect)="onSelect($event)" 
-    (onDelete)="onDelete($event)" (onClear)="onClear($event)" 
-    (onError)="onError($event)">
+    (onDelete)="onDelete($event)" (onClear)="onClear($event)">
 </go-upload>
 <div class="row" *ngIf="uploadedFiles.length > 0" style="margin-top: 2rem;">
     <strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>
@@ -122,7 +122,6 @@ export class UploadDocument implements OnInit {
     private ts_ex_default: string = `uploadedFiles: any[] = [];
 
 onFinish(event: any) {
-    this.status = 'อัพโหลดสำเร็จ';
     for (let file of event.files) {
         this.uploadedFiles.push(file);
     }
@@ -137,17 +136,18 @@ onDelete(event: any) {
 }
 
 onClear(event: any) {
-    this.status = 'ลบไฟล์ทั้งหมด';
+    this.status = '';
 }
 
-onError(event: any) {
-    this.status = 'อัพโหลดผิดพลาด';
+clearCompletedList() {
+    this.uploadedFiles = [];
 }`;
 
-    private html_ex_upload_set: string = `<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,text/*,application/*" fileTypeAllow="image/*,text/*,application/*"
+    private html_ex_upload_set: string = `<strong>Set Option Upload</strong> Status: {{statusSet}}
+<go-upload id="upload_set" name="upload_set" url="http://localhost:10050/upload" [multiple]="false" accept="image/*,text/*,application/*" fileTypeAllow="image/*,text/*,application/*"
     [maxFileSize]=2.5*1024*1024 [showImage]="false" [previewWidth]="100" [speedCalculationTime]=1000
     [messageSettings]="message_sets" [showOptions]="show_opts" (onFinish)="onFinishSet($event)"
-    (onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)" (onError)="onErrorSet($event)">
+    (onSelect)="onSelectSet($event)" (onDelete)="onDeleteSet($event)" (onClear)="onClearSet($event)">
 </go-upload>
 <div class="row" *ngIf="uploadedFilesSet.length > 0">
     <strong>{{uploadedFileMessage}}</strong> <button class="btn btn-danger btn-sm" (click)="clearCompletedList()">Clear</button>
@@ -163,7 +163,6 @@ message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it" };
 show_opts = { showDragandDropBox: true };
 
 onFinishSet(event: any) {
-    this.status = 'อัพโหลดสำเร็จ';
     for (let file of event.files) {
         this.uploadedFilesSet.push(file);
     }
@@ -178,11 +177,7 @@ onDeleteSet(event: any) {
 }
 
 onClearSet(event: any) {
-    this.status = 'ลบไฟล์ทั้งหมด';
-}
-
-onErrorSet(event: any) {
-    this.status = 'อัพโหลดผิดพลาด';
+    this.status = '';
 }
 
 clearCompletedListSet() {
@@ -213,7 +208,6 @@ clearCompletedListSet() {
     }
 
     onFinish(event: any) {
-        this.status = 'อัพโหลดสำเร็จ';
         for (let file of event.files) {
             this.uploadedFiles.push(file);
         }
@@ -236,7 +230,6 @@ clearCompletedListSet() {
     }
 
     onFinishSet(event: any) {
-        this.statusSet = 'อัพโหลดสำเร็จ';
         for (let file of event.files) {
             this.uploadedFilesSet.push(file);
         }
