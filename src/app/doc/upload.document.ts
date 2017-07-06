@@ -159,7 +159,7 @@ clearCompletedList() {
 </div>`;
 
     private ts_ex_upload_set: string = `uploadedFilesSet: any[] = [];
-message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it" };
+message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it", invalidFileSizeMsg: "ขนาดไฟล์ไม่ถูกต้อง" };
 show_opts = { showDragandDropBox: true };
 
 onFinishSet(event: any) {
