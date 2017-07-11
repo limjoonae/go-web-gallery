@@ -81,7 +81,7 @@ const _releaseUpdate: Array<any> = [
 const _EXAMPLE1: Array<any> = [
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data"></p-tree>` },
+  { data: `<p-tree [value]="data" id='tree_basic'></p-tree>` },
 ];
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.ts  ` },
@@ -90,7 +90,7 @@ const _EXAMPLE2: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="single" [(selection)]="selectedFile"></p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="single" [(selection)]="selectedFile" id='tree_single'></p-tree>` },
   { data: `<div>Selected Node: <label *ngIf="selectedFile">{{selectedFile.label}}</label></div>` },
   { data: `` },
   { data: `` },
@@ -102,7 +102,7 @@ const _EXAMPLE3: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="multiple" [(selection)]="selectedFiles"> </p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="multiple" [(selection)]="selectedFiles" id='tree_multiple'> </p-tree>` },
   { data: `<div>Selected Nodes: <span *ngFor="let file of selectedFiles">{{file.label}} </span></div>` },
 ];
 const _EXAMPLE4: Array<any> = [
@@ -112,7 +112,7 @@ const _EXAMPLE4: Array<any> = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-tree [value]="data" selectionMode="checkbox" [(selection)]="selectedFiles2"></p-tree>` },
+  { data: `<p-tree [value]="data" selectionMode="checkbox" [(selection)]="selectedFiles2" id='tree_checkbox'></p-tree>` },
   { data: `<div>Selected Nodes: <span *ngFor="let file of selectedFiles2">{{file.label}} </span></div>` },
 
 ];
@@ -201,7 +201,7 @@ export class TreeDocument  {
     private codeExample4 = _EXAMPLE4;
     private data1 = _DATA1;
 
-    private data =
+    private item1 =
         [
             {
                 "label": "Documents",
@@ -249,7 +249,156 @@ export class TreeDocument  {
                         "children": [{"label": "Goodfellas", "icon": "fa-file-video-o", "data": "Goodfellas Movie"}, {"label": "Untouchables", "icon": "fa-file-video-o", "data": "Untouchables Movie"}]
                     }]
             }
-        ]
+        ];
+    private item2 =
+        [
+            {
+                "label": "Documents",
+                "data": "Documents Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Work",
+                        "data": "Work Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Expenses.doc", "icon": "fa-file-word-o", "data": "Expenses Document"}, {"label": "Resume.doc", "icon": "fa-file-word-o", "data": "Resume Document"}]
+                    },
+                    {
+                        "label": "Home",
+                        "data": "Home Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Invoices.txt", "icon": "fa-file-word-o", "data": "Invoices for this month"}]
+                    }]
+            },
+            {
+                "label": "Pictures",
+                "data": "Pictures Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [
+                    {"label": "barcelona.jpg", "icon": "fa-file-image-o", "data": "Barcelona Photo"},
+                    {"label": "logo.jpg", "icon": "fa-file-image-o", "data": "PrimeFaces Logo"},
+                    {"label": "primeui.png", "icon": "fa-file-image-o", "data": "PrimeUI Logo"}]
+            },
+            {
+                "label": "Movies",
+                "data": "Movies Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Al Pacino",
+                        "data": "Pacino Movies",
+                        "children": [{"label": "Scarface", "icon": "fa-file-video-o", "data": "Scarface Movie"}, {"label": "Serpico", "icon": "fa-file-video-o", "data": "Serpico Movie"}]
+                    },
+                    {
+                        "label": "Robert De Niro",
+                        "data": "De Niro Movies",
+                        "children": [{"label": "Goodfellas", "icon": "fa-file-video-o", "data": "Goodfellas Movie"}, {"label": "Untouchables", "icon": "fa-file-video-o", "data": "Untouchables Movie"}]
+                    }]
+            }
+        ];
+
+        private item3 =
+        [
+            {
+                "label": "Documents",
+                "data": "Documents Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Work",
+                        "data": "Work Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Expenses.doc", "icon": "fa-file-word-o", "data": "Expenses Document"}, {"label": "Resume.doc", "icon": "fa-file-word-o", "data": "Resume Document"}]
+                    },
+                    {
+                        "label": "Home",
+                        "data": "Home Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Invoices.txt", "icon": "fa-file-word-o", "data": "Invoices for this month"}]
+                    }]
+            },
+            {
+                "label": "Pictures",
+                "data": "Pictures Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [
+                    {"label": "barcelona.jpg", "icon": "fa-file-image-o", "data": "Barcelona Photo"},
+                    {"label": "logo.jpg", "icon": "fa-file-image-o", "data": "PrimeFaces Logo"},
+                    {"label": "primeui.png", "icon": "fa-file-image-o", "data": "PrimeUI Logo"}]
+            },
+            {
+                "label": "Movies",
+                "data": "Movies Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Al Pacino",
+                        "data": "Pacino Movies",
+                        "children": [{"label": "Scarface", "icon": "fa-file-video-o", "data": "Scarface Movie"}, {"label": "Serpico", "icon": "fa-file-video-o", "data": "Serpico Movie"}]
+                    },
+                    {
+                        "label": "Robert De Niro",
+                        "data": "De Niro Movies",
+                        "children": [{"label": "Goodfellas", "icon": "fa-file-video-o", "data": "Goodfellas Movie"}, {"label": "Untouchables", "icon": "fa-file-video-o", "data": "Untouchables Movie"}]
+                    }]
+            }
+        ];
+
+        private item4 =
+        [
+            {
+                "label": "Documents",
+                "data": "Documents Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Work",
+                        "data": "Work Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Expenses.doc", "icon": "fa-file-word-o", "data": "Expenses Document"}, {"label": "Resume.doc", "icon": "fa-file-word-o", "data": "Resume Document"}]
+                    },
+                    {
+                        "label": "Home",
+                        "data": "Home Folder",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [{"label": "Invoices.txt", "icon": "fa-file-word-o", "data": "Invoices for this month"}]
+                    }]
+            },
+            {
+                "label": "Pictures",
+                "data": "Pictures Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [
+                    {"label": "barcelona.jpg", "icon": "fa-file-image-o", "data": "Barcelona Photo"},
+                    {"label": "logo.jpg", "icon": "fa-file-image-o", "data": "PrimeFaces Logo"},
+                    {"label": "primeui.png", "icon": "fa-file-image-o", "data": "PrimeUI Logo"}]
+            },
+            {
+                "label": "Movies",
+                "data": "Movies Folder",
+                "expandedIcon": "fa-folder-open",
+                "collapsedIcon": "fa-folder",
+                "children": [{
+                        "label": "Al Pacino",
+                        "data": "Pacino Movies",
+                        "children": [{"label": "Scarface", "icon": "fa-file-video-o", "data": "Scarface Movie"}, {"label": "Serpico", "icon": "fa-file-video-o", "data": "Serpico Movie"}]
+                    },
+                    {
+                        "label": "Robert De Niro",
+                        "data": "De Niro Movies",
+                        "children": [{"label": "Goodfellas", "icon": "fa-file-video-o", "data": "Goodfellas Movie"}, {"label": "Untouchables", "icon": "fa-file-video-o", "data": "Untouchables Movie"}]
+                    }]
+            }
+        ];
 
     private selectedFile: any;    
     private selectedFiles: any;

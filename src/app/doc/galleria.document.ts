@@ -79,10 +79,11 @@ private images = [
     ` },
     { data: `app.component.html` },
     { data: `` },
-    { data: `<p-galleria [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  ></p-galleria>` },
+    { data: `<p-galleria id='galleria_basic' [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  ></p-galleria>` },
 ]
 const _EXAMPLE2: Array<any> = [
   { data: `` },
+ {data:` <p-galleria id='galleria_effect' [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  transitionInterval="2000" effect="explode" effectDuration="500" showCaption="true"></p-galleria>`},
 ]
 const _EXAMPLE3: Array<any> = [
   { data: `` },

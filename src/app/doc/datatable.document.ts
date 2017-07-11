@@ -5,7 +5,8 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'groupField', type: 'string', description: `ใช้สำหรับระบุชื่อของ field ที่ต้องการให้แสดงเป็น group`},
     { require: '', name: 'paginator', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางแสดงจำนวนหน้า`},
     { require: '', name: 'pageLinks', type: 'number', description: `ใช้สำหรับระบุจำนวนหน้าที่ต้องการให้แสดง`},
-    { require: '', name: 'rowsPerPageOptions', type: 'number', description: `ใช้สำหรับระบุจำนวน row ต่อหน้า`},
+    { require: '', name: 'rows', type: 'number', description: `ใช้สำหรับระบุจำนวน row ต่อหน้า`},
+    { require: '', name: 'rowsPerPageOptions', type: 'number', description: `ชุดตัวเลขสำหรับกำหนดจำนวน row ที่จะแสดงในหนึ่ง page`},
     { require: '', name: 'rowGroupMode', type: 'string', description: `ใช้สำหรับระบุประเภทของ row group ที่ต้องการให้แสดง มีดังนี้ subheader rowspan `},
     { require: '', name: 'sortMode', type: 'string', description: `ใช้สำหรับระบุประเภทของการ sort มีประเภทดังนี้ single multiple `},
     { require: '', name: 'sortField', type: 'string', description: `ใช้สำหรับระบุชื่อ field ที่ต้องการให้ sort ตั้งแต่แรก`},
@@ -15,13 +16,12 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'editable', type: 'boolean', description: `ใช้ระบุเพื่อให้สามารถแก้ไขตารางได้`},
     { require: '', name: 'expandableRows', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางสามารถ expand ได้`},
     { require: '', name: 'resizableColumns', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางสามารถ resize column ได้`},
-    { require: '', name: 'columnResizeMode', type: 'string', description: `ใช้สำหรับระบุ mode ในการ resize มี 2 mode ดังนี้ expand fit`},
+    { require: '', name: 'columnResizeMode', type: 'string', description: `ใช้สำหรับระบุ mode ในการ resize มี 2 mode ดังนี้ fit(ลดขนาดคอลัมพ์อื่นให้เท่าขนาดเดิม) expand(ไม่ลดขนาด)`},
     { require: '', name: 'reorderableColumns', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางเรียงลำดับให้`},
     { require: '', name: 'scrollable', type: 'boolean', description: `ใช้ระบุเพื่อติดตั้ง scroll ให้แก่ตาราง`},
     { require: '', name: 'scrollHeight', type: 'number', description: `ใช้สำหรับระบุความสูงของ scroll`},
-    { require: '', name: 'scrollWidth', type: 'number', description: `ใช้สำหรับระบุความกว้างของ scroll`},
-    { require: '', name: 'rows', type: 'number', description: `ใช้สำหรับระบุจำนวนแถวที่แสดงเมื่อใส่ scroll`},
-    { require: '', name: 'virtualScroll', type: 'boolean', description: `ใช้ระบุเพื่อแสดงข้อมูลระหว่าง scroll`},
+    { require: '', name: 'scrollWidth', type: 'number', description: `ใช้สำหรับระบุความกว้างของ datatable ใช้ร่วมกับการกำหนดความกว้างของ column`},
+    { require: '', name: 'virtualScroll', type: 'boolean', description: `ใช้ระบุเพื่อโหลดข้อมูลเพิ่มเติมระหว่าง scroll ใช้ร่วมกับ lazy และ total record`},
     { require: '', name: 'lazy', type: 'boolean', description: `ใช้ระบุให้ตารางโหลดข้อมูลแบบ lazy`},
     { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางสามารถ responsive ได้`},
     { require: '', name: 'exportFilename', type: 'string', description: `ใช้ระบุชื่อไฟล์ที่ทำการ export `},
@@ -171,18 +171,15 @@ const _EXAMPLE1: Array<any> = [
   { data: `app.component.html` },
   { data: `` },
   { data: `<p-dataTable [value]="dataTable1">` },
-  { data: `   <p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header"></p-column>` },
+  { data: `   <p-column *ngFor="let col of cols1" [field]="col.field" [header]="col.header" id='dataTable_basic'></p-column>` },
   { data: `</p-dataTable>` },
 
 
 ]
 const _EXAMPLE2: Array<any> = [
-  { data: `app.component.ts` },  
-  { data: `` },
-  { data: `app.component.html` },
-  { data: `` },  
+  { data: `app.component.html` },  
   { data: `
-<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple">
+<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10]" sortMode="multiple" id='dataTable_paginator_sort'>
   <p-header>List of Cars</p-header>
   <p-column field="vin" header="Vin" [sortable]="true"></p-column>
   <p-column field="year" header="Year" [sortable]="true"></p-column>
@@ -208,11 +205,11 @@ const _EXAMPLE3: Array<any> = [
   </div>
 </div>` },
   { data: `
-<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" selectionMode="multiple" [(selection)]="selectedDatas">
-  <p-column field="vin" header="Vin (startsWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
-  <p-column field="year" header="Year" [editable]="true" ></p-column>
-  <p-column field="brand" header="Brand" [editable]="true" ></p-column>
-  <p-column field="color" header="Color" [editable]="true"></p-column>
+<p-dataTable [value]="dataTable2" [rows]="5" [paginator]="true" [globalFilter]="gb" [editable]="true" id='dataTable_filter_editable'>
+  <p-column field="vin" header="Vin (startWith)" [filter]="true" filterPlaceholder="Search" [editable]="true"></p-column>
+	<p-column field="year" header="Year (equals)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='equals'></p-column>
+	<p-column field="brand" header="Brand (contain)" [editable]="true"  [filter]="true" filterPlaceholder="Search" filterMatchMode='contains'></p-column>
+	<p-column field="color" header="Color (endsWith)" [editable]="true" [filter]="true" filterPlaceholder="Search" filterMatchMode='endsWith'></p-column>
   <p-footer>
     <ul>
       <li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
@@ -225,7 +222,7 @@ const _EXAMPLE3: Array<any> = [
 const _EXAMPLE4: Array<any> = [
   { data: `app.component.html` },
   { data: `
-<p-dataTable [value]="dataTable2" expandableRows="true" resizableColumns="true" reorderableColumns="true">
+<p-dataTable [value]="dataTable2" expandableRows="true" resizableColumns="true" reorderableColumns="true" id='dataTable_resize'>
   <p-header>List of Cars</p-header>
   <p-column expander="true" styleClass="col-icon"></p-column>
   <p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -258,20 +255,22 @@ const _EXAMPLE4: Array<any> = [
 const _EXAMPLE5: Array<any> = [
   { data: `app.component.html` },
   { data: `
-<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight={{scrollHeightCal(dataTable5)}}>
+
+<p-dataTable  [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="100px" scrollWidth='600px' id='dataTable_scroll_csv'>
   <p-header>
     <div >
       <go-button label="CSV" iconName="file-o" buttonColor="primary" (click)="dt.exportCSV()"></go-button>
     </div>
   </p-header>
-  <p-column field="vin" header="Vin" ></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="brand" header="Brand"></p-column>
-  <p-column field="color" header="Color"></p-column>
+  <p-column field="vin" header="Vin" [style] = "{width:'160px'}" ></p-column>
+  <p-column field="year" header="Year" [style] = "{width:'160px'}" ></p-column>
+  <p-column field="brand" header="Brand" [style] = "{width:'160px'}" ></p-column>
+  <p-column field="color" header="Color" [style] = "{width:'160px'}" ></p-column>
 </p-dataTable>
 
-  component.ts
-
+ 
+*ส่วนเสริมสำหรับการกำหนดความสูงของ Scroll ให้เหมาะสมกับจำนวนข้อมูล
+ component.ts
   private defaultScrollHeight : number = 100;
 
   scrollHeightCal(data : Array<any>) : string{
@@ -299,7 +298,7 @@ toggle() {
   { data: `` },
   { data: `app.component.html` },
   { data: `
-<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()"></go-button>
+<go-button label="Toggle" iconName="list" buttonColor="primary" (click)="toggle()" id='dataTable_responsive'></go-button>
 <p-dataTable [value]="dataTable6" [rows]="5" [paginator]="true" [responsive]="true" [stacked]="stacked">
   <p-header>Responsive</p-header>
   <p-column field="vin" header="Vin"></p-column>
@@ -308,6 +307,28 @@ toggle() {
   <p-column field="color" header="Color"></p-column>
 </p-dataTable>
     ` },
+];
+
+const _EXAMPLE7: Array<any> = [
+  { data: `app.component.ts` },  
+  { data: `` },
+  { data: `private selectedDatas: Array<any>;` },
+  { data: `` },
+  { data: `app.component.html` },
+  { data: `
+<p-dataTable [value]="dataTable3" selectionMode="multiple" [(selection)]="selectedDatas" id='dataTable_selection'>
+<p-column field="vin" header="Vin"></p-column>
+<p-column field="year" header="Year" ></p-column>
+<p-column field="brand" header="Brand" ></p-column>
+<p-column field="color" header="Color" ></p-column>
+<p-footer>
+    <ul>
+      <li *ngFor="let data of selectedDatas" style="text-align: left">{{data.vin + ' - ' + data.brand + ' - ' + data.year + ' - ' + data.color}}</li>
+    </ul>
+  </p-footer>
+</p-dataTable>
+` },
+
 ];
 
 const _DATATABLE2: Array<any> = [
@@ -368,6 +389,7 @@ export class DataTableDocument  {
     private codeExample4 = _EXAMPLE4;
     private codeExample5 = _EXAMPLE5;
     private codeExample6 = _EXAMPLE6;
+    private codeExample7 = _EXAMPLE7;
 
     private dataTable1 = _DATATABLE1;
     private cols1 = _COLS1;
@@ -399,4 +421,23 @@ export class DataTableDocument  {
       else
       return '100px';
     }
+/*
+    loadCarsLazy(event: LazyLoadEvent) {
+        //for demo purposes keep loading the same dataset 
+        //in a real production application, this data should come from server by building the query with LazyLoadEvent options 
+        this.dataTable5 = [
+            {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
+        ];
+        
+    }   
+    */
 }

@@ -63,18 +63,6 @@ const EVENTLIST: Array<any> = [
   { require: '', name: 'typed', type: 'function($event)', description: `เมื่อผู้ใช้พิมพ์ลงในกล่องข้อความจะทำการ return ค่าที่ผู้ใช้พิมพ์ในรูปของ string` }
 ];
 
-const APPMODULELINE: Array<any> = [
-  `import { SelectModule } from 'ng2-select/ng2-select';`,
-  ``,
-  `@NgModule({`,
-  ` imports: [`,
-  `     ..........`,
-  `     SelectModule,`,
-  `     ..........`,
-  ` ],`,
-  `})`
-];
-
  const _EXAMPLE1: Array<any> = [
       `app.component.html`,
       ``,
@@ -83,6 +71,7 @@ const APPMODULELINE: Array<any> = [
       `         [items]="items"`, 
       `         [disabled]="disabledSingle" `,
       `         (data)="refreshSingleValue($event)"`,
+      `         id='search_single'`,
       `></ng-select>`, 
       `<p><strong> Select: </strong> {{ singleValue.text }} </p>`,
       ``,
@@ -115,6 +104,8 @@ const APPMODULELINE: Array<any> = [
      `          (selected)="selected($event)"`,
      `          (removed)="removed($event)"`,
      `          placeholder="please select city"`,
+     `          [active]="initial"`,
+     `          id='selectbox_multiple'`,
      `></ng-select>`,
      `<p><strong> Output value: </strong> {{ itemsToString(multiValue)}} </p>`,
      `<p><strong> Select value: </strong> {{ selectValue.text }} </p>`,
@@ -132,8 +123,11 @@ const APPMODULELINE: Array<any> = [
      `         'Rotterdam', 'Seville', 'Sheffield', 'Sofia', 'Stockholm', 'Stuttgart',`, 
      `         'Zagreb', 'Zaragoza', 'Łódź'];`,
      ``,
+     `private initial:Array<string> = ['Munich'];`,
+     ``,    
      `private selectValue: any = [];`,
      `private removeValue: any = [];`,
+     `private multiValue: any = [];`,
      ``,
      `public refreshMultiValue(value: any): void {`,
      `  this.multiValue = value;`,
@@ -162,9 +156,10 @@ const APPMODULELINE: Array<any> = [
     `<ng-select
         [items]="colorItems"
         (data)="refreshColorValue($event)"
-        placeholder="Please select color">`,
+        placeholder="Please select color"
+        id='selectbox_searchColor'>`,
     `</ng-select>`,
-     `<p><strong> Output value: </strong> {{colorValue.text}} </p>`,
+     `<p><strong> Output value: </strong> {{colorValue.id}} </p>`,
      ``,
      `app.component.ts`,
      ``,
@@ -225,7 +220,7 @@ const APPMODULELINE: Array<any> = [
     COLORS.forEach((color: { name: string, hex: string }) => {
         this.colorItems.push({
             id: color.hex,
-            text: '<colorbox style='background-color:$ {color.hex};'></colorbox>$ {color.name} ($ {color.hex})'
+            text: '<colorbox style="background-color:$ {color.hex};"></colorbox>$ {color.name} ($ {color.hex})'
         });
     });
 }`,
@@ -256,7 +251,6 @@ export class SelectboxDocument {
     private suffixSyntax: string = `><ng-select>`;
     private attributeList = ATTRIBUTELIST;
     private eventList = EVENTLIST;
-    private appModuleLine = APPMODULELINE;
 
     private exampleOf1 = _EXAMPLE1;
     private exampleOf2 = _EXAMPLE2;
@@ -282,6 +276,8 @@ export class SelectboxDocument {
         'Rotterdam', 'Seville', 'Sheffield', 'Sofia', 'Stockholm', 'Stuttgart',
         'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
         'Zagreb', 'Zaragoza', 'Łódź'];
+
+    private initial:Array<string> = ['Munich'];    
 
     private removeValue: any = [];
     private selectValue: any = [];

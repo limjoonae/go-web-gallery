@@ -76,16 +76,25 @@ export class TextEditorDocument {
     private appModuleDetail: string = `app.module.ts`;
     private systemJSDetail: string = `systemjs.config.js`;
 
-    code_1: string = `<go-texteditor elementId='editor_1' [height]='100' editormode='basic' content='basic editor' 
+    code_1: string = `
+    <go-texteditor elementId='editor_1' [height]='100' editormode='basic' content='basic editor' 
     (onEditorChanged)="change_1($event)"></go-texteditor>`;
-    code_output_1: string = `change_1(event: any) { this.value_1 = event; }`;
-    code_2: string = `	<go-texteditor elementId='editor_2' editormode='standard' [width]='400' 
+    code_output_1: string = `app.component.ts
+    value_1: string = '';
+    change_1(event: any) { this.value_1 = event; }`;
+    code_2: string = `
+    	<go-texteditor elementId='editor_2' editormode='standard' [width]='400' 
     [showMenubar]='false' [resize]='true' content='standard editor'	(onEditorChanged)="change_2($event)">
     </go-texteditor>`;
-    code_output_2: string = `change_2(event: any) { this.value_2 = event; }`;
-    code_3: string = `<go-texteditor elementId='editor_3' editormode='full' [showStatusbar]='false' 
+    code_output_2: string = `app.component.ts
+    value_1: string = '';
+    change_2(event: any) { this.value_2 = event; }`;
+    code_3: string = `
+    <go-texteditor elementId='editor_3' editormode='full' [showStatusbar]='false' 
     content='full editor' (onEditorChanged)="change_3($event)"></go-texteditor>`;
-    code_output_3: string = ` change_3(event: any) { this.value_3 = event; }`;
+    code_output_3: string = `app.component.ts
+    value_1: string = '';
+     change_3(event: any) { this.value_3 = event; }`;
 
     value_1: string = '';
     value_2: string = '';

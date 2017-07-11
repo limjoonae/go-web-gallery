@@ -111,12 +111,6 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Responsive? :</label>
-							<select class="form-control" #showResponsive (change)="callResponsive(showResponsive.value)">
-                            	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
-							</select>
-						</div>
-						<div class="form-group">
 							<label>Modal? :</label>
 							<select class="form-control" #showModal (change)="callModal(showModal.value)">
                             	<option *ngFor=" let b of booleanArr" [value]="b">{{b}}</option>
@@ -132,25 +126,25 @@
 						</div>
 						<div class="form-group">
 							<label>Body :</label>
-							<input class="form-control" #bodyDialog (keyup)="callBody(bodyDialog.value)">														
+							<input class="form-control" [(ngModel)]="body" #bodyDialog (keyup)="callBody(bodyDialog.value)">														
 						</div>
 					</div>
 				</div>
 				<div class="col-md-8" >
 					<div class="card-block">
-							<h2>Code:</h2>
-							<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
-							<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
-							<div class="dialog">
-							<p-dialog [header]="title" [(visible)]="display" 
-										[modal] = "isModal" [width] = "width" [height] = "height" 
-										[closable] = "isClosable" [responsive] = "isResponsive"
-										[draggable] = "isDraggable" [showHeader] = "isShowHeader">
-								<p> {{body}}</p> 
+						<h2>Code:</h2>
+						<pre><code *ngFor="let line of codeExample"> {{line}} <br></code></pre>
+						<go-button label="show" iconName="external-link-square" buttonColor="primary" (click)="showDialog()" ></go-button>
+						<div class="dialog">
+						<p-dialog [header]="title" [(visible)]="display" 
+									[modal] = "isModal" [width] = "width" [height] = "height" 
+									[closable] = "isClosable" 
+									[draggable] = "isDraggable" [showHeader] = "isShowHeader" breakpoint='500' id='dialog_configuration'>
+							<p>{{body}}</p> 
                             <p-footer>
                             	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-									<go-button label="no" iconName="close" buttonColor="primary" (click)="display=false" ></go-button>
-									<go-button label="yes" iconName="check" buttonColor="primary" (click)="display=false" ></go-button>
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog()" ></go-button>
                                 </div>
                             </p-footer>
                         </p-dialog>
@@ -158,6 +152,88 @@
 					</div>
 				</div>
 			</div>
+			<h5>Responsive</h5>
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						<go-button label="Responsive" iconName="check" buttonColor="primary" (click)="showDialog2()"></go-button>
+						<go-button label="Non-Responsive" iconName="close" buttonColor="primary" (click)="showDialog3()"></go-button>
+						<div class="dialog">
+							<p-dialog [header]="title2" [(visible)]="display2" 
+										[modal] = "true" [width] = "400" [height] = "250" 
+										[closable] = "true" [responsive] = "true"
+										[draggable] = "true" [showHeader] = "true" id='dialog_responsive'>
+								<p> Please Drag the Dialog. Then, resize your browser.<br><br></p> 
+                            <p-footer>
+                            	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog2()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog2()" ></go-button>
+                                </div>
+                            </p-footer>
+                        </p-dialog>
+						</div>
+						<div class="dialog">
+							<p-dialog [header]="title3" [(visible)]="display3" 
+										[modal] = "true" [width] = "400" [height] = "250" 
+										[closable] = "true" [responsive] = "false"
+										[draggable] = "true" [showHeader] = "true" id='dialog_non-responsive'>
+								<p>Please Drag the Dialog. Then, resize your browser.<br><br></p> 
+                            <p-footer>
+                            	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+									<go-button label="no" iconName="close" buttonColor="primary" (click)="showDialog3()" ></go-button>
+									<go-button label="yes" iconName="check" buttonColor="primary" (click)="showDialog3()" ></go-button>
+                                </div>
+                            </p-footer>
+                        </p-dialog>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_7">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_7" aria-expanded="false" aria-controls="collapse_ex_7">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_7" class="collapse" role="tabpanel" aria-labelledby="ex_7">
+						<div class="jumbotron">
+							<p>component.html</p>
+							<code>&lt;go-button label="Responsive" iconName="check" buttonColor="primary" (click)="showDialog2()"&gt;</code><br>
+							<code>&lt;go-button label="Non-Responsive" iconName="close" buttonColor="primary" (click)="showDialog3()"&gt;</code><br>
+							<code>&lt;p-dialog [header]="title2" [(visible)]="display2" 
+										[modal] = "true" [width] = "300" [height] = "300" 
+										[closable] = "true" [responsive] = "true"
+										[draggable] = "true" [showHeader] = "true"
+										id='dialog_responsive'&gt;</code><br>
+							<code>&lt;p-dialog [header]="title3" [(visible)]="display3" 
+										[modal] = "true" [width] = "300" [height] = "300" 
+										[closable] = "true" [responsive] = "false"
+										[draggable] = "true" [showHeader] = "true"
+										id='dialog_non-responsive'&gt;</code><br>
+							<p></p>
+							<p>component.ts</p>
+							<pre>
+<code>
+private display2: boolean = false;
+private display3: boolean = false;
+private title2:string = 'Responsive';
+private title3:string = 'Non-Responsive';
+
+showDialog2() &#123;
+this.display2 = true;
+&#125;
+									  
+showDialog3() &#123;
+this.display3 = true;
+&#125;
+									</code>
+							</pre>
+						</div>
+					</div>
+				</div>	
+			</div>
+		
 			<!--<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">

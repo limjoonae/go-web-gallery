@@ -23,7 +23,13 @@ const _ATTRSYNTAX: Array<any> = [
 ];
 
 const _EXAMPLE1: Array<any> = [
+
+  { data: `<p-panel id='panel_basic' header="Title" [toggleable] = "true" [collapsed]="true" (onBeforeToggle)="beforeCollapsed()">{{Content}}</p-panel>` },
+]
+const _EXAMPLE2: Array<any> = [
+
   { data: `<p-panel header="Title" [toggleable] = "true" [collapsed]="true" (onBeforeToggle)="beforeCollapsed()">{{Content}}</p-panel>` },
+
   { data: `` },
   { data: `component.ts` },
   { data: `collapsed : boolean = true;` },

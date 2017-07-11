@@ -105,13 +105,16 @@
 							<code>{{data_code_2}}</code>
 							<br>
 							<code>{{label_code}}</code>
+							<br><br>
+							<code>Array of Color</code><br><br>
+							<code>{{color_code}}</code>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="line" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+					<go-chart chartType="line" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true'[chartColor]="chart_color1"></go-chart>
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_1">
@@ -169,7 +172,7 @@
 
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+					<go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true' (onChartClicked) = "myTest()"></go-chart><br>{{click}}
 				</div>
 				<div class="col-md-8">
 					<div role="tab" id="ex_4">
@@ -180,7 +183,15 @@
 					</div>
 					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
 						<div class="jumbotron">
-							<code>{{code_4}}</code>
+							<code>{{code_4}}</code><br><br>
+							app.component.ts<br>
+							<pre>
+<code>private click: boolean = false;
+myTest() &#123;
+      this.click = !this.click;
+  &#125;
+</code>
+</pre>
 						</div>
 					</div>
 				</div>

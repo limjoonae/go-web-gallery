@@ -98,18 +98,18 @@
 	<div role="tabpanel" class="tab-pane fade" id="Example">
 		<div class="jumbotron">
 			<div class="row row-in-tab">
-				<div class="col-md-6">
+				<div class="col-md-6 card-block">
 					<h4> Block</h4>
 					<go-checkbox 
 							name="chbnames1" 
-							id="chbid1" 
+							id="chb_block" 
 							label="Checkbox: "  
 							[(ngModel)]="datas1" 
 							type="block" 
 							colorTheme="success" 
-							require="true">  check </go-checkbox>
-					<p> <strong> Output value: </strong> {{getValue}}  <label *ngFor="let d of datas1"> <label *ngIf="d.checked"> {{d.value}} , </label></label></p>
-					<p> <strong> Output label: </strong> {{getLabel}}  <label *ngFor="let d of datas1"> <label *ngIf="d.checked"> {{d.label}} , </label></label> </p>
+							require="true"></go-checkbox>
+					<p> <strong> Output value: </strong><span *ngFor="let d of datas1"> <span *ngIf="d.checked"> {{d.value}} , </span></span></p>
+					<p> <strong> Output label: </strong><span *ngFor="let d of datas1"> <span *ngIf="d.checked"> {{d.label}} , </span></span> </p>
 					
 				</div>
 				<div class="col-md-6">
@@ -123,20 +123,22 @@
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
                             <pre> <code  *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS1" >{{codets.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row row-in-tab">
-				<div class="col-md-6">
+				<div class="col-md-6 card-block">
 					<h4> Inline </h4>
 					<go-checkbox name="chbname2" 
-								id="chbid2" 
+								id="chb_inline" 
 								[(ngModel)]="datas2"  
 								colorTheme="warning"
-								>  check </go-checkbox>
-					<p> <strong> Output value: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.value}} , </label></label> </p>
-					<p> <strong> Output label: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.label}} , </label></label> </p>
+								></go-checkbox>
+					<p> <strong> Output value: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.value}} , </span></span> </p>
+					<p> <strong> Output label: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.label}} , </span></span> </p>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_2">
@@ -149,24 +151,26 @@
 					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
 						<div class="jumbotron">
 							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS2" >{{codets.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>
 			</div>
             <div class="row row-in-tab">
-				<div class="col-md-6">
+				<div class="col-md-6 card-block">
 					<h4> Columns </h4>
                     <go-checkbox name="chbnames3" 
-								id="chbid3" 
+								id="chb_column" 
 								label="Select Checkbox: " 
 								[(ngModel)]="datas3"
 								type="column"
 								[col]="3" 
 								colorTheme="danger" 
 								require="true"
-					>  check </go-checkbox>
-					<p> <strong> Output value: </strong> {{getValue}} <label *ngFor="let d of datas3"><label *ngIf="d.checked">  {{d.value}} , </label></label></p>
-					<p> <strong> Output label: </strong> {{getLabel}} <label *ngFor="let d of datas3"><label *ngIf="d.checked">  {{d.label}} , </label></label></p>
+					></go-checkbox>
+					<p> <strong> Output value: </strong><span *ngFor="let d of datas3"><span *ngIf="d.checked">  {{d.value}} , </span></span></p>
+					<p> <strong> Output label: </strong> <span *ngFor="let d of datas3"><span *ngIf="d.checked">  {{d.label}} , </span></span></p>
 				</div>
 				<div class="col-md-6">
 					<div role="tab" id="ex_3">
@@ -179,6 +183,8 @@
 					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
 						<div class="jumbotron">
 							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS3" >{{codets.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>

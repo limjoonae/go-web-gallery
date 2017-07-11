@@ -67,11 +67,11 @@
 				<div class="col-md-3">
 					<div class="row">
 						<b>{{firstProgressbarDescription}}</b>
-						<go-progressbar [progress]="progress_1"></go-progressbar>
-						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_1(10)">เพิ่มค่า progress_1 เป็นจำนวน 10 จุด</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="reduceProgress_1(10)">ลดค่า progress_1 เป็นจำนวน 10 จุด</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="finishProgress_1()">ทำให้ progress_1 เสร็จสิ้น</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_1()">ล้างค่า progress_1</button>
+						<go-progressbar [progress]="progress_1" id="default_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_1(10)" id="add_btn_dp">เพิ่มค่า progress_1 เป็นจำนวน 10 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="reduceProgress_1(10)" id="reduce_btn_dp">ลดค่า progress_1 เป็นจำนวน 10 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="finishProgress_1()" id="fin_btn_dp">ทำให้ progress_1 เสร็จสิ้น</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_1()" id="rst_btn_dp">ล้างค่า progress_1</button>
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -96,11 +96,11 @@
 				<div class="col-md-3">
 					<div class="row">
 						<b>{{secondProgressbarDescription}}</b>
-						<go-progressbar [progress]="progress_2" [minProgress]=200 [maxProgress]=1000 color="green"></go-progressbar>
-						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_2(20)">เพิ่มค่า progress_2 เป็นจำนวน 20 จุด</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_2(20)" *ngIf="!isAutoAdd_2">เพิ่มค่า progress_2 อัตโนมัติ รอบละ 20 จุด</button>
-						<button class="btn btn-danger btn-sm btn-block" (click)="stopAutoAddProgress_2()" *ngIf="isAutoAdd_2">หยุดการเพิ่มค่า progress_2 อัตโนมัติ</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_2()">ล้างค่า progress_2</button>
+						<go-progressbar [progress]="progress_2" [minProgress]=200 [maxProgress]=1000 color="green" id="interval_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_2(20)" id="add_btn_ip">เพิ่มค่า progress_2 เป็นจำนวน 20 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_2(20)" *ngIf="!isAutoAdd_2" id="auto_btn_ip">เพิ่มค่า progress_2 อัตโนมัติ รอบละ 20 จุด</button>
+						<button class="btn btn-danger btn-sm btn-block" (click)="stopAutoAddProgress_2()" *ngIf="isAutoAdd_2" id="stop_btn_ip">หยุดการเพิ่มค่า progress_2 อัตโนมัติ</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_2()" id="rst_btn_ip">ล้างค่า progress_2</button>
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -125,9 +125,9 @@
 				<div class="col-md-3">
 					<div class="row">
 						<b>{{thirdProgressbarDescription}}</b>
-						<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000"></go-progressbar>
-						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>
-						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_3()">ล้างค่า progress_3</button>
+						<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000" id="lock_on_load_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)" id="auto_btn_lp">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_3()" id="rst_btn_lp">ล้างค่า progress_3</button>
 					</div>
 				</div>
 				<div class="col-md-9">

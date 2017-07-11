@@ -152,36 +152,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="row row-in-tab">
-				<div class="col-md-3">
-					<div class="row">
-						<label><strong>Sidebar with close on click outside</strong></label>
-						<button class="btn btn-primary" *ngIf="!open_5" (click)="toggleSidebar_5()">Open Sidebar with Return Result</button>
-						<button class="btn btn-secondary" *ngIf="open_5" (click)="toggleSidebar_5()">Close Sidebar with Return Result</button>
-					</div>
-				</div>
-				<div class="col-md-9">
-					<div role="tab" id="ex_5">
-						<h5 class="mb-0">
-							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_5" aria-expanded="false" aria-controls="collapse_ex_5"> Code
-								Example#5 </a>
-						</h5>
-					</div>
-					<div id="collapse_ex_5" class="collapse" role="tabpanel" aria-labelledby="ex_5">
-						<div class="jumbotron">
-							<pre><code>{{html_5}}</code></pre>
-							<p>app.component.ts</p>
-							<pre><code>{{ts_5}}</code></pre>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
 
 <!-- This is side bar parts -->
-<go-sidebar [(opened)]="open_1">
+<go-sidebar [(opened)]="open_1" id="default_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 1</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_1()">Menu 2</a>
@@ -189,15 +165,15 @@
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]="true" closeOnClickOutside="true">
-	<nav class="nav nav-pills">
+<go-sidebar [(opened)]="open_2" position="top" [showBackdrop]="true" closeOnClickOutside="true" id="backdrop_sidebar">
+	<nav class="navbar navbar-default">
 		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 4</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 5</a>
-		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 6</a>
+		<a class="nav-link" href="#" (click)="toggleSidebar_2()">Menu 6</a>		
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_3" position="right" autoFocus="true" trapFocus="true">
+<go-sidebar [(opened)]="open_3" position="right" autoFocus="true" trapFocus="true" id="right_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 7</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_3()">Menu 8</a>
@@ -205,18 +181,10 @@
 	</nav>
 </go-sidebar>
 
-<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()">
+<go-sidebar [(opened)]="open_4" (onOpened)="openFinish()" (onClosed)="closeFinish()" id="action_sidebar">
 	<nav class="nav nav-pills nav-stacked">
 		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 10</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 11</a>
 		<a class="nav-link" href="#" (click)="toggleSidebar_4()">Menu 12</a>
-	</nav>
-</go-sidebar>
-
-<go-sidebar [(opened)]="open_5" position="bottom" [autoFocus]="true" closeOnClickOutside="true">
-	<nav class="nav nav-pills nav-stacked">
-		<a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 13</a>
-		<a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 14</a>
-		<a class="nav-link" href="#" (click)="toggleSidebar_5()">Menu 15</a>
 	</nav>
 </go-sidebar>

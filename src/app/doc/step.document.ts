@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 const _ATTRIBUTELIST: Array<any> = [
@@ -79,57 +79,79 @@ private items1 = [
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-steps [model]="items1" ></p-steps>` },
+  { data: `<p-steps id="basic_steps" [model]="items1" ></p-steps>` },
 
 ]
 const _EXAMPLE2: Array<any> = [
   { data: `app.component.ts` },
   { data: `` },
-  { data: `private activeIndex: number = 1;` },
+  { data: `import { ViewEncapsulation } from '@angular/core';` },
   { data: `
-private items2: Array<any> = [
-  {
-    label: 'Step 1',
-    command: (event: any) => {
-      this.activeIndex = 0;
+@Component({
+    styles: ['
+        .ui-steps .ui-steps-item  {
+            width: 16%;
+        }
+
+        .ui-steps .ui-steps-title {
+          white-space: pre-line;
+        }
+        
+        .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+            color: #555555;
+        }
+       
+    '],
+    encapsulation: ViewEncapsulation.None
+  })` },
+  { data: `` },
+  { data: `export class Step  { ` },
+  { data: `
+  private activeIndex: number = 1;
+  private items2: Array<any> = [
+    {
+      label: 'Step 1',
+      command: (event: any) => {
+        this.activeIndex = 0;
+      }
+    },
+    {
+      label: 'Step 2',
+      command: (event: any) => {
+        this.activeIndex = 1;
+      }
+    },
+    {
+      label: 'Step 3',
+      command: (event: any) => {
+        this.activeIndex = 2;
+      }
+    },
+    {
+      label: 'Step 4',
+      command: (event: any) => {
+        this.activeIndex = 3;
+      }
+    },
+    {
+      label: 'Step 5',
+      command: (event: any) => {
+        this.activeIndex = 4;
+      }
+    },
+    {
+      label: 'Step 6',
+      command: (event: any) => {
+        this.activeIndex = 5;
+      }
     }
-  },
-  {
-    label: 'Step 2',
-    command: (event: any) => {
-      this.activeIndex = 1;
-    }
-  },
-  {
-    label: 'Step 3',
-    command: (event: any) => {
-      this.activeIndex = 2;
-    }
-  },
-  {
-    label: 'Step 4',
-    command: (event: any) => {
-      this.activeIndex = 3;
-    }
-  },
-  {
-    label: 'Step 5',
-    command: (event: any) => {
-      this.activeIndex = 4;
-    }
-  },
-  {
-    label: 'Step 6',
-    command: (event: any) => {
-      this.activeIndex = 5;
-    }
-  }
-];
+  ];
     ` },
+  { data: `}` },
   { data: `` },
   { data: `app.component.html` },
   { data: `` },
-  { data: `<p-steps [model]="items2" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>` },
+  { data: `<p-steps id="custom_steps" [model]="items2" [(activeIndex)]="activeIndex" [readonly]="false" styleClass="steps-custom"></p-steps>` },
 ]
 const _EXAMPLE3: Array<any> = [
   { data: `` },
@@ -141,7 +163,22 @@ const _EXAMPLE4: Array<any> = [
 
 @Component({
     selector: 'doc-step',
-    templateUrl: './step.document.html'
+    templateUrl: './step.document.html',
+    styles: [`
+        .ui-steps .ui-steps-item  {
+            width: 16%;
+        }
+
+        .ui-steps .ui-steps-title {
+          white-space: pre-line;
+        }
+        
+        .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+            color: #555555;
+        }
+       
+    `],
+    encapsulation: ViewEncapsulation.None
 })
 export class StepDocument  { 
 
@@ -150,7 +187,7 @@ export class StepDocument  {
     private componentTag: string = 'Step'
     private version: string = '1.0'; 
     private componentDescription: string = `Step เป็นเครื่องมือในการจัดขั้นตอน สามารถปรับให้เหมาะสมกับการใช้งานขั้นตอนต่าง ๆ ได้`
-    private releaseDate: string = '29 March 2017';
+    private releaseDate: string = '13 June 2017';
     private creditURL: string = 'https://www.primefaces.org/primeng/#/steps';
     private credit: string = 'primeng (2.0.5)';   
 
@@ -171,10 +208,10 @@ export class StepDocument  {
 
     private activeIndex: number = 1;
     private items1 = [
-      {label: 'Login'},
-      {label: 'Select Round'},
-      {label: 'Payment'},
-      {label: 'Confirm'}
+      {label: 'Step 1'},
+      {label: 'Step 2'},
+      {label: 'Step 3'},
+      {label: 'Step 4'}
     ];
     private items2: Array<any> = [{
                 label: 'Step 1',

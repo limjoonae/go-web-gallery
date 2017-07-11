@@ -62,7 +62,7 @@ export class ProgressbarDocument {
     main_title = 'Example';
 
     firstProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่หนึ่ง`;
-    code_1: string = `<go-progressbar [progress]="progress_1"></go-progressbar>`;
+    code_1: string = `<go-progressbar [progress]="progress_1" id="default_progressbar"></go-progressbar>`;
     code_button_1: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="addProgress_1(10)">เพิ่มค่า progress_1 เป็นจำนวน 10 จุด</button>`;
     code_exam_1: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
     progress_1: number = 0;<br>
@@ -84,7 +84,7 @@ export class ProgressbarDocument {
     }
 
     secondProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่สอง`;
-    code_2: string = `<go-progressbar [progress]="progress_2" [minProgress]=200 [maxProgress]=1000 [color]="green">
+    code_2: string = `<go-progressbar [progress]="progress_2" [minProgress]=200 [maxProgress]=1000 [color]="green" id="interval_progressbar">
     </go-progressbar>`;
     code_button_2: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_2(20)">เพิ่มค่า progress_2 อัตโนมัติ รอบละ 20 จุด</button>`;
     code_exam_2: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
@@ -116,7 +116,7 @@ export class ProgressbarDocument {
     }
 
     thirdProgressbarDescription: string = `ปุ่มสำหรับ progressbar ลำดับที่สาม`;
-    code_3: string = `<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000"></go-progressbar>`;
+    code_3: string = `<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000" id="lock_on_load_progressbar"></go-progressbar>`;
     code_button_3: string = `ตัวอย่างปุ่มกด: <button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>`;
     code_exam_3: string = `<b>ฟังก์ชั่นการใช้งาน</b><br>
     progress_3: number = 0;<br>

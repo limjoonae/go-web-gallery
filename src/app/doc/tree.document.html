@@ -126,7 +126,7 @@
 				<div class="col-md-4">
 					<div class="card-block">
 						<h4> Basic </h4>
-						<p-tree [value]="data"></p-tree>
+						<p-tree [value]="item1" id='tree_basic'></p-tree>
 					</div>
 				</div>
 				<div class="col-md-8">
@@ -148,7 +148,7 @@
 				<div class="col-md-4">
 					<div class="card-block">
 						<h4> Single Selection </h4>
-						<p-tree [value]="data" selectionMode="single" [(selection)]="selectedFile"></p-tree>
+						<p-tree [value]="item2" selectionMode="single" [(selection)]="selectedFile" id='tree_single'></p-tree>
 						<div>Selected Node: <label *ngIf="selectedFile">{{selectedFile.label}}</label></div>
 					</div>
 				</div>
@@ -171,7 +171,7 @@
 				<div class="col-md-4">
 					<div class="card-block">
 						<h4> Multiple Selection</h4>
-						<p-tree [value]="data" selectionMode="multiple" [(selection)]="selectedFiles"> </p-tree>
+						<p-tree [value]="item3" selectionMode="multiple" [(selection)]="selectedFiles" id='tree_multiple'> </p-tree>
 						<div>Selected Nodes: <span *ngFor="let file of selectedFiles">{{file.label}} </span></div>
 					</div>
 				</div>
@@ -194,7 +194,7 @@
 				<div class="col-md-4">
 					<div class="card-block">
 						<h4> Multiple Selection with Checkbox</h4>
-						<p-tree [value]="data" selectionMode="checkbox" [(selection)]="selectedFiles2"></p-tree>
+						<p-tree [value]="item4" selectionMode="checkbox" [(selection)]="selectedFiles2" id='tree_checkbox'></p-tree>
 						<div>Selected Nodes: <span *ngFor="let file of selectedFiles2">{{file.label}} </span></div>
 					</div>
 				</div>

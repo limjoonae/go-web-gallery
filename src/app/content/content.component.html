@@ -29,18 +29,18 @@
 					<go-textbox type="text" [(ngModel)]="dept_name" name="dept"  goId="dept_id" placeholder="department name"  required goId="dept_id"></go-textbox><br>
 					E-Mail
 					<go-textbox type="email" [(ngModel)]="user_email" name="email"  goId="email_id" placeholder="example@host.com"  required #email_1="ngModel" ></go-textbox><br>
-					<font size='2' color='red'>* Please Fill in English</font><br>
+					<p style="color: red;">* Please Fill in English</p><br>
 					
 					 	<p-dialog [header]="title" [visible]="registerDialogDisplay"
               			[modal] = "isModal" [width] = "width" [height] = "height" 
 										[closable] = 'false'[responsive] = "isResponsive"
 										[draggable] = "false" [showHeader] = "true">
 						
-						<div class="dialog" align="center">
-							<font size = '4' color = '#990000'>Registered!!</font>
+						<div class="dialog" style="text-align: center;">
+							<a style="color: #990000;">Registered!!</a>
 						</div>
 							<p-footer>
-								<div align = 'center'>
+								<div style="text-align: center;">
 								<go-button label="close" iconName="close" buttonColor="danger" (click)="registerDialogDisplay=false" ></go-button>
 								</div>	
 							</p-footer>
@@ -50,17 +50,17 @@
 										[closable] = "false" [responsive] = "isResponsive"
 										[draggable] = "false" [showHeader] = "true">
 						
-						<div class="dialog" align="center">
-							<font size = '4' color = '#990000'>Please fill the correct data.</font>
+						<div class="dialog" style="text-align: center;">
+							<a style="color: #990000;">Please fill the correct data.</a>
 						</div>
 							<p-footer>
-								<div align = 'center'>
+								<div style="text-align: center;">
 								<go-button label="close" iconName="close" buttonColor="danger" (click)="errorDialogDisplay=false" ></go-button>
 								</div>	
 							</p-footer>
 					 	</p-dialog>
 				</div>
-				<div align = center>
+				<div style="text-align: center">
 					<go-button label="Submit" iconName="check" buttonColor="danger" (click)="submitData()" ></go-button>
 					<go-button label="Clear"  buttonColor="danger" (click)="clearText()" ></go-button><br>
 				</div>

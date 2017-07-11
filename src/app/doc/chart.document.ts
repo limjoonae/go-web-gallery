@@ -87,7 +87,26 @@ export class ChartDocument {
     private systemjsLine = SYSTEMJSLINE;
     private appModuleDetail: string = `app.module.ts`;
     private systemJSDetail: string = `systemjs.config.js`;
-
+    private chart_color1:Array<any> = [
+        {backgroundColor:'red', 
+        borderColor:'black', 
+        pointBackgroundColor:'blue', 
+        pointBorderColor:'black',
+        pointHoverBackgroundColor:'red',
+         pointHoverBorderColor:'pink'},
+         { backgroundColor:'lightblue', 
+        borderColor:'black', 
+        pointBackgroundColor:'red', 
+        pointBorderColor:'black',
+        pointHoverBackgroundColor:'lightblue',
+         pointHoverBorderColor:'green'} ,
+         { backgroundColor:'pink', 
+        borderColor:'black', 
+        pointBackgroundColor:'purple', 
+        pointBorderColor:'blue',
+        pointHoverBackgroundColor:'pink',
+         pointHoverBorderColor:'red'} 
+         ];
     //This is value for example
     public chartData: Array<any> = [
         { data: [20, 20, 30, 40, 50, 60], label: 'A' },
@@ -132,18 +151,44 @@ export class ChartDocument {
         { data: [20, 20, 40, 60, 70, 90], label: 'C' }<br>
     ];`;
 
+    private color_code :string = `private chart_color1:Array<any> = [
+       {backgroundColor:'red', 
+        borderColor:'black', 
+        pointBackgroundColor:'blue', 
+        pointBorderColor:'black',
+        pointHoverBackgroundColor:'red',
+         pointHoverBorderColor:'pink'},
+         { backgroundColor:'lightblue', 
+        borderColor:'black', 
+        pointBackgroundColor:'red', 
+        pointBorderColor:'black',
+        pointHoverBackgroundColor:'lightblue',
+         pointHoverBorderColor:'green'} ,
+         { backgroundColor:'pink', 
+        borderColor:'black', 
+        pointBackgroundColor:'purple', 
+        pointBorderColor:'blue',
+        pointHoverBackgroundColor:'pink',
+         pointHoverBorderColor:'red'} 
+         ];`;
+
     data_code_2: string = `public chartData2: Array<any> = [{ data: [10, 30, 50, 70, 80, 90] }];`;
 
     label_code: string = `public chartLabel: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];`;
     code_1: string = `<go-chart chartType="line" [chartData]='chartData' 
-                    [chartLabel]='chartLabel' [showLegend]='true'></go-chart>`;
+                    [chartLabel]='chartLabel' [showLegend]='true' [chartColor]="chart_color1"></go-chart>`;
     code_2: string = `<go-chart chartType="bar" [chartData]='chartData'
                     [chartLabel]='chartLabel' [showLegend]='false'
-                    [yAxlesStartAtZero]='true' [yAxlesMaxValue]=90></go-chart>`;
+                    [yAxlesStartAtZero]='true' [yAxlesMaxValue]=90 ></go-chart> `;
     code_3: string = `<go-chart chartType="doughnut"
                     [chartData]='chartData2' [chartLabel]='chartLabel'
                     [showLegend]='true'></go-chart>`;
     code_4: string = `<go-chart chartType="pie" [chartData]='chartData2'
-                    [chartLabel]='chartLabel' [showLegend]='true'></go-chart>`;
-
+                    [chartLabel]='chartLabel' [showLegend]='true'></go-chart> (onChartClicked) = "myTest()"
+                    
+                     `;
+    private click:boolean = false;
+    myTest(){
+       this.click = !this.click;
+    }
 }

@@ -25,7 +25,20 @@ const DATA3: Array<any> = [
 ];
 
 const EXAMPLE1: Array<any> = [
-  { data: `private datas1 = : CheckboxData[] = [`},
+  { data: `<go-checkbox name="chbnames1"`},
+  { data: `             id="chb_block"`},
+  { data: `             label="Checkbox: "`},
+  { data: `             [(ngModel)]="datas1"`},
+  { data: `             type="block"`},
+  { data: `             colorTheme="success"`},
+  { data: `             require="true">`},
+  { data: ` </go-checkbox>`},
+  { data: `<p> <strong> Output value: </strong> <label *ngFor="let d of datas1"> <span *ngIf="d.checked">  {{d.value}} , </span></span> </p>`},
+  { data: `<p> <strong> Output label: </strong> <label *ngFor="let d of datas1"> <span *ngIf="d.checked">  {{d.label}} , </span></span> </p>`},
+];
+
+const EXAMPLE1TS: Array<any> = [
+  { data: `private datas1: Array<any> = [`},
   { data: `         { value: '11', label: 'checkbox 1', disable: true, checked: true },`},
   { data: `         { value: '12', label: 'checkbox 2', disable: '', checked: true },`},
   { data: `         { value: '13', label: 'checkbox 3', disable: '', checked: true },`},
@@ -34,39 +47,43 @@ const EXAMPLE1: Array<any> = [
   { data: `         { value: '16', label: 'checkbox 6', disable: '', checked: false }`},
   { data: `     ];`},
   { data: ``},
-  { data: `<go-checkbox name="chbnames1"`},
-  { data: `             id="chbid1"`},
-  { data: `             label="Checkbox: "`},
-  { data: `             [(ngModel)]="datas1"`},
-  { data: `             type="block"`},
-  { data: `             colorTheme="success"`},
-  { data: `             require="true"`},
-  { data: `             > checkbox`},
-  { data: ` </go-checkbox>`},
-  { data: `<p> <strong> Output value: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.value}} , </label></label> </p>`},
-  { data: `<p> <strong> Output label: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.label}} , </label></label> </p>`},
 ];
 
 const EXAMPLE2: Array<any> = [
-  { data: `private datas2 = : CheckboxData[] = [`},
+  { data: `<go-checkbox name="chbname2"`},
+  { data: `             id="chb_inline"`},
+  { data: `             label="Checkbox: "`},
+  { data: `             [(ngModel)]="datas2"`},
+  { data: `             colorTheme="warning">`},
+  { data: `</go-checkbox>`},
+  { data: `<p> <strong> Output value: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.value}} , </span></span> </p>`},
+  { data: `<p> <strong> Output label: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.label}} , </span></span> </p>`},
+];
+
+const EXAMPLE2TS: Array<any> = [
+  { data: `private datas2: Array<any> = [`},
   { data: `     { value: '11', label: 'checkbox 1', disable: 'true', checked: '' },`},
   { data: `     { value: '12', label: 'checkbox 2', disable: '', checked: true }`},
   { data: `];`},
   { data: ``},
-  { data: `<go-checkbox name="chbname2"`},
-  { data: `             id="chbid2"`},
-  { data: `             label="Checkbox: "`},
-  { data: `             [(ngModel)]="datas2"`},
-  { data: `             colorTheme="warning"`},
-  { data: `             > checkbox `},
-  { data: `</go-checkbox>`},
-  { data: `<p> <strong> Output value: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.value}} , </label></label> </p>`},
-  { data: `<p> <strong> Output label: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.label}} , </label></label> </p>`},
-  { data: ``},
 ];
 
 const EXAMPLE3: Array<any> = [
-  { data: `private data3: Array<any> = [`},
+  { data: `<go-checkbox name="chbnames3"`},
+  { data: `               id="chb_column"`},
+  { data: `               label="Select Checkbox: "`},
+  { data: `               [(ngModel)]="datas3"`},
+  { data: `               type="column"`},
+  { data: `               [col]="3"`},
+  { data: `               colorTheme="danger"`},
+  { data: `               require="true">`},
+  { data: `</go-checkbox>`},
+  { data: `<p> <strong> Output value: </strong> <span *ngFor="let d of datas3"> <span *ngIf="d.checked">  {{d.value}} , </span></span> </p>`},
+  { data: `<p> <strong> Output label: </strong> <span *ngFor="let d of datas3"> <span *ngIf="d.checked">  {{d.label}} , </span></span> </p>`},
+];
+
+const EXAMPLE3TS: Array<any> = [
+  { data: `private datas3: Array<any> = [`},
   { data: `   { value: '31', label: 'checkbox 1', disable: '', checked: true },`},
   { data: `   { value: '32', label: 'checkbox 2', disable: true, checked: '' },`},
   { data: `   { value: '33', label: 'checkbox 3', disable: '', checked: '' },`},
@@ -76,18 +93,6 @@ const EXAMPLE3: Array<any> = [
   { data: `   { value: '37', label: 'checkbox 7', disable: '', checked: true }`},
   { data: `];`},
   { data: ``},
-  { data: `<go-checkbox name="chbnames3"`},
-  { data: `               id="chbid3"`},
-  { data: `               label="Select Checkbox: "`},
-  { data: `               [(ngModel)]="datas3"`},
-  { data: `               type="column"`},
-  { data: `               [col]="3"`},
-  { data: `               colorTheme="danger"`},
-  { data: `               require="true"`},
-  { data: `               >  check `},
-  { data: `</go-checkbox>`},
-  { data: `<p> <strong> Output value: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.value}} , </label></label> </p>`},
-  { data: `<p> <strong> Output label: </strong> <label *ngFor="let d of datas2"> <label *ngIf="d.checked">  {{d.label}} , </label></label> </p>`},
 ];
 
 const ATTRIBUTELIST: Array<any> = [
@@ -130,11 +135,11 @@ export class CheckboxDocument  {
     private codeExample1 = EXAMPLE1;
     private codeExample2 = EXAMPLE2;
     private codeExample3 = EXAMPLE3;
+    private codeTS1 = EXAMPLE1TS;
+    private codeTS2 = EXAMPLE2TS;
+    private codeTS3 = EXAMPLE3TS;
     private attributeList = ATTRIBUTELIST;
-    // private eventList = EVENTLIST;
-    // private gettingStart = GETTINGSTART;
     private releaseUpdate = _releaseUpdate;
-    // private fixBug = _fixBug;
 
     private componentTag: string = '<go-checkbox>' 
     private componentDescription: string = `Checkbox เป็นเครื่องมือช่วยให้กรอกข้อมูลบางอย่าง และทำการเลือกข้อมูลโดยกดเครื่องหมายถูกที่ตัวใดตัวหนึ่ง
@@ -163,7 +168,6 @@ export class CheckboxDocument  {
       { data: `         value: "value_of_checkbox",`},
       { data: `         label: "label_of_checkbox",`},
       { data: `         [disable: true_or_false],`},
-      // { data: `         [readonly: "true_or_false"],`},
       { data: `         [checked: true_or_false] `},
       { data: `  }];`}
     ];
@@ -173,41 +177,7 @@ export class CheckboxDocument  {
       { require: '*', name: 'label', type: 'string', description: `ใช้สำหรับระบุข้อความที่จะแสดงข้าง checkbox`},
       { require: '', name: 'disable', type: 'boolean', description: `ใช้กำหนดเพื่อปิดใช้งาน checkbox โดย
           หากระบุค่า disable="true" จะไม่สามารถใช้งานได้`},
-      // { require: '', name: 'readonly', type: 'boolean ', description: `ใช้สำหรับตั้งค่า checkbox ให้แสดงผล read only`},
       { require: '', name: 'checked', type: 'boolean ', description: `ใช้สำหรับตั้งค่า check ให้ checkbox`}
   ];
 
-  private DATA3: Array<any> = [
-    { value: '31', label: 'checkbox 1', disable: '', checked: true },
-    { value: '32', label: 'checkbox 2', disable: 'true', checked: '' },
-    { value: '33', label: 'checkbox 3', disable: '', checked: '' },
-    { value: '34', label: 'checkbox 4', disable: '', checked: true },
-    { value: '35', label: 'checkbox 5', disable: '', checked: '' },
-    { value: '36', label: 'checkbox 6', disable: '', checked: '' },
-    { value: '37', label: 'checkbox 7', disable: '', checked: true }
-];
-  private _data3:Array<any> = [
-    { value: '31', label: 'checkbox 1', disable: '', checked: true },
-    { value: '32', label: 'checkbox 2', disable: 'true', checked: '' },
-    { value: '33', label: 'checkbox 3', disable: '', checked: '' },
-    { value: '34', label: 'checkbox 4', disable: '', checked: true },
-    { value: '35', label: 'checkbox 5', disable: '', checked: '' },
-    { value: '36', label: 'checkbox 6', disable: '', checked: '' },
-    { value: '37', label: 'checkbox 7', disable: '', checked: true }
-];
-
-// private initdata(){
-//   this.DATA3 = this._data3;
-//   return true;
-// }
-
-  // private _getValueOfData1: any = [];
-  // private getValueOfData1(){
-  //   for(var i=0; i<this.datas1.length; i++){
-  //     if(this.datas1[i].checked){
-  //       console.log(this.datas1[i].label);
-  //     }
-  //   }
-  //   return true;
-  // }
  }

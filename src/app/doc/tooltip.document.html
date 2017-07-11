@@ -67,36 +67,17 @@
 		<div class="jumbotron">
 			<div class="row row-in-tab">
 				<div class="col-md-4">
-					<div class="card-block">
-						<div class="row form-group">
-							<h3>Tooltip on Button<br></h3>
-							<div class="col-md-5 form-inline">
-								<go-button label="Right" buttonColor="danger"  pTooltip="tooltip position right"></go-button>
-							</div>
-							<div class="col-md-5">
-								<go-button label="Left" buttonColor="info"  pTooltip="tooltip position left" tooltipPosition="left"></go-button> 
-							</div>		
-						</div>
-						
-						<div class="row form-group">
-							<div class="col-md-5 form-inline">
-								<go-button label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button> 
-							</div>
-							<div class="col-md-5">
-								<go-button label="Bottom" buttonColor="success"  pTooltip="tooltip position bottom" tooltipPosition="bottom"></go-button>
-							</div>		
-						</div>
-					</div>
-				<div class="col-md-4">
-					<div class="car-block">
-						<div class="row form-group">
-								<h3>ToolTip on Textbox<br></h3>
-								<input pTooltip = "Textbox Tooltip" placeholder="Mouse On Me!!" type="text" ng-reflect-text="Enter your name">
-							</div>
-						</div>	
-					</div>
-				</div>
-				
+					<label><strong>Basic Tooltip</strong></label>
+					<div style="text-align: center;"><go-button goId="basic_tooltip" iconName="info" buttonColor="info" pTooltip="Basic Tooltip"></go-button></div><br>
+					<label><strong>Tooltip Positioning</strong></label>
+					<div style="text-align: center;"><go-button goId="tooltip_left" label="Left" buttonColor="success"  pTooltip="tooltip position left" tooltipPosition="left"></go-button></div><br>
+					<div style="text-align: center;"><go-button goId="tooltip_top" label="Top" buttonColor="warning"  pTooltip="tooltip position top" tooltipPosition="top"></go-button></div><br>
+					<div style="text-align: center;"><go-button goId="tooltip_bottom" label="Bottom" buttonColor="danger"  pTooltip="tooltip position bottom" tooltipPosition="bottom"></go-button></div><br>
+					<label><strong>Disbled Tooltip</strong></label>
+					<div style="text-align: center;"><go-button goId="tooltip_disbled" label="Disabled" buttonColor="success" pTooltip="disabled tooltip" tooltipDisabled="true"></go-button></div><br>
+					<label><strong>Tooltip with Event</strong></label>
+					<div style="text-align: center;"><input id="tooltip_onfocus" type="text" pTooltip="Textbox Tooltip" tooltipEvent="focus" placeholder="Focus on Me :D"></div>
+				</div>		
 				<div class="col-md-8">
 					<div role="tab" id="ex_1">
 						<h5 class="mb-0">

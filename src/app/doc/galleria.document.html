@@ -76,10 +76,11 @@
 	</div>
 	<div role="tabpanel" class="fade" id="Example">
 		<div class="jumbotron">
+			<h4>Basic</h4>
 			<div class="row row-in-tab">
 				<div class="col-md-5">
 					<div class="card-block">
-						<p-galleria [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  ></p-galleria>
+						<p-galleria id='galleria_basic' [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  transitionInterval="4000"></p-galleria>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -97,6 +98,30 @@
 					</div>
 				</div>
 			</div>
+			
+			<h4>Transition Interval</h4>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<p-galleria id='galleria_effect' [images]="images" [autoPlay]="true" panelWidth="400" panelHeight="313"  transitionInterval="2000" effect="pulse" effectDuration="500" showCaption="false" showFilmStrip="false"></p-galleria>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+                            <pre><code *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		
 			<!--<div class="row row-in-tab">
 				<div class="col-md-4">
 					<div class="card-block">

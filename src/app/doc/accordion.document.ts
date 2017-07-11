@@ -68,14 +68,14 @@ const _styleLine_css: Array<any> = [
 
 const _EXAMPLE1: Array<any> = [
   { data: `
-<p-accordion>
-  <p-accordionTab header="Header 1">
+<p-accordion id = "BasicAccordion">
+  <p-accordionTab header="Header 1" id = "BasicAccordionTab1">
     Content 1
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
+  <p-accordionTab header="Header 2" id = "BasicAccordionTab2">
     Content 2
   </p-accordionTab>
-  <p-accordionTab header="Header 3">
+  <p-accordionTab header="Header 3" id = "BasicAccordionTab3">
     Content 3    
   </p-accordionTab>
 </p-accordion>
@@ -83,14 +83,14 @@ const _EXAMPLE1: Array<any> = [
 ]
 const _EXAMPLE2: Array<any> = [
   { data: `
-<p-accordion [multiple]="true">
-  <p-accordionTab header="Header 1">
+<p-accordion [multiple]="true" id="MultipleAccordion">
+  <p-accordionTab header="Header 1" id="MultipleAccordionTab1">
     Content 1
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
+  <p-accordionTab header="Header 2" id="MultipleAccordionTab2">
     Content 2
   </p-accordionTab>
-  <p-accordionTab header="Header 3">
+  <p-accordionTab header="Header 3" id="MultipleAccordionTab3">
     Content 3    
   </p-accordionTab>
 </p-accordion>
@@ -98,14 +98,14 @@ const _EXAMPLE2: Array<any> = [
 ]
 const _EXAMPLE3: Array<any> = [
   { data: `
-<p-accordion>
-  <p-accordionTab header="Header 1" [disabled]="true">
+<p-accordion [lazy] = "true" id="LazyAccordion">
+  <p-accordionTab header="Header 1" [selected]="true" id="LazyAccordionTab1">
     Content 1
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
+  <p-accordionTab header="Header 2" id="LazyAccordionTab2">
     Content 2
   </p-accordionTab>
-  <p-accordionTab header="Header 3">
+  <p-accordionTab header="Header 3" id="LazyAccordionTab3">
     Content 3    
   </p-accordionTab>
 </p-accordion>
@@ -113,14 +113,14 @@ const _EXAMPLE3: Array<any> = [
 ]
 const _EXAMPLE4: Array<any> = [
   { data: `
-<p-accordion>
-  <p-accordionTab header="Header 1" [selected]="true">
+<p-accordion id="DisableAccordion">
+  <p-accordionTab header="Header 1" [disabled]="true" id="DisableAccordionTab1">
     Content 1
   </p-accordionTab>
-  <p-accordionTab header="Header 2" [selected]="true">
+  <p-accordionTab header="Header 2" id="DisableAccordionTab2">
     Content 2
   </p-accordionTab>
-  <p-accordionTab header="Header 3" [selected]="true">
+  <p-accordionTab header="Header 3" id="DisableAccordionTab3">
     Content 3    
   </p-accordionTab>
 </p-accordion>
@@ -128,14 +128,14 @@ const _EXAMPLE4: Array<any> = [
 ]
 const _EXAMPLE5: Array<any> = [
   { data: `
-<p-accordion [lazy] = "true">
-  <p-accordionTab header="Header 1" [selected]="true">
+<p-accordion id="SelectedAccordion">
+  <p-accordionTab header="Header 1" [selected]="true" id="SelectedAccordionTab1">
     Content 1
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
+  <p-accordionTab header="Header 2" [selected]="true" id="SelectedAccordionTab2">
     Content 2
   </p-accordionTab>
-  <p-accordionTab header="Header 3">
+  <p-accordionTab header="Header 3" [selected]="true" id="SelectedAccordionTab3">
     Content 3    
   </p-accordionTab>
 </p-accordion>

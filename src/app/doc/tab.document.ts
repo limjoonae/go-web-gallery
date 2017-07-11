@@ -47,14 +47,14 @@ const _releaseUpdate: Array<any> = [
 
 const _EXAMPLE1: Array<any> = [
   { data: `
-<p-tabView>
-  <p-tabPanel header="Header 1" leftIcon="fa-calendar">
+<p-tabView id="tabView_basic">
+  <p-tabPanel header="Header 1" id="basic_tp_1" leftIcon="fa-calendar">
     Content 1
   </p-tabPanel>
-  <p-tabPanel header="Header 2" leftIcon="fa-print">
+  <p-tabPanel header="Header 2" id="basic_tp_2" leftIcon="fa-print">
     Content 2
   </p-tabPanel>
-  <p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+  <p-tabPanel header="Header 3" id="basic_tp_3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
     Content 3
   </p-tabPanel>
 </p-tabView>
@@ -73,17 +73,17 @@ private onTabChange(event) {
   { data: `` },
   { data: `
 <div class="form-group">
-  <p-tabView (onChange)="onTabChange($event)">
-    <p-tabPanel header="Header I">
+  <p-tabView (onChange)="onTabChange($event)" id="tabView_event">
+    <p-tabPanel header="Header I"  id="event_tp_1">
       Content 1
     </p-tabPanel>
-    <p-tabPanel header="Header II" [selected]="true">
+    <p-tabPanel header="Header II" id="event_tp_2" [selected]="true">
       Content 2
     </p-tabPanel>
-    <p-tabPanel header="Header III" [closable]="true" >
+    <p-tabPanel header="Header III" id="event_tp_3" [closable]="true" >
       Content 3
     </p-tabPanel>
-    <p-tabPanel header="Header IV" [disabled]="true">
+    <p-tabPanel header="Header IV" id="event_tp_4" [disabled]="true">
       Content 4
     </p-tabPanel>
   </p-tabView>
@@ -93,14 +93,14 @@ private onTabChange(event) {
 ]
 const _EXAMPLE3: Array<any> = [
   { data: `
-<p-tabView orientation="left">
-  <p-tabPanel header="Header 1" leftIcon="fa-calendar">
+<p-tabView orientation="left"  id="tabView_orientation">
+  <p-tabPanel header="Header 1" id="orientation_tp_1" leftIcon="fa-calendar">
     Content 1
   </p-tabPanel>
-  <p-tabPanel header="Header 2" leftIcon="fa-print">
+  <p-tabPanel header="Header 2" id="orientation_tp_2" leftIcon="fa-print">
     Content 2
   </p-tabPanel>
-  <p-tabPanel header="Header 3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
+  <p-tabPanel header="Header 3" id="orientation_tp_3" leftIcon="fa-bell-o" rightIcon="fa-bookmark-o">
     Content 3
   </p-tabPanel>
 </p-tabView>
