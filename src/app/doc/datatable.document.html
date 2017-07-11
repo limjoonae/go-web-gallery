@@ -126,6 +126,18 @@
 							<pre><code  *ngFor="let line of data2" >{{line}} <br></code> </pre>
 						</div>
 					</div>
+					<div role="tab" id="ex_03">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_03" aria-expanded="false" aria-controls="collapse_ex_03">
+							Code Example for data#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_03" class="collapse" role="tabpanel" aria-labelledby="ex_03">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let line of data3" >{{line}} <br></code> </pre>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row row-in-tab">
@@ -287,7 +299,8 @@
 					<div class="card-block">
 						<h4> Scroll &amp; Export CSV</h4>
 
-						<p-dataTable #dt [value]="dataTable5" exportFilename="dataTableEX5" scrollable="true" scrollHeight="100px" scrollWidth="600px" id='dataTable_scroll_csv'>
+						<p-dataTable #dt  exportFilename="dataTableEX5" 
+						scrollable="true" scrollWidth="600px" scrollHeight="100px"  id='dataTable_scroll_csv' [value]="dataTable5">
 
 							<p-header>
 								<div >
@@ -375,6 +388,41 @@
 					<div id="collapse_ex_7" class="collapse" role="tabpanel" aria-labelledby="ex_7">
 						<div class="jumbotron">
 							<pre><code  *ngFor="let codeExample of codeExample7" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-5">
+					<div class="card-block">
+						<h4> Lazy Loading</h4>
+
+						<p-dataTable #dt   [lazy]="true" [totalRecords]="totalRecords" [rows]="4" (onLazyLoad)="lazyLoad($event)" [paginator]="true"
+						 id='dataTable_lazy' [value]="_data">
+
+							<p-header>
+								<div >
+									Lazy Loading
+								</div>
+							</p-header>
+							<p-column field="vin" header="Vin"  ></p-column>
+							<p-column field="year" header="Year" ></p-column>
+							<p-column field="brand" header="Brand" ></p-column>
+							<p-column field="color" header="Color"  ></p-column>
+						</p-dataTable>   
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div role="tab" id="ex_8">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_8" aria-expanded="false" aria-controls="collapse_ex_8">
+							Code Example#8
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_8" class="collapse" role="tabpanel" aria-labelledby="ex_8">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample8" >{{codeExample.data}} <br></code> </pre>
 						</div>
 					</div>
 				</div>

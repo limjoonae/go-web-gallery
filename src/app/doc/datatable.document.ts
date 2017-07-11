@@ -21,7 +21,7 @@ const _ATTRIBUTETABLELIST: Array<any> = [
     { require: '', name: 'scrollable', type: 'boolean', description: `ใช้ระบุเพื่อติดตั้ง scroll ให้แก่ตาราง`},
     { require: '', name: 'scrollHeight', type: 'number', description: `ใช้สำหรับระบุความสูงของ scroll`},
     { require: '', name: 'scrollWidth', type: 'number', description: `ใช้สำหรับระบุความกว้างของ datatable ใช้ร่วมกับการกำหนดความกว้างของ column`},
-    { require: '', name: 'virtualScroll', type: 'boolean', description: `ใช้ระบุเพื่อโหลดข้อมูลเพิ่มเติมระหว่าง scroll ใช้ร่วมกับ lazy และ total record`},
+    //{ require: '', name: 'virtualScroll', type: 'boolean', description: `ใช้ระบุเพื่อโหลดข้อมูลเพิ่มเติมระหว่าง scroll ใช้ร่วมกับ lazy และ total record`},
     { require: '', name: 'lazy', type: 'boolean', description: `ใช้ระบุให้ตารางโหลดข้อมูลแบบ lazy`},
     { require: '', name: 'responsive', type: 'boolean', description: `ใช้ระบุเพื่อให้ตารางสามารถ responsive ได้`},
     { require: '', name: 'exportFilename', type: 'string', description: `ใช้ระบุชื่อไฟล์ที่ทำการ export `},
@@ -73,7 +73,7 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `` },
   { data: `     [value]="data_of_datatable"` },
   { data: `     [groupField="name_of_field]`},
-  { data: `     [paginator="true_or_false"] [pageLinks="number_of_page"] [rowsPerPageOptions="rows_per_page"]` },
+  { data: `     [paginator="true_or_false"] [pageLinks="number_of_page"] [rows="number_of_row"] [rowsPerPageOptions="rows_per_page"]` },
   { data: `     [rowGroupMode="subheader_or_rowspan"] [sortMode="single_or_multiple"] [sortField="name_of_field"]` },
   { data: `     [globalFilter]="name_of_searchbox"` },
   { data: `     [selectionMode="single_or_multiple"] [(selection)="selected"]` },
@@ -81,7 +81,7 @@ const _ATTRSYNTAX: Array<any> = [
   { data: `     [expandableRows="true_or_false"]` },
   { data: `     [resizableColumns="true_or_false"] [columnResizeMode="expand_or_fit"]` },
   { data: `     [reorderableColumns="true_or_false"]` },
-  { data: `     [scrollable="true_or_false"] [scrollHeight="height_of_scroll"] [scrollWidth="width_of_scroll"] [rows="number_of_row"] [virtualScroll="virtual_scroll"]` },
+  { data: `     [scrollable="true_or_false"] [scrollHeight="height_of_scroll"] [scrollWidth="width_of_scroll"]` },
   { data: `     [lazy="true_or_false"] [(onLazyLoad)="functionLoadLazy($event)"]` },
   { data: `     [responsive="true_or_false]` },
   { data: `     [exportFilename="filename"]` },
@@ -156,6 +156,31 @@ const _DATA2: Array<any> = [
   {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
   {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
   {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
+];`
+];
+
+const _DATA3: Array<any> = [
+`const _DATAFOREXAMPLE: Array<any> = [
+  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Audi", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
+  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Volvo", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
 ];`
 ];
 const _EXAMPLE1: Array<any> = [
@@ -330,6 +355,73 @@ const _EXAMPLE7: Array<any> = [
 ` },
 
 ];
+const _EXAMPLE8: Array<any> = [
+  { data: `app.component.ts` },  
+  { data: `` },
+  { data: `
+    ngOnInit() {
+      this.totalRecords = 50000;
+      console.log('total record----', this.totalRecords);
+    }`},
+  { data : `
+    private dataForEx = _DATAFOREXAMPLE;
+    private _data: Array<any>;
+    private totalRecords: number;
+    private firstRecord: number =0;
+    private numOfRow: number = 4;
+
+    private onPage(value){
+      this.firstRecord = value.first;
+      this.numOfRow = value.rows;
+    }
+    
+    private lazyLoad(event){
+      console.log('------ event', event)
+      setTimeout(() => {
+        
+            if(this.dataForEx) {
+                this._data = this.dataForEx.slice(event.first, (event.first + event.rows));
+             }
+        }, 1000);
+    }`},
+  { data: `` },
+  { data: `app.component.html` },
+  { data: `
+	<p-dataTable #dt [lazy]="true" [totalRecords]="totalRecords" [rows]="4" (onLazyLoad)="lazyLoad($event)" 
+  [paginator]="true" id='dataTable_lazy' [value]="_data">
+    <p-header>
+		  <div>Lazy Loading</div>
+  	</p-header>
+		<p-column field="vin" header="Vin"></p-column>
+		<p-column field="year" header="Year"></p-column>
+		<p-column field="brand" header="Brand"></p-column>
+		<p-column field="color" header="Color"></p-column>
+	</p-dataTable>   
+` },
+
+];
+const _DATAFOREXAMPLE: Array<any> = [
+  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Audi", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
+  {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+  {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+  {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+  {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+  {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+  {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+  {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+  {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+  {"brand": "Volvo", "year": 2000, "color": "Black", "vin": "h54hw5"},
+  {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
+];
 
 const _DATATABLE2: Array<any> = [
   {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
@@ -383,6 +475,7 @@ export class DataTableDocument  {
 
     private data1 = _DATA1;
     private data2 = _DATA2;
+    private data3 = _DATA3;
     private codeExample1 = _EXAMPLE1;
     private codeExample2 = _EXAMPLE2;
     private codeExample3 = _EXAMPLE3;
@@ -390,6 +483,7 @@ export class DataTableDocument  {
     private codeExample5 = _EXAMPLE5;
     private codeExample6 = _EXAMPLE6;
     private codeExample7 = _EXAMPLE7;
+    private codeExample8 = _EXAMPLE8;
 
     private dataTable1 = _DATATABLE1;
     private cols1 = _COLS1;
@@ -420,6 +514,33 @@ export class DataTableDocument  {
           } 
       else
       return '100px';
+    }
+     
+     ngOnInit() {
+      this.totalRecords = 50000;
+      console.log('total record----', this.totalRecords);
+    }
+    private dataForEx = _DATAFOREXAMPLE;
+    private _data: Array<any>;
+    private totalRecords: number;
+    private firstRecord: number =0;
+    private numOfRow: number = 4;
+
+    private onPage(value){
+      this.firstRecord = value.first;
+      this.numOfRow = value.rows;
+    }
+    
+    
+    
+    private lazyLoad(event){
+      console.log('------ event', event)
+      setTimeout(() => {
+        
+            if(this.dataForEx) {
+                this._data = this.dataForEx.slice(event.first, (event.first + event.rows));
+             }
+        }, 1000);
     }
 /*
     loadCarsLazy(event: LazyLoadEvent) {
