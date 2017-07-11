@@ -94,18 +94,18 @@ const _EXAMPLE4: Array<any> = [
 ]
 
 const _IMAGE = [
-  { source:'./image/galleria1.jpg', alt:'Description for Image 1'},
-  { source:'./image/galleria2.jpg', alt:'Description for Image 2' },
-  { source:'./image/galleria3.jpg', alt:'Description for Image 3' },
-  { source:'./image/galleria4.jpg', alt:'Description for Image 4' },
-  { source:'./image/galleria5.jpg', alt:'Description for Image 5' },
-  { source:'./image/galleria6.jpg', alt:'Description for Image 6' },
-  { source:'./image/galleria7.jpg', alt:'Description for Image 7'},
-  { source:'./image/galleria8.jpg', alt:'Description for Image 8'},
-  { source:'./image/galleria9.jpg', alt:'Description for Image 9'},
-  { source:'./image/galleria10.jpg', alt:'Description for Image 10' },
-  { source:'./image/galleria11.jpg', alt:'Description for Image 11' },
-  { source:'./image/galleria12.jpg', alt:'Description for Image 12' }
+  { source:'./image/galleria/galleria1.jpg', alt:'Description for Image 1'},
+  { source:'./image/galleria/galleria2.jpg', alt:'Description for Image 2' },
+  { source:'./image/galleria/galleria3.jpg', alt:'Description for Image 3' },
+  { source:'./image/galleria/galleria4.jpg', alt:'Description for Image 4' },
+  { source:'./image/galleria/galleria5.jpg', alt:'Description for Image 5' },
+  { source:'./image/galleria/galleria6.jpg', alt:'Description for Image 6' },
+  { source:'./image/galleria/galleria7.jpg', alt:'Description for Image 7'},
+  { source:'./image/galleria/galleria8.jpg', alt:'Description for Image 8'},
+  { source:'./image/galleria/galleria9.jpg', alt:'Description for Image 9'},
+  { source:'./image/galleria/galleria10.jpg', alt:'Description for Image 10' },
+  { source:'./image/galleria/galleria11.jpg', alt:'Description for Image 11' },
+  { source:'./image/galleria/galleria12.jpg', alt:'Description for Image 12' }
 ];
 
 const _styleLine_html: Array<any> = [
