@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Car } from './assets/model/car';
+import { Car } from './model/car';
 import { CarService } from './service/car.service';
 import { TreeService } from './service/tree.service';
 	
@@ -57,10 +57,10 @@ export class ContentComponent implements OnInit {
 
   // galleria
   images: any[] = [
-    {source:'./app/content/assets/images/datagrid/Fiat-big.gif', alt:'Fiat Logo', title:'Fiat'},
-    {source:'./app/content/assets/images/datagrid/Renault-big.gif', alt:'Renault Logo', title:'Renault'},
-    {source:'./app/content/assets/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
-    {source:'./app/content/assets/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
+    {source:'./image/content/images/datagrid/Fiat-big.gif', alt:'Fiat Logo', title:'Fiat'},
+    {source:'./image/content/images/datagrid/Renault-big.gif', alt:'Renault Logo', title:'Renault'},
+    {source:'./image/content/images/datagrid/VW-big.gif', alt:'VW for Logo', title:'VW'},
+    {source:'./image/content/images/datagrid/Jaguar-big.gif', alt:'Jaguar Logo', title:'Jaguar'}
   ];
 
 	datas = DATA; //**checkbox*
@@ -79,13 +79,13 @@ export class ContentComponent implements OnInit {
   public chartLabel: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
 
   // **image-gallery*
-  private imgUrl = './app/content/assets/';
+  private imgUrl = './image/content/images/';
   ImgGallery = [
-  { thumb: this.imgUrl + 'images/gallery/thumbs/img1.jpg', img: this.imgUrl + '/images/gallery/img1.jpg' },
-  { thumb: this.imgUrl + 'images/gallery/thumbs/img2.jpg', img: this.imgUrl + '/images/gallery/img2.jpg' },
-  { thumb: this.imgUrl + 'images/gallery/thumbs/img3.jpg', img: this.imgUrl + '/images/gallery/img3.jpg' },
-  { thumb: this.imgUrl + 'images/gallery/thumbs/img4.jpg', img: this.imgUrl + '/images/gallery/img4.jpg' },
-  { thumb: this.imgUrl + 'images/gallery/thumbs/img5.jpg', img: this.imgUrl + '/images/gallery/img5.jpg' }
+  { thumb: this.imgUrl + 'gallery/thumbs/img1.jpg', img: this.imgUrl + 'gallery/img1.jpg' },
+  { thumb: this.imgUrl + 'gallery/thumbs/img2.jpg', img: this.imgUrl + 'gallery/img2.jpg' },
+  { thumb: this.imgUrl + 'gallery/thumbs/img3.jpg', img: this.imgUrl + 'gallery/img3.jpg' },
+  { thumb: this.imgUrl + 'gallery/thumbs/img4.jpg', img: this.imgUrl + 'gallery/img4.jpg' },
+  { thumb: this.imgUrl + 'gallery/thumbs/img5.jpg', img: this.imgUrl + 'gallery/img5.jpg' }
   ];
   
   //**pulldown-menu*
