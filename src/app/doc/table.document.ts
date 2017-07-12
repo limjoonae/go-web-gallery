@@ -67,7 +67,7 @@ export class TableDocument {
     private introduction_example = "ในตัวอย่างนี้ จะใช้ Data ชุดเดียวกันทั้งหมด ตามด้านล่างนี้ <br>*หมายเหตุ สำหรับช่อง startDate จะมีประเภทของตัวแปร Date";
     code_1: string = `<strong>Basic and On Cell Clicked</strong><br>
 <go-table id="table_basic" class="table table-striped table-border table-hover table-sm"
-    [filterAll]="false" cardClass="card-block card-header card-inverse" 
+    cardClass="card-block card-header card-inverse" 
     [columns]="columns_1" [data]="data" (onCellClicked)="cellClick($event)">
 </go-table>
 <span><strong>ช่องที่ถูกคลิก:</strong> {{cellClicked}}</span>`;
@@ -77,7 +77,7 @@ export class TableDocument {
 </go-table>`;
     code_3: string = `<strong>Filter</strong><br>
 <go-table id="table_filter" class="table table-striped table-border table-sm table-responsive" 
-    [itemsPerPage]=4 cardClass="card-block card-header card-inverse" 
+    [filterAll]="false" [itemsPerPage]=4 cardClass="card-block card-header card-inverse" 
     [columns]="columns_3" [data]="data" >
 </go-table>`;
     code_4: string = `<strong>Fetch Data and Max Size</strong><br>
