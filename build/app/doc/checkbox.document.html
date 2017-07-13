@@ -1,0 +1,194 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+                    <strong>Feature</strong>
+					<li *ngFor="let feature of componentFeature">{{feature.data}}</li>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-checkbox/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="jumbotron">
+				<div class="card-title">
+					<h2> Release Update </h2>
+				</div>
+				<div class="card-block">
+					<p *ngFor="let line of releaseUpdate">
+						<b *ngIf="line.dateUpdate"> {{line.dateUpdate}} </b>
+						<li *ngIf="line.head"> 
+							<b> {{line.head}}</b>: {{line.data}} 
+						</li>
+					</p>
+				</div>
+			</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+        <div class="jumbotron">
+            <h2>Syntax</h2>
+            <pre> <code *ngFor="let attr of attrSyntax">{{attr.data}} <br></code> </pre>
+        </div>
+        <div class="jumbotron">
+            <h2>Syntax Array of data</h2>
+            <pre> <code *ngFor="let arr of arrSyntax">{{arr.data}} <br> </code> </pre> 
+        </div>
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeList">
+                        <th scope="row">{{attribute.require}}</th>
+                        <td>{{attribute.name}}</td>
+                        <td><em>{{attribute.type}}</em></td>
+                        <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="arrOfData" class="jumbotron">
+            <h2>Attributes Array of data </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of arrOfDataList">
+                        <th scope="row">{{attribute.require}}</th>
+                        <td>{{attribute.name}}</td>
+                        <td><em>{{attribute.type}}</em></td>
+                        <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-6 card-block">
+					<h4> Block</h4>
+					<go-checkbox 
+							name="chbnames1" 
+							id="chb_block" 
+							label="Checkbox: "  
+							[(ngModel)]="datas1" 
+							type="block" 
+							colorTheme="success" 
+							require="true"></go-checkbox>
+					<p> <strong> Output value: </strong><span *ngFor="let d of datas1"> <span *ngIf="d.checked"> {{d.value}} , </span></span></p>
+					<p> <strong> Output label: </strong><span *ngFor="let d of datas1"> <span *ngIf="d.checked"> {{d.label}} , </span></span> </p>
+					
+				</div>
+				<div class="col-md-6">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+                            <pre> <code  *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS1" >{{codets.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-6 card-block">
+					<h4> Inline </h4>
+					<go-checkbox name="chbname2" 
+								id="chb_inline" 
+								[(ngModel)]="datas2"  
+								colorTheme="warning"
+								></go-checkbox>
+					<p> <strong> Output value: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.value}} , </span></span> </p>
+					<p> <strong> Output label: </strong> <span *ngFor="let d of datas2"> <span *ngIf="d.checked">  {{d.label}} , </span></span> </p>
+				</div>
+				<div class="col-md-6">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS2" >{{codets.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="row row-in-tab">
+				<div class="col-md-6 card-block">
+					<h4> Columns </h4>
+                    <go-checkbox name="chbnames3" 
+								id="chb_column" 
+								label="Select Checkbox: " 
+								[(ngModel)]="datas3"
+								type="column"
+								[col]="3" 
+								colorTheme="danger" 
+								require="true"
+					></go-checkbox>
+					<p> <strong> Output value: </strong><span *ngFor="let d of datas3"><span *ngIf="d.checked">  {{d.value}} , </span></span></p>
+					<p> <strong> Output label: </strong> <span *ngFor="let d of datas3"><span *ngIf="d.checked">  {{d.label}} , </span></span></p>
+				</div>
+				<div class="col-md-6">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code> </pre>
+							<p>app.component.ts</p>
+							<pre> <code  *ngFor="let codets of codeTS3" >{{codets.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

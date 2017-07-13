@@ -1,0 +1,153 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#doc" role="tab" data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#ex" role="tab" data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>Version: {{version}}</strong>
+					</p>
+					<p>
+						<strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p>
+						<strong>Credit:</strong> <a target="_blank" href="https://github.com/MurhafSousli/ng2-progressbar">ng2-progressbar</a>
+					</p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-progressbar/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="doc">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<code>
+				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
+			</code>
+		</div>
+		<div class="jumbotron">
+			<h2>Attributes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td>{{attribute.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="ex">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<b>{{firstProgressbarDescription}}</b>
+						<go-progressbar [progress]="progress_1" id="default_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_1(10)" id="add_btn_dp">เพิ่มค่า progress_1 เป็นจำนวน 10 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="reduceProgress_1(10)" id="reduce_btn_dp">ลดค่า progress_1 เป็นจำนวน 10 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="finishProgress_1()" id="fin_btn_dp">ทำให้ progress_1 เสร็จสิ้น</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_1()" id="rst_btn_dp">ล้างค่า progress_1</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1"> Code
+								Example#1 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<code>{{code_1}}</code><br>
+							<code>{{code_button_1}}</code><br>
+							<code [innerHTML]="code_exam_1"></code>
+						</div>
+					</div>
+					<span>ค่าของ progress_1: {{progress_1}} (0-100)</span>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<b>{{secondProgressbarDescription}}</b>
+						<go-progressbar [progress]="progress_2" [minProgress]=200 [maxProgress]=1000 color="green" id="interval_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="addProgress_2(20)" id="add_btn_ip">เพิ่มค่า progress_2 เป็นจำนวน 20 จุด</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_2(20)" *ngIf="!isAutoAdd_2" id="auto_btn_ip">เพิ่มค่า progress_2 อัตโนมัติ รอบละ 20 จุด</button>
+						<button class="btn btn-danger btn-sm btn-block" (click)="stopAutoAddProgress_2()" *ngIf="isAutoAdd_2" id="stop_btn_ip">หยุดการเพิ่มค่า progress_2 อัตโนมัติ</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_2()" id="rst_btn_ip">ล้างค่า progress_2</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2"> Code
+								Example#2 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<code>{{code_2}}</code><br>
+							<code>{{code_button_2}}</code><br>
+							<code [innerHTML]="code_exam_2"></code>
+						</div>
+					</div>
+					<span>ค่าของ progress_2: {{progress_2}} (200-1000)</span>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<div class="row">
+						<b>{{thirdProgressbarDescription}}</b>
+						<go-progressbar [progress]="progress_3" color="black" height="5px" [lockOnLoad]="true" [opacity]="0.6" [transitionSpeed]="1000" id="lock_on_load_progressbar"></go-progressbar>
+						<button class="btn btn-primary btn-sm btn-block" (click)="autoAddProgress_3(10)" id="auto_btn_lp">เพิ่มค่า progress_3 อัตโนมัติ ทุกวินาทีละ 10 หน่วย</button>
+						<button class="btn btn-primary btn-sm btn-block" (click)="resetProgress_3()" id="rst_btn_lp">ล้างค่า progress_3</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3"> Code
+								Example#3 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<code>{{code_3}}</code><br>
+							<code>{{code_button_3}}</code><br>
+							<code [innerHTML]="code_exam_3"></code>
+						</div>
+					</div>
+					<span>ค่าของ progress_3: {{progress_3}} (0-100)</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
