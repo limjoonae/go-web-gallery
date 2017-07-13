@@ -11,6 +11,8 @@ src/.sonar/*
 !src/systemjs.config.js
 !src/dist/*.js
 *.js.map
+!build/**/*.js
+!build/**/*.js.map
 e2e/**/*.js
 e2e/**/*.js.map
 _test-output
