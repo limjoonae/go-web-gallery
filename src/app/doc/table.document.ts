@@ -32,10 +32,8 @@ const DATEFORMATLIST: Array<any> = [
     { format: 'm', description: 'เลขที่ของเดือน (เป็นตัวเลขที่ไม่ขึ้นต้นด้วย 0)' },
     { format: 'mm', description: 'เลขที่ของเดือน (เป็นตัวเลข 2 ตำแหน่ง)' },
     { format: 'y', description: 'เลขปี (เป็นตัวเลข 2 ตำแหน่ง)' },
-    { format: 'YY', description: 'เลขปี (เป็นตัวเลข 4 ตำแหน่ง)' },
-    { format: `'...'`, description: 'ตัวอักษรต่างๆ' },
-    { format: '"', description: 'เครื่องหมายคำพูด' },
-    { format: 'อย่างอื่นทั้งหมด', description: 'ตัวอักษรต่างๆ' },
+    { format: 'yy', description: 'เลขปี (เป็นตัวเลข 4 ตำแหน่ง)' },
+    { format: 'เครื่องหมายต่างๆ', description: 'ใช้ขั้นระหว่างวัน เดือน ปี เช่น dd/mm/yy, dd-mm-yy' },
 ];
 
 @Component({
@@ -75,9 +73,9 @@ export class TableDocument {
 <go-table  id="table_sorting" class="table table-striped table-border table-sm" 
     [paging]="false" [filterAll]="false" [columns]="columns_2" [data]="data">
 </go-table>`;
-    code_3: string = `<strong>Filter</strong><br>
+    code_3: string = `<strong>Filtering</strong><br>
 <go-table id="table_filter" class="table table-striped table-border table-sm table-responsive" 
-    [filterAll]="false" [itemsPerPage]=4 cardClass="card-block card-header card-inverse" 
+    [itemsPerPage]=4 cardClass="card-block card-header card-inverse" 
     [columns]="columns_3" [data]="data" >
 </go-table>`;
     code_4: string = `<strong>Fetch Data and Max Size</strong><br>
@@ -135,7 +133,7 @@ cellClick(event: any) {
     column_2_code: string = `columns_2: Array<any> = [
     { title: 'Name', name: 'name'},
     { title: 'Id', name: 'no'},
-    { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy'}
+    { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy', filtering: { placeholder: 'Start Date'}}
 ];`;
     column_3_code: string = `columns_3: Array<any> = [
     { title: 'Name', name: 'name', sort: false, filtering: { placeholder: 'Name'} },
@@ -150,7 +148,7 @@ cellClick(event: any) {
 
 data_4: Array<any> = [];
 TotalRows: number = 6;
-rowPerPage: number = 2;
+rowPerPage: number = 1;
 page: number;
 
 filterAll: string;
@@ -219,7 +217,7 @@ fetchNextNRows(rowPerPage: number, page: number): Array<any> {
     columns_2: Array<any> = [
         { title: 'Name', name: 'name'},
         { title: 'Id', name: 'no'},
-        { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy'}
+        { title: 'Start Date', name: 'startDate', dateFormat: 'dd-mm-yy', filtering: { placeholder: 'Date'}}
     ];
     columns_3: Array<any> = [
         { title: 'Name', name: 'name', sort: false, filtering: { placeholder: 'Name'} },
@@ -239,7 +237,7 @@ fetchNextNRows(rowPerPage: number, page: number): Array<any> {
 
     data_4: Array<any> = [];
     TotalRows: number = 6;
-    rowPerPage: number = 2;
+    rowPerPage: number = 1;
     page: number;
     
     filterAll: string;
