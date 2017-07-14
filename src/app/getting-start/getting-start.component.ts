@@ -14,7 +14,7 @@ import { Component, Input } from '@angular/core';
 })
 export class GettingStartComponent  { 
 
-    releaseDate:string = '26 June 2017';
+    releaseDate:string = '14 July 2017';
     prerequisiteInstall: Array<any> = [
         {},
     ];
@@ -36,7 +36,7 @@ export class GettingStartComponent  {
     // ];
 
     createProjectAngular:Array<any> = [
-        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone git@10.182.247.74:go-webframework/go-starter-project.git ชื่อโปรเจค`},
+        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`},
         { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั่ง` , code: `npm install`},
         { data: `3. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
         { data: `browser จะถูกเปิดอัตโนมัติ และแสดงคำว่า Hello Angular`},
