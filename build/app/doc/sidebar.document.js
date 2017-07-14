@@ -5,7 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ATTRIBUTELIST = [
     { require: '*', name: 'opened', type: 'boolean', description: "\u0E43\u0E0A\u0E49\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E15\u0E31\u0E49\u0E07\u0E04\u0E48\u0E32\u0E43\u0E2B\u0E49 sidebar \u0E40\u0E1B\u0E34\u0E14\u0E2D\u0E2D\u0E01\u0E21\u0E32(true) \u0E2B\u0E23\u0E37\u0E2D\u0E1B\u0E34\u0E14\u0E01\u0E25\u0E31\u0E1A\u0E40\u0E02\u0E49\u0E32\u0E44\u0E1B(false) \u0E42\u0E14\u0E22\u0E15\u0E2D\u0E19\u0E1B\u0E23\u0E30\u0E01\u0E32\u0E28\u0E04\u0E48\u0E32\u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19\u0E43\u0E2B\u0E49\u0E1B\u0E23\u0E30\u0E01\u0E32\u0E28\u0E40\u0E1B\u0E47\u0E19 false \u0E14\u0E49\u0E27\u0E22\u0E40\u0E2A\u0E21\u0E2D" },
