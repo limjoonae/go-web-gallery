@@ -7,13 +7,13 @@ module.exports = function(grunt) {
     copy: {
       build_test: {
         cwd: 'src',
-        src: [ '**/*.js','**/*.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
+        src: [ '**/*.js','**/*.js.map','!systemjs.config.extras.js','!systemjs.config.prd.js','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
         dest: 'build_test',
         expand: true
       },
       build_prd: {
         cwd: 'src',
-        src: [ '**/*.js','**/*.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
+        src: [ '**/*.js','**/*.js.map','!systemjs.config.js','!systemjs.config.extras.js','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
         dest: 'build_prd',
         expand: true
       },
