@@ -5,10 +5,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     copy: {
-      build: {
+      build_test: {
         cwd: 'src',
         src: [ '**/*.js','**/*.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
-        dest: 'build',
+        dest: 'build_test',
+        expand: true
+      },
+      build_prd: {
+        cwd: 'src',
+        src: [ '**/*.js','**/*.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','*.ico' ],
+        dest: 'build_prd',
         expand: true
       },
     },
