@@ -1,0 +1,16 @@
+<div class="card-block text-xs-center">
+	<go-button label="Click me to show Sidebar" buttonSize="sm" buttonColor="primary" (click)="triggersidebar()"></go-button>
+</div>
+<go-sidebar [(opened)]="open">
+	<nav class="nav nav-pills nav-stacked">
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/button']">Button</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/checkbox']">Check Box</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/textarea']">Text Area</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/textbox']">Text Box</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/texteditor']">Text Editor</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/popup']">Popup</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/progressbar']">Progress Bar</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/radiobutton']">Radio Button</a>
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/sidebar']">Side Bar</a>
+	</nav>
+</go-sidebar>

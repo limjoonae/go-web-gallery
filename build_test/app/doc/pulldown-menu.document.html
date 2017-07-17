@@ -1,0 +1,127 @@
+<!--<go-pulldown-menu headMenu="List" [pageList]="pageList"></go-pulldown-menu>-->
+
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong>Credit: -</strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-pulldown-menu/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<!--<small>[  ] = optional attribute\n</small>-->
+			<code>{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}</code>
+		</div>
+		<div class="jumbotron">
+			<h2>Attributes</h2>
+			<small>* = require</small>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td>{{attribute.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<!--<div class="container-fluid">-->
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-3">
+					<ul class="nav navbar-nav">
+						<go-pulldown-menu headLabel="Menu 1" [pageList]="pageList" id="pulldown_menu_1"></go-pulldown-menu>
+						<go-pulldown-menu headLabel="Menu 2" [pageList]="pageList2" id="pulldown_menu_2"></go-pulldown-menu>
+					</ul>
+				</div>
+				<div class="col-md-9">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<code>&lt;ul class="nav navbar-nav"&gt;</code><br>
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;go-pulldown-menu headLabel="Menu 1" [pageList]="pageList" id="pulldown_menu_1"&gt;&lt;/go-pulldown-menu&gt;</code><br>
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;go-pulldown-menu headLabel="Menu 2" [pageList]="pageList2" id="pulldown_menu_2"&gt;&lt;/go-pulldown-menu&gt;</code><br>
+							<code>&lt;/ul&gt;</code><br>
+							<p></p><br>
+							<p>component.ts</p>
+<pre>
+<code>import &#123; PageListModel &#125; from 'go-pulldown-menu';
+
+const PAGELIST: PageListModel&#91;&#93; = &#91; 		//** หรือ PAGELIST: Array&lt;any&gt; */
+  &#123;routerLink: 'badge', menuName: 'Badge'&#125;,
+  &#123;routerLink: 'checkbox', menuName: 'Check Box'&#125;,
+  &#123;routerLink: 'textarea', menuName: 'Text Area'&#125;,
+  &#123;routerLink: 'textbox', menuName: 'Text Box'&#125;,
+  &#123;routerLink: 'texteditor', menuName: 'Text Editor'&#125;
+  &#123;outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Another Website'&#125;
+&#93;;
+
+const PAGELIST2: PageListModel&#91;&#93; = &#91; 		
+  &#123;routerLink: 'badge', menuName: 'Badge'&#125;,
+  &#123;routerLink: 'checkbox', menuName: 'Check Box'&#125;,
+  &#123;routerLink: 'textarea', menuName: 'Text Area'&#125;,
+  &#123;routerLink: 'textbox', menuName: 'Text Box'&#125;,
+  &#123;routerLink: 'texteditor', menuName: 'Text Editor'&#125;
+  &#123;outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Another Website', separated: true&#125;
+&#93;;
+
+@Component(&#123;
+  selector: 'my-app',
+  template: `&lt;router-outlet&gt;&lt;/router-outlet&gt;`,
+&#125;)
+
+export class AppComponent  &#123; 
+  pageList = PAGELIST;
+  pageList2 = PAGELIST2;
+&#125;</code>
+</pre><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

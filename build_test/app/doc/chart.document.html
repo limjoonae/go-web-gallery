@@ -1,0 +1,211 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#doc" role="tab" data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#ex" role="tab" data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>Version: {{version}}</strong>
+					</p>
+					<p>
+						<strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p>
+						<strong>Credit:</strong> <a href="https://github.com/valor-software/ng2-charts">ng2-chart v1.4.1</a>
+					</p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-chart/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="doc">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<code>
+				{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}
+			</code>
+			<h4>Array of Object of chart_data</h4>
+			<code> {{chartdataSyntax}} </code>
+			<h4>Array of Object of chart_color</h4>
+			<code> {{chartcolorSyntax}} </code>
+		</div>
+		<div class="jumbotron">
+			<h2>Attributes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em [innerHTML]="attribute.type"></em></td>
+						<td>{{attribute.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="ex">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="row">
+						<h5>
+							<strong>Data Table</strong>
+						</h5>
+						<table class="table table-striped table-hover table-sm">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th *ngFor="let label of chartLabel">{{label}}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let data of chartData">
+									<th scope="row">{{data.label}}</th>
+									<td *ngFor="let _data of data.data">{{_data}}</td>
+								</tr>
+								<tr>
+									<th scope="row">chart2</th>
+									<td *ngFor="let _data of chartData2[0].data">{{_data}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_data">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_data" aria-expanded="false" aria-controls="collapse_ex_data"> Code Example for data </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_data" class="collapse" role="tabpanel" aria-labelledby="ex_data">
+						<div class="jumbotron">
+							<code [innerHTML]="data_code"></code>
+							<br>
+							<code>{{data_code_2}}</code>
+							<br>
+							<code>{{label_code}}</code>
+							<br><br>
+							<code>Array of Color</code><br><br>
+							<code>{{color_code}}</code>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<go-chart chartType="line" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true'[chartColor]="chart_color1"></go-chart>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1"> Code
+								Example#1 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<code>{{code_1}}</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<go-chart chartType="bar" [chartData]='chartData' [chartLabel]='chartLabel' showLegend='true' yAxlesStartAtZero='true'
+						yAxlesMaxValue=90></go-chart>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2"> Code
+								Example#2 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<code>{{code_2}}</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<go-chart chartType="doughnut" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true'></go-chart>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3"> Code
+								Example#3 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<code>{{code_3}}</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-4">
+					<go-chart chartType="pie" [chartData]='chartData2' [chartLabel]='chartLabel' showLegend='true' (onChartClicked) = "myTest()"></go-chart><br>{{click}}
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_4"> Code
+								Example#4 </a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<code>{{code_4}}</code><br><br>
+							app.component.ts<br>
+							<pre>
+<code>private click: boolean = false;
+myTest() &#123;
+      this.click = !this.click;
+  &#125;
+</code>
+</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- 
+<go-chart class="col-md-6" chartType="line" [chartData]='lineChartData'
+	[chartLabel]='lineChartLabel' [chartColor]='lineChartColor'
+	showLegend='true' yAxlesStartAtZero='true' yAxlesMaxValue=-50></go-chart>
+<go-chart class="col-md-4" chartType="doughnut"
+	[chartData]='lineChartData' [chartLabel]='lineChartLabel'
+	[chartColor]='lineChartColor' showLegend='true'></go-chart>
+	 -->

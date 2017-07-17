@@ -1,0 +1,104 @@
+<div class="container bg-faded ">
+
+    <div class="row ">
+        <div class="card-block">
+            <h1 class="card-title ">Getting Started</h1>
+             <p><strong>Release Date: {{releaseDate}} </strong></p>
+        </div>
+       
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" href="#prerequisiteInstall" role="tab" data-toggle="tab" >Prerequisite Install</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#createProjectAngular2" role="tab" data-toggle="tab">Create New Project</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#existingProject" role="tab" data-toggle="tab">Existing Angular Project</a> </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div  role="tabpanel" class="tab-pane active" id="prerequisiteInstall">
+                    <h3 class="card-header "><strong> Download Installer </strong></h3>
+                    <div class="card-block">
+                        <p>Download ตัว installer ทั้งหมดจากลิ้งค์ด้านล่าง</p>
+                        <a href="http://10.182.247.73/go-cdn-dev/installerX86.zip"><i class="fa fa-download"></i> Installer for Windows x86</a><br>
+                        <a href="http://10.182.247.73/go-cdn-dev/installerX64.zip"><i class="fa fa-download"></i> Installer for Windows x64</a>
+                    </div>
+                    <h3 class="card-header "><strong> การติดตั้ง Nodejs </strong></h3>
+                    <div class="card-block">
+                        <p *ngFor="let data of setupNodejs"> 
+                             {{data.data}} <br>
+                            <code *ngIf="data.code != null"> {{data.code}} </code> 
+                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
+                        </p>
+                    </div>
+                    <h3 class="card-header"><strong> การติดตั้ง Git </strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of setupGit"> 
+                            <p [innerHTML]="data.data"></p>
+                            <code *ngIf="data.code != null"> {{data.code}} </code>
+                        </div>
+                    </div>
+                    <h3 class="card-header"><strong> การ generate ssh key (optional)</strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of generateSshKey"> 
+                            <p> <span [innerHTML]="data.data"> </span> <a *ngIf="data.link != null" href="data.link">{{data.link}}</a></p>
+                            <code *ngIf="data.code != null"> {{data.code}} </code>
+                        </div>
+                    </div>
+                    <!--<h3 class="card-header"><strong> การ set proxy git และ npm </strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of setProxy"> 
+                             <p>{{data.data}}</p>
+                            <pre> <code *ngIf="data.code != null"> {{data.code}} </code> </pre>
+                        </div>
+                    </div>-->
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="setupGit">
+                    <h3 class="card-header"><strong> การติดตั้ง Git </strong></h3>
+                    <div class="card-block">
+                        <p *ngFor="let data of setupGit"> 
+                             {{data.data}} <br>
+                            <code *ngIf="data.code != null"> {{data.code}} </code> 
+                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
+                        </p>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="createProjectAngular2">
+                    <h3 class="card-header"><strong> การสร้าง Project Angular </strong></h3>
+                    <div class="card-block">
+                        <div *ngFor="let data of createProjectAngular">
+                            <p> {{data.data}} </p>
+                            <pre><code *ngIf="data.code != null"> {{data.code}} </code></pre>
+                            <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
+                        </div>
+                    </div>
+                </div>
+
+                <div  role="tabpanel" class="tab-pane fade" id="existingProject">
+                    <h3 class="card-header "><strong>Existing Angular Project</strong></h3>
+                    <h5 class="card-header ">systemjs.config.js</h5>
+                    <div class="card-block">
+                        <p *ngFor="let data of howToSystemjs">
+                             {{data.data}} <br>
+                            <code *ngIf="data.code != null"> {{data.code}} </code> 
+                        </p>
+                        <object data="file/systemjs.txt" style="width: 100%; height: 100%; display: block;"></object> <br>
+                    </div>
+
+                    <h5 class="card-header ">app.module.ts</h5>
+                    <div class="card-block">
+                        <p> {{importAppModule}} </p>
+                        <object data="file/appModuleTS.txt" style="width: 100%; height: 100%; display: block;"></object> <br>                        
+                    </div>
+
+                    <h5 class="card-header ">index.html</h5>
+                    <div class="card-block">
+                        <p> {{indexData}} </p>
+                        <object data="file/indexFile.txt" style="width: 100%; height: 100%; display: block;"></object> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

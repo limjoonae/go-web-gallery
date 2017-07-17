@@ -1,0 +1,151 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a class="nav-link active" href="#Overview" role="tab" data-toggle="tab">Overview</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Document" role="tab" data-toggle="tab">Document</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Example" role="tab" data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="Overview">
+        <div class="jumbotron">
+            <h2>Component {{componentTag}}</h2><br>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Description</strong>
+                    <p>{{componentDescription}}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Version: {{version}}</strong></p>
+                    <p><strong>Release Date: {{releaseDate}}</strong></p>
+                    <p><strong>Credit: <a href="{{creditUrl}}" target="_blank">{{credit}}</a></strong></p>
+                    <div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-auto-complete/issues" target="_blank">Report Issue</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="Document">
+        <div class="jumbotron">
+            <h2>Syntax</h2>
+            <code>{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}</code>
+        </div>
+
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeList">
+                        <th scope="row">{{attribute.require}}</th>
+                        <td>{{attribute.name}}</td>
+                        <td><em>{{attribute.type}}</em></td>
+                        <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="Example">
+        <div class="jumbotron">
+            <div class="row row-in-tab">
+                <div class="col-md-6">
+                    <pre>arrayOfStrings: string[] = {{json(arrayOfStrings)}}</pre>
+                    <input type="text" class="form-control" auto-complete [source]="arrayOfStrings" (ngModelChange)="myCallback($event)" [ngModel]="model1"
+                        placeholder="enter text" id="autocomplete_basic">
+                    <br>selected model1: {{json(model1)}}<br><br>
+                </div>
+                <div class="col-md-6">
+                    <div role="tab" id="ex_1">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+                        </h5>
+                    </div>
+                    <div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+                        <div class="jumbotron">
+                            <div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample1">{{codeExample.data}} <br></code></pre>
+						</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-in-tab">
+                <div class="col-md-6">
+                    <pre>arrayOfKeyValues: any[] = {{json(arrayOfKeyValues)}}</pre>
+                    <input type="text" class="form-control" auto-complete blank-option-text="Select One" [(ngModel)]="model2" [source]="arrayOfKeyValues"
+                        placeholder="enter text" [accept-user-input]=false id="autocomplete_keyvalue">
+                    <br>selected model2: {{model2 | json}}<br><br>
+                </div>
+                <div class="col-md-6">
+                    <div role="tab" id="ex_2">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+                        </h5>
+                    </div>
+                    <div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+                        <div class="jumbotron">
+                            <code>&lt;input type="text" class="form-control" auto-complete blank-option-text="Select One" [(ngModel)]="model2" [source]="arrayOfKeyValues"
+                        placeholder="enter text" [accept-user-input]=false  id="autocomplete_keyvalue"&gt;</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-in-tab">
+                <div class="col-md-6">
+                    <pre>arrayOfKeyValues2: any[] = {{json(arrayOfKeyValues2)}}</pre>
+                    <input type="text" class="form-control" auto-complete [source]="arrayOfKeyValues2" [(ngModel)]="model3" placeholder="enter text"
+                        value-property-name="key" list-formatter="key: name" display-property-name="name" max-num-list = "3" id="autocomplete_keyvalue2">
+                    <br>selected model3: {{model3 | json}}<br><br>
+                </div>
+                <div class="col-md-6">
+                    <div role="tab" id="ex_3">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+                        </h5>
+                    </div>
+                    <div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+                        <div class="jumbotron">
+                            <code>&lt;input type="text" class="form-control" auto-complete [source]="arrayOfKeyValues2" [(ngModel)]="model3" placeholder="enter text"
+                        value-property-name="key" list-formatter="key: name" display-property-name="name"  id="autocomplete_keyvalue2"&gt;</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-in-tab">
+                <div class="col-md-6">
+                    <pre>googleGeoCode: string = {{googleGeoCode}}</pre>
+                    <input type="text" class="form-control" auto-complete [(ngModel)]="model4" placeholder="Enter Address(min. 2 chars)" [source]="googleGeoCode"
+                        list-formatter="formatted_address" display-property-name="formatted_address" path-to-data="results" min-chars="2" loading-text ="Now Loading..." id="autocomplete_googlemaps">
+                    <br>selected model4: {{model4 | json}}<br><br>
+                </div>
+                <div class="col-md-6">
+                    <div role="tab" id="ex_4">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#4
+							</a>
+                        </h5>
+                    </div>
+                    <div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+                        <div class="jumbotron">
+                            <code>&lt;input type="text" class="form-control" auto-complete [(ngModel)]="model4" placeholder="Enter Address(min. 2 chars)"
+                        [source]="googleGeoCode" list-formatter="formatted_address" display-property-name="formatted_address" path-to-data="results" min-chars="2" loading-text = "Now Loading..." id="autocomplete_googlemaps"&gt;</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

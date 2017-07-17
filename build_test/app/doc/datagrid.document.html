@@ -1,0 +1,496 @@
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong>Credit: <a href="{{creditURL}}" target="_blank"> {{credit}} </a></strong></p>
+					<div class="align-center"><a class="form-control btn btn-danger" href="http://10.182.247.74/go-webframework/go-datagrid/issues" target="_blank">Report Issue</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+            <h2>Syntax</h2>
+            <pre> <code>{{prefixSyntax}}<em *ngFor="let attrSyntax of attrSyntaxList">{{attrSyntax.data}} <br></em>{{suffixSyntax}}</code> </pre>
+        </div>
+        <div class="jumbotron">
+            <h2>Attributes</h2>
+			<h3> tabset </h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let attribute of attributeList">
+                    <th scope="row">{{attribute.require}}</th>
+                    <td>{{attribute.name}}</td>
+                    <td><em>{{attribute.type}}</em></td>
+                    <td>{{attribute.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+			<h3> Event </h3>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of eventList">
+                    <th scope="row">{{event.require}}</th>
+                    <td>{{event.name}}</td>
+                    <td><em>{{event.type}}</em></td>
+                    <td>{{event.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="row row-in-tab">
+					<div class="col-md-12">
+						<div role="tab" id="ex_02">
+							<h5 class="mb-0">
+								<a class="collapsed" data-toggle="collapse" href="#collapse_ex_02" aria-expanded="false" aria-controls="collapse_ex_02">
+										Code Example for data
+								</a>
+							</h5>
+						</div>
+						<div id="collapse_ex_02" class="collapse" role="tabpanel" aria-labelledby="ex_02">
+							<div class="jumbotron">
+								<pre><code  *ngFor="let codeExample of codeData" >{{codeExample}} <br></code> </pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-7 card-block">
+					<h4> Basic </h4>
+					<p-dataGrid id="datagrid_basic" [value]="dataForExBasic" totalRecords=1>
+						<p-header> List of Cars </p-header>
+						<ng-template let-data pTemplate="item">
+							<div style="padding:3px" class="ui-g-12 ui-md-3">
+								<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+									<img src="./image/datagrid/{{data.brand}}.gif">
+									<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+								</p-panel>
+							</div>
+						</ng-template>
+					</p-dataGrid>
+				</div>
+				<div class="col-md-5">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<p> app.component.html </p>
+							<pre> <code  *ngFor="let codeExample of codeExampleBasic" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row row-in-tab">
+				<div class="col-md-7 card-block">
+					<h4> paginator </h4>
+					<div class="form-group">
+						<strong> - Position Default </strong>
+						<p-dataGrid id="datagrid_paginator" [value]="dataForExBasic" [paginator]="true" [rows]="4">
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+
+					<div class="form-group">
+						<strong> - Position Top </strong>
+						<p-dataGrid id="datagrid_paginator_top" [value]="dataForExBasic" [paginator]="true" [rows]="4" paginatorPosition="top">
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+
+					<div class="form-group">
+						<strong> - Position Both </strong>
+						<p-dataGrid id="datagrid_paginator_both" [value]="dataForExBasic" [paginator]="true" [rows]="4" paginatorPosition="both">
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+
+					<div class="form-group">
+						<strong> - Page Links</strong>
+						<p-dataGrid id="datagrid_pagelink" [value]="dataForExBasic" [paginator]="true" [rows]="4" pageLinks="1">
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+
+					<div class="form-group">
+						<strong> - Rows Per Page Options</strong>
+						<p-dataGrid id="datagrid_rowsPerPage" [value]="dataForExBasic" [paginator]="true" [rows]="4" [rowsPerPageOptions]="[1,2,3,4,5,6,7,8]" >
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+
+				</div>
+				<div class="col-md-5">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<p> app.component.html </p>
+							<pre> <code  *ngFor="let codeExample of codeExamplePaginator" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row row-in-tab">
+				<div class="col-md-7 card-block">
+					<h4> Event </h4>
+						<p-dataGrid id="datagrid_event" [value]="dataForExBasic" [paginator]="true" [rows]="4" [rowsPerPageOptions]="[1,2,3,4,5,6,7,8]" (onPage)="onPage($event)" >
+							<p-header>
+								List of Cars
+							</p-header>
+							<ng-template let-dataForEx pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="dataForEx.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{dataForEx.brand}}.gif">
+										<div class="dataForEx-detail">{{dataForEx.year}} - {{dataForEx.color}}</div>
+										<hr class="ui-widget-content" style="border-top:0">
+										<i class="fa fa-search" (click)="selectCar(dataForEx)" style="cursor:pointer"></i>
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+
+						<p> <strong> Index of first record in page: </strong>  {{firstRecord}} </p>
+						<p> <strong> Number of rows on the page: </strong> {{numOfRow}} </p>
+
+						<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true"  [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+							<div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedCar" style="font-size:16px;text-align:center;padding:20px">
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-12" style="text-align:center"><img src="./image/datagrid/{{selectedCar.brand}}.gif"></div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Vin: </div>
+									<div class="ui-grid-col-8">{{selectedCar.vin}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Year: </div>
+									<div class="ui-grid-col-8">{{selectedCar.year}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Brand: </div>
+									<div class="ui-grid-col-8">{{selectedCar.brand}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Color: </div>
+									<div class="ui-grid-col-8">{{selectedCar.color}}</div>
+								</div>
+							</div>
+						</p-dialog>
+				</div>
+				<div class="col-md-5">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<p> aap.component.ts </p>
+							<pre> <code  *ngFor="let codeExample of codeExampleEvent_ts" >{{codeExample.data}} <br></code></pre>
+							<p> app.component.html </p>
+							<pre> <code  *ngFor="let codeExample of codeExampleEvent_html" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-in-tab">
+				<div class="col-md-7 card-block">
+					<div class="form-group">
+						<strong> - Lazy Load</strong>
+						<p-dataGrid id="datagrid_lazy" [lazy]="true" [totalRecords]="totalRecords"
+								(onLazyLoad)="lazyLoad($event)" [value]="data_lazy" 
+								[paginator]="true" [rows]="4">
+							<p-header> List of Cars </p-header>
+							<ng-template let-data pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="data.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{data.brand}}.gif">
+										<div class="data-detail">{{data.year}} - {{data.color}}</div>	
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#4
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<p> aap.component.ts </p>
+							<pre> <code  *ngFor="let codeExample of codeExampleLazy_ts" >{{codeExample.data}} <br></code></pre>
+							<p> app.component.html </p>
+							<pre> <code  *ngFor="let codeExample of codeExampleLazy_html" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<!--<div class="row row-in-tab">-->
+				<!--<div class="col-md-7 card-block">
+						<p-dataGrid id="datagrid_basic" [value]="dataForEx" [paginator]="true" [rows]="8" pageLinks="2" paginatorPosition="both" [rowsPerPageOptions]="[4,8,12,16,20]">
+							<p-header>
+								List of Cars
+							</p-header>
+							<ng-template let-dataForEx pTemplate="item">
+								<div style="padding:3px" class="ui-g-12 ui-md-3">
+									<p-panel [header]="dataForEx.vin" [style]="{'text-align':'center'}">
+										<img src="./image/datagrid/{{dataForEx.brand}}.gif">
+										<div class="dataForEx-detail">{{dataForEx.year}} - {{dataForEx.color}}</div>
+										<hr class="ui-widget-content" style="border-top:0">
+										<i class="fa fa-search" (click)="selectCar(dataForEx)" style="cursor:pointer"></i>
+									</p-panel>
+								</div>
+							</ng-template>
+						</p-dataGrid>
+
+				
+						<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true"  [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+							<div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedCar" style="font-size:16px;text-align:center;padding:20px">
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-12" style="text-align:center"><img src="./image/datagrid/{{selectedCar.brand}}.gif"></div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Vin: </div>
+									<div class="ui-grid-col-8">{{selectedCar.vin}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Year: </div>
+									<div class="ui-grid-col-8">{{selectedCar.year}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Brand: </div>
+									<div class="ui-grid-col-8">{{selectedCar.brand}}</div>
+								</div>
+								<div class="ui-grid-row">
+									<div class="ui-grid-col-4">Color: </div>
+									<div class="ui-grid-col-8">{{selectedCar.color}}</div>
+								</div>
+							</div>
+						</p-dialog>
+				</div>-->
+				<!--<div class="col-md-5">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+                            <pre> <code *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>-->
+			<!--</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-12">
+					<div role="tab" id="ex_02">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_02" aria-expanded="false" aria-controls="collapse_ex_02">
+									Code Example for data
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_02" class="collapse" role="tabpanel" aria-labelledby="ex_02">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-12">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre><code  *ngFor="let codeExample of codeExample1" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_2">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_2" aria-expanded="false" aria-controls="collapse_ex_2">
+							Code Example#2
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_2" class="collapse" role="tabpanel" aria-labelledby="ex_2">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample2" >{{codeExample.data}} <br></code> </pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_3">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_3" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_3" class="collapse" role="tabpanel" aria-labelledby="ex_3">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample3" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="row row-in-tab">
+				<div class="col-md-4">
+					<div class="card-block">
+						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div role="tab" id="ex_4">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_4" aria-expanded="false" aria-controls="collapse_ex_3">
+							Code Example#3
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_4" class="collapse" role="tabpanel" aria-labelledby="ex_4">
+						<div class="jumbotron">
+							<pre> <code  *ngFor="let codeExample of codeExample4" >{{codeExample.data}} <br></code></pre>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+	</div>
+</div>
