@@ -42,10 +42,12 @@ export class GettingStartComponent  {
         { data: `browser จะถูกเปิดอัตโนมัติ และแสดงคำว่า Hello Angular`},
     ];
     
+    public webcdn = 'https://webcdn.cpall.co.th';
+    public devwebcdn = 'http://dev-webcdn.cpall.co.th';
     howToSystemjs:Array<any> = [
-        { code: `'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',`, data: `1.	กำหนด path ที่ชื่อ npm เพื่อเรียกใช้งาน library หลักของ Angular ดังนี้`},
-        { code: `'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/2.1.0/',`, data: `2.	กำหนด path ที่ชื่อ go เพื่อเรียกใช้งาน component ดังนี้`},
-        { code: `'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/'`, data: `3.	กำหนด path ที่ชื่อ lib เพื่อเรียกใช้งาน component ดังนี้`},
+        { code: `'npm:': '` + this.devwebcdn +`/node_modules/4.0.0/',`, data: `1.	กำหนด path ที่ชื่อ npm เพื่อเรียกใช้งาน library หลักของ Angular ดังนี้`},
+        { code: `'go:': '` + this.devwebcdn +`/dist/go/2.1.0/',`, data: `2.	กำหนด path ที่ชื่อ go เพื่อเรียกใช้งาน component ดังนี้`},
+        { code: `'lib:': '` + this.devwebcdn +`/dist/lib/1.0.0/'`, data: `3.	กำหนด path ที่ชื่อ lib เพื่อเรียกใช้งาน component ดังนี้`},
         { data: `4. วาง path ทั้ง 2 ลงใน paths`},
         { data: `5.	วาง path ของ gomodule และ libmodule ลงใน map`},
         { data: `เมื่อวางแล้วจะได้ดังนี้`}
