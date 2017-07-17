@@ -193,7 +193,7 @@ clearCompletedListSet() {
     private message_sets = { chooseLabel: "Choose file", deleteLabel: "Delete it", invalidFileSizeMsg: "ขนาดไฟล์ไม่ถูกต้อง"};
     private show_opts = { showDragandDropBox: true, showUploadStatusDialog: false };
 
-    private dowloadBackendpath = '';
+    private downloadBackendpath = '';
 
     ngOnInit() {
         this.getDownloadedPath();
@@ -202,9 +202,9 @@ clearCompletedListSet() {
     getDownloadedPath() {
         let paths = module.id.split('/');
         for (let i = 0; i < paths.length - 1; i++) {
-            this.dowloadBackendpath += paths[i] + '/';
+            this.downloadBackendpath += paths[i] + '/';
         }
-        this.dowloadBackendpath += 'backend.zip';
+        this.downloadBackendpath += 'backend.zip';
     }
 
     onFinish(event: any) {
