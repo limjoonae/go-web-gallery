@@ -6,9 +6,9 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'http://dev-webcdn.cpall.co.th/node_modules/4.0.0/',
-      'go:': 'http://dev-webcdn.cpall.co.th/dist/go/2.1.0/',
-      'lib:': 'http://dev-webcdn.cpall.co.th/dist/lib/1.0.0/',
+      'npm:': 'http://webcdn.cpall.co.th/node_modules/4.0.0/',
+      'go:': 'http://webcdn.cpall.co.th/dist/go/2.1.0/',
+      'lib:': 'http://webcdn.cpall.co.th/dist/lib/1.0.0/',
     },
     // map tells the System loader where to look for things
     map: {
