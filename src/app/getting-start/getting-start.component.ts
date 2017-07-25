@@ -36,9 +36,10 @@ export class GettingStartComponent  {
     // ];
 
     createProjectAngular:Array<any> = [
-        { data: `1. เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone http://10.182.247.74/go-webframework/go-starter-project.git ชื่อโปรเจค`},
-        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั่ง` , code: `npm install`},
-        { data: `3. สตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start`},
+        { data: `1. ดาวน์โหลด starter project จาก <a href="https://github.com/limjoonae/go-starter-project" target="_blank">https://github.com/limjoonae/go-starter-project</a> โดยเลือกแบบ Download Zip หรือ 
+        ดาวน์โหลดผ่าน git โดย เปิด command prompt แล้วไปยัง path ที่ต้องการจะสร้างโปรเจค แล้วทำการ clone โปรเจคตั้งต้น ด้วยคำสั่งนี้`, code: `git clone https://github.com/limjoonae/go-starter-project.git ชื่อโปรเจค`},
+        { data: `2. เปิด command prompt ขึ้นมาใน root path project แล้วรันคำสั่ง` , code: `npm install โดยใช้ Internet ในการรัน`},
+        { data: `3. กลับมาใช้ Intranet แล้วสตาร์ทโปรเจคด้วยคำสั่ง`, code: `npm start ที่ root path ของโปรเจคที่สร้าง`},
         { data: `browser จะถูกเปิดอัตโนมัติ และแสดงคำว่า Hello Angular`},
     ];
     
@@ -64,5 +65,22 @@ export class GettingStartComponent  {
         { data: '5. ไปที่เมนู setting > SSH Keys'},
         { data: '6. วาง key ที่ copy มาจาก Git GUI แล้วตั้งชื่อ title '},
         { data: '7. กด Add key'}
-    ]
+    ];
+
+    private downloadX32Path = '';
+    private downloadX64Path = '';
+
+    ngOnInit() {
+        this.getDownloadedPath();
+    }
+
+    getDownloadedPath() {
+        let paths = module.id.split('/');
+        for (let i = 0; i < paths.length - 1; i++) {
+            this.downloadX32Path += paths[i] + '/';
+            this.downloadX64Path += paths[i] + '/';
+        }
+        this.downloadX32Path += 'installerX32.zip';
+        this.downloadX64Path += 'installerX64.zip';
+    }
 }

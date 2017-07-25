@@ -27,9 +27,9 @@ var GettingStartComponent = (function () {
         //     { data: `2. set proxy ของ npm`, code: `npm config set registry http://registry.npmjs.org -g`},
         // ];
         this.createProjectAngular = [
-            { data: "1. \u0E40\u0E1B\u0E34\u0E14 command prompt \u0E41\u0E25\u0E49\u0E27\u0E44\u0E1B\u0E22\u0E31\u0E07 path \u0E17\u0E35\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E08\u0E30\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04 \u0E41\u0E25\u0E49\u0E27\u0E17\u0E33\u0E01\u0E32\u0E23 clone \u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04\u0E15\u0E31\u0E49\u0E07\u0E15\u0E49\u0E19 \u0E14\u0E49\u0E27\u0E22\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E19\u0E35\u0E49", code: "git clone http://10.182.247.74/go-webframework/go-starter-project.git \u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04" },
-            { data: "2. \u0E40\u0E1B\u0E34\u0E14 command prompt \u0E02\u0E36\u0E49\u0E19\u0E21\u0E32\u0E43\u0E19 root path project \u0E41\u0E25\u0E49\u0E27\u0E23\u0E31\u0E19\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07", code: "npm install" },
-            { data: "3. \u0E2A\u0E15\u0E32\u0E23\u0E4C\u0E17\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04\u0E14\u0E49\u0E27\u0E22\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07", code: "npm start" },
+            { data: "1. \u0E14\u0E32\u0E27\u0E19\u0E4C\u0E42\u0E2B\u0E25\u0E14 starter project \u0E08\u0E32\u0E01 <a href=\"https://github.com/limjoonae/go-starter-project\" target=\"_blank\">https://github.com/limjoonae/go-starter-project</a> \u0E42\u0E14\u0E22\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E41\u0E1A\u0E1A Download Zip \u0E2B\u0E23\u0E37\u0E2D \n        \u0E14\u0E32\u0E27\u0E19\u0E4C\u0E42\u0E2B\u0E25\u0E14\u0E1C\u0E48\u0E32\u0E19 git \u0E42\u0E14\u0E22 \u0E40\u0E1B\u0E34\u0E14 command prompt \u0E41\u0E25\u0E49\u0E27\u0E44\u0E1B\u0E22\u0E31\u0E07 path \u0E17\u0E35\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E08\u0E30\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04 \u0E41\u0E25\u0E49\u0E27\u0E17\u0E33\u0E01\u0E32\u0E23 clone \u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04\u0E15\u0E31\u0E49\u0E07\u0E15\u0E49\u0E19 \u0E14\u0E49\u0E27\u0E22\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E19\u0E35\u0E49", code: "git clone https://github.com/limjoonae/go-starter-project.git \u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04" },
+            { data: "2. \u0E40\u0E1B\u0E34\u0E14 command prompt \u0E02\u0E36\u0E49\u0E19\u0E21\u0E32\u0E43\u0E19 root path project \u0E41\u0E25\u0E49\u0E27\u0E23\u0E31\u0E19\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07", code: "npm install \u0E42\u0E14\u0E22\u0E43\u0E0A\u0E49 Internet \u0E43\u0E19\u0E01\u0E32\u0E23\u0E23\u0E31\u0E19" },
+            { data: "3. \u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E43\u0E0A\u0E49 Intranet \u0E41\u0E25\u0E49\u0E27\u0E2A\u0E15\u0E32\u0E23\u0E4C\u0E17\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04\u0E14\u0E49\u0E27\u0E22\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07", code: "npm start \u0E17\u0E35\u0E48 root path \u0E02\u0E2D\u0E07\u0E42\u0E1B\u0E23\u0E40\u0E08\u0E04\u0E17\u0E35\u0E48\u0E2A\u0E23\u0E49\u0E32\u0E07" },
             { data: "browser \u0E08\u0E30\u0E16\u0E39\u0E01\u0E40\u0E1B\u0E34\u0E14\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34 \u0E41\u0E25\u0E30\u0E41\u0E2A\u0E14\u0E07\u0E04\u0E33\u0E27\u0E48\u0E32 Hello Angular" },
         ];
         this.webcdn = 'https://webcdn.cpall.co.th';
@@ -53,7 +53,21 @@ var GettingStartComponent = (function () {
             { data: '6. วาง key ที่ copy มาจาก Git GUI แล้วตั้งชื่อ title ' },
             { data: '7. กด Add key' }
         ];
+        this.downloadX32Path = '';
+        this.downloadX64Path = '';
     }
+    GettingStartComponent.prototype.ngOnInit = function () {
+        this.getDownloadedPath();
+    };
+    GettingStartComponent.prototype.getDownloadedPath = function () {
+        var paths = module.id.split('/');
+        for (var i = 0; i < paths.length - 1; i++) {
+            this.downloadX32Path += paths[i] + '/';
+            this.downloadX64Path += paths[i] + '/';
+        }
+        this.downloadX32Path += 'installerX32.zip';
+        this.downloadX64Path += 'installerX64.zip';
+    };
     return GettingStartComponent;
 }());
 GettingStartComponent = __decorate([

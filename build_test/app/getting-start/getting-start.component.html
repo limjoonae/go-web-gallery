@@ -19,8 +19,8 @@
                     <h3 class="card-header "><strong> Download Installer </strong></h3>
                     <div class="card-block">
                         <p>Download ตัว installer ทั้งหมดจากลิ้งค์ด้านล่าง</p>
-                        <a href="http://10.182.247.73/go-cdn-dev/installerX86.zip"><i class="fa fa-download"></i> Installer for Windows x86</a><br>
-                        <a href="http://10.182.247.73/go-cdn-dev/installerX64.zip"><i class="fa fa-download"></i> Installer for Windows x64</a>
+                        <a [href]="downloadX32Path"><i class="fa fa-download"></i> Installer for Windows x32</a><br>
+                        <a [href]="downloadX64Path"><i class="fa fa-download"></i> Installer for Windows x64</a>
                     </div>
                     <h3 class="card-header "><strong> การติดตั้ง Nodejs </strong></h3>
                     <div class="card-block">
@@ -30,7 +30,7 @@
                             <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
                         </p>
                     </div>
-                    <h3 class="card-header"><strong> การติดตั้ง Git </strong></h3>
+                    <h3 class="card-header"><strong> การติดตั้ง Git (optional)</strong></h3>
                     <div class="card-block">
                         <div *ngFor="let data of setupGit"> 
                             <p [innerHTML]="data.data"></p>
@@ -68,7 +68,7 @@
                     <h3 class="card-header"><strong> การสร้าง Project Angular </strong></h3>
                     <div class="card-block">
                         <div *ngFor="let data of createProjectAngular">
-                            <p> {{data.data}} </p>
+                            <p [innerHTML]="data.data"></p>
                             <pre><code *ngIf="data.code != null"> {{data.code}} </code></pre>
                             <img *ngIf="data.image != null" class="img-fluid" alt="Responsive image" src="{{data.image}}" >
                         </div>
