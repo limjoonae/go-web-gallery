@@ -7,13 +7,13 @@ module.exports = function(grunt) {
     copy: {
       build_qa: {
         cwd: 'src',
-        src: [ '**/*.js','**/*.js.map','!systemjs.config.js','!systemjs.config.extras.js','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','**/*.ico','**/*.zip' ],
+        src: [ '**/*.js','**/*.js.map','!systemjs.config.js','!systemjs.config.extras.js','!**/*.spec.js','!**/*.spec.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','**/*.ico','**/*.zip' ],
         dest: 'build_qa',
         expand: true
       },
       build_dev: {
         cwd: 'src',
-        src: [ '**/*.js','**/*.js.map','!systemjs.config.js','!systemjs.config.extras.js','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','**/*.ico','**/*.zip' ],
+        src: [ '**/*.js','**/*.js.map','!systemjs.config.js','!systemjs.config.extras.js','!**/*.spec.js','!**/*.spec.js.map','!**/dist/**','**/*.html','!index.html','**/*.css','assets/**','file/**','image/**','**/*.ico','**/*.zip' ],
         dest: 'build_dev',
         expand: true
       },
