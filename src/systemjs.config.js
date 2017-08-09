@@ -6,10 +6,7 @@
   System.config({
     paths: {
       // paths serve as alias
-      // 'npm:': 'http://10.182.247.73/go-cdn-dev/node_modules/4.0.0/',
-      // 'go:': 'http://10.182.247.73/go-cdn-dev/dist/go/2.1.0/',
-      // 'lib:': 'http://10.182.247.73/go-cdn-dev/dist/lib/1.0.0/',
-      'npm:': 'http://webcdn.cpall.co.th/node_modules/4.0.0/',
+      'npm:': 'node_modules/',
       'go:': 'dist/',
       'lib:': 'dist/',
     },

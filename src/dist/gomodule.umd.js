@@ -8587,6 +8587,7 @@ __decorate([
 ], NgTableComponent.prototype, "columns", null);
 NgTableComponent = __decorate([
     core_1.Component({
+        // moduleId: module.id,
         selector: 'ng-table',
         styles: ["\n    .table-fixed {\n      'table-layout':'fixed',\n       'word-wrap': 'break-word'\n      }\n  "],
         template: __webpack_require__(414)
@@ -47352,6 +47353,7 @@ var TableComponent = (function () {
             return defaultValue; //default value
     };
     TableComponent.prototype.escapeSpecialCharacters = function (inputText) {
+        // return inputText;
         return inputText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
     };
     TableComponent.prototype.changePage = function (page, data) {
@@ -47409,26 +47411,20 @@ var TableComponent = (function () {
         var filteredData = data;
         var dateString;
         var DateFormat;
-        //console.log('data: ',data);
-        //console.log('columns: ',this.columns);
-        /* for(let i = 0; i < this.columns.length;i++){
-         if(this.columns[i] instanceof Object) dateFormat = this.columns[i].dateFormat;
-         //console.log(dateFormat);
-     }
-         */
         this.columns.forEach(function (column) {
             if (column.filtering) {
-                //console.log(column.filtering);
-                //column.filtering.filterString = this.escapeSpecialCharacters(column.filtering.filterString);
+                var filteringStringReturn_1;
+                filteringStringReturn_1 = _this.escapeSpecialCharacters(column.filtering.filterString);
                 filteredData = filteredData.filter(function (item) {
                     var dump;
                     if (item[column.name] instanceof Date) {
                         DateFormat = column.dateFormat;
-                        dump = _this.formatDate(item[column.name], DateFormat);
+                        dump = _this.formatDate(item[column.name], DateFormat, column.yearAdditional);
                     }
-                    else
+                    else {
                         dump = item[column.name];
-                    return String(dump.match(column.filtering.filterString));
+                    }
+                    return String(dump).match(filteringStringReturn_1);
                 });
             }
         });
@@ -47447,7 +47443,7 @@ var TableComponent = (function () {
             _this.columns.forEach(function (column) {
                 if (item[column.name] instanceof Date) {
                     DateFormat = column.dateFormat;
-                    dump = _this.formatDate(item[column.name], DateFormat);
+                    dump = _this.formatDate(item[column.name], DateFormat, column.yearAdditional);
                 }
                 else
                     dump = item[column.name];
@@ -47488,7 +47484,7 @@ var TableComponent = (function () {
     TableComponent.prototype.onCellClick = function (event) {
         this.onCellClicked.emit(event);
     };
-    TableComponent.prototype.formatDate = function (date, format) {
+    TableComponent.prototype.formatDate = function (date, format, yearAdd) {
         if (!date) {
             return "";
         }
@@ -47530,6 +47526,8 @@ var TableComponent = (function () {
                             break;
                         case "y":
                             var _year = date.getFullYear();
+                            if (yearAdd)
+                                _year += yearAdd;
                             output += (lookAhead("y") ? _year :
                                 (_year % 100 < 10 ? "0" : "") + _year % 100);
                             break;
@@ -48257,7 +48255,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 __webpack_require__(504);
-var tinypath = 'http://webcdn.cpall.co.th/node_modules/4.0.0/tinymce/';
+var tinypath = 'http://10.182.247.73/node_modules/4.0.0/tinymce/';
 var TextEditorComponent = (function () {
     function TextEditorComponent() {
         this.height = 200;
@@ -48444,6 +48442,7 @@ var UploadComponent = (function () {
         this.url = 'http://localhost:10050/upload'; //req
         this.multiple = true;
         this.fileTypeAllow = '';
+        this.autoUpload = false;
         this.maxFileSize = 2 * 1024 * 1024; //2 MB
         this.showImage = true;
         this.previewWidth = 100;
@@ -48451,17 +48450,16 @@ var UploadComponent = (function () {
         this.canAbort = true;
         this.autoCompressImageFile = false;
         this.messageSettings = {};
-        this.errorHeaderMsg = '<strong>เกิดข้อผิดพลาด!</strong>';
         this.invalidFileSizeMsg = 'ไฟล์ที่เลือกต้องมีขนาดมากกว่า 0 B และไม่เกิน ';
-        this.invalidTypeMsg = 'ประเภทของไฟล์ที่เลือกไม่ถูกต้อง';
+        this.invalidTypeMsg = 'กรุณาเลือกประเภทของไฟล์ให้ถูกต้อง';
         this.chooseLabel = 'เลือกไฟล์';
         this.uploadLabel = 'อัพโหลด';
         this.deleteLabel = 'ลบ';
         this.clearLabel = 'ลบทั้งหมด';
         this.abortLabel = 'ยกเลิก';
         this.draganddropBoxMessage = 'คุณสามารถลากไฟล์มาวางที่นี่ได้';
-        this.nonChosenMessage = 'ยังไม่ได้เลือกไฟล์';
-        this.latestFileChosenCaption = 'ไฟล์ที่เลือก :';
+        this.nonChosenMessage = '';
+        this.latestFileChosenCaption = 'ไฟล์ที่เลือกล่าสุด:';
         this.uploadingMessage = 'กำลังอัพโหลดไฟล์...';
         this.uploadStatusComplete = 'การอัพโหลดสำเร็จ';
         this.uploadStatusFailure = 'การอัพโหลดล้มเหลว';
@@ -48499,18 +48497,17 @@ var UploadComponent = (function () {
         this.chooseFileName = this.nonChosenMessage;
     };
     UploadComponent.prototype.checkOptions = function () {
-        this.errorHeaderMsg = this.checkMsgsValue('errorHeaderMsg', this.errorHeaderMsg);
         this.invalidFileSizeMsg = this.checkMsgsValue('invalidFileSizeMsg', this.invalidFileSizeMsg + this.formatSize(this.maxFileSize));
         this.invalidTypeMsg = this.checkMsgsValue('invalidTypeMsg', this.invalidTypeMsg);
-        this.chooseLabel = this.checkMsgsValue('chooseLabel', 'เลือกไฟล์');
-        this.uploadLabel = this.checkMsgsValue('uploadLabel', 'อัพโหลด');
-        this.deleteLabel = this.checkMsgsValue('deleteLabel', 'ลบ');
-        this.clearLabel = this.checkMsgsValue('clearLabel', 'ลบทั้งหมด');
-        this.abortLabel = this.checkMsgsValue('abortLabel', 'ยกเลิก');
-        this.draganddropBoxMessage = this.checkMsgsValue('draganddropBoxMessage', 'คุณสามารถลากไฟล์มาวางที่นี่ได้');
-        this.nonChosenMessage = this.checkMsgsValue('nonChosenMessage', 'ยังไม่ได้เลือกไฟล์');
-        this.latestFileChosenCaption = this.checkMsgsValue('latestFileChosenCaption', 'ไฟล์ที่เลือกทั้งหมด : ');
-        this.uploadingMessage = this.checkMsgsValue('uploadingMessage', 'กำลังอัพโหลดไฟล์');
+        this.chooseLabel = this.checkMsgsValue('chooseLabel', this.chooseLabel);
+        this.uploadLabel = this.checkMsgsValue('uploadLabel', this.uploadLabel);
+        this.deleteLabel = this.checkMsgsValue('deleteLabel', this.deleteLabel);
+        this.clearLabel = this.checkMsgsValue('clearLabel', this.clearLabel);
+        this.abortLabel = this.checkMsgsValue('abortLabel', this.abortLabel);
+        this.draganddropBoxMessage = this.checkMsgsValue('draganddropBoxMessage', this.draganddropBoxMessage);
+        this.nonChosenMessage = this.checkMsgsValue('nonChosenMessage', this.nonChosenMessage);
+        this.latestFileChosenCaption = this.checkMsgsValue('latestFileChosenCaption', this.latestFileChosenCaption);
+        this.uploadingMessage = this.checkMsgsValue('uploadingMessage', this.uploadingMessage);
         this.uploadStatusComplete = this.checkMsgsValue('uploadStatusComplete', this.uploadStatusComplete);
         this.uploadStatusFailure = this.checkMsgsValue('uploadStatusFailure', this.uploadStatusFailure);
         this.showImage = this.checkShowOptionsValue('showImage', this.showImage);
@@ -48573,11 +48570,10 @@ var UploadComponent = (function () {
         }
         if (haveError) {
             this.showError = true;
-            this.errorMsg = this.errorHeaderMsg;
             if (this.sizeError)
-                this.errorMsg += '<br>- ' + this.invalidFileSizeMsg;
+                this.errorMsg = this.invalidFileSizeMsg;
             if (this.typeError)
-                this.errorMsg += '<br>- ' + this.invalidTypeMsg;
+                this.errorMsg = this.invalidTypeMsg;
         }
         else
             this.showError = false;
@@ -48888,10 +48884,6 @@ __decorate([
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], UploadComponent.prototype, "errorHeaderMsg", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
 ], UploadComponent.prototype, "invalidFileSizeMsg", void 0);
 __decorate([
     core_1.Input(),
@@ -49008,7 +49000,8 @@ __decorate([
 UploadComponent = __decorate([
     core_1.Component({
         selector: 'go-upload',
-        template: __webpack_require__(432)
+        template: __webpack_require__(432),
+        styles: ["\n        div[role=\"alert\"] {\n            margin-bottom: .5rem;\n        }\n    "]
     }),
     __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
 ], UploadComponent);
@@ -53404,7 +53397,7 @@ module.exports = "<span class=\"gos-textarea-margin\">\r\n    <go-label [label]=
 /* 432 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card card-block col-md-12 text-center\"\r\n\t[ngClass]=\"{'card-info': this.dragHighlight}\"\r\n\t*ngIf=\"showDragandDropBox\" (dragenter)=\"onDragEnter($event)\"\r\n\t(dragover)=\"onDragOver($event)\" (dragleave)=\"onDragLeave($event)\"\r\n\t(drop)=\"onDrop($event)\">{{draganddropBoxMessage}}</div>\r\n<div class=\"col-md-12\"\r\n\t*ngIf=\"showBrowseButton || showLatestFileNameChosen || !autoUpload || (canAbort && uploading)\">\r\n\t<button class=\"btn btn-primary btn-sm\" id=\"fileselect\"\r\n\t\t(click)=\"onChooseClick($event, fileinput)\" [disabled]=\"uploading\"\r\n\t\t*ngIf=\"showBrowseButton\">\r\n\t\t<input #fileinput id=\"my-file-selector\" type=\"file\"\r\n\t\t\tstyle=\"display: none;\" (change)=\"onFileSelect($event)\"\r\n\t\t\t[multiple]=\"multiple\" [accept]=\"accept\" [disabled]=\"uploading\">\r\n\t\t<i class=\"fa fa-plus\"></i> {{chooseLabel}}\r\n\t</button>\r\n\t<label class=\"label label-info\" *ngIf=\"showLatestFileNameChosen\">\r\n\t\t{{chooseFileName}} </label>\r\n\t<button *ngIf=\"!autoUpload\" class=\"btn btn-success btn-sm\"\r\n\t\t(click)=\"upload()\" [disabled]=\"!hasFiles() || uploading\">\r\n\t\t<i class=\"fa fa-upload\"></i> {{uploadLabel}}\r\n\t</button>\r\n\t<button *ngIf=\"!autoUpload && (!canAbort || (canAbort && !uploading))\"\r\n\t\tclass=\"btn btn-danger btn-sm\" (click)=\"clear()\"\r\n\t\t[disabled]=\"!hasFiles() || uploading\">\r\n\t\t<i class=\"fa fa-ban\"></i> {{clearLabel}}\r\n\t</button>\r\n\t<button *ngIf=\"canAbort && uploading\" class=\" btn btn-danger btn-sm\"\r\n\t\t(click)=\"abortUpload()\" [disabled]=\"!uploading\">\r\n\t\t<i class=\"fa fa-times\"></i> {{abortLabel}}\r\n\t</button>\r\n</div>\r\n<div class=\"alert alert-danger col-md-12\" role=\"alert\"\r\n\t*ngIf=\"showFileChosenError && showError\" [innerHTML]=\"errorMsg\">\r\n\t<button type=\"button\" class=\"close\" (click)=\"this.showError = false;\">\r\n\t\t<span aria-hidden=\"true\">&times;</span>\r\n\t</button>\r\n</div>\r\n<div [ngClass]=\"uploadStatusClass\" role=\"alert\"\r\n\t*ngIf=\"showUploadStatusDialog && uploadstatus\" [innerHTML]=\"uploadstatus\">\r\n\t<button type=\"button\" class=\"close\" (click)=\"this.uploadstatus = '';\">\r\n\t\t<span aria-hidden=\"true\">&times;</span>\r\n\t</button>\r\n</div>\r\n<div class=\"col-md-12\" *ngIf=\"hasFiles() && showProgressBar\">\r\n\t<div class=\"text-xs-center\">{{uploadingMessage}}\r\n\t\t{{progressPercent}}</div>\r\n\t<div class=\"text-xs-center\">{{uploadedSizeHumanized}}\r\n\t\t({{uploadSpeedHumanized}})</div>\r\n\t<div class=\"row\">\r\n\t\t<progress class=\"progress progress-striped progress-animated\"\r\n\t\t\t[value]=\"progress\" max=\"100\"\r\n\t\t\taria-describedby=\"uploadprogress-caption\"></progress>\r\n\r\n\t</div>\r\n</div>\r\n<div class=\"col-md-12\" *ngIf=\"hasFiles() && showAllFileChosen\">\r\n\t<div class=\"row\" *ngFor=\"let file of files\">\r\n\t\t<img [src]=\"file.objectURL\" *ngIf=\"isImage(file) && showImage\"\r\n\t\t\t[width]=\"previewWidth\" /> <i class=\"fa fa-file-image-o\"\r\n\t\t\t*ngIf=\"isImage(file) && !showImage\"></i><i class=\"fa fa-file\"\r\n\t\t\t*ngIf=\"!isImage(file)\"></i> {{file.name}} - {{formatSize(file.size)}}\r\n\t\t<button class=\"btn btn-danger btn-sm\" (click)=\"remove(file)\"\r\n\t\t\t*ngIf=\"!autoUpload\" [disabled]=\"uploading\">\r\n\t\t\t<i class=\"fa fa-trash\"></i>{{deleteLabel}}\r\n\t\t</button>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"card card-block col-md-12 text-center\"\r\n\t[ngClass]=\"{'card-info': this.dragHighlight}\"\r\n\t*ngIf=\"showDragandDropBox\" (dragenter)=\"onDragEnter($event)\"\r\n\t(dragover)=\"onDragOver($event)\" (dragleave)=\"onDragLeave($event)\"\r\n\t(drop)=\"onDrop($event)\">{{draganddropBoxMessage}}</div>\r\n<div class=\"col-md-12\" style=\"margin-bottom: .5rem;\"\r\n\t*ngIf=\"showBrowseButton || showLatestFileNameChosen || !autoUpload || (canAbort && uploading)\">\r\n\t<button class=\"btn btn-primary btn-sm\" id=\"fileselect\"\r\n\t\t(click)=\"onChooseClick($event, fileinput)\" [disabled]=\"uploading\"\r\n\t\t*ngIf=\"showBrowseButton\">\r\n\t\t<input #fileinput id=\"my-file-selector\" type=\"file\"\r\n\t\t\tstyle=\"display: none;\" (change)=\"onFileSelect($event)\"\r\n\t\t\t[multiple]=\"multiple\" [accept]=\"accept\" [disabled]=\"uploading\">\r\n\t\t<i class=\"fa fa-plus\"></i> {{chooseLabel}}\r\n\t</button>\r\n\t<button *ngIf=\"!autoUpload\" class=\"btn btn-success btn-sm\"\r\n\t\t(click)=\"upload()\" [disabled]=\"!hasFiles() || uploading\">\r\n\t\t<i class=\"fa fa-upload\"></i> {{uploadLabel}}\r\n\t</button>\r\n\t<button *ngIf=\"!autoUpload && (!canAbort || (canAbort && !uploading))\"\r\n\t\tclass=\"btn btn-danger btn-sm\" (click)=\"clear()\"\r\n\t\t[disabled]=\"!hasFiles() || uploading\">\r\n\t\t<i class=\"fa fa-ban\"></i> {{clearLabel}}\r\n\t</button>\r\n\t<button *ngIf=\"canAbort && uploading\" class=\" btn btn-danger btn-sm\"\r\n\t\t(click)=\"abortUpload()\" [disabled]=\"!uploading\">\r\n\t\t<i class=\"fa fa-times\"></i> {{abortLabel}}\r\n\t</button>\r\n</div>\r\n<div class=\"alert alert-danger col-md-12\" role=\"alert\"\r\n\t*ngIf=\"showFileChosenError && showError\">{{errorMsg}}\r\n\t<button type=\"button\" class=\"close\" (click)=\"this.showError = false;\">\r\n\t\t<span aria-hidden=\"true\">&times;</span>\r\n\t</button>\r\n</div>\r\n<div [ngClass]=\"uploadStatusClass\" role=\"alert\"\r\n\t*ngIf=\"showUploadStatusDialog && uploadstatus\">{{uploadstatus}}\r\n\t<button type=\"button\" class=\"close\" (click)=\"this.uploadstatus = '';\">\r\n\t\t<span aria-hidden=\"true\">&times;</span>\r\n\t</button>\r\n</div>\r\n<div class=\"col-md-12\" *ngIf=\"hasFiles() && showProgressBar\">\r\n\t<div class=\"text-xs-center\">{{uploadingMessage}}\r\n\t\t{{progressPercent}}</div>\r\n\t<div class=\"text-xs-center\">{{uploadedSizeHumanized}}\r\n\t\t({{uploadSpeedHumanized}})</div>\r\n\t<div class=\"row\">\r\n\t\t<progress class=\"progress progress-striped progress-animated\"\r\n\t\t\t[value]=\"progress\" max=\"100\"\r\n\t\t\taria-describedby=\"uploadprogress-caption\"></progress>\r\n\t</div>\r\n</div>\r\n<div>\r\n\t<label class=\"label label-info\" *ngIf=\"showLatestFileNameChosen\">\r\n\t{{chooseFileName}}</label>\r\n</div>\r\n<div class=\"col-md-12\" *ngIf=\"hasFiles() && showAllFileChosen\">\r\n\t<div class=\"row\" *ngFor=\"let file of files\">\r\n\t\t<div class=\"col-sm-9\">\r\n\t\t\t<img [src]=\"file.objectURL\" *ngIf=\"isImage(file) && showImage\"\r\n\t\t\t\t[width]=\"previewWidth\" /> <i class=\"fa fa-file-image-o\"\r\n\t\t\t\t*ngIf=\"isImage(file) && !showImage\"></i><i class=\"fa fa-file\"\r\n\t\t\t\t*ngIf=\"!isImage(file)\"></i> {{file.name}} - {{formatSize(file.size)}}\r\n\t\t</div>\r\n\t\t<div class=\"col-sm-3\" style=\"text-align: right;\">\r\n\t\t\t<button class=\"btn btn-danger btn-sm\" (click)=\"remove(file)\" *ngIf=\"!autoUpload\" [disabled]=\"uploading\">\r\n\t\t\t\t<i class=\"fa fa-trash\"></i> {{deleteLabel}}\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 /* 433 */

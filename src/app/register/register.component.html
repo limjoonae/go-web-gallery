@@ -5,53 +5,53 @@
         <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="UL code" type="number" [(ngModel)]="ulcode" 
+                    <go-textbox placeholder="UL code" type="number" [(ngModel)]="user.ulCode" 
                     name="ulcode"  goId="ulcode_id" required maxlength="5"></go-textbox>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="Service name" type="text" [(ngModel)]="servicename" name="servicename"  goId="servicename_id" required ></go-textbox>
+                    <go-textbox placeholder="Service name" type="text" [(ngModel)]="user.serviceName" name="servicename"  goId="servicename_id" required ></go-textbox>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="Project name" type="text" [(ngModel)]="projectname" name="projectname"  goId="projectname_id" required ></go-textbox>
+                    <go-textbox placeholder="Project name" type="text" [(ngModel)]="user.projectName" name="projectname"  goId="projectname_id" required ></go-textbox>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="First name" type="text" [(ngModel)]="firstname" name="firstname"  goId="firstname_id" required ></go-textbox>
+                    <go-textbox placeholder="First name" type="text" [(ngModel)]="user.firstName" name="firstname"  goId="firstname_id" required ></go-textbox>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="Last name" type="text" [(ngModel)]="lastname" name="lastname"  goId="lastname_id" required ></go-textbox>
+                    <go-textbox placeholder="Last name" type="text" [(ngModel)]="user.lastName" name="lastname"  goId="lastname_id" required ></go-textbox>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 form-group">
                     <go-textbox placeholder="E-mail e.g. example@gosoft.co.th" type="email" 
-                    [(ngModel)]="email" name="email_1" required #email_1="ngModel" goId="email_1"
+                    [(ngModel)]="user.email" name="email_1" required #email_1="ngModel" goId="email_1"
                     [(isValid)]="isValidEmail" ></go-textbox>
                 </div>
             </div>
-            <p-dialog [header]="title" [visible]="registerDialogDisplay"
+            <p-dialog [header]="title" [visible]="dialogDisplay"
                     [modal] = "isModal" [width] = "width" [height] = "height" 
                     [closable] = 'false' [responsive] = "isResponsive"
                     [draggable] = "false" [showHeader] = "true">
                                     
                 <div class="dialog" style="text-align: center;">
-                    <a style="color: #990000;">Registered!!</a>
+                    <a style="color: #990000;">{{dialogMessage}}</a>
                 </div>
                 <p-footer>
                     <div style="text-align: center;">
-                        <go-button label="close" iconName="close" buttonColor="danger" (click)="registerDialogDisplay=false" ></go-button>
+                        <go-button label="close" iconName="close" buttonColor="danger" (click)="dialogDisplay=false" ></go-button>
                     </div>	
                 </p-footer>
             </p-dialog>
 
-            <p-dialog [header]="errorTitle" [visible]="errorDialogDisplay"
+            <!-- <p-dialog [header]="errorTitle" [visible]="errorDialogDisplay"
                     [modal] = "isModal" [width] = "width" [height] = "height" 
                     [closable] = "false" [responsive] = "isResponsive"
                     [draggable] = "false" [showHeader] = "true">
@@ -64,9 +64,9 @@
                         <go-button label="close" iconName="close" buttonColor="danger" (click)="errorDialogDisplay=false" ></go-button>
                     </div>	
                 </p-footer>
-            </p-dialog>
+            </p-dialog> -->
             <div style="text-align: center;">    
-                <button type="button" class="btn btn-danger" (click)="submitData()" [disabled]="!registerForm.form.valid"><i class="fa fa-check"></i> Register</button>
+                <button type="button" class="btn btn-danger" (click)="register()" [disabled]="!registerForm.form.valid"><i class="fa fa-check"></i> Register</button>
                 <go-button label="Clear" buttonColor="danger" iconName="times" (click)="clearText()"></go-button><br>
             </div>
         </form>

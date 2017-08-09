@@ -46,6 +46,8 @@ import { GettingStartComponent } from './getting-start/getting-start.component';
 import { RegisterComponent } from './register/register.component';
 import { WhatsnewComponent } from './whatsnew/whatsnew.component';
 
+import { UsersService } from './service/users.service';
+
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
   { path: 'font', component: FontDocument},
@@ -127,6 +129,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     WhatsnewComponent,
   ],
+  providers:    [ UsersService ],
   bootstrap:    [ AppComponent ],
 })
 export class AppModule { }
