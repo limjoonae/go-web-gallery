@@ -1,71 +1,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-8">
-			<div class="card">
-				<h3 class="card-header">What's New!!</h3>
-				<div class="card-block">
-					<div class="row">
-						<div class="col-sm-12 col-md-12 col-lg-12">
-						<h5>Angular 4.0.0 Now Available</h5>
-						<p>ขณะนี้ได้ update เป็น Angular version 4.0.0 แล้ว สามารถอ่านรายละเอียดเพิ่มเติมได้ที่ <a href="http://angularjs.blogspot.com/2017/03/angular-400-now-available.html" target="_blank"><strong><em>AngularJS</em></strong></a></p>
-						</div>
-					</div>
-					<div class="row" style="margin-top: 1rem;">
-						<div class="col-sm-12 col-md-12 col-lg-12">
-						<h5>Component Pack</h5>
-						<p>สามารถใช้งาน component ทั้งหมดได้ โดยเรียกใช้ไฟล์ gomodule.umd.js และ libmodule.umd.js ดูตัวอย่างการใช้งานได้ที่ <go-button label="Getting Start" buttonColor="danger" [routerLink]="['gettingstart']" buttonSize="sm"></go-button> ที่เมนู Existing Angular Project</p><br><br><br><br><br><br><br>
-						</div>
-					</div>
-				</div>
-			</div>
+			<app-whatsnew></app-whatsnew>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-4">
-			<div class="card">
-				<h3 class="card-header">Registeration</h3>
-				<div class="card-block">
-					Name - Surname
-					<go-textbox type="text" [(ngModel)]="user_name" name="user"  goId="user_id" placeholder="name and surname"  required goId="user_id"></go-textbox><br>
-					Department
-					<go-textbox type="text" [(ngModel)]="dept_name" name="dept"  goId="dept_id" placeholder="department name"  required goId="dept_id"></go-textbox><br>
-					E-Mail
-					<go-textbox type="email" [(ngModel)]="user_email" name="email"  goId="email_id" placeholder="example@host.com"  required #email_1="ngModel" ></go-textbox><br>
-					<p style="color: red;">* Please Fill in English</p><br>
-					
-					 	<p-dialog [header]="title" [visible]="registerDialogDisplay"
-              			[modal] = "isModal" [width] = "width" [height] = "height" 
-										[closable] = 'false'[responsive] = "isResponsive"
-										[draggable] = "false" [showHeader] = "true">
-						
-						<div class="dialog" style="text-align: center;">
-							<a style="color: #990000;">Registered!!</a>
-						</div>
-							<p-footer>
-								<div style="text-align: center;">
-								<go-button label="close" iconName="close" buttonColor="danger" (click)="registerDialogDisplay=false" ></go-button>
-								</div>	
-							</p-footer>
-					 	</p-dialog>
-						 <p-dialog [header]="errorTitle" [visible]="errorDialogDisplay"
-              			[modal] = "isModal" [width] = "width" [height] = "height" 
-										[closable] = "false" [responsive] = "isResponsive"
-										[draggable] = "false" [showHeader] = "true">
-						
-						<div class="dialog" style="text-align: center;">
-							<a style="color: #990000;">Please fill the correct data.</a>
-						</div>
-							<p-footer>
-								<div style="text-align: center;">
-								<go-button label="close" iconName="close" buttonColor="danger" (click)="errorDialogDisplay=false" ></go-button>
-								</div>	
-							</p-footer>
-					 	</p-dialog>
-				</div>
-				<div style="text-align: center">
-					<go-button label="Submit" iconName="check" buttonColor="danger" (click)="submitData()" ></go-button>
-					<go-button label="Clear"  buttonColor="danger" (click)="clearText()" ></go-button><br>
-				</div>
-				<div><br></div>
-			</div>
+			<app-register></app-register>
 		</div>
 	</div>
 	<div class="row">

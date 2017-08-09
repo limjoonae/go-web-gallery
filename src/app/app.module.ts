@@ -43,6 +43,8 @@ import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
 import { UploadDocument } from './doc/upload.document';
 import { GettingStartComponent } from './getting-start/getting-start.component';
+import { RegisterComponent } from './register/register.component';
+import { WhatsnewComponent } from './whatsnew/whatsnew.component';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
@@ -122,6 +124,8 @@ const appRoutes: Routes = [
     TextareaDocument,
     TextboxDocument,
     GettingStartComponent,
+    RegisterComponent,
+    WhatsnewComponent,
   ],
   bootstrap:    [ AppComponent ],
 })
