@@ -33,30 +33,37 @@ export class RegisterComponent implements OnInit  {
     private email: string;
     
     private dialogDisplay : boolean = false;
-    private errorDialogDisplay : boolean = false;
+    private confirmDialogDisplay : boolean = false;
     private title: string = "Registeration";
-    private errorTitle : string = "Error";
-    private isShowHeader: boolean = true;
-    private isDraggable: boolean = false;
-    private isClosable: boolean = false;
     private isResponsive: boolean = true;    
     private isModal: boolean = true;
-    private width: number = 300;
-    private height: number = 200;
     private dialogMessage: string = '';
+    private cancelButtonLabel: string = '';
+    private showConfirmButton: boolean = false;
 
     private isValidEmail: boolean = true;
 
+    showConfirmDialog() {
+        this.title = 'Confirm';
+        this.dialogMessage = 'Are you sure to register?';
+        this.cancelButtonLabel = 'No';
+        this.showConfirmButton = true;
+        this.dialogDisplay = true;
+    }
+
     register() {
+        this.dialogDisplay = false;
+        this.cancelButtonLabel = 'OK';
+        this.showConfirmButton = false;
         this.usersService.register(this.user).subscribe(
             success => { 
-                console.log('success: ', success);
-                console.log('success: ', success["_body"]);
+                this.clearText();
+                this.title = 'Successful';
                 this.dialogMessage = success["_body"];
                 this.dialogDisplay = true;
             },
             error => { 
-                console.log('success: ', error["_body"]);
+                this.title = 'You cannot register';
                 this.dialogMessage = error["_body"];
                 this.dialogDisplay = true;
             }

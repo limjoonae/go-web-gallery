@@ -37,21 +37,22 @@
                 </div>
             </div>
             <p-dialog [header]="title" [visible]="dialogDisplay"
-                    [modal] = "isModal" [width] = "width" [height] = "height" 
-                    [closable] = 'false' [responsive] = "isResponsive"
-                    [draggable] = "false" [showHeader] = "true">
+                    [modal]="true" [width]="300" [height]="200" 
+                    [closable]="false" [responsive]="true"
+                    [draggable]="false" [showHeader]="true">
                                     
                 <div class="dialog" style="text-align: center;">
                     <a style="color: #990000;">{{dialogMessage}}</a>
                 </div>
                 <p-footer>
                     <div style="text-align: center;">
-                        <go-button label="close" iconName="close" buttonColor="danger" (click)="dialogDisplay=false" ></go-button>
+                        <go-button *ngIf="showConfirmButton" label="Yes" iconName="check" buttonColor="primary" (click)="register()" ></go-button>
+                        <go-button [label]="cancelButtonLabel" iconName="close" buttonColor="danger" (click)="dialogDisplay=false" ></go-button>
                     </div>	
                 </p-footer>
             </p-dialog>
 
-            <!-- <p-dialog [header]="errorTitle" [visible]="errorDialogDisplay"
+            <!-- <p-dialog [header]="errorTitle" [visible]="confirmDialogDisplay"
                     [modal] = "isModal" [width] = "width" [height] = "height" 
                     [closable] = "false" [responsive] = "isResponsive"
                     [draggable] = "false" [showHeader] = "true">
@@ -66,7 +67,7 @@
                 </p-footer>
             </p-dialog> -->
             <div style="text-align: center;">
-                <button type="button" class="btn btn-danger" (click)="register()" [disabled]="!registerForm.form.valid || !isValidEmail"><i class="fa fa-check"></i> Register</button>
+                <button type="button" class="btn btn-danger" (click)="showConfirmDialog()" [disabled]="!registerForm.form.valid || !isValidEmail"><i class="fa fa-check"></i> Register</button>
                 <go-button label="Clear" buttonColor="danger" iconName="times" (click)="clearText()"></go-button><br>
             </div>
         </form>
