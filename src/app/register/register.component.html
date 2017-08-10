@@ -5,7 +5,7 @@
         <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
             <div class="row">
                 <div class="col-sm-12 form-group">
-                    <go-textbox placeholder="UL code" type="number" [(ngModel)]="user.ulCode" 
+                    <go-textbox placeholder="UL code (max length is 5 digit)" type="number" [(ngModel)]="user.ulCode" 
                     name="ulcode"  goId="ulcode_id" required maxlength="5"></go-textbox>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                     </div>	
                 </p-footer>
             </p-dialog> -->
-            <div style="text-align: center;">    
-                <button type="button" class="btn btn-danger" (click)="register()" [disabled]="!registerForm.form.valid"><i class="fa fa-check"></i> Register</button>
+            <div style="text-align: center;">
+                <button type="button" class="btn btn-danger" (click)="register()" [disabled]="!registerForm.form.valid || !isValidEmail"><i class="fa fa-check"></i> Register</button>
                 <go-button label="Clear" buttonColor="danger" iconName="times" (click)="clearText()"></go-button><br>
             </div>
         </form>
