@@ -6,9 +6,10 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/',
-      'go:': 'dist/',
-      'lib:': 'dist/',
+      'npm:': 'http://dev-webcdn.cpall.co.th/node_modules/4.0.0/',
+      'npm2:': 'node_modules/',
+      'go:': 'http://dev-webcdn.cpall.co.th/dist/go/2.1.0/',
+      'lib:': 'http://dev-webcdn.cpall.co.th/dist/lib/1.0.0/',
     },
     // map tells the System loader where to look for things
     map: {
@@ -32,6 +33,7 @@
 
       // other libraries
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'angular2-markdown': 'npm2:angular2-markdown/bundles/angular2-markdown.umd.js',
 
       //***lib for go-component***
       'go-module': 'go:gomodule.umd.js',
