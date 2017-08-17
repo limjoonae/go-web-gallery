@@ -45,10 +45,24 @@ nav { margin-bottom: 1.25rem; }
 	position: absolute;
 	right: 1rem;
 }
-
 #whats-new {
     height: 30rem;
 }
+.exFile {
+     width: 100%; 
+     height: 100%; 
+     display: block;
+}
+object{
+    background-color:#eee;
+    overflow:auto;
+    margin:0 0 1em;
+    padding:.5em 1em;
+    width: 100%; 
+    height: 10rem; 
+    display: block;
+}
+
 @media (min-width: 992px) { 
 .loading-img {margin-left: 40%; margin-top: 10rem;}
 #projectName{display:inline-block;}
