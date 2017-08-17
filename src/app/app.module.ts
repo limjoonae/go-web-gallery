@@ -44,7 +44,6 @@ import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
 import { UploadDocument } from './doc/upload.document';
 import { RegisterComponent } from './register/register.component';
-import { WhatsnewComponent } from './whatsnew/whatsnew.component';
 import { PrerequisiteComponent } from './documentation/prerequisite.component';
 import { GettingstartMenuComponent } from './documentation/menu.component';
 import { CreateNewProjectComponent } from './documentation/create-new-project.component';
@@ -57,11 +56,12 @@ import { UsersService } from './service/users.service';
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
   { path: 'font', component: FontDocument},
-  { path: 'gettingstart/prerequisite', component: PrerequisiteComponent},
-  { path: 'gettingstart/createnewproject', component: CreateNewProjectComponent},
-  { path: 'gettingstart/existingproject', component: ExistingProjectComponent},
-  { path: 'changelog/gomodule', component: ChangelogGomoduleComponent},
-  { path: 'changelog/libmodule', component: ChangelogLibmoduleComponent},
+  { path: 'documentation/gettingstart/prerequisite', component: PrerequisiteComponent},
+  { path: 'documentation/gettingstart/createnewproject', component: CreateNewProjectComponent},
+  { path: 'documentation/gettingstart/existingproject', component: ExistingProjectComponent},
+  { path: 'documentation/changelog/gomodule', component: ChangelogGomoduleComponent},
+  { path: 'documentation/changelog/libmodule', component: ChangelogLibmoduleComponent},
+  { path: 'documentation', redirectTo: 'documentation/gettingstart/prerequisite' },
   { path: 'accordion', component: AccordionDocument },
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
@@ -138,7 +138,6 @@ const appRoutes: Routes = [
     TextareaDocument,
     TextboxDocument,
     RegisterComponent,
-    WhatsnewComponent,
     PrerequisiteComponent,
     GettingstartMenuComponent,
     CreateNewProjectComponent,

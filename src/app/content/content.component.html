@@ -1,7 +1,17 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-8">
-			<app-whatsnew></app-whatsnew>
+			<h1>Front-end Web Application Framework</h1>
+			<div class="row"> 
+				<div class="col-sm-12 col-md-12 col-lg-12">
+				<br><div Markdown path="file/INTRODUCTION.md"></div>
+					<div style="text-align: center;">
+						<div class="col-sm-6"><a class="form-control btn btn-danger" [routerLink]="['/documentation/gettingstart/prerequisite']">Get Started</a></div>
+						<div class="col-sm-6"><a class="form-control btn btn-danger" [routerLink]="['/documentation/changelog/gomodule']">Changelog</a></div>
+					</div>
+						<small class="text-muted" Markdown path="file/LASTVERSION.md"></small>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-4">
 			<app-register></app-register>
