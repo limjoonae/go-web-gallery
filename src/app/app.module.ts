@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarkdownModule } from 'angular2-markdown';
 
 import { AppComponent }  from './app.component';
 import { HeaderComponent }  from './header/header.component';
@@ -42,16 +43,25 @@ import { TextareaDocument } from './doc/textarea.document';
 import { TextboxDocument } from './doc/textbox.document';
 import { TreeDocument } from './doc/tree.document';
 import { UploadDocument } from './doc/upload.document';
-import { GettingStartComponent } from './getting-start/getting-start.component';
 import { RegisterComponent } from './register/register.component';
 import { WhatsnewComponent } from './whatsnew/whatsnew.component';
+import { PrerequisiteComponent } from './documentation/prerequisite.component';
+import { GettingstartMenuComponent } from './documentation/menu.component';
+import { CreateNewProjectComponent } from './documentation/create-new-project.component';
+import { ExistingProjectComponent } from './documentation/existing-project.component';
+import { ChangelogGomoduleComponent } from './documentation/changelog-gomodule.component';
+import { ChangelogLibmoduleComponent } from './documentation/changelog-libmodule.component';
 
 import { UsersService } from './service/users.service';
 
 const appRoutes: Routes = [
   { path: '', component: ContentComponent},
   { path: 'font', component: FontDocument},
-  { path: 'gettingstart', component: GettingStartComponent},
+  { path: 'gettingstart/prerequisite', component: PrerequisiteComponent},
+  { path: 'gettingstart/createnewproject', component: CreateNewProjectComponent},
+  { path: 'gettingstart/existingproject', component: ExistingProjectComponent},
+  { path: 'changelog/gomodule', component: ChangelogGomoduleComponent},
+  { path: 'changelog/libmodule', component: ChangelogLibmoduleComponent},
   { path: 'accordion', component: AccordionDocument },
   { path: 'autocomplete', component: AutoCompleteDocument},
   { path: 'badge', component: BadgeDocument},
@@ -79,6 +89,7 @@ const appRoutes: Routes = [
   { path: 'tooltip', component: TooltipDocument},
   { path: 'tree', component: TreeDocument},
   { path: 'upload', component: UploadDocument},
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
@@ -90,6 +101,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     GoModule.forRoot(),
     LibModule.forRoot(),
+    MarkdownModule.forRoot(),
   ],
   declarations: [ 
     AppComponent,
@@ -125,9 +137,14 @@ const appRoutes: Routes = [
     TreeDocument,
     TextareaDocument,
     TextboxDocument,
-    GettingStartComponent,
     RegisterComponent,
     WhatsnewComponent,
+    PrerequisiteComponent,
+    GettingstartMenuComponent,
+    CreateNewProjectComponent,
+    ExistingProjectComponent,
+    ChangelogGomoduleComponent,
+    ChangelogLibmoduleComponent
   ],
   providers:    [ UsersService ],
   bootstrap:    [ AppComponent ],
