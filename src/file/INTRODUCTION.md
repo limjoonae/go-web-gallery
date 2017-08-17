@@ -1,0 +1,1 @@
+คือเฟรมเวิร์คที่รวบรวม component ต่างๆ ที่ถูกใช้งานบ่อย เช่น datetime picker, datadrid, textbox with validation และอื่นๆอีกมากมาย เพื่อช่วยลดเวลาในการค้นหา component มาใช้ อีกทั้งยังสามารถทำงานได้บน browser ตามมาตรฐานขององค์กร

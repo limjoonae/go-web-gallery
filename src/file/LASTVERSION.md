@@ -1,0 +1,1 @@
+เวอร์ชั่นล่าสุด: gomodule v2.1.0, libmodule v1.0.0. base on angular v4.0.0
